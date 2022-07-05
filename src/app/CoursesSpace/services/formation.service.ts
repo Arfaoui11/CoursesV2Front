@@ -34,7 +34,7 @@ export class FormationService {
 
 
   login(credentials:any): Observable<any> {
-    return this.http.post('http://localhost:8099/api/auth/signin', {
+    return this.http.post('http://localhost:4000/api/user/login', {
       email: credentials.username,
       password: credentials.password
     }, httpOptions);
@@ -42,7 +42,7 @@ export class FormationService {
 
 
   register(user:User): Observable<any> {
-    return this.http.post('http://localhost:8099/api/auth/signup', {
+    return this.http.post('http://localhost:4000/api/user/register', {
       displayName: user.lastName,
       email: user.email,
       password: user.password,
@@ -51,6 +51,7 @@ export class FormationService {
       tarifHoraire : user.tarifHoraire,
       profession : user.profession,
       age:user.age,
+      isAdmin:user.isAdmin,
       socialProvider: 'LOCAL'
     }, httpOptions);
   }

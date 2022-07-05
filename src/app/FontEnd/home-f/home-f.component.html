@@ -195,11 +195,11 @@
       <div class="col-xl-4 col-md-6 col-sm-12" *ngIf="listFormation">
         <div class="card">
           <div class="card-content">
-            <img    class="card-img-top img-fluid"   [src]="'data:image/jpeg;base64,'+listFormation[index].image" alt="Card image cap">
+            <img    class="card-img-top img-fluid"   [src]="listFormation[index].image" alt="Card image cap">
 
             <div class="card-body">
               <h5> Title :  {{listFormation[index].title.toUpperCase()}}</h5>
-           <!--   <p class="card-text  mb-0"> Former : {{listFormation[index].userF.displayName.toUpperCase()}}</p> -->
+              <p class="card-text  mb-0"> Former : {{listFormation[index].userF.lastName.toUpperCase()}}</p>
               <span class="card-text"> Domain : {{listFormation[index].domain}}</span>
               <div class="card-btns d-flex justify-content-between mt-2">
                 <a (click)="nextCourses()" class="btn gradient-light-primary text-white">Next</a>

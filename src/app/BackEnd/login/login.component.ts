@@ -71,10 +71,10 @@ export class LoginComponent implements OnInit {
     this.appDataService.id = this.currentUser.id;
     this.appDataService.displayName = this.currentUser.displayName;
 
-    if (this.currentUser.roles[0] == "ROLE_ADMIN")
+    if (this.currentUser.isAdmin == "true")
     {
        window.location.href = '#/home/Formation-management';
-    }else if (this.currentUser.roles[0] == "ROLE_MODERATOR")
+    }else if (this.currentUser.isAdmin == "false")
     {
       window.location.href = '#/home/Formation-management/calendarCourses/'+this.currentUser.id;
     }else
