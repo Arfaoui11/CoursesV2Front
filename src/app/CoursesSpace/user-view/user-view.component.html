@@ -123,7 +123,7 @@
             <br>
             <div class="input-group row-cols-md-3" >
               <span class="input-groupe-text "> frais </span>
-              <input #frais="ngModel" type="number" class="form-control" [(ngModel)]="fr.frais" name="frais" placeholder="Price" min="100" max="3000" required >
+              <input #frais="ngModel" type="number" class="form-control" [(ngModel)]="fr.costs" name="frais" placeholder="Price" min="100" max="3000" required >
               <div *ngIf="frais.invalid && frais.touched" style="color: red">
                 <div *ngIf="frais.errors?.required" class="alert">
                   Required

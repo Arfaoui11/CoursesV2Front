@@ -117,7 +117,7 @@ export class AddFomateurComponent implements OnInit {
   {
     this.services.deleteFormation(i)
       .subscribe(response => {
-        this.listFomation = this.listFomation.filter(item => item.idFormation !== i);
+        this.listFomation = this.listFomation.filter(item => item.id !== i);
       });
   }
   /*

@@ -1,23 +1,24 @@
 import {PostComment} from "./PostComment";
 import {User} from "./User";
-import {Files} from "./files";
+
 import {Quiz} from "./Quiz";
 
 export class Formation {
 
-  idFormation!:number;
+  id!:number;
   title!:string;
   level!:string;
   start!:Date;
   end!:Date;
   nbrHeures!:number;
+  image!:string;
+  images!:string[];
   domain!:string;
-  nbrMaxParticipant!:number;
-  frais!:number;
   rating!:number;
+  nbrMaxParticipant!:number;
+  costs!:number;
   lieu!: string;
   formateur!:User;
-  databaseFiles!:Files[];
   postComments!:PostComment[];
   apprenant!:User[];
   quizzes!:Quiz[];

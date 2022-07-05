@@ -44,16 +44,14 @@
             currentPage: page,
             totalItems: Items
           }  , let i=index">
-          <div class="bd-blog mb-30" *ngIf="l.databaseFiles[0].fileType.toString().includes('image')">
+          <div class="bd-blog mb-30" >
             <div class="bd-blog-img" >
-              <div *ngIf="l.databaseFiles[0].fileType.toString().includes('image') ; then thenfirst ; else thenSec"></div>
-              <ng-template #thenfirst > <a href="blog-details.html"><img  [src]="'data:image/jpeg;base64,'+l.databaseFiles[0].data" alt="blog image not found 1"></a></ng-template>
-              <ng-template #thenSec > <a href="blog-details.html"><img  [src]="'data:image/jpeg;base64,'+l.databaseFiles[1].data" alt="blog image not found 2"></a></ng-template>
+              <img  [src]="'data:image/jpeg;base64,'+l.image" alt="blog image not found 1">
             </div>
             <div class="bd-blog-text">
               <div class="bd-blog-meta mb-15">
                 <ul>
-                  <div style="width: 60px;float: right"><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/#/front/End/detailsF/'+l.idFormation" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></div>
+                  <div style="width: 60px;float: right"><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/#/front/End/detailsF/'+l.id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></div>
                 </ul>
                 <ul>
                   <li><a href="blog-details.html"><i class="flaticon-calendar"></i>Start : {{l.start | date | slice:0 : 12   }} <br> End : {{l.end | date | slice:0 : 12}} </a></li>
@@ -70,7 +68,7 @@
                   <h6 class="bd-blog-author-info-title"> {{l.domain}}</h6>
                 </div>
                 <div class="bd-blog-author-link">
-                  <a href="blog-details.html" [routerLink]="['../detailsF',l.idFormation]" >Read More <i class="far fa-arrow-right"></i></a>
+                  <a href="blog-details.html" [routerLink]="['../detailsF',l.id]" >Read More <i class="far fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>

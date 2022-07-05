@@ -68,9 +68,9 @@ export class PortfelioFormDetailsComponent implements OnInit {
 
           this.listFormation =data;
 
-          for (let l of this.listFormation.databaseFiles)
+          for (let l of this.listFormation.images)
           {
-            if(l.fileType.toString().includes('video'))
+           /* if(l.fileType.toString().includes('video'))
             {
               this.retrieveVideo.push(l)  ;
             }else if(l.fileType.toString().includes('application'))
@@ -81,6 +81,8 @@ export class PortfelioFormDetailsComponent implements OnInit {
             {
               this.retrieveImage.push(l) ;
             }
+
+            */
           }
 
         }

@@ -204,7 +204,7 @@ export class CalendarCoursesComponent implements OnInit {
 
   UpdateFormation(f: Formation)
   {
-    this.serviceForm.updateFormation(f,this.formation.idFormation).subscribe(
+    this.serviceForm.updateFormation(f,this.formation.id).subscribe(
       data=>{
         this.getformation();
         this.getdata();
@@ -289,7 +289,7 @@ export class CalendarCoursesComponent implements OnInit {
 
   dataId(form : Formation)
   {
-    this.idF = form.idFormation;
+    this.idF = form.id;
     this.formation = form;
   }
 
@@ -300,7 +300,7 @@ export class CalendarCoursesComponent implements OnInit {
   {
     this.serviceForm.deleteFormation(i)
       .subscribe(response => {
-        this.listFormation = this.listFormation.filter(item => item.idFormation !== i);
+        this.listFormation = this.listFormation.filter(item => item.id !== i);
         this.getformation();
         this.getdata();
       });

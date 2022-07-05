@@ -195,11 +195,7 @@
       <div class="col-xl-4 col-md-6 col-sm-12" *ngIf="listFormation">
         <div class="card">
           <div class="card-content">
-            <div *ngIf="listFormation[index].databaseFiles[0].fileType.toString().includes('image') ; then thenfirst ; else thenSec">
-            </div>
-            <ng-template #thenfirst > <img    class="card-img-top img-fluid"   [src]="'data:image/jpeg;base64,'+listFormation[index].databaseFiles[0].data" alt="Card image cap"></ng-template>
-            <ng-template #thenSec ><img    class="card-img-top img-fluid"   [src]="'data:image/jpeg;base64,'+listFormation[index].databaseFiles[1].data" alt="Card image cap"></ng-template>
-
+            <img    class="card-img-top img-fluid"   [src]="'data:image/jpeg;base64,'+listFormation[index].image" alt="Card image cap">
 
             <div class="card-body">
               <h5> Title :  {{listFormation[index].title.toUpperCase()}}</h5>

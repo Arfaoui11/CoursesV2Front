@@ -3,7 +3,6 @@ import {Formation} from "../../core/model/Formation";
 import {User} from "../../core/model/User";
 import {FormationService} from "../services/formation.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
-import {DomSanitizer} from "@angular/platform-browser";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {TokenService} from "../services/token.service";

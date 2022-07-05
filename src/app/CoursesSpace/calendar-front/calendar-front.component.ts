@@ -195,7 +195,7 @@ export class CalendarFrontComponent implements OnInit {
 
   UpdateFormation(f: Formation)
   {
-    this.serviceForm.updateFormation(f,this.formation.idFormation).subscribe(
+    this.serviceForm.updateFormation(f,this.formation.id).subscribe(
       data=>{
         this.getformation();
         this.getdata();
@@ -280,7 +280,7 @@ export class CalendarFrontComponent implements OnInit {
 
   dataId(form : Formation)
   {
-    this.idF = form.idFormation;
+    this.idF = form.id;
     this.formation = form;
   }
 
@@ -291,7 +291,7 @@ export class CalendarFrontComponent implements OnInit {
   {
     this.serviceForm.desaffecterApprenant(this.currentUser.id,i)
       .subscribe(response => {
-        this.listFormation = this.listFormation.filter(item => item.idFormation !== i);
+        this.listFormation = this.listFormation.filter(item => item.id !== i);
         this.getformation();
        // this.getdata();
       });

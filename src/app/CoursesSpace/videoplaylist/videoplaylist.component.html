@@ -1,7 +1,7 @@
 
 
 <!-- Admin and Video Section Starts -->
-<section *ngIf="formation.databaseFiles.length > 0" >
+<section *ngIf="formation.images.length > 0" >
   <div class="row">
     <div class="col-lg-4 col-sm-12">
       <div class="card">
@@ -123,7 +123,7 @@
   </div>
   <div class="form-group col-md-4">
     <h3> Add Quiz </h3>
-    <button [routerLink]="['../../Quiz',formation.idFormation]" class="btn btn-outline-info round mr-1 mb-1 waves-effect waves-light"> Add Quiz </button>
+    <button [routerLink]="['../../Quiz',formation.id]" class="btn btn-outline-info round mr-1 mb-1 waves-effect waves-light"> Add Quiz </button>
   </div>
 </div>
 
@@ -147,12 +147,9 @@
         <div class="ml-auto user-like text-danger"><i class="fa fa-heart"></i></div>
       </div>
 
-      <div *ngIf="formation.databaseFiles.length > 0">
+      <div *ngIf="formation.images.length > 0">
 
-        <div *ngIf="formation.databaseFiles[0].fileType.toString().includes('image') ; then thenfirst ; else thenSec"></div>
-        <ng-template #thenfirst > <a ><img  [src]="'data:image/jpeg;base64,'+formation.databaseFiles[0].data" alt="blog image not found 1"></a></ng-template>
-        <ng-template #thenSec > <a ><img  [src]="'data:image/jpeg;base64,'+formation.databaseFiles[1].data" alt="blog image not found 2"></a></ng-template>
-
+        <img  [src]="'data:image/jpeg;base64,'+formation.image" alt="blog image not found 1">
       </div>
 
       <div class="d-flex justify-content-start align-items-center mb-1">
@@ -224,11 +221,9 @@
     </div>
     <div class="card-content">
       <div class="card-body">
-        <div *ngIf="formation.databaseFiles.length > 0">
+        <div *ngIf="formation.images.length > 0">
 
-          <div *ngIf="formation.databaseFiles[0].fileType.toString().includes('image') ; then thenfirst ; else thenSec"></div>
-          <ng-template #thenfirst > <a ><img  [src]="'data:image/jpeg;base64,'+formation.databaseFiles[0].data" alt="blog image not found 1"></a></ng-template>
-          <ng-template #thenSec > <a ><img  [src]="'data:image/jpeg;base64,'+formation.databaseFiles[1].data" alt="blog image not found 2"></a></ng-template>
+          <img  [src]="'data:image/jpeg;base64,'+formation.image" alt="blog image not found 1">
 
         </div>
         <div class="d-flex justify-content-start mt-2">

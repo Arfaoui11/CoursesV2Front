@@ -159,7 +159,7 @@ export class FormationComponent implements OnInit {
     this.serviceForm.deleteFormation(i)
       .subscribe(response => {
 
-        this.listFomation = this.listFomation.filter(item => item.idFormation !== i);
+        this.listFomation = this.listFomation.filter(item => item.id !== i);
       });
     this.snackbar.open(' delete successfully', 'Undo', {
       duration: 2000

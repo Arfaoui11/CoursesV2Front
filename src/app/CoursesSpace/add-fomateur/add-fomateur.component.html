@@ -63,10 +63,10 @@
             </div>
           </td>
           <td class="product-action">
-            <span class="action-delete"><i class="feather icon-trash" (click)="deleteFormation(l.idFormation)"></i></span>
+            <span class="action-delete"><i class="feather icon-trash" (click)="deleteFormation(l.id)"></i></span>
           </td>
           <td class="product-action">
-            <span class="action-edit"><i class="feather icon-edit" (click)="ToggleForm();dataId(l.idFormation)" ></i></span>
+            <span class="action-edit"><i class="feather icon-edit" (click)="ToggleForm();dataId(l.id)" ></i></span>
           </td>
           <td>
             <ngx-qrcode [elementType]="elementType"  [value]="l.domain" [width]="50"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode>
@@ -132,7 +132,7 @@
               </div>
               <div class="col-sm-12 data-field-col">
                 <label >Frais</label>
-                <input type="number" class="form-control" [(ngModel)]="fr.frais" >
+                <input type="number" class="form-control" [(ngModel)]="fr.costs" >
               </div>
               <div class="col-sm-12 data-field-col">
                 <label >DateDebut</label>

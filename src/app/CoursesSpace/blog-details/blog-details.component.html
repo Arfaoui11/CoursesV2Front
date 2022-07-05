@@ -28,10 +28,7 @@
         <div class="blog__details--wrapper mr-50 mb-50">
           <div class="ablog ablog-4 mb-60">
             <div class="ablog__img">
-              <div *ngIf="formation.databaseFiles[0].fileType.toString().includes('image') ; then thenfirst ; else thenSec"></div>
-              <ng-template #thenfirst > <a href="blog-details.html"><img  [src]="'data:image/jpeg;base64,'+formation.databaseFiles[0].data" alt="blog image not found 1"></a></ng-template>
-              <ng-template #thenSec > <a href="blog-details.html"><img  [src]="'data:image/jpeg;base64,'+formation.databaseFiles[1].data" alt="blog image not found 2"></a></ng-template>
-
+              <img  [src]="'data:image/jpeg;base64,'+formation.image" alt="blog image not found 1">
               <!--  <div class="video-player-wrapper" >
 
                   <vg-player (onPlayerReady)="videoPlayerInit($event)">
@@ -246,7 +243,7 @@
                 </div>
                 <div class="sidebar__post--text">
                   <!--  <h4 class="sidebar__post--title"><a (click)="sendIndex($index)">{{vdo.fileName}}</a></h4>-->
-                  <h4 class="sidebar__post--title"><a [routerLink]="['../../portF',formation.idFormation]">{{vdo.fileName}}</a></h4>
+                  <h4 class="sidebar__post--title"><a [routerLink]="['../../portF',formation.id]">{{vdo.fileName}}</a></h4>
                   <span>{{formation.start | date | slice:0 : 12}}</span>
                 </div>
               </div>

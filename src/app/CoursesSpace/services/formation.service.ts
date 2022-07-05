@@ -183,11 +183,19 @@ export class FormationService {
   }
 
 
-
+/*
   getFormation():Observable<Formation[]>
   {
     return this.http.get<Formation[]>("http://localhost:8099/Courses/retrieveFormation");
   }
+
+ */
+
+  getFormation():Observable<Formation[]>
+  {
+    return this.http.get<Formation[]>("http://localhost:4000/api/courses");
+  }
+
 
   getPourcentage():Observable<Object[]>
   {

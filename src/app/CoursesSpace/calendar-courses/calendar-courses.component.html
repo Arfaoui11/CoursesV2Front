@@ -199,7 +199,7 @@
     <ng-template #content>
       <div class='external-drag-items' *ngFor="let data of listFormation">
         <div id='waiting-item-check'>
-          <ejs-checkbox #checkbox id={{data.idFormation}} [checked]="false" (change)="onItemChecked($event)">
+          <ejs-checkbox #checkbox id={{data.id}} [checked]="false" (change)="onItemChecked($event)">
           </ejs-checkbox>
         </div>
         <div id="waiting">
@@ -245,7 +245,7 @@
         </div>
         <div class="input-group row-cols-md-3" >
           <span class="input-groupe-text "> frais </span>
-          <input type="number" class="form-control" [(ngModel)]="formation.frais"  >
+          <input type="number" class="form-control" [(ngModel)]="formation.costs"  >
         </div>
 
         <div class="input-group row-cols-md-3" >

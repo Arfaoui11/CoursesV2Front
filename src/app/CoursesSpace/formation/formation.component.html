@@ -50,18 +50,18 @@
           <td>{{l.title}}</td>
           <td>{{l.level}}</td>
           <td>{{l.domain}}</td>
-          <td>{{l.frais}} DT</td>
+          <td>{{l.costs}} DT</td>
           <td >
-            <button class="btn btn-outline-danger" (click)="deleteFormation(l.idFormation)">Delete</button>
+            <button class="btn btn-outline-danger" (click)="deleteFormation(l.id)">Delete</button>
           </td>
           <td>
-            <button  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="dataId(l.idFormation)" >Update</button>
+            <button  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="dataId(l.id)" >Update</button>
           </td>
           <td>
-            <button class="btn btn-outline-instagram" [routerLink]="['../Quiz',l.idFormation]">Add Quiz</button>
+            <button class="btn btn-outline-instagram" [routerLink]="['../Quiz',l.id]">Add Quiz</button>
           </td>
           <td>
-            <button class="btn btn-outline-foursquare" [routerLink]="['../videoplaylist',l.idFormation]">Details</button>
+            <button class="btn btn-outline-foursquare" [routerLink]="['../videoplaylist',l.id]">Details</button>
           </td>
           <td>
             <ngx-qrcode [elementType]="elementType"  [value]="l.toString()" [width]="50"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode>
@@ -159,7 +159,7 @@
             <br>
             <div class="input-group row-cols-md-3" >
               <span class="input-groupe-text "> frais </span>
-              <input #frais="ngModel" type="number" class="form-control" [(ngModel)]="fr.frais" name="frais" placeholder="Price" min="100" max="3000" required >
+              <input #frais="ngModel" type="number" class="form-control" [(ngModel)]="fr.costs" name="frais" placeholder="Price" min="100" max="3000" required >
               <div *ngIf="frais.invalid && frais.touched" style="color: red">
                 <div *ngIf="frais.errors?.required" class="alert">
                   Required

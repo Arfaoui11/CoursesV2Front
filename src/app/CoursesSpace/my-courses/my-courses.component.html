@@ -46,9 +46,8 @@
           }  , let i=index">
         <div class="bd-blog mb-30">
           <div class="bd-blog-img" >
-            <div *ngIf="l.databaseFiles[0].fileType.toString().includes('image') ; then first ; else Sec"></div>
-            <ng-template #first > <a ><img  [src]="'data:image/jpeg;base64,'+l.databaseFiles[0].data" alt="blog image not found 1"></a></ng-template>
-            <ng-template #Sec > <a ><img  [src]="'data:image/jpeg;base64,'+l.databaseFiles[1].data" alt="blog image not found 2"></a></ng-template>
+            <img  [src]="'data:image/jpeg;base64,'+l.image" alt="blog image not found 1">
+
           </div>
           <div class="bd-blog-text">
             <div class="bd-blog-meta mb-15">
@@ -66,7 +65,7 @@
 
               </div>
               <div class="bd-blog-author-link">
-                <a href="blog-details.html" [routerLink]="['../detailsF',l.idFormation]" >Read More <i class="far fa-arrow-right"></i></a>
+                <a href="blog-details.html" [routerLink]="['../detailsF',l.id]" >Read More <i class="far fa-arrow-right"></i></a>
               </div>
             </div>
           </div>
