@@ -79,7 +79,7 @@
               <div class="bd-blog-meta mb-15">
               <ul>
                 <li><a (click)="gotTo404()"  ><i  class="flaticon-calendar"></i>{{formation.start | date | slice:0 : 12 }} - {{formation.end | date | slice:0 : 12 }}</a> <span ></span></li>
-                <li><a href="#com"><i class="flaticon-chat"></i>{{formation.postComments.length}} Comments</a></li>
+                <li><a href="#com"><i class="flaticon-chat"></i>{{formation.comments.length}} Comments</a></li>
                 <li><a [routerLink]="['../../chat']" ><i class="flaticon-chatting"></i> Chat Room </a></li>
               </ul>
             </div>
@@ -255,7 +255,7 @@
             <h3 class="sidebar__widget--title mb-25">This course includes </h3>
             <div class="sidebar--widget__cat mb-20">
               <ul>
-                <li><p>{{formation.nbrHeures}} hours on-demand video</p></li>
+                <li><p>{{formation.nbrHours}} hours on-demand video</p></li>
                 <li><p>Full lifetime access</p></li>
                 <li><p>Certificate of completion</p></li>
                 <li *ngIf="formation.quizzes.length == 0"> 5 Quiz to get Certificate </li>

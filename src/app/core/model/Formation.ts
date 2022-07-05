@@ -2,6 +2,7 @@ import {PostComment} from "./PostComment";
 import {User} from "./User";
 
 import {Quiz} from "./Quiz";
+import {CourseApprenants} from "./courseApprenants";
 
 export class Formation {
 
@@ -10,7 +11,7 @@ export class Formation {
   level!:string;
   start!:Date;
   end!:Date;
-  nbrHeures!:number;
+  nbrHours!:number;
   image!:string;
   images!:string[];
   domain!:string;
@@ -18,9 +19,9 @@ export class Formation {
   nbrMaxParticipant!:number;
   costs!:number;
   lieu!: string;
-  formateur!:User;
-  postComments!:PostComment[];
-  apprenant!:User[];
+  userF!:User;
+  comments!:PostComment[];
+  courseApprenants!:CourseApprenants[];
   quizzes!:Quiz[];
 
 }

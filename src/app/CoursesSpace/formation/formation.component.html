@@ -133,7 +133,7 @@
             <br>
             <div class="input-group row-cols-md-3" >
               <span  class="input-groupe-text "> Nbr Heures </span>
-              <input #nbrHeures="ngModel" type="number" class="form-control" [(ngModel)]="fr.nbrHeures" name="nbrHeures" placeholder="Heures" min="1" max="50" required>
+              <input #nbrHeures="ngModel" type="number" class="form-control" [(ngModel)]="fr.nbrHours" name="nbrHeures" placeholder="Heures" min="1" max="50" required>
               <div *ngIf="nbrHeures.invalid && nbrHeures.touched" style="color: red">
                 <div *ngIf="nbrHeures.errors?.required" class="alert">
                   Required

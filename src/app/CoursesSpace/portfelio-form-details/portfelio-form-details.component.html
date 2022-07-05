@@ -118,7 +118,7 @@
           <div class="bd-blog-meta mb-15">
             <ul>
               <li><a href="blog-details.html"><i class="flaticon-calendar"></i>{{formation.start | date | slice:0 : 12 }} - {{formation.end | date | slice:0 : 12 }}</a></li>
-              <li><a href="#com"><i class="flaticon-chat"></i>{{formation.postComments.length}} Comments</a></li>
+              <li><a href="#com"><i class="flaticon-chat"></i>{{formation.comments.length}} Comments</a></li>
               <li><a (click)="goToChatRoom(formation.id)" ><i class="flaticon-chatting"></i> Chat Room Courses </a></li>
             </ul>
           </div>
@@ -196,7 +196,7 @@
                 </div>
                 <div class="bd-service-sidebar-info mb-25">
                   <span>Fomer</span>
-                  <h6>{{formation.formateur.displayName.toUpperCase()}}</h6>
+                  <h6>{{formation.userF.displayName.toUpperCase()}}</h6>
                 </div>
                 <div class="bd-service-sidebar-info">
                   <span>Domain</span>

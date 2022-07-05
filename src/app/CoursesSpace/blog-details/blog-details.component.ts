@@ -155,7 +155,7 @@ export class BlogDetailsComponent implements OnInit {
         {
           this.retrieveImage.push(l) ;
         }
-        
+
         */
       }
 
@@ -199,9 +199,9 @@ export class BlogDetailsComponent implements OnInit {
 
 
 
-    for (let app of this.formation.apprenant)
+    for (let app of this.formation.courseApprenants)
     {
-      if (app.id == this.currentUser.id)
+      if (app.userA.id == this.currentUser.id)
       {
         this.show = true;
       }
