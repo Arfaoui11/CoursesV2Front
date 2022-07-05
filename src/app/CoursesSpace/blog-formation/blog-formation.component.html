@@ -46,13 +46,13 @@
           }  , let i=index">
           <div class="bd-blog mb-30" >
             <div class="bd-blog-img" >
-              <img  [src]="'data:image/jpeg;base64,'+l.image" alt="blog image not found 1">
+              <img  [src]="l.image" alt="blog image not found 1">
             </div>
             <div class="bd-blog-text">
               <div class="bd-blog-meta mb-15">
                 <ul>
-                  <div style="width: 60px;float: right"><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/#/front/End/detailsF/'+l.id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></div>
-                </ul>
+                <div style="width: 60px;float: right"><ngx-qrcode [elementType]="elementType"  [value]="l.toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></div>
+              </ul>
                 <ul>
                   <li><a href="blog-details.html"><i class="flaticon-calendar"></i>Start : {{l.start | date | slice:0 : 12   }} <br> End : {{l.end | date | slice:0 : 12}} </a></li>
                   <li><a href="blog-details.html"><i class="flaticon-chat"></i>{{l.comments.length}} Comments</a></li>
@@ -60,7 +60,7 @@
               </div>
               <h4 class="bd-blog-title mb-40"><a href="blog-details.html"> Title : {{l.title.toUpperCase()}} </a></h4>
               <h6 >Domain  : {{l.domain.toUpperCase()}}</h6>
-              <h6 class="bd-blog-title mb-20">Former : {{l.userF.displayName.toUpperCase()}}</h6>
+            <!--  <h6 class="bd-blog-title mb-20">Former : {{l.userF.displayName.toUpperCase()}}</h6>-->
               <h6 >Position  : {{l.lieu.toUpperCase()}}</h6>
               <div class="bd-blog-author">
                 <div class="bd-blog-author-info">
@@ -68,7 +68,7 @@
                   <h6 class="bd-blog-author-info-title"> {{l.domain}}</h6>
                 </div>
                 <div class="bd-blog-author-link">
-                  <a href="blog-details.html" [routerLink]="['../detailsF',l.id]" >Read More <i class="far fa-arrow-right"></i></a>
+                  <a  [routerLink]="['../detailsF',l.id]" >Read More <i class="far fa-arrow-right"></i></a>
                 </div>
               </div>
             </div>

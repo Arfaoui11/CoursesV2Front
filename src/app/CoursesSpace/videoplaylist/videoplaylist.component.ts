@@ -69,7 +69,7 @@ export class VideoplaylistComponent implements OnInit {
       this.getCommentByFormation();
 
 
-      this.rating = this.formation.rating;
+      this.rating = this.formation.nbrMaxParticipant;
     },2000);
   }
 
@@ -181,7 +181,7 @@ export class VideoplaylistComponent implements OnInit {
 
     this.serviceForm.getFormationById(this.idFormation).subscribe(data => {
       this.formation = data;
-      this.rating = this.formation.rating;
+      this.rating = this.formation.nbrMaxParticipant;
     });
     return this.formation;
   }

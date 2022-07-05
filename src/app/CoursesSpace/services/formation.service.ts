@@ -43,7 +43,7 @@ export class FormationService {
 
   register(user:User): Observable<any> {
     return this.http.post('http://localhost:8099/api/auth/signup', {
-      displayName: user.displayName,
+      displayName: user.lastName,
       email: user.email,
       password: user.password,
       matchingPassword: user.password,
@@ -208,7 +208,7 @@ export class FormationService {
   }
 
   getFormationById(id:number):Observable<Formation> {
-    return this.http.get<Formation>("http://localhost:8099/Courses/getFormationById/"+id);
+    return this.http.get<Formation>("http://localhost:4000/api/courses/"+id);
   }
 
   getApprenantByFormation(i : number):Observable<User[]> {

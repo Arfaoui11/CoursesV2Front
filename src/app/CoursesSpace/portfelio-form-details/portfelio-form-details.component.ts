@@ -59,7 +59,7 @@ export class PortfelioFormDetailsComponent implements OnInit {
 
 
 
-      this.rating = this.formation.rating;
+      this.rating = this.formation.ratings;
     },2000);
 
     this.serviceForm.getFormationById(this.idFormation)

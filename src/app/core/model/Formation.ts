@@ -15,7 +15,7 @@ export class Formation {
   image!:string;
   images!:string[];
   domain!:string;
-  rating!:number;
+  ratings!:number;
   nbrMaxParticipant!:number;
   costs!:number;
   lieu!: string;

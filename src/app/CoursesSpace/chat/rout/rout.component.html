@@ -27,7 +27,7 @@
                         <div class="media"  ><img src="assets/images/profile/user-uploads/user-02.jpg" alt="user"   width="80" class="rounded-circle">
                           <div class="media-body ml-4">
                             <div  [ngClass]="{'online' : user.isOnline}" [ngClass]="{'offline' : !user.isOnline}">
-                              <h6 class="mb-0">{{user.displayName}}</h6>
+                              <h6 class="mb-0">{{user.lastName}}</h6>
                             <!--  <small class="small font-weight-bold">{{daysa.getDate().toString().toUpperCase() +"-"+daysa.getMonth().toString().toUpperCase() +"-"+daysa.getFullYear().toString().toUpperCase() }}</small>-->
                               <small class="small font-weight-bold">{{user.isOnline ? "Online" : "Offline"}}</small>
                             </div>

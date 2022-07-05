@@ -28,7 +28,7 @@
         <div class="blog__details--wrapper mr-50 mb-50">
           <div class="ablog ablog-4 mb-60">
             <div class="ablog__img">
-              <img  [src]="'data:image/jpeg;base64,'+formation.image" alt="blog image not found 1">
+              <img  [src]="formation.image" alt="blog image not found 1">
               <!--  <div class="video-player-wrapper" >
 
                   <vg-player (onPlayerReady)="videoPlayerInit($event)">
@@ -92,7 +92,7 @@
               </ng-template>
 
               <ngb-rating [(rate)]="rating" [starTemplate]="t"  [max]="5" (rateChange)="changeRating()"></ngb-rating>
-              <pre>Rate: <b>{{formation.rating.toString() | slice: 0 : 4  }}</b></pre>
+              <pre>Rate: <b>{{formation.ratings.toString() | slice: 0 : 4  }}</b></pre>
               <h2 class="bd-blog-details-title mb-25">{{formation.title.toUpperCase()}}</h2>
 
 
