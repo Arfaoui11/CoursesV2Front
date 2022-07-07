@@ -14,7 +14,7 @@ export class AddFomateurComponent implements OnInit {
 
   listFomation : Formation[];
   @Input() fr:Formation=new Formation;
-  idF : number;
+  idF : string;
 
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
@@ -40,7 +40,7 @@ export class AddFomateurComponent implements OnInit {
     return this.listFomation;
   }
 
-  dataId(i:number)
+  dataId(i:string)
   {
     console.log(i);
     this.idF = i;
@@ -61,7 +61,7 @@ export class AddFomateurComponent implements OnInit {
     }
   }
 
-  UpdateFormation(f: Formation,id : number)
+  UpdateFormation(f: Formation,id : string)
   {
 
     this.services.updateFormation(f,id).subscribe(
@@ -99,7 +99,7 @@ export class AddFomateurComponent implements OnInit {
 
 
 
-    this.services.uploadFile(formData,1).subscribe(res => {
+    this.services.uploadFile(formData,'a').subscribe(res => {
       console.log(res)
     });
 
@@ -113,7 +113,7 @@ export class AddFomateurComponent implements OnInit {
 
 
 
-  deleteFormation(i :number)
+  deleteFormation(i :string)
   {
     this.services.deleteFormation(i)
       .subscribe(response => {

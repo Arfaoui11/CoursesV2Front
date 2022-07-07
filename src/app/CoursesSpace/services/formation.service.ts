@@ -122,7 +122,7 @@ export class FormationService {
   //////////////////// Formation ////////////////////////////////////////
 
 
-  getCommentByFormation(idF : number): Observable<PostComment[]>
+  getCommentByFormation(idF : string): Observable<PostComment[]>
   {
     return this.http.get<PostComment[]>('http://localhost:4000/api/comment/'+idF);
   }
@@ -136,7 +136,7 @@ export class FormationService {
   }
 
 
-  writeComment(mess :PostComment,idF :number , idU : string): Observable<number>
+  writeComment(mess :PostComment,idF :string , idU : string): Observable<number>
   {
     return this.http.post<number>("http://localhost:4000/api/comment/"+idF+"/"+idU+"/",mess)
   }
@@ -155,7 +155,7 @@ export class FormationService {
     return this.http.get<Formation[]>('http://localhost:8099/Courses/SearchMultiple/'+key);
   }
 
-  getFormateurbyFormation(id : number):Observable<User>
+  getFormateurbyFormation(id : string):Observable<User>
   {
     return this.http.get<User>('http://localhost:8099/Courses/getFormateurFromFormation/'+id);
   }
@@ -167,15 +167,15 @@ export class FormationService {
   }
 
 
-  getFormationByFormateur(id:number):Observable<Formation[]> {
+  getFormationByFormateur(id:string):Observable<Formation[]> {
     return this.http.get<Formation[]>('http://localhost:8099/Courses/getFormationByFormateur/'+id);
   }
 
-  getFormationByApprenant(id:number):Observable<Formation[]> {
+  getFormationByApprenant(id:string):Observable<Formation[]> {
     return this.http.get<Formation[]>('http://localhost:8099/Courses/getFormationByApprenant/'+id);
   }
 
-  getListQuizByUser(id : number,idf : number):Observable<any[]>
+  getListQuizByUser(id : string,idf : string):Observable<any[]>
   {
     return this.http.get<any[]>('http://localhost:8099/Courses/listQuiqtestedbuUser/'+id+"/"+idf);
   }
@@ -205,22 +205,22 @@ export class FormationService {
     return this.http.get<Object[]>("http://localhost:8099/Courses/getAllSearch");
   }
 
-  getFormationById(id:number):Observable<Formation> {
+  getFormationById(id:string):Observable<Formation> {
     return this.http.get<Formation>("http://localhost:4000/api/courses/"+id);
   }
 
-  getApprenantByFormation(i : number):Observable<User[]> {
+  getApprenantByFormation(i : string):Observable<User[]> {
     return this.http.get<User[]>("http://localhost:8099/Courses/ApprenantByFormation/"+i);
   }
 
 
 
-  deleteFormation(i:number): Observable<any> {
+  deleteFormation(i:string): Observable<any> {
 
     return this.http.get<number>("http://localhost:8099/Courses/deleteFormation/"+i)
   }
 
-  deleteFormateur(i:number): Observable<any> {
+  deleteFormateur(i:string): Observable<any> {
 
     return this.http.get("http://localhost:8099/user/deleteUserById/"+i);
   }
@@ -230,7 +230,7 @@ export class FormationService {
     return this.http.get("http://localhost:8099/Courses/deleteFiles/"+i);
   }
 
-  updateFormation(f:Formation,i:number): Observable<any>
+  updateFormation(f:Formation,i:string): Observable<any>
   {
     const headers = { 'content-type': 'application/json'};
     const body=JSON.stringify(f);
@@ -239,14 +239,14 @@ export class FormationService {
     ("http://localhost:8099/Courses/updateFormation/"+i,f);
   }
 
-  affectationApptoFormation(idApp :number , idFor : number): Observable<any>
+  affectationApptoFormation(idApp :string , idFor : string): Observable<any>
   {
 
     return this.http.post<any>("http://localhost:8099/Courses/affecterApprenantFormationWithMax/"+idApp+"/"+idFor,null);
 
   }
 
-  getRevenueByFormation(i :number):Observable<number>
+  getRevenueByFormation(i :string):Observable<number>
   {
     return  this.http.get<number>('http://localhost:8099/Courses/getRevenueByFormation/'+i)
   }
@@ -258,39 +258,39 @@ export class FormationService {
       .get<Object[]>("http://localhost:8099/Courses/NbrApprenantByFormation")
   }
 
-  addLikes(i:number,id:number): Observable<any> {
+  addLikes(i:string,id:string): Observable<any> {
     return this.http.put<any>("http://localhost:8099/Courses/addLikes/"+i+"/"+id,null)
   }
 
-  addDisLikes(i:number,id:number): Observable<any> {
+  addDisLikes(i:string,id:string): Observable<any> {
 
     return this.http.put<any>("http://localhost:8099/Courses/addDisLikes/"+i+"/"+id,null)
   }
 
-  desaffecterApprenant(idU:number,idF:number): Observable<any> {
+  desaffecterApprenant(idU:string,idF:string): Observable<any> {
 
     return this.http.post<any>("http://localhost:8099/Courses/desaffecterApprenant/"+idU+"/"+idF,null)
   }
 
 
 
-  getNbrLikes(id:number):Observable<any>
+  getNbrLikes(id:string):Observable<any>
   {
     return this.http.get<any>('http://localhost:8099/Courses/getNbrLikesByComment/'+id);
   }
 
-  getNbrDisLikes(id:number):Observable<any>
+  getNbrDisLikes(id:string):Observable<any>
   {
     return this.http.get<any>('http://localhost:8099/Courses/getNbrDislikesByComment/'+id);
   }
 
-  addRatingFormation(idF:number,rate :number):Observable<any>
+  addRatingFormation(idF:string,rate :number):Observable<any>
   {
     return this.http.put<any>("http://localhost:8099/Courses/FormationWIthRate/"+idF+"/"+rate,null)
   }
 
 
-  uploadFile(file: FormData, i: number): Observable<any>
+  uploadFile(file: FormData, i: string): Observable<any>
   {
     return this.http.post<any>('http://localhost:8099/Courses/uploadMultipleFiles/'+i,file);
   }
@@ -306,7 +306,7 @@ export class FormationService {
   }
 
 
-  getFilesFormation( i: number): Observable<any>
+  getFilesFormation( i: string): Observable<any>
   {
     return this.http.get<any>('http://localhost:8099/Courses/getFiles/'+i);
   }

@@ -36,7 +36,7 @@ export class BlogDetailsComponent implements OnInit {
   dataa :any;
   showC : boolean = false;
   videoUrl: any;
-  public idFormation :number;
+  public idFormation :string;
   toggle: boolean = true;
   formation : Formation;
   currentUser: User;
@@ -243,7 +243,7 @@ export class BlogDetailsComponent implements OnInit {
 
   sendComments()
   {
-    this.serviceForm.writeComment(this.post,this.idFormation,"62c3736891d87f6c4584e323").subscribe(
+    this.serviceForm.writeComment(this.post,this.idFormation,this.currentUser.id).subscribe(
       data=>{
         this.getCommentByFormation();
 
@@ -296,7 +296,7 @@ export class BlogDetailsComponent implements OnInit {
   }
   public stat : boolean = true;
 
-  LikesComment(id:number)
+  LikesComment(id:string)
   {
     let status = true;
     for (let c of this.comment)
@@ -362,7 +362,7 @@ private ratTrue = false;
 
   }
 
-  DisLikesComment(id:number)
+  DisLikesComment(id:string)
   {
 
     let status = true;

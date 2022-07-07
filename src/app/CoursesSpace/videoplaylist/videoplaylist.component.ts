@@ -40,7 +40,7 @@ export class VideoplaylistComponent implements OnInit {
   dataa :any;
   showC : boolean = false;
   videoUrl: any;
-  public idFormation :number;
+  public idFormation :string;
   toggle: boolean = false;
   formation : Formation;
   currentUser: any = [];
@@ -266,7 +266,7 @@ export class VideoplaylistComponent implements OnInit {
     return this.comment;
   }
 
-  LikesComment(id:number)
+  LikesComment(id:string)
   {
 
 
@@ -283,7 +283,7 @@ export class VideoplaylistComponent implements OnInit {
   public nbrL : number=0;
   public nbrD:number=0;
 
-  getnbrLikes(id:number)
+  getnbrLikes(id:string)
   {
 
     this.serviceForm.getNbrLikes(id).subscribe(data =>
@@ -292,7 +292,7 @@ export class VideoplaylistComponent implements OnInit {
 
   }
 
-  getnbrDisLikes(id:number)
+  getnbrDisLikes(id:string)
   {
 
     this.serviceForm.getNbrDisLikes(id).subscribe(data =>
@@ -304,7 +304,7 @@ export class VideoplaylistComponent implements OnInit {
 
 
 
-  DisLikesComment(id:number)
+  DisLikesComment(id:string)
   {
 
 
@@ -313,7 +313,7 @@ export class VideoplaylistComponent implements OnInit {
     });
   }
 
-  getFormateurByFormation(id:number)
+  getFormateurByFormation(id:string)
   {
     this.serviceForm.getFormateurbyFormation(id).subscribe(
       (data:User)=>{this.formateur = data}

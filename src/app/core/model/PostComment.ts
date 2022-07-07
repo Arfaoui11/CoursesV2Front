@@ -5,7 +5,7 @@ import {Formation} from "./Formation";
 
 export class PostComment {
 
-  id!:number;
+  id!:string;
   message!:string;
   createdAt!:Date;
   updatedAt!:Date;

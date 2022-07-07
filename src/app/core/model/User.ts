@@ -6,7 +6,7 @@ import {PostComment} from "./PostComment";
 
 export class User {
 
-  id !: number;
+  id !: string;
   firstName ! : string;
   lastName ! : string;
   phoneNumber !:number;

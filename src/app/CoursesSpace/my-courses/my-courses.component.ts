@@ -54,7 +54,7 @@ export class MyCoursesComponent implements OnInit {
 
 
 
-  affectationApptoFormation(idApp :number , idFor : number)
+  affectationApptoFormation(idApp :string , idFor : string)
   {
     this.serviceForm.affectationApptoFormation(idApp, idFor).subscribe();
     this.snackbar.open(' ajoute avec succees ', 'Back', {

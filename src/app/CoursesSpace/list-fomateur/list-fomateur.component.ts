@@ -17,7 +17,7 @@ export class ListFomateurComponent implements OnInit {
 
   @Input() idForma : number;
 
-  @Output() eventForm = new EventEmitter<number>();
+  @Output() eventForm = new EventEmitter<string>();
   p: any;
 
   toggle = true;
@@ -53,7 +53,7 @@ export class ListFomateurComponent implements OnInit {
 
 
 
-  sendIdF(i :number)
+  sendIdF(i :string)
   {
    // console.log(i);
     this.eventForm.emit(i);

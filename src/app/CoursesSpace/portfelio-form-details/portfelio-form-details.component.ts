@@ -33,7 +33,7 @@ export class PortfelioFormDetailsComponent implements OnInit {
   dataa :any;
   showC : boolean = false;
   videoUrl: any;
-  public idFormation :number;
+  public idFormation :string;
   toggle: boolean = false;
   formation : Formation;
   currentUser: any = [];
@@ -182,7 +182,7 @@ export class PortfelioFormDetailsComponent implements OnInit {
     this.retrieveVideo[this.index].play();
   }
 
-  goToChatRoom(idFormation: number) {
+  goToChatRoom(idFormation: string) {
     window.location.href = '#/chatRoom/'+idFormation;
   }
 }

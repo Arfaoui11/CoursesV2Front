@@ -28,7 +28,7 @@ export class FormationComponent implements OnInit {
 
   public imagePath :FileList;
 
-  idF : number;
+  idF : string;
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
 
@@ -101,7 +101,7 @@ export class FormationComponent implements OnInit {
   }
 
 
-  dataId(i:number)
+  dataId(i:string)
   {
     console.log(i);
     this.idF = i;
@@ -131,7 +131,7 @@ export class FormationComponent implements OnInit {
     }
 
 
-    this.serviceForm.uploadFile(formData,1).subscribe(res => {
+    this.serviceForm.uploadFile(formData,'a').subscribe(res => {
       console.log(res)
     });
 
@@ -141,7 +141,7 @@ export class FormationComponent implements OnInit {
 
   }
 
-  UpdateFormation(f: Formation,id : number)
+  UpdateFormation(f: Formation,id : string)
   {
 
     this.serviceForm.updateFormation(f,id).subscribe(
@@ -154,7 +154,7 @@ export class FormationComponent implements OnInit {
     });
   }
 
-  deleteFormation(i :number)
+  deleteFormation(i :string)
   {
     this.serviceForm.deleteFormation(i)
       .subscribe(response => {
@@ -180,13 +180,13 @@ export class FormationComponent implements OnInit {
     });
   }
 
-  assignApprenent(idA : number , idF : number )
+  assignApprenent(idA : string , idF : string )
   {
     this.serviceForm.affectationApptoFormation(idA, idF).subscribe();
   }
 
 
-  getRevenueByFormation(idFormation: number) {
+  getRevenueByFormation(idFormation: string) {
 
     this.serviceForm.getRevenueByFormation(idFormation).subscribe(
       (data:number)=>{this.data1 = data});
@@ -297,7 +297,7 @@ export class FormationComponent implements OnInit {
   imageName: any;
   getImage() {
     //Make a call to Sprinf Boot to get the Image Bytes.
-    this.serviceForm.getFilesFormation(1)
+    this.serviceForm.getFilesFormation('aaasd')
       .subscribe(
         res => {
           this.retrieveResonse = res;

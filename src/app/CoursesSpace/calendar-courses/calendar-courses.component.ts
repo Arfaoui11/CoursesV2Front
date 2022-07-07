@@ -107,14 +107,14 @@ export class CalendarCoursesComponent implements OnInit {
   public firstDayOfWeek = 1;
   public startHour: string;
   public endHour: string;
-  idF : number=2;
+  idF : string='';
 
   public path : string ;
 
 
   public allowDragAndDrop = true;
   @Input() formation: Formation ;
-  public idFormateur: number;
+  public idFormateur: string;
   public ListApprenant: Record<string, any>[];
 
   constructor(private serviceForm : FormationService,private snackbar:MatSnackBar,private token: TokenService,private route:ActivatedRoute ) {
@@ -296,7 +296,7 @@ export class CalendarCoursesComponent implements OnInit {
 
 
 
-  deleteFormation(i :number)
+  deleteFormation(i :string)
   {
     this.serviceForm.deleteFormation(i)
       .subscribe(response => {
@@ -649,12 +649,12 @@ export class CalendarCoursesComponent implements OnInit {
      }*/
   }
 
-  getApprenantByFormation(id:number)
+  getApprenantByFormation(id:string)
   {
     this.serviceForm.getApprenantByFormation(id).subscribe(data => this.ListApprenant = data);
     return  this.ListApprenant;
   }
-  public selectedDepartmentId: number;
+  public selectedDepartmentId: string;
 
   public onSpecializationChange(args?: Record<string, any>): void {
     let filteredData: Record<string, any>[];
@@ -664,7 +664,7 @@ export class CalendarCoursesComponent implements OnInit {
       filteredData = this.getApprenantByFormation(this.selectedDepartmentId);
       // filteredData = this.formateur;
     } else {
-      this.selectedDepartmentId = 0;
+      this.selectedDepartmentId = '';
       filteredData = [];
     }
     this.ListApprenant = filteredData;

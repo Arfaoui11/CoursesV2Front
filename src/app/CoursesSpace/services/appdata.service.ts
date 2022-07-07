@@ -7,13 +7,13 @@ import {LocalStorage} from "ngx-webstorage";
 export class AppdataService {
 
   @LocalStorage()
-  public id: number;
+  public id: string;
 
   @LocalStorage()
   public displayName: string;
 
   public clearData(){
-    this.id = 0;
+    this.id = '';
     this.displayName = "";
   }
 }

@@ -95,7 +95,7 @@ export class CalendarComponent implements OnInit {
   public firstDayOfWeek = 1;
   public startHour: string;
   public endHour: string;
-  idF : number=2;
+  idF : string='';
 
 
 
@@ -273,7 +273,7 @@ export class CalendarComponent implements OnInit {
 
 
 
-  deleteFormation(i :number)
+  deleteFormation(i :string)
   {
     this.serviceForm.deleteFormation(i)
       .subscribe(response => {
@@ -289,13 +289,13 @@ export class CalendarComponent implements OnInit {
 
 
 
-  getApprenantByFormation(id:number)
+  getApprenantByFormation(id:string)
   {
     this.serviceForm.getApprenantByFormation(id).subscribe(data => this.ListApprenant = data);
     return  this.ListApprenant;
   }
 
-  public selectedDepartmentId: number;
+  public selectedDepartmentId: string;
 
   public onSpecializationChange(args?: Record<string, any>): void {
     let filteredData: Record<string, any>[];
@@ -305,7 +305,7 @@ export class CalendarComponent implements OnInit {
       filteredData = this.getApprenantByFormation(this.selectedDepartmentId);
       // filteredData = this.formateur;
     } else {
-      this.selectedDepartmentId = 0;
+      this.selectedDepartmentId = '';
       filteredData = [];
     }
     this.ListApprenant = filteredData;

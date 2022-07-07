@@ -19,7 +19,7 @@ export class RoutComponent implements OnInit {
   publishedMessage: Message[] = [];
   showTypingIndicator: boolean = false;
   typingUser: string;
-  loggedinUserId: number;
+  loggedinUserId: string;
   websocket: WebSocket;
   currentUser: any = [];
 
@@ -141,7 +141,7 @@ export class RoutComponent implements OnInit {
     this.users.forEach(user => user.isOnline = false);
   }
 
-  setUserStatus(userId: Number, isOnline: boolean) {
+  setUserStatus(userId: string, isOnline: boolean) {
     // let user: User[] = this.users.filter(u => u.id == userId );
     // user[0].isOnline = isOnline;
     // this.users = user;

@@ -6,7 +6,7 @@ import {CourseApprenants} from "./courseApprenants";
 
 export class Formation {
 
-  id!:number;
+  id!:string;
   title!:string;
   level!:string;
   start!:Date;

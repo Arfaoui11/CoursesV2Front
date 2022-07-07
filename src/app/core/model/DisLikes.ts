@@ -2,7 +2,7 @@ import {User} from "./User";
 
 export class DisLikes {
 
-  id!:number;
+  id!:string;
   nbrDislikes!:number;
   createAt!:Date;
   userLD !: User;

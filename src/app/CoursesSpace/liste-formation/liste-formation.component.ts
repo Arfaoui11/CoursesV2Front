@@ -52,7 +52,7 @@ export class ListeFormationComponent implements OnInit {
   }
 
 
-  affectationApptoFormation(idApp :number , idFor : number)
+  affectationApptoFormation(idApp :string , idFor : string)
   {
     this.serviceForm.affectationApptoFormation(idApp, idFor).subscribe();
     this.snackbar.open(' ajout avec succees ', 'Back', {
@@ -61,7 +61,7 @@ export class ListeFormationComponent implements OnInit {
   }
 
 
-  getApprenantByFormation(i : number)
+  getApprenantByFormation(i : string)
   {
     this.serviceForm.getApprenantByFormation(i).subscribe(
       (data:User[])=>{this.listApprenent = data});
