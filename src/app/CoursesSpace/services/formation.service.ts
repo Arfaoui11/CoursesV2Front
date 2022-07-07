@@ -124,7 +124,7 @@ export class FormationService {
 
   getCommentByFormation(idF : number): Observable<PostComment[]>
   {
-    return this.http.get<PostComment[]>('http://localhost:8099/Courses/getCommentsByFormation/'+idF);
+    return this.http.get<PostComment[]>('http://localhost:4000/api/comment/'+idF);
   }
 
 
@@ -136,12 +136,9 @@ export class FormationService {
   }
 
 
-  writeComment(mess :PostComment,idF :number , idU : number): Observable<number>
+  writeComment(mess :PostComment,idF :number , idU : string): Observable<number>
   {
-    const headers = { 'content-type': 'application/json'};
-    const body=JSON.stringify(mess);
-    console.log(body);
-    return this.http.post<number>("http://localhost:8099/Courses/addComments/"+idF+"/"+idU+"/",mess)
+    return this.http.post<number>("http://localhost:4000/api/comment/"+idF+"/"+idU+"/",mess)
   }
 
 

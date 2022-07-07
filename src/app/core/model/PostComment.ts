@@ -1,12 +1,17 @@
 import {Likes} from "./likes";
 import {DisLikes} from "./DisLikes";
 import {User} from "./User";
+import {Formation} from "./Formation";
 
 export class PostComment {
 
   id!:number;
   message!:string;
-  createAt!:Date;
+  createdAt!:Date;
+  updatedAt!:Date;
   likes : Likes[];
-  userC!:User;
+  dislikes : DisLikes[];
+  user!:User;
+  course!:Formation;
+
 }

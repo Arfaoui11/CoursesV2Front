@@ -142,19 +142,19 @@
                     <div class="comments-text">
 
                       <div class="avatar-name">
-                        <h5>{{post.userC.displayName.toUpperCase()}}</h5>
+                        <h5>{{post.user.lastName.toUpperCase()}}</h5>
                         <div class="ml-auto cursor-pointer" style="float: right">
-                          <button class="like" (click)="LikesComment(post.idComn)">
+                          <button class="like" (click)="LikesComment(post.id)">
                             <i class="fa fa-thumbs-o-up" aria-hidden="true"> </i>
                           </button>
-                          <label style="color: black ;font-size: 15px">{{post.nbrLikes }}</label>
+                          <label style="color: black ;font-size: 15px">{{post.id }}</label>
                           &nbsp;
-                          <button class="dislike" (click)="DisLikesComment(post.idComn)">
+                          <button class="dislike" (click)="DisLikesComment(post.id)">
                             <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
                           </button>
-                          <label style="color: #f7485a ;font-size: 15px" > {{post.nbrDisLikes}}</label>
+                          <label style="color: #f7485a ;font-size: 15px" > {{post.id}}</label>
                         </div>
-                        <span class="post-meta">{{post.createAt | date | slice:0 : 12 }}</span>
+                        <span class="post-meta">{{post.createdAt | date | slice:0 : 12 }}</span>
                       </div>
                       <p >{{post.message}}</p>
 

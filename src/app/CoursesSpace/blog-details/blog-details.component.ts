@@ -76,7 +76,6 @@ export class BlogDetailsComponent implements OnInit {
 
 
 
-  //  console.log(this.currentUser);
 
   }
 
@@ -135,6 +134,8 @@ export class BlogDetailsComponent implements OnInit {
 
       this.rating = this.formation.ratings;
     },2000);
+
+    console.log(this.comment)
 
     this.serviceForm.getFormationById(this.idFormation)
      .subscribe(
@@ -242,19 +243,10 @@ export class BlogDetailsComponent implements OnInit {
 
   sendComments()
   {
-    this.serviceForm.writeComment(this.post,this.idFormation,this.currentUser.id).subscribe(
+    this.serviceForm.writeComment(this.post,this.idFormation,"62c3736891d87f6c4584e323").subscribe(
       data=>{
         this.getCommentByFormation();
-        if(data==0)
-        {
-          this.snackbar.open( 'You Are create bad Comment in this Courses ', 'Undo', {
-            duration: 2000
-          });
-        }else {
-          this.snackbar.open(' Comment added ', 'Undo', {
-            duration: 2000
-          });
-        }
+
 
       },
 
