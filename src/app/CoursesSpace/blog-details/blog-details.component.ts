@@ -245,7 +245,7 @@ export class BlogDetailsComponent implements OnInit {
   {
     this.serviceForm.writeComment(this.post,this.idFormation,this.currentUser.id).subscribe(
       data=>{
-        this.getCommentByFormation();
+        this.getFormation();
 
 
       },
@@ -323,7 +323,7 @@ export class BlogDetailsComponent implements OnInit {
             console.log(data);
 
 
-            this.getCommentByFormation();
+            this.getFormation();
 
           }
         );

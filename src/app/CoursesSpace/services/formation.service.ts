@@ -259,12 +259,12 @@ export class FormationService {
   }
 
   addLikes(i:string,id:string): Observable<any> {
-    return this.http.put<any>("http://localhost:8099/Courses/addLikes/"+i+"/"+id,null)
+    return this.http.post<any>("http://localhost:4000/comment/like/"+i+"/"+id,null)
   }
 
   addDisLikes(i:string,id:string): Observable<any> {
 
-    return this.http.put<any>("http://localhost:8099/Courses/addDisLikes/"+i+"/"+id,null)
+    return this.http.post<any>("http://localhost:4000/comment/dislike/"+i+"/"+id,null)
   }
 
   desaffecterApprenant(idU:string,idF:string): Observable<any> {

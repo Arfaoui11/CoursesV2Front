@@ -52,7 +52,7 @@ export class LoginComponent implements OnInit {
   onSubmit(): void {
     this.authService.login(this.form).subscribe(
       data => {
-        this.tokenStorage.saveToken(data.accessToken);
+        this.tokenStorage.saveToken(data.token);
         this.login(data.user);
       },
       err => {
@@ -69,12 +69,12 @@ export class LoginComponent implements OnInit {
     this.currentUser = this.tokenStorage.getUser();
 
     this.appDataService.id = this.currentUser.id;
-    this.appDataService.displayName = this.currentUser.displayName;
+    this.appDataService.displayName = this.currentUser.lastName;
 
-    if (this.currentUser.isAdmin == "true")
+    if (this.currentUser.isAdmin === "true")
     {
        window.location.href = '#/home/Formation-management';
-    }else if (this.currentUser.isAdmin == "false")
+    }else if (this.currentUser.isAdmin === "false")
     {
       window.location.href = '#/home/Formation-management/calendarCourses/'+this.currentUser.id;
     }else

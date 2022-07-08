@@ -147,12 +147,12 @@
                           <button class="like" (click)="LikesComment(post.id)">
                             <i class="fa fa-thumbs-o-up" aria-hidden="true"> </i>
                           </button>
-                          <label style="color: black ;font-size: 15px">{{post.id }}</label>
+                          <label style="color: black ;font-size: 15px">{{post.likes.length }}</label>
                           &nbsp;
                           <button class="dislike" (click)="DisLikesComment(post.id)">
                             <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
                           </button>
-                          <label style="color: #f7485a ;font-size: 15px" > {{post.id}}</label>
+                          <label style="color: #f7485a ;font-size: 15px" > {{post.dislikes.length}}</label>
                         </div>
                         <span class="post-meta">{{post.createdAt | date | slice:0 : 12 }}</span>
                       </div>
