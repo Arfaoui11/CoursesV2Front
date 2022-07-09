@@ -299,14 +299,14 @@ export class BlogDetailsComponent implements OnInit {
   LikesComment(id:string)
   {
     let status = true;
-    for (let c of this.comment)
+    for (let c of this.formation.comments)
     {
-      if (c.idComn == id)
+      if (c.id == id)
       {
         for (let l of c.likes)
         {
 
-          if(l.userL.id == this.currentUser.id)
+          if(l.user.id == this.currentUser.id)
           {
             status=false;
           }
@@ -366,14 +366,14 @@ private ratTrue = false;
   {
 
     let status = true;
-    for (let c of this.comment)
+    for (let c of this.formation.comments)
     {
-      if (c.idComn == id)
+      if (c.id == id)
       {
         for (let l of c.dislikes)
         {
 
-          if(l.userL.id == this.currentUser.id)
+          if(l.user.id == this.currentUser.id)
           {
             status=false;
           }
@@ -385,8 +385,7 @@ private ratTrue = false;
     }
     if (status) {
       this.serviceForm.addDisLikes(id, this.currentUser.id).subscribe(data => {
-        console.log(data);
-        this.getCommentByFormation();
+        this.getFormation();
       });
     }
   }

@@ -6,6 +6,7 @@ export class Likes {
   id!:string;
   nbrLikes!:number;
   createAt!:Date;
-  post !:  PostComment;
-  userL !: User;
+
+  user !: User;
+  comment !: PostComment;
 }

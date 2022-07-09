@@ -20,6 +20,11 @@ const httpOptions = {
   headers: new HttpHeaders({ 'Content-Type': 'application/json' })
 };
 
+const httpHeaders = {
+
+}
+
+
 @Injectable({
   providedIn: 'root'
 })
@@ -258,13 +263,17 @@ export class FormationService {
       .get<Object[]>("http://localhost:8099/Courses/NbrApprenantByFormation")
   }
 
+  getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('auth-token')}`);
+  }
+
   addLikes(i:string,id:string): Observable<any> {
-    return this.http.post<any>("http://localhost:4000/comment/like/"+i+"/"+id,null)
+    return this.http.post("http://localhost:4000/api/comment/like/"+i+"/"+id,null,{headers : this.getHeaders()})
   }
 
   addDisLikes(i:string,id:string): Observable<any> {
 
-    return this.http.post<any>("http://localhost:4000/comment/dislike/"+i+"/"+id,null)
+    return this.http.post("http://localhost:4000/api/comment/dislike/"+i+"/"+id,null,{headers : this.getHeaders()})
   }
 
   desaffecterApprenant(idU:string,idF:string): Observable<any> {
