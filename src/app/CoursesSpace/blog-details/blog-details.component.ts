@@ -493,7 +493,7 @@ private ratTrue = false;
     }else
     {
 
-      this.snackbar.open(' Go to Register An Account  ', 'Undo', {
+      this.snackbar.open(' Go to Register An Account ', 'Undo', {
         duration: 2000
       });
       setTimeout(()=> {
