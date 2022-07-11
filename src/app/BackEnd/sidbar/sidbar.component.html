@@ -4,7 +4,7 @@
     <ul class="nav navbar-nav flex-row">
       <li class="nav-item mr-auto"><a class="navbar-brand" href="#">
         <div class="logo"></div>
-        <h2 class="brand-text mb-0">Women Em</h2>
+        <h2 class="brand-text mb-0">UdacityAc</h2>
       </a></li>
       <li class="nav-item nav-toggle"><a class="nav-link modern-nav-toggle pr-0" data-toggle="collapse"><i class="feather icon-x d-block d-xl-none font-medium-4 primary toggle-icon"></i><i class="toggle-icon feather icon-disc font-medium-4 d-none d-xl-block collapse-toggle-icon primary" data-ticon="icon-disc"></i></a></li>
     </ul>
@@ -27,7 +27,7 @@
       <li class=" nav-item"><a [routerLink]="['/home/']"><i class="feather icon-message-square"></i><span class="menu-title" data-i18n="Chat">Home</span></a>
       </li>-->
 
-      <li class="nav-item" *ngIf="currentUser.roles[0] == 'ROLE_ADMIN'"><a [routerLink]="['/home/Formation-management/addFormation']"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Courses Space</span><span class="badge badge badge-warning badge-pill float-right mr-2">3</span></a>
+      <li class="nav-item" ><a [routerLink]="['/home/Formation-management/addFormation']"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Courses Space</span><span class="badge badge badge-warning badge-pill float-right mr-2">3</span></a>
         <ul class="menu-content">
           <li><a [routerLink]="['/home/Formation-management/addFormation']"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo"> Courses </span></a>
           </li>
@@ -37,24 +37,11 @@
           </li>
         </ul>
       </li>
-      <li class="nav-item" *ngIf="currentUser.roles[0] == 'ROLE_MODERATOR'"><a [routerLink]="['/home/Formation-management/calendarCourses/'+currentUser.id]"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Former Space</span><span class="badge badge badge-warning badge-pill float-right mr-2">3</span></a>
-        <ul class="menu-content">
-          <li><a [routerLink]="['/home/Formation-management/calendarCourses/'+currentUser.id]"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo"> Calendar </span></a>
-          </li>
-
-        </ul>
-      </li>
-
-      <li class="nav-item" ><a [routerLink]="['/home/Formation-management/calendarCourses/'+currentUser.id]"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Partner Space</span><span class="badge badge badge-warning badge-pill float-right mr-2">3</span></a>
-        <ul class="menu-content">
-          <li><a [routerLink]="['/home/Formation-management/calendarCourses/'+currentUser.id]"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo"> Calendar </span></a>
-          </li>
-
-        </ul>
-      </li>
 
 
-     <li class=" nav-item" *ngIf="currentUser.roles[0] == 'ROLE_ADMIN'"><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">User</span></a>
+
+
+     <li class=" nav-item" ><a href="#"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">User</span></a>
        <ul class="menu-content">
          <li><a href="app-user-list.html"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">List</span></a>
          </li>

@@ -71,12 +71,9 @@ export class LoginComponent implements OnInit {
     this.appDataService.id = this.currentUser.id;
     this.appDataService.displayName = this.currentUser.lastName;
 
-    if (this.currentUser.isAdmin === "true")
+    if (this.currentUser.isAdmin)
     {
        window.location.href = '#/home/Formation-management';
-    }else if (this.currentUser.isAdmin === "false")
-    {
-      window.location.href = '#/home/Formation-management/calendarCourses/'+this.currentUser.id;
     }else
     {
 

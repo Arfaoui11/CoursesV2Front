@@ -42,7 +42,8 @@ const routes: Routes =
      {path:'register',component: RegisterComponent },
      {path:'chatRoom/:idCourses',component: CallVideoComponent },
      {path:'homeF',component: HomeFComponent },
-     { path: '',  redirectTo: '/front/End/homeF', pathMatch: 'full' },
+     {path:'hom',component: HomeComponent },
+     { path: '',  redirectTo: '/home/Formation-management', pathMatch: 'full' },
      {
        path: 'front',
        component: LayoutFComponent,
@@ -64,12 +65,10 @@ const routes: Routes =
              { path: 'quizWelcome', component: WelcomeComponent },
              { path: '**', pathMatch: 'full',  component: E404Component },
 
-
-
            ]
          },
        ]
-     },
+   },
 
   {
     path: 'home',
@@ -92,9 +91,6 @@ const routes: Routes =
           { path: 'Quiz/:idCourses', component: QuestionComponent },
           { path: 'Question/:idQuiz', component: QestionQuizCoursesComponent },
           { path: 'userview/:idUser', component: UserViewComponent },
-          { path: 'login', component: LoginComponent },
-
-
         ]
       }
 
