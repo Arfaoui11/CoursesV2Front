@@ -42,8 +42,33 @@ const routes: Routes =
      {path:'register',component: RegisterComponent },
      {path:'chatRoom/:idCourses',component: CallVideoComponent },
      {path:'homeF',component: HomeFComponent },
-     {path:'hom',component: HomeComponent },
-     { path: '',  redirectTo: '/home/Formation-management', pathMatch: 'full' },
+     { path: '',  redirectTo: '/front/End/homeF', pathMatch: 'full' },
+     {
+       path: 'home',
+       component: HomeComponent,
+       children: [
+         {
+           path: 'Formation-management',
+           children: [
+
+             { path: 'addFormateur', component: AddFomateurComponent },
+             { path: 'dashboard', component: DashboardComponent },
+             { path: 'videoplaylist/:idCourses', component: VideoplaylistComponent },
+             { path: 'formateur', component: ListFomateurComponent },
+             { path: 'addFormation', component: FormationComponent },
+             { path: 'listFormateur', component: ListFomateurComponent } ,
+             { path: 'calendar', component: CalendarComponent },
+             { path: 'calendarCourses/:idFormer', component: CalendarCoursesComponent },
+             { path: 'listFormation', component: ListeFormationComponent },
+             { path: 'Courses', component: CoursesFormComponent },
+             { path: 'Quiz/:idCourses', component: QuestionComponent },
+             { path: 'Question/:idQuiz', component: QestionQuizCoursesComponent },
+             { path: 'userview/:idUser', component: UserViewComponent },
+           ]
+         }
+
+       ]
+     },
      {
        path: 'front',
        component: LayoutFComponent,
@@ -63,39 +88,14 @@ const routes: Routes =
              { path: 'detailsF/:idCourses', component: BlogDetailsComponent },
              { path: 'quiz/:idQuiz', component: QuizComponent },
              { path: 'quizWelcome', component: WelcomeComponent },
-             { path: '**', pathMatch: 'full',  component: E404Component },
+             { path: '**',  component: E404Component },
 
            ]
          },
        ]
-   },
+     },
 
-  {
-    path: 'home',
-    component: HomeComponent,
-    children: [
-      {
-        path: 'Formation-management',
-        children: [
 
-          { path: 'addFormateur', component: AddFomateurComponent },
-          { path: 'dashboard', component: DashboardComponent },
-          { path: 'videoplaylist/:idCourses', component: VideoplaylistComponent },
-          { path: 'formateur', component: ListFomateurComponent },
-          { path: 'addFormation', component: FormationComponent },
-          { path: 'listFormateur', component: ListFomateurComponent } ,
-          { path: 'calendar', component: CalendarComponent },
-          { path: 'calendarCourses/:idFormer', component: CalendarCoursesComponent },
-          { path: 'listFormation', component: ListeFormationComponent },
-          { path: 'Courses', component: CoursesFormComponent },
-          { path: 'Quiz/:idCourses', component: QuestionComponent },
-          { path: 'Question/:idQuiz', component: QestionQuizCoursesComponent },
-          { path: 'userview/:idUser', component: UserViewComponent },
-        ]
-      }
-
-  ]
-  }
 ];
 
 

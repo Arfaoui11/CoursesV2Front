@@ -14,13 +14,16 @@ import {AppdataService} from "../../CoursesSpace/services/appdata.service";
 })
 export class LoginComponent implements OnInit {
 
+  private roles: string[];
   form: any = {};
   isLoggedIn = false;
   isLoginFailed = false;
   errorMessage = '';
   currentUser: any;
 
-
+  showAdminBoard = false;
+  showStudentBoard = false;
+  showFormerBoard = false;
 
   constructor(private appDataService: AppdataService,private authService: FormationService,private router:Router, private tokenStorage: TokenService, private route: ActivatedRoute, private userService: UserServicesService) { }
 
@@ -68,16 +71,26 @@ export class LoginComponent implements OnInit {
     this.isLoggedIn = true;
     this.currentUser = this.tokenStorage.getUser();
 
-    this.appDataService.id = this.currentUser.id;
-    this.appDataService.displayName = this.currentUser.lastName;
+    this.roles = this.currentUser.type;
 
-    if (this.currentUser.isAdmin)
+    this.showAdminBoard = this.roles.includes('ADMIN');
+    this.showStudentBoard = this.roles.includes('STUDENT');
+    this.showFormerBoard = this.roles.includes('FORMER');
+
+    this.appDataService.id = this.currentUser.id;
+    this.appDataService.lastName = this.currentUser.lastName;
+
+    if (this.showAdminBoard)
     {
-       window.location.href = '#/home/Formation-management';
-    }else
+       window.location.href = '#/home/Formation-management/dashboard';
+    }else if (this.showStudentBoard)
     {
 
       window.location.href = '../homeF';
+    }else if (this.showFormerBoard){
+      window.location.href = '#/home/Formation-management';
+    }else {
+      window.location.href = '#';
     }
 
 

@@ -57,15 +57,15 @@ export class FormationComponent implements OnInit {
 
 
   constructor(private sanitizer : DomSanitizer,private serviceForm : FormationService,private snackbar:MatSnackBar,private service : ShereService) {
-    this.getNbrApprenantByFormation();
+   // this.getNbrApprenantByFormation();
 
   }
 
   ngOnInit(): void {
     console.log(this.idF);
     this.getformation();
-    this.getPourcentage();
-    this.getAllSearch();
+   // this.getPourcentage();
+   // this.getAllSearch();
 
    // this.getNbrApprenantByFormation();
   }

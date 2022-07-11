@@ -37,7 +37,7 @@ export class RoutComponent implements OnInit {
       let message: Message = {
         type: 'JOINED',
         from: this.appDataService.id,
-        fromUserName: this.appDataService.displayName,
+        fromUserName: this.appDataService.lastName,
         message: ''
       };
       this.websocket.send(JSON.stringify(message));
@@ -78,7 +78,7 @@ export class RoutComponent implements OnInit {
     let message: Message = {
       type: 'MESSAGE',
       from: this.appDataService.id,
-      fromUserName: this.appDataService.displayName,
+      fromUserName: this.appDataService.lastName,
       message: msg
     };
     for (let u of this.users)
@@ -97,7 +97,7 @@ export class RoutComponent implements OnInit {
     let message: Message = {
       type: 'TYPING',
       from: this.appDataService.id,
-      fromUserName: this.appDataService.displayName,
+      fromUserName: this.appDataService.lastName,
       message: ''
     };
     this.websocket.send(JSON.stringify(message));
@@ -163,7 +163,7 @@ export class RoutComponent implements OnInit {
     let message: Message = {
       type: 'LEFT',
       from: this.appDataService.id,
-      fromUserName: this.appDataService.displayName,
+      fromUserName: this.appDataService.lastName,
       message: ""
     }
     this.websocket.send(JSON.stringify(message));

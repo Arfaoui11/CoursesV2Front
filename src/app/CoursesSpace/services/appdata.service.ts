@@ -10,10 +10,10 @@ export class AppdataService {
   public id: string;
 
   @LocalStorage()
-  public displayName: string;
+  public lastName: string;
 
   public clearData(){
     this.id = '';
-    this.displayName = "";
+    this.lastName = "";
   }
 }

@@ -8,6 +8,7 @@ import {TokenService} from "../../CoursesSpace/services/token.service";
 })
 export class NavbarComponent implements OnInit {
 
+
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
@@ -15,15 +16,17 @@ export class NavbarComponent implements OnInit {
   username: string;
   currentUser: any;
 
-  constructor(private tokenStorageService: TokenService) { }
-
+  constructor(private token: TokenService) {
+    this.currentUser = this.token.getUser();
+  }
   ngOnInit(): void {
-    this.isLoggedIn = !!this.tokenStorageService.getToken();
 
-    this.currentUser = this.tokenStorageService.getUser();
+    this.isLoggedIn = !!this.token.getToken();
+
+    this.currentUser = this.token.getUser();
 
     if (this.isLoggedIn) {
-      const user = this.tokenStorageService.getUser();
+      const user = this.token.getUser();
       this.roles = user.roles;
 
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
@@ -32,10 +35,10 @@ export class NavbarComponent implements OnInit {
       this.username = user.displayName;
     }
   }
-
   logout(): void {
-    this.tokenStorageService.signOut();
-    //window.location.reload();
-    window.location.href = '#/';
+    this.token.signOut();
+    //  window.location.reload();
+
+    window.location.href = '/login';
   }
 }
