@@ -3,7 +3,7 @@ import {Result} from "./Result";
 
 export class Quiz {
 
-  idQuiz! : number;
+  id! : number;
   title !: string;
   score !: number;
   createAt !:Date;

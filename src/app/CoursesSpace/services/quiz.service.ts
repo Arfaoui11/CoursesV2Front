@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Observable} from "rxjs";
 import {Question} from "../../core/model/Question";
 import {Result} from "../../core/model/Result";
@@ -12,18 +12,23 @@ export class QuizService {
 
   constructor(private http : HttpClient) { }
 
+  getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('auth-token')}`);
+  }
+
+
   getQuestionJson(){
     return this.http.get<any>("assets/questions.json");
   }
 
   getQuizQuestion(id:number): Observable<any[]>
   {
-    return this.http.get<any[]>("http://localhost:4000/api/quiz/getQuizQuestion/"+id);
+    return this.http.get<any[]>("http://localhost:4000/api/quiz/getQuizQuestion/"+id,{headers : this.getHeaders()});
   }
 
   getQuestionByQuiz(id:number): Observable<Question[]>
   {
-    return this.http.get<Question[]>("http://localhost:4000/api/quiz/getQuestionByQuiz/"+id);
+    return this.http.get<Question[]>("http://localhost:4000/api/quiz/getQuestionByQuiz/"+id,{headers : this.getHeaders()});
   }
 
   saveScore(re : Result,idU:number,idQ:number):Observable<any>
@@ -31,29 +36,29 @@ export class QuizService {
     const headers = { 'content-type': 'application/json'};
     const body=JSON.stringify(re);
     console.log(body);
-    return this.http.post<Result>("http://localhost:4000/api/quiz/SaveScore/"+idU+"/"+idQ,re)
+    return this.http.post<Result>("http://localhost:4000/api/quiz/SaveScore/"+idU+"/"+idQ,re,{headers : this.getHeaders()})
   }
 
 
   addQuiz(quiz : Quiz,idF:number):Observable<Quiz>
   {
-    return this.http.post<Quiz>("http://localhost:4000/api/quiz/addQuiz/"+idF,quiz);
+    return this.http.post<Quiz>("http://localhost:4000/api/quiz/addQuiz/"+idF,quiz,{headers : this.getHeaders()});
   }
 
   addQuestion(qu : Question,idQuiz:number):Observable<Question>
   {
-    return this.http.post<Question>("http://localhost:4000/api/quiz/addQuestionAndAsigntoQuiz/"+idQuiz,qu);
+    return this.http.post<Question>("http://localhost:4000/api/quiz/addQuestionAndAsigntoQuiz/"+idQuiz,qu,{headers : this.getHeaders()});
   }
 
   getQuizByForm(id:number):Observable<Quiz[]>
   {
-    return this.http.get<Quiz[]>('http://localhost:4000/api/quiz/getQuizByFormation/'+id);
+    return this.http.get<Quiz[]>('http://localhost:4000/api/quiz/getQuizByFormation/'+id,{headers : this.getHeaders()});
   }
 
 
   deleteQuiz(i:number): Observable<any> {
 
-    return this.http.get<number>("http://localhost:4000/api/quiz/DeleteQuiz/"+i)
+    return this.http.delete<number>("http://localhost:4000/api/quiz/DeleteQuiz/"+i,{headers : this.getHeaders()})
   }
 
 
@@ -61,7 +66,7 @@ export class QuizService {
 
     deleteQuestion(i:number): Observable<any> {
 
-    return this.http.get<number>(" http://localhost:4000/api/quiz/DeleteQuestion/"+i)
+    return this.http.delete<number>(" http://localhost:4000/api/quiz/DeleteQuestion/"+i,{headers : this.getHeaders()})
   }
 
 }

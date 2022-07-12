@@ -30,11 +30,11 @@
         <td> {{l.createAt}}</td>
         <td>{{l.score}}</td>
         <td>
-          <button class="btn btn-outline-danger"  (click)="deleteQuiz(l.idQuiz)" >Delete</button>
+          <button class="btn btn-outline-danger"  (click)="deleteQuiz(l.id)" >Delete</button>
         </td>
 
         <td>
-          <button  class="btn btn-outline-primary "  [routerLink]="['../../Question',l.idQuiz]"   >Add Question</button>
+          <button  class="btn btn-outline-primary "  [routerLink]="['../../Question',l.id]"   >Add Question</button>
         </td>
         <td>
           <ngx-qrcode [elementType]="elementType"  [value]="l.title" [width]="50"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode>

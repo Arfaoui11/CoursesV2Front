@@ -2,7 +2,7 @@ import {Quiz} from "./Quiz";
 
 export class Question {
 
-   quesId:number;
+   id:number;
    title:string;
    optionA:string;
    optionB:string;

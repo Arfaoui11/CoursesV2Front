@@ -70,19 +70,22 @@ export class PortfelioFormDetailsComponent implements OnInit {
 
           for (let l of this.listFormation.images)
           {
-           /* if(l.fileType.toString().includes('video'))
+
+
+            if(l.toString().includes('mp4') || l.toString().includes('mkv') || l.toString().includes('wmv'))
             {
               this.retrieveVideo.push(l)  ;
-            }else if(l.fileType.toString().includes('application'))
+              console.log(this.retrieveVideo[this.index]);
+            }else if(l.toString().includes('word') || l.toString().includes('pdf'))
             {
               this.retrieveFiles.push(l);
             }
-            else if (l.fileType.toString().includes('image'))
+            else if (l.toString().includes('jpg') || l.toString().includes('png') || l.toString().includes('jpeg'))
             {
               this.retrieveImage.push(l) ;
             }
 
-            */
+
           }
 
         }

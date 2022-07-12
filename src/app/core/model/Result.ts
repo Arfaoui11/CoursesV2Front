@@ -3,7 +3,7 @@ import {User} from "./User";
 
 export class Result {
 
-  idR:number;
+  id:number;
   username : string;
   correctAnswer:number;
   inCorrectAnswer:number;

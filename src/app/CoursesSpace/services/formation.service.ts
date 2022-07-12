@@ -37,6 +37,10 @@ export class FormationService {
 
   public  field : {[key : string]:any};
 
+  getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('auth-token')}`);
+  }
+
 
   login(credentials:any): Observable<any> {
     return this.http.post('http://localhost:4000/api/user/login', {
@@ -129,7 +133,7 @@ export class FormationService {
 
   getCommentByFormation(idF : string): Observable<PostComment[]>
   {
-    return this.http.get<PostComment[]>('http://localhost:4000/api/comment/'+idF);
+    return this.http.get<PostComment[]>('http://localhost:4000/api/comment/'+idF,{headers : this.getHeaders()});
   }
 
 
@@ -143,7 +147,7 @@ export class FormationService {
 
   writeComment(mess :PostComment,idF :string , idU : string): Observable<number>
   {
-    return this.http.post<number>("http://localhost:4000/api/comment/"+idF+"/"+idU+"/",mess)
+    return this.http.post<number>("http://localhost:4000/api/comment/"+idF+"/"+idU+"/",mess,{headers : this.getHeaders()})
   }
 
 
@@ -211,7 +215,7 @@ export class FormationService {
   }
 
   getFormationById(id:string):Observable<Formation> {
-    return this.http.get<Formation>("http://localhost:4000/api/courses/"+id);
+    return this.http.get<Formation>("http://localhost:4000/api/courses/"+id,{headers : this.getHeaders()});
   }
 
   getApprenantByFormation(i : string):Observable<User[]> {
@@ -222,7 +226,7 @@ export class FormationService {
 
   deleteFormation(i:string): Observable<any> {
 
-    return this.http.get<number>("http://localhost:8099/Courses/deleteFormation/"+i)
+    return this.http.delete("http://localhost:4000/api/courses/"+i,{headers : this.getHeaders()})
   }
 
   deleteFormateur(i:string): Observable<any> {
@@ -247,7 +251,7 @@ export class FormationService {
   affectationApptoFormation(idApp :string , idFor : string): Observable<any>
   {
 
-    return this.http.post<any>("http://localhost:8099/Courses/affecterApprenantFormationWithMax/"+idApp+"/"+idFor,null);
+    return this.http.post<any>("http://localhost:4000/api/courses/"+idFor+"/"+idApp,null,{headers : this.getHeaders()});
 
   }
 
@@ -263,9 +267,7 @@ export class FormationService {
       .get<Object[]>("http://localhost:8099/Courses/NbrApprenantByFormation")
   }
 
-  getHeaders() {
-    return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('auth-token')}`);
-  }
+
 
   addLikes(i:string,id:string): Observable<any> {
     return this.http.post("http://localhost:4000/api/comment/like/"+i+"/"+id,null,{headers : this.getHeaders()})

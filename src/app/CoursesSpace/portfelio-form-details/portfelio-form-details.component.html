@@ -103,7 +103,7 @@
 
 
 
-                  <video #media *ngIf="retrieveVideo[index].fileType.toString().includes('video')" [vgMedia]="$any(media)"  [src]="'data:video/mp4;base64,'+retrieveVideo[index].data" width='150' height='100'
+                  <video #media  [vgMedia]="$any(media)"  [src]="'data:video/mp4;base64,'+retrieveVideo[index]" width='150' height='100'
                          id="singleVideo"
                          preload="auto" crossorigin controls="controls">
                     <track src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt" kind="subtitles" label="English" srclang="en" default>
