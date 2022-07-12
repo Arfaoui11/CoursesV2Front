@@ -260,6 +260,11 @@ export class FormationService {
     return  this.http.get<number>('http://localhost:8099/Courses/getRevenueByFormation/'+i)
   }
 
+  getVideo(path : string) : Observable<any>
+  {
+    return  this.http.get('http://localhost:4000/api/video/'+path,{headers : this.getHeaders()})
+  }
+
   getNbrApprenantByFormation():Observable<Object[]>
   {
 

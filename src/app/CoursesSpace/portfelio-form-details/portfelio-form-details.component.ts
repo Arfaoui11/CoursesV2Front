@@ -54,6 +54,10 @@ export class PortfelioFormDetailsComponent implements OnInit {
     console.log(this.idFormation);
     this.getFormation();
 
+
+
+
+
     setTimeout( () => {
 
 
@@ -87,7 +91,7 @@ export class PortfelioFormDetailsComponent implements OnInit {
 
 
           }
-
+          this.pathUrl = 'http://localhost:4000/api/video/'+ this.retrieveVideo[this.index].slice(37);
         }
       );
 
@@ -180,9 +184,16 @@ export class PortfelioFormDetailsComponent implements OnInit {
     this.retrieveVideo = this.retrieveVideo[this.index];
   }
 
-  sendIndex($index: number) {
+  public pathUrl : string ;
+  sendIndex($index: number ,path : string) {
     this.index =$index;
     this.retrieveVideo[this.index].play();
+
+    this.pathUrl = 'http://localhost:4000/api/video/'+ path.slice(37);
+
+
+    this.serviceForm.getVideo(path.slice(37));
+
   }
 
   goToChatRoom(idFormation: string) {

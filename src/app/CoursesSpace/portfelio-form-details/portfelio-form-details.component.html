@@ -103,7 +103,7 @@
 
 
 
-                  <video #media  [vgMedia]="$any(media)"  [src]="'data:video/mp4;base64,'+retrieveVideo[index]" width='150' height='100'
+                  <video #media  [vgMedia]="$any(media)"  [src]="pathUrl" width='150' height='100'
                          id="singleVideo"
                          preload="auto" crossorigin controls="controls">
                     <track src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt" kind="subtitles" label="English" srclang="en" default>
@@ -167,7 +167,7 @@
         <div class="bd-service-sidebar mb-50">
           <div class="widget mb-45"  >
 
-            <h3 class="sidebar__widget--title mb-30"  >Recent Videos</h3>
+            <h3 class="sidebar__widget--title mb-30"  >Recent Videos </h3>
 
             <div class="sidebar--widget__post mb-20" *ngFor="let vdo of retrieveVideo; let $index = index">
               <div class="sidebar__post--thumb">
@@ -179,7 +179,7 @@
                 </a>
               </div>
               <div class="sidebar__post--text">
-                <h4 class="sidebar__post--title"><a (click)="sendIndex($index)">{{vdo.fileName}}</a></h4>
+                <h4 class="sidebar__post--title"><a (click)="sendIndex($index,vdo)">{{vdo | slice:37  }}</a></h4>
                 <span>{{formation.start | date | slice:0 : 12}}</span>
               </div>
             </div>
@@ -206,8 +206,8 @@
             </div>
           </div>
           <div class="bd-service-sidebar-btn">
-            <a  class="theme-btn w-full mb-20 " style="color: white" (click)="playvideo(retrieveVideo[index].id)">Watch Live</a>
-            <a  class="theme-btn-black w-full" style="color: white" (click)="downloadFiles(retrieveVideo[index].id)">Download Brochure <i class="far fa-arrow-alt-to-bottom"></i></a>
+            <a  class="theme-btn w-full mb-20 " style="color: white" (click)="playvideo(retrieveVideo[index])">Watch Live</a>
+            <a  class="theme-btn-black w-full" style="color: white" (click)="downloadFiles(retrieveVideo[index])">Download Brochure <i class="far fa-arrow-alt-to-bottom"></i></a>
           </div>
         </div>
       </div>
