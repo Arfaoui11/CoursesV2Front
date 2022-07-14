@@ -220,7 +220,7 @@ export class CalendarComponent implements OnInit {
     xx.send(null);
 
 
-    xmll.open('get','http://localhost:8099/Courses/retrieveFormation',true);
+    xmll.open('get','http://localhost:4000/api/courses',true);
 
 
     xmll.send(null);
@@ -231,9 +231,6 @@ export class CalendarComponent implements OnInit {
 
   setTimeout( () =>
   {
-
-
-
 
     this.eventObject = {
       dataSource :this.event,
