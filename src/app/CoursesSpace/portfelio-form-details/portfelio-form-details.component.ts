@@ -187,12 +187,14 @@ export class PortfelioFormDetailsComponent implements OnInit {
   public pathUrl : string ;
   sendIndex($index: number ,path : string) {
     this.index =$index;
-    this.retrieveVideo[this.index].play();
+    this.retrieveVideo[this.index];
 
     this.pathUrl = 'http://localhost:4000/api/video/'+ path.slice(37);
 
 
-    this.serviceForm.getVideo(path.slice(37));
+  /*  this.serviceForm.getVideo(path.slice(37)).subscribe( data => {
+      console.log(data)
+    });*/
 
   }
 
