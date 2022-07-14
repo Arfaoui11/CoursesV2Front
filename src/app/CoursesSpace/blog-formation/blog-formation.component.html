@@ -32,6 +32,7 @@
         </form>
       </div>
 
+
     </div>
   </div>
   <!-- blog area start here -->
@@ -54,14 +55,15 @@
                 <div style="width: 60px;float: right"><ngx-qrcode [elementType]="elementType"  [value]="l.toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></div>
               </ul>
                 <ul>
-                  <li><a href="blog-details.html"><i class="flaticon-calendar"></i>Start : {{l.start | date | slice:0 : 12   }} <br> End : {{l.end | date | slice:0 : 12}} </a></li>
-                  <li><a href="blog-details.html"><i class="flaticon-chat"></i>{{l.comments.length}} Comments</a></li>
+                  <li><a href="#"><i class="flaticon-calendar"></i>Start : {{l.start | date | slice:0 : 12   }} <br> End : {{l.end | date | slice:0 : 12}} </a></li>
+                  <li><a href="#"><i class="flaticon-chat"></i>{{l.comments.length}} Comments</a></li>
+
                 </ul>
               </div>
-              <h4 class="bd-blog-title mb-40"><a href="blog-details.html"> Title : {{l.title.toUpperCase()}} </a></h4>
-              <h6 >Domain  : {{l.domain.toUpperCase()}}</h6>
+              <h4 class="bd-blog-title mb-40"><a class="e-title" href="#"> Title : {{l.title.toUpperCase()}} </a></h4>
+              <h6 >Skills Covered  : {{l.domain.toUpperCase()}}</h6>
             <!--  <h6 class="bd-blog-title mb-20">Former : {{l.userF.displayName.toUpperCase()}}</h6>-->
-              <h6 >Position  : {{l.lieu.toUpperCase()}}</h6>
+              <h6 >Prerequisites  : {{l.lieu.toUpperCase()}}</h6>
               <div class="bd-blog-author">
                 <div class="bd-blog-author-info">
                   <img src="../../../assets/front/img/blog/blog-author-1.jpg" alt="author image not found">

@@ -41,25 +41,6 @@
                       <li><a href="index-7.html">Home Style 7</a></li>
                     </ul>
                   </li>
-                  <li class="menu-item-has-children"><a href="about.html">Forum</a>
-                    <ul class="sub-menu">
-                      <li><a href="about.html">About Us</a></li>
-                      <li><a href="about-me.html">About Me</a></li>
-                    </ul>
-                  </li>
-                  <li class="menu-item-has-children"><a href="service.html">Help</a>
-                    <ul class="sub-menu">
-                      <li><a href="service.html">Services</a></li>
-                      <li><a href="service-details.html">Service Details</a></li>
-                    </ul>
-                  </li>
-                  <li class="menu-item-has-children"><a [routerLink]="['/front/End/blogF']">Courses</a>
-                    <ul class="sub-menu">
-                      <li><a [routerLink]="['/front/End/blogF']">Courses</a></li>
-                      <li *ngIf="this.currentUser"><a  [routerLink]="['/front/End/myCourses']">My Learning </a></li>
-                      <li *ngIf="this.currentUser"><a [routerLink]="['/front/End/myCalender']">My Calender </a></li>
-                    </ul>
-                  </li>
                   <li class="menu-item-has-children"><a href="#">Partners</a>
                     <ul class="sub-menu">
                       <li><a href="portfolio-1.html">Portfolio One</a></li>
@@ -72,7 +53,22 @@
                       <li><a href="error.html">Error Page</a></li>
                     </ul>
                   </li>
-                  <li class="menu-item-has-children"><a [routerLink]="['/front/End/team']">Team</a></li>
+                  <li class="menu-item-has-children"><a [routerLink]="['/front/End/blogF']">Courses</a>
+                    <ul class="sub-menu">
+                      <li><a [routerLink]="['/front/End/blogF']">Courses</a></li>
+                      <li *ngIf="this.currentUser"><a  [routerLink]="['/front/End/myCourses']">My Learning </a></li>
+                      <li *ngIf="this.currentUser"><a [routerLink]="['/front/End/myCalender']">My Calender </a></li>
+                    </ul>
+                  </li>
+                  <li class="menu-item-has-children"><a [routerLink]="['/front/End/blogF']">My Classroom</a>
+                    <ul class="sub-menu">
+                      <li><a [routerLink]="['/front/End/blogF']">Home</a></li>
+                      <li *ngIf="this.currentUser"><a  [routerLink]="['/front/End/myCourses']"> Catalog </a></li>
+                      <li><a [routerLink]="['/front/End/blogF']">Help</a></li>
+                      <li *ngIf="this.currentUser"><a [routerLink]="['/front/End/myCalender']"> Setting </a></li>
+                    </ul>
+
+
                   <!--<li><a href="contact.html">Contact</a></li>-->
                 </ul>
               </nav>

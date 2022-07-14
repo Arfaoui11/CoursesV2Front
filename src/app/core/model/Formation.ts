@@ -19,6 +19,8 @@ export class Formation {
   nbrMaxParticipant!:number;
   costs!:number;
   lieu!: string;
+  skills!: string;
+  prerequisites !: string;
   userF!:User;
   comments!:PostComment[];
   courseApprenants!:CourseApprenants[];

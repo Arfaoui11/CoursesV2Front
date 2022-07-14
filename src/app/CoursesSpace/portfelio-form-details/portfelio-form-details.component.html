@@ -179,7 +179,7 @@
                 </a>
               </div>
               <div class="sidebar__post--text">
-                <h4 class="sidebar__post--title"><a (click)="sendIndex($index,vdo)">{{vdo | slice:37  }}</a></h4>
+                <h4 class="sidebar__post--title"><a (click)="sendIndex($index,vdo)">{{vdo | slice:37 : -18  }}</a></h4>
                 <span>{{formation.start | date | slice:0 : 12}}</span>
               </div>
             </div>

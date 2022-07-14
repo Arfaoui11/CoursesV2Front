@@ -246,7 +246,7 @@ export class BlogDetailsComponent implements OnInit {
     this.serviceForm.writeComment(this.post,this.idFormation,this.currentUser.id).subscribe(
       data=>{
         this.getFormation();
-
+        this.getCommentByFormation()
 
       },
 
@@ -262,33 +262,6 @@ export class BlogDetailsComponent implements OnInit {
     this.serviceForm.getCommentByFormation(this.idFormation).subscribe(
       (data: PostComment[]) => {
         this.comment = data;
-        for (let l of this.comment) {
-          let xx = new XMLHttpRequest();
-          let xmll = new XMLHttpRequest();
-
-          let nbL=0;
-          let nbD=0;
-          xmll.onreadystatechange = ()=>
-          {
-            l.nbrDisLikes = JSON.parse(xmll.responseText)
-          };
-          xx.onreadystatechange = ()=>
-          {
-            l.nbrLikes = JSON.parse(xx.responseText)
-          };
-
-          xx.open('get','http://localhost:8099/Courses/getNbrLikesByComment/'+l.idComn,true);
-
-
-          xx.send(null);
-
-
-          xmll.open('get','http://localhost:8099/Courses/getNbrDislikesByComment/'+l.idComn,true);
-
-
-          xmll.send(null);
-
-        }
 
       }
     );
