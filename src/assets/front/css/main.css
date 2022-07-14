@@ -1544,7 +1544,7 @@ select {
   /**
   @color declaration
   */
-  --clr-common-white: #fff;
+  --clr-common-white: #efe1f4;
   --clr-common-black: #000;
   --clr-body-heading: #161616;
   --clr-body-heading2: #232323;
@@ -2030,7 +2030,7 @@ input.main-search-input:-ms-input-placeholder {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-
+#ffdeea
 .bd-header-area-three.header-sticky.sticky-menu {
   background: var(--clr-common-white);
 }
