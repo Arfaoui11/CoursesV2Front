@@ -130,7 +130,7 @@ export class CalendarFrontComponent implements OnInit {
 
   public  field : {[key : string]:any};
 
-  public fields: Object = { text: 'domain', value: 'idFormation' };
+  public fields: Object = { text: 'domain', value: 'id' };
   // set the placeholder to DropDownList input element
   public waterMark: string = 'Select a game';
   // set the value to select an item based on mapped value at initial rendering
@@ -221,32 +221,6 @@ export class CalendarFrontComponent implements OnInit {
   getdata()
   {
 
-    let xx = new XMLHttpRequest();
-    let xmll = new XMLHttpRequest();
-
-
-    xmll.onreadystatechange = ()=>
-    {
-      this.event = JSON.parse(xmll.responseText)
-    };
-    xx.onreadystatechange = ()=>
-    {
-      this.formateur = JSON.parse(xx.responseText)
-    };
-
-    xx.open('get','http://localhost:8099/Courses/retrieveFormateur',true);
-
-
-    xx.send(null);
-
-
-    xmll.open('get',"http://localhost:8099/Courses/getFormationByApprenant/"+5,true);
-
-
-    xmll.send(null);
-
-
-
 
 
     setTimeout( () =>
@@ -269,7 +243,7 @@ export class CalendarFrontComponent implements OnInit {
       /*
 
       */
-    },2200)
+    },200)
 
 
 
@@ -396,7 +370,7 @@ export class CalendarFrontComponent implements OnInit {
 
   // setViews: View[] = ["Day","Month","Agenda","TimelineMonth","TimelineDay","TimelineWeek"];
   // public setView :View = "Month";
-  public selectedDate : Date = new Date(2022,4,1);
+  public selectedDate : Date = new Date(2022,5,1);
   public timeScale: TimeScaleModel = { enable: true, interval: 60 };
 
   StartTime: Date = new Date(2022, 3, 1, 10, 0);
@@ -682,7 +656,7 @@ export class CalendarFrontComponent implements OnInit {
   public onSpecializationChange(args?: Record<string, any>): void {
     let filteredData: Record<string, any>[];
     if (args && args.value) {
-      this.selectedDepartmentId = args ? args.itemData.idFormation : this.selectedDepartmentId;
+      this.selectedDepartmentId = args ? args.itemData.id : this.selectedDepartmentId;
       // filteredData = this.listFormation.filter((item: any) => item.apprenant.idFormation === this.selectedDepartmentId);
       filteredData = this.getApprenantByFormation(this.selectedDepartmentId);
       // filteredData = this.formateur;
@@ -693,7 +667,7 @@ export class CalendarFrontComponent implements OnInit {
     this.ListApprenant = filteredData;
 
     this.field = {
-      dataSource : this.ListApprenant,id:'id',text : 'displayName'
+      dataSource : this.ListApprenant,id:'id',text : 'lastName'
     };
   }
 }

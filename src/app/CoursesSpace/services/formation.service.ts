@@ -180,8 +180,8 @@ export class FormationService {
     return this.http.get<Formation[]>('http://localhost:8099/Courses/getFormationByFormateur/'+id);
   }
 
-  getFormationByApprenant(id:string):Observable<Formation[]> {
-    return this.http.get<Formation[]>('http://localhost:8099/Courses/getFormationByApprenant/'+id);
+  getFormationByApprenant(id:string):Observable<any[]> {
+    return this.http.get<any[]>('http://localhost:4000/api/courses/getMycourses/'+id);
   }
 
   getListQuizByUser(id : string,idf : string):Observable<any[]>
@@ -219,7 +219,7 @@ export class FormationService {
   }
 
   getApprenantByFormation(i : string):Observable<User[]> {
-    return this.http.get<User[]>("http://localhost:8099/Courses/ApprenantByFormation/"+i);
+    return this.http.get<User[]>("http://localhost:4000/api/courses/getStudent/"+i);
   }
 
 

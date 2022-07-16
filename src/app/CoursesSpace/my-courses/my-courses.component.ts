@@ -14,7 +14,7 @@ import {TokenService} from "../services/token.service";
 })
 export class MyCoursesComponent implements OnInit {
 
-  listFormation  : Formation[];
+  listFormation  : any[];
   toggle = true;
   domain : string;
 
@@ -45,7 +45,7 @@ export class MyCoursesComponent implements OnInit {
   getAllFormation()
   {
     return  this.serviceForm.getFormationByApprenant(this.currentUser.id).subscribe(
-      (data : Formation[]) => {this.listFormation = data;
+      (data : any[]) => {this.listFormation = data;
         this.Items = this.listFormation.length;
       });
   }
