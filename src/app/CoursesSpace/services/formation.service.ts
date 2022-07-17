@@ -285,7 +285,7 @@ export class FormationService {
 
   desaffecterApprenant(idU:string,idF:string): Observable<any> {
 
-    return this.http.post<any>("http://localhost:8099/Courses/desaffecterApprenant/"+idU+"/"+idF,null)
+    return this.http.delete<any>("http://localhost:4000/api/user/desaffection/"+idU+"/"+idF,{headers : this.getHeaders()})
   }
 
 
