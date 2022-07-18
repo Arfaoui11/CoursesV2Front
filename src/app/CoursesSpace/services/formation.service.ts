@@ -50,19 +50,10 @@ export class FormationService {
   }
 
 
-  register(user:User): Observable<any> {
-    return this.http.post('http://localhost:4000/api/user/register', {
-      displayName: user.lastName,
-      email: user.email,
-      password: user.password,
-      matchingPassword: user.password,
-      phoneNumber : user.phoneNumber,
-      tarifHoraire : user.tarifHoraire,
-      profession : user.profession,
-      age:user.age,
-      isAdmin:user.isAdmin,
-      socialProvider: 'LOCAL'
-    }, httpOptions);
+  register(filew: FormData): Observable<any> {
+
+
+    return this.http.post('http://localhost:4000/api/user/register', filew);
   }
 
 

@@ -43,12 +43,12 @@ export class AddEditFormerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-
+  formData : any;
 
   addFomateur()
   {
 
-    this.serviceForm.register(this.user).subscribe(data=>console.log(data));
+    this.serviceForm.register(this.formData).subscribe(data=>console.log(data));
     this.refreshDoctors.emit();
   }
 

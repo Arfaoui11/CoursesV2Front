@@ -3,47 +3,52 @@
     <img id="profile-img" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" class="profile-img-card" />
     <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
       <div class="form-group">
-        <label for="displayName">Display Name</label> <input type="text" class="form-control" name="displayName" [(ngModel)]="form.displayName" required minlength="3"
-                                                             maxlength="20" #displayName="ngModel" />
-        <div class="alert-danger" *ngIf="f.submitted && displayName.invalid">
-<!--          <div *ngIf="displayName.errors.required">Display Name is required</div>-->
-<!--          <div *ngIf="displayName.errors.minlength">Display Name must be at least 3 characters</div>-->
-<!--          <div *ngIf="displayName.errors.maxlength">Display Name must be at most 20 characters</div>-->
-        </div>
+        <label >First Name <input type="text" class="form-control" name="firstName" [(ngModel)]="form.firstName" required minlength="3"
+                                                             maxlength="20" #firstName="ngModel" />
+        </label>
       </div>
+
       <div class="form-group">
-        <label for="email">Email</label> <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
-<!--        <div class="alert-danger" *ngIf="f.submitted && email.invalid">-->
-<!--          <div *ngIf="email.errors.required">Email is required</div>-->
-<!--          <div *ngIf="email.errors.email">Email must be a valid email address</div>-->
-<!--        </div>-->
+        <label >Last Name <input type="text" class="form-control" name="lastName" [(ngModel)]="form.lastName" required minlength="3"
+                                                           maxlength="20" #lastName="ngModel" />
+        </label>
       </div>
+
       <div class="form-group">
-        <label for="profession" > Profession</label>
-        <select  #profession="ngModel" [(ngModel)]="form.profession" name="profession" id="profession" class="form-control"  required >
-          <option  value="FORMER">FORMER</option>
-          <option value="LEARNER">LEARNER</option>
-          <option value="IT">IT</option>
-          <option value="DOCTOR">DOCTOR</option>
-          <option value="Cardiologist">Cardiologist</option>
-          <option value="STUDENT">STUDENT</option>
-        </select>
+        <label >Email <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel" />
+        </label>
       </div>
+
+
       <div class="form-group">
-        <label for="password">Password</label> <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+        <label >age <input type="number" class="form-control" name="age" [(ngModel)]="form.age" required minlength="3"
+                                                           maxlength="20" #age="ngModel" />
+        </label>
+      </div>
+
+
+
+      <div class="form-group">
+        <label >phoneNumber <input type="text" class="form-control" name="phoneNumber" [(ngModel)]="form.phoneNumber" required minlength="3"
+                                                           maxlength="20" #phoneNumber="ngModel" />
+        </label>
+      </div>
+
+
+
+      <div class="form-group">
+        <label >Password <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
                                                       #password="ngModel" />
-<!--        <div class="alert-danger" *ngIf="f.submitted && password.invalid">-->
-<!--          <div *ngIf="password.errors.required">Password is required</div>-->
-<!--          <div *ngIf="password.errors.minlength">Password must be at least 6 characters</div>-->
-<!--        </div>-->
+        </label>
       </div>
-      <div class="form-group">
-        <label for="matchingPassword">Confirm Password</label> <input type="password" class="form-control" name="matchingPassword" [(ngModel)]="form.matchingPassword"
-                                                                      required minlength="6" #matchingPassword="ngModel" />
-<!--        <div class="alert-danger" *ngIf="f.submitted && matchingPassword.invalid">-->
-<!--          <div *ngIf="matchingPassword.errors.required">Confirm Password is required</div>-->
-<!--          <div *ngIf="matchingPassword.errors.minlength">Confirm Password must be at least 6 characters</div>-->
-<!--        </div>-->
+
+
+      <div class="form-group col-md-4">
+        <label  >Add Image </label>
+        <input  type="file" name="file"  (change)="selectImage($event)" multiple>
+        <img [src]="imgURL" height="100" width="150"  *ngIf="imgURL" >
+
+
       </div>
       <div class="form-group">
         <button class="btn btn-primary btn-block">Sign Up</button>

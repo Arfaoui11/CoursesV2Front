@@ -17,7 +17,7 @@ export class User {
   type!:string;
   age!:number;
   state!:string;
-  image!:string;
+  file!:string;
   isAdmin!:boolean;
   password: any;
   matchingPassword: any;

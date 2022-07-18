@@ -182,11 +182,11 @@ export class CalendarFrontComponent implements OnInit {
 
   }
 
-
+  formData : any;
   addFormateur()
   {
 
-    this.serviceForm.register(this.user).subscribe(data=>console.log(data));
+    this.serviceForm.register(this.formData).subscribe(data=>console.log(data));
   }
   getAllFormateur()
   {
