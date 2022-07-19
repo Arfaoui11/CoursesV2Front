@@ -21,9 +21,9 @@ export class QuizService {
     return this.http.get<any>("assets/questions.json");
   }
 
-  getQuizQuestion(id:string): Observable<any[]>
+  getQuizQuestion(id:string): Observable<Question[]>
   {
-    return this.http.get<any[]>("http://localhost:4000/api/quiz/getQuizQuestion/"+id,{headers : this.getHeaders()});
+    return this.http.get<Question[]>("http://localhost:4000/api/quiz/getQuizQuestion/"+id,{headers : this.getHeaders()});
   }
 
   getQuestionByQuiz(id:string): Observable<Question[]>

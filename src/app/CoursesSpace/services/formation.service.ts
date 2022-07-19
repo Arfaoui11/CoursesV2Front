@@ -4,9 +4,7 @@ import {Observable} from "rxjs";
 import {Formation} from "../../core/model/Formation";
 import {User} from "../../core/model/User";
 import {PostComment} from "../../core/model/PostComment";
-import {Likes} from "../../core/model/likes";
-import {DisLikes} from "../../core/model/DisLikes";
-import {Quiz} from "../../core/model/Quiz";
+
 
 
 
