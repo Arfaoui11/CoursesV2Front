@@ -35,14 +35,14 @@
         <div class="e-cards specialist-item" id=Specialist_{{data.id}} [routerLink]="['../userview',data.id]" >
           <div class="e-card-content">
             <div class="specialist-image">
-              <img class="profile" src="assets/images/profile/user-uploads/user-02.jpg" alt="doctor" />
+              <img class="profile" [src]="data.file" alt="doctor" />
               <span class='availability {{data.tarifHoraire}}}'></span>
               <span class='upload icon-upload_photo '></span>
             </div>
           </div>
           <div class="specialist-detail">
-            <div class="name">Dr. {{data.displayName}}</div>
-            <div class="education">Domain : {{getEducation(data.profession)}}</div>
+            <div class="name">Dr. {{data.lastName}}</div>
+            <div class="education">Domain : {{data.profession}}</div>
             <div class="specialist-experience">
               <div class="specialization">
                 <span class="label-text">Designation</span>

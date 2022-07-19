@@ -18,6 +18,11 @@ export class AddEditFormerComponent implements OnInit {
 
   @Input() user:User=new User;
 
+  public imagePath :File;
+  imgURL: any;
+  isSuccessful = false;
+  isSignUpFailed = false;
+  errorMessage = '';
   public doctorsData: Record<string, any>[];
   public activeDoctorData: Record<string, any>;
   public dialogState: string;
@@ -43,12 +48,52 @@ export class AddEditFormerComponent implements OnInit {
 
   ngOnInit(): void {
   }
-  formData : any;
+
+
+  selectImage(event : any) {
+
+
+    const file : File = event?.target?.files[0];
+    this.imagePath = file;
+
+    const reader = new FileReader();
+
+
+
+    reader.readAsDataURL(file);
+    reader.onload = (_event) => {
+      this.imgURL = reader.result;
+    }
+  }
 
   addFomateur()
   {
 
-    this.serviceForm.register(this.formData).subscribe(data=>console.log(data));
+    const formData = new FormData();
+
+    formData.append('file',this.imagePath);
+    formData.append('lastName',this.user.lastName)
+    formData.append('firstName',this.user.firstName)
+    formData.append('email',this.user.email)
+    formData.append('password',this.user.password)
+    formData.append('phoneNumber',this.user.phoneNumber.toString())
+    formData.append('age',this.user.age.toString())
+    formData.append('type',"FORMER");
+
+    this.serviceForm.register(formData).subscribe(data => {
+        console.log(data);
+        this.isSuccessful = true;
+        if (this.isSuccessful)
+        {
+          alert("Account create with successful")
+        }
+        this.isSignUpFailed = false;
+      },
+
+      err => {
+        this.errorMessage = err.error.message;
+        this.isSignUpFailed = true;
+      },);
     this.refreshDoctors.emit();
   }
 

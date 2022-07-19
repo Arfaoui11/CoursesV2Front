@@ -7,41 +7,36 @@
         <div class="form-row">
           <div class="form-group col-md-6">
             <label >Name</label>
-            <input type="text" class="form-control"  #titre="ngModel" [(ngModel)]="user.lastName" name="title" required placeholder="Name">
+            <input type="text" class="form-control"  #lastName="ngModel" [(ngModel)]="user.lastName" name="title" required placeholder="Name">
           </div>
           <div class="form-group col-md-6">
             <label >Email</label>
-            <input type="email" class="form-control"  #titre="ngModel" [(ngModel)]="user.email" name="title" required placeholder="Email">
+            <input type="email" class="form-control"  #email="ngModel" [(ngModel)]="user.email" name="title" required placeholder="Email">
           </div>
 
 
           <div class="form-group col-md-6">
             <label >Age</label>
-            <input type="number" class="form-control" #nbrMaxParticipant="ngModel" [(ngModel)]="user.age"  name="nbrMaxParticipant" required placeholder="xx">
+            <input type="number" class="form-control" #age="ngModel" [(ngModel)]="user.age"  name="nbrMaxParticipant" required placeholder="xx">
           </div>
 
         </div>
 
         <div class="form-group">
           <label >Phone Number</label>
-          <input type="number" class="form-control"   #frais="ngModel" [(ngModel)]="user.phoneNumber" required name="frais" placeholder="+216 xx xxx xxx">
+          <input type="number" class="form-control"   #phoneNumber="ngModel" [(ngModel)]="user.phoneNumber" required name="frais" placeholder="+216 xx xxx xxx">
         </div>
         <div class="form-row">
           <div class="form-group col-md-6">
             <label >Tarif Horaire</label>
-            <input type="number" class="form-control" #dateDebut="ngModel" [(ngModel)]="user.tarifHoraire" name="dateDebut"  required >
+            <input type="number" class="form-control" #tarifHoraire="ngModel" [(ngModel)]="user.tarifHoraire" name="dateDebut"  required >
           </div>
 
-     <!--   <div class="form-group col-md-4">
-            <label  >Add Image </label>
-            <input  type="file"  (change)="onFileSelected($event)" multiple>
-            <img [src]="imgURL" height="100" width="150"  *ngIf="imgURL">
 
-          </div>-->
 
           <div class="form-group col-md-4">
             <label >Domain</label>
-            <select #domain="ngModel" [(ngModel)]="user.profession" name="domain" class="form-control"  required >
+            <select #profession="ngModel" [(ngModel)]="user.profession" name="domain" class="form-control"  required >
               <option selected value="IT">IT</option>
               <option value="ART">ART</option>
               <option value="CINEMA">CINEMA</option>
@@ -54,9 +49,15 @@
           </div>
           <div class="form-group">
             <label >Password</label>
-            <input type="password" class="form-control"   #frais="ngModel" [(ngModel)]="user.password" required name="Password" >
+            <input type="password" class="form-control"   #password="ngModel" [(ngModel)]="user.password" required name="Password" >
           </div>
+          <div class="form-group col-md-4">
+            <label  >Add Image </label>
+            <input  type="file" name="file"  (change)="selectImage($event)" multiple>
+            <img [src]="imgURL" height="100" width="150"  *ngIf="imgURL" >
 
+
+          </div>
 
         </div>
 
@@ -67,6 +68,13 @@
         <button ejs-button cssClass="e-normal" (click)='onCancelClick()'>Cancel</button>
         <button type="submit" class="btn btn-primary" (click)="addFomateur()"
                 data-toggle="tooltip" data-placement="right"  > Add Courses </button>
+      </div>
+      <div class="alert alert-warning" *ngIf="isSignUpFailed">
+        Signup failed!<br />{{ errorMessage }}
+      </div>
+
+      <div class="alert alert-success" *ngIf="isSuccessful">Your registration is successful!
+
       </div>
     </ng-template>
   </ejs-dialog>

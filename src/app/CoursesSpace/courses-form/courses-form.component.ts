@@ -101,7 +101,7 @@ export class CoursesFormComponent implements OnInit {
       this.formateur = JSON.parse(xx.responseText)
     };
 
-    xx.open('get','http://localhost:8090/Courses/retrieveFormateur',true);
+    xx.open('get','http://localhost:4000/api/user/getFormer',true);
 
 
     xx.send(null);

@@ -66,7 +66,7 @@ export class FormationService {
 
   getFormateur():Observable<User[]>
   {
-    return this.http.get<User[]>('http://localhost:8099/Courses/retrieveFormateur');
+    return this.http.get<User[]>('http://localhost:4000/api/user/getFormer',{headers : this.getHeaders()});
   }
 
 
