@@ -142,12 +142,10 @@ export class FormationService {
   }
 
 
-  addFormation(f : Formation,i:number): Observable<Formation>
+  addFormation(form: FormData,i:string): Observable<any>
   {
-    const headers = { 'content-type': 'application/json'};
-    const body=JSON.stringify(f);
-    console.log(body);
-    return this.http.post<Formation>("http://localhost:8099/Courses/ajouterEtAffecterFormationAFormateur/"+i,f)
+
+    return this.http.post<any>("http://localhost:4000/api/courses/"+i,form,{headers : this.getHeaders()})
   }
 
   SerachMultiple(key:string) :Observable<Formation[]>

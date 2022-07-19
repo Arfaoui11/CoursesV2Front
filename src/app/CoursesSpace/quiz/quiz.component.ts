@@ -29,7 +29,7 @@ export class QuizComponent implements OnInit {
 
 
 
-  public idQuiz :number;
+  public idQuiz :string;
 
   public name: string = "";
   public questionList: any = [];
@@ -157,7 +157,7 @@ export class QuizComponent implements OnInit {
 
 
 
-  saveScoreQuiz(idU:number,idQ:number)
+  saveScoreQuiz(idU:string,idQ:string)
   {
     this.res.totalCorrect=this.points;
     this.res.correctAnswer=this.correctAnswer;

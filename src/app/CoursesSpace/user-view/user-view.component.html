@@ -9,7 +9,7 @@
         <div class="card-body">
           <div class="row">
             <div class="users-view-image">
-              <img src="../../../assets/images/portrait/small/avatar-s-1.jpg" class="users-avatar-shadow w-100 rounded mb-2 pr-2 ml-1" alt="avatar">
+              <img [src]="user.file" class="users-avatar-shadow w-100 rounded mb-2 pr-2 ml-1" alt="avatar">
             </div>
             <div class="col-12 col-sm-9 col-md-6 col-lg-5">
               <table>
@@ -62,7 +62,7 @@
 
         <div class="modal-content">
 
-          <div class="modal-header" style="background-color: #ffdeea">
+          <div class="modal-header" style="background-color: #d3d3d3">
             <h5 class="modal-title" id="exmpleModelLabel">Add Courses</h5>
             <button type="button" class="btn btn-outline-info" data-bs-dismiss="modal" aria-label="Close"  >X</button>
 
@@ -123,15 +123,15 @@
             <br>
             <div class="input-group row-cols-md-3" >
               <span class="input-groupe-text "> frais </span>
-              <input #frais="ngModel" type="number" class="form-control" [(ngModel)]="fr.costs" name="frais" placeholder="Price" min="100" max="3000" required >
-              <div *ngIf="frais.invalid && frais.touched" style="color: red">
-                <div *ngIf="frais.errors?.required" class="alert">
+              <input #costs="ngModel" type="number" class="form-control" [(ngModel)]="fr.costs" name="costs" placeholder="costs" min="100" max="3000" required >
+              <div *ngIf="costs.invalid && costs.touched" style="color: red">
+                <div *ngIf="costs.errors?.required" class="alert">
                   Required
                 </div>
-                <div *ngIf="frais.errors?.max" class="alert">
+                <div *ngIf="costs.errors?.max" class="alert">
                   Price Max is 3000 DT !!!!
                 </div>
-                <div *ngIf="frais.errors?.min" class="alert">
+                <div *ngIf="costs.errors?.min" class="alert">
                   Price Min is 100 DT !!!!
                 </div>
               </div>
@@ -139,17 +139,17 @@
             <br>
               <div class="input-group row-cols-md-3" >
                 <label >Start Date</label>
-                <input type="date" class="form-control" #dateDebut="ngModel" [(ngModel)]="fr.start" name="dateDebut"  required >
+                <input type="date" class="form-control" #start="ngModel" [(ngModel)]="fr.start" name="start"  required >
               </div>
               <br>
               <div class="input-group row-cols-md-3" >
                 <label >End Date</label>
-                <input type="date" class="form-control" #dateFin="ngModel" [(ngModel)]="fr.end" name="dateFin" required >
+                <input type="date" class="form-control" #end="ngModel" [(ngModel)]="fr.end" name="end" required >
               </div>
             <br>
             <div class="input-group row-cols-md-3">
-              <label for="niveau" > Level</label>
-              <select  #niveau="ngModel" [(ngModel)]="fr.level" name="niveau" id="niveau" class="form-control"  required >
+              <label for="level" > Level</label>
+              <select  #level="ngModel" [(ngModel)]="fr.level" name="level" id="level" class="form-control"  required >
                 <option  value="BEGINNER">BEGINNER</option>
                 <option value="INTERMEDIATE">INTERMEDIATE</option>
                 <option value="ADVANCED">ADVANCED</option>
@@ -169,6 +169,13 @@
                 <option value="MARKETING">MARKETING</option>
               </select>
             </div>
+              <div class="form-group col-md-4">
+                <label  >Add Image </label>
+                <input  type="file" name="image"  (change)="selectImage($event)" multiple>
+                <img [src]="imgURL" height="100" width="150"  *ngIf="imgURL" >
+
+
+              </div>
 
             <button type="button" class="btn btn-primary"  style="float: right" data-bs-dismiss="modal" aria-label="Close" [disabled]="!f.valid" (click)="addFormation();f.reset()" ><i class="feather icon-activity" ></i> Add </button>
 

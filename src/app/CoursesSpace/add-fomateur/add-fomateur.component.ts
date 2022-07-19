@@ -15,12 +15,14 @@ export class AddFomateurComponent implements OnInit {
   listFomation : Formation[];
   @Input() fr:Formation=new Formation;
   idF : string;
+  public imagePath :File;
+  imgURL: any;
 
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
   formateur : User;
-  imgURL: any;
-  public imagePath :FileList;
+
+
   show : boolean = false;
 
   constructor(private services : FormationService,private snackbar:MatSnackBar) {
@@ -46,20 +48,23 @@ export class AddFomateurComponent implements OnInit {
     this.idF = i;
   }
 
-  onFileSelected(event : any) {
-
-    const file : FileList = event?.target?.files;
+  selectImage(event : any) {
 
 
-    var reader = new FileReader();
-
+    const file : File = event?.target?.files[0];
     this.imagePath = file;
 
-    reader.readAsDataURL(file[0]);
+    const reader = new FileReader();
+
+
+
+    reader.readAsDataURL(file);
     reader.onload = (_event) => {
       this.imgURL = reader.result;
     }
   }
+
+
 
   UpdateFormation(f: Formation,id : string)
   {
@@ -76,32 +81,32 @@ export class AddFomateurComponent implements OnInit {
     this.show = ! this.show;
   }
 
-  addFormation(i:number)
+  addFormation(i:string)
   {
 
-    this.services.addFormation(this.fr,i).subscribe(
+    const formDataa = new FormData();
+
+    formDataa.append('image',this.imagePath);
+    formDataa.append('title',this.fr.title)
+    formDataa.append('domain',this.fr.domain)
+    formDataa.append('level',this.fr.level)
+    formDataa.append('start',this.fr.start.toDateString())
+    formDataa.append('end',this.fr.end.toDateString())
+    formDataa.append('nbrHours',this.fr.nbrHours.toString())
+    formDataa.append('lieu',this.fr.lieu);
+    formDataa.append('nbrMaxParticipant',this.fr.nbrMaxParticipant.toString());
+    formDataa.append('costs',this.fr.costs.toString());
+
+
+    this.services.addFormation(formDataa,this.idF).subscribe(
       data=>{
-        this.getformation();
+        console.log(data);
+        this.snackbar.open(' ajout avec succees', 'Undo', {
+          duration: 2000
+        });
       });
 
-    const formData = new FormData();
 
-    for (let i = 0 ;i<this.imagePath.length ; i++)
-    {
-      const element  =  this.imagePath[i];
-
-      formData.append('files',element);
-    }
-
-    this.snackbar.open(' ajout avec succees', '', {
-      duration: 2000
-    });
-
-
-
-    this.services.uploadFile(formData,'a').subscribe(res => {
-      console.log(res)
-    });
 
 
 

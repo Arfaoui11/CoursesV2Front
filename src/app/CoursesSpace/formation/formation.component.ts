@@ -26,13 +26,14 @@ export class FormationComponent implements OnInit {
   key: any;
 
 
-  public imagePath :FileList;
+
 
   idF : string;
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
 
-
+  public imagePath :File;
+  imgURL: any;
 
   type2 = ChartType.PieChart;
   title = 'Numbre Apprenant By Formation';
@@ -114,30 +115,45 @@ export class FormationComponent implements OnInit {
     return this.listFomation;
   }
 
+
+  selectImage(event : any) {
+
+
+    const file : File = event?.target?.files[0];
+    this.imagePath = file;
+
+    const reader = new FileReader();
+
+
+
+    reader.readAsDataURL(file);
+    reader.onload = (_event) => {
+      this.imgURL = reader.result;
+    }
+  }
   addFormation(i:number)
   {
-    this.serviceForm.addFormation(this.fr,3).subscribe(
-      data=>{
-        this.getformation();
-      });
-
     const formData = new FormData();
 
-    for (let i = 0 ;i<this.imagePath.length ; i++)
-    {
-      const element  =  this.imagePath[i];
+    formData.append('image',this.imagePath);
+    formData.append('title',this.fr.title)
+    formData.append('domain',this.fr.domain)
+    formData.append('level',this.fr.level)
+    formData.append('start',this.fr.start.toDateString())
+    formData.append('end',this.fr.end.toDateString())
+    formData.append('nbrHours',this.fr.nbrHours.toString())
+    formData.append('lieu',this.fr.lieu);
+    formData.append('nbrMaxParticipant',this.fr.nbrMaxParticipant.toString());
+    formData.append('costs',this.fr.costs.toString());
 
-      formData.append('files',element);
-    }
 
-
-    this.serviceForm.uploadFile(formData,'a').subscribe(res => {
-      console.log(res)
-    });
-
-    this.snackbar.open(' ajout avec succees', 'Undo', {
-      duration: 2000
-    });
+    this.serviceForm.addFormation(formData,'').subscribe(
+      data=>{
+        console.log(data);
+        this.snackbar.open(' ajout avec succees', 'Undo', {
+          duration: 2000
+        });
+      });
 
   }
 
@@ -199,8 +215,8 @@ export class FormationComponent implements OnInit {
   array1:any=[];
   data3:any=[];
   data2:any = this.getNbrApprenantByFormation();
-  imgURL: any;
-  retrivedImage: any;
+
+
 
 
 
@@ -254,20 +270,7 @@ export class FormationComponent implements OnInit {
 
 
 
-  onFileSelected(event : any) {
 
-    const file : FileList = event?.target?.files;
-
-
-    var reader = new FileReader();
-
-    this.imagePath = file;
-
-    reader.readAsDataURL(file[0]);
-    reader.onload = (_event) => {
-      this.imgURL = reader.result;
-    }
-  }
 
 
   SearchMultiple(key:string): void

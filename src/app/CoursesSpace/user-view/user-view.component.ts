@@ -11,6 +11,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
   styleUrls: ['./user-view.component.scss']
 })
 export class UserViewComponent implements OnInit {
+  public imagePath :File;
+  imgURL: any;
   public idUser: any;
   public user :User;
   public listFomateur: User[];
@@ -36,27 +38,44 @@ export class UserViewComponent implements OnInit {
 
   }
 
+  selectImage(event : any) {
+
+
+    const file : File = event?.target?.files[0];
+    this.imagePath = file;
+
+    const reader = new FileReader();
+
+
+
+    reader.readAsDataURL(file);
+    reader.onload = (_event) => {
+      this.imgURL = reader.result;
+    }
+  }
+
   addFormation()
   {
-    this.serviceForm.addFormation(this.fr,this.idUser).subscribe(
+
+    const formData = new FormData();
+
+    formData.append('image',this.imagePath);
+    formData.append('title',this.fr.title)
+    formData.append('domain',this.fr.domain)
+    formData.append('level',this.fr.level)
+    formData.append('start',this.fr.start.toString())
+    formData.append('end',this.fr.end.toString())
+    formData.append('nbrHours',this.fr.nbrHours.toString())
+    formData.append('lieu',this.fr.lieu);
+    formData.append('nbrMaxParticipant',this.fr.nbrMaxParticipant.toString());
+    formData.append('costs',this.fr.costs.toString());
+
+
+    this.serviceForm.addFormation(formData,this.idUser).subscribe(
       data=>{
         console.log(data);
       });
-/*
-    const formData = new FormData();
 
-    for (let i = 0 ;i<this.imagePath.length ; i++)
-    {
-      const element  =  this.imagePath[i];
-
-      formData.append('files',element);
-    }
-
-
-    this.serviceForm.uploadFile(formData,1).subscribe(res => {
-      console.log(res)
-    });
-*/
     this.snackbar.open(' ajout avec succees', 'Undo', {
       duration: 2000
     });

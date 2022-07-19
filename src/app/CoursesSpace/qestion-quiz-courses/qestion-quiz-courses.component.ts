@@ -24,7 +24,7 @@ export class QestionQuizCoursesComponent implements OnInit {
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
 
-  public idQuiz :number;
+  public idQuiz :string;
 
 
   constructor(private questionService: QuizService, private route:ActivatedRoute) { }
@@ -79,7 +79,7 @@ export class QestionQuizCoursesComponent implements OnInit {
   }
 
 
-  deleteQuestion(idQ : number)
+  deleteQuestion(idQ : string)
   {
     this.questionService.deleteQuestion(idQ).subscribe(
       data=> {

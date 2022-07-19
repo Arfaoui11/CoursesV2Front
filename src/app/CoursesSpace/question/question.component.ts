@@ -24,7 +24,7 @@ export class QuestionComponent implements OnInit {
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
 
-  public idFormation :number;
+  public idFormation :string;
 
 
   constructor(private questionService: QuizService, private route:ActivatedRoute) { }
@@ -52,7 +52,7 @@ export class QuestionComponent implements OnInit {
   }
 
 
-  getQuizbyFormation(id:number)
+  getQuizbyFormation(id:string)
   {
     this.questionService.getQuizByForm(id).subscribe(
       data=> {
@@ -63,7 +63,7 @@ export class QuestionComponent implements OnInit {
   }
 
 
-  getQuizQuestion(idQuiz:number)
+  getQuizQuestion(idQuiz:string)
   {
     this.questionService.getQuizQuestion(idQuiz)
       .subscribe( (data : Question[])=>{this.ListQuestion = data});
@@ -81,14 +81,14 @@ export class QuestionComponent implements OnInit {
   }
 
 
-  addQuestion(idQ:number)
+  addQuestion(idQ:string)
   {
     this.questionService.addQuestion(this.question,idQ).subscribe(
 
     )
   }
 
-  deleteQuiz(idQ : number)
+  deleteQuiz(idQ : string)
   {
     this.questionService.deleteQuiz(idQ).subscribe(
       data=> {

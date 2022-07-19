@@ -21,17 +21,17 @@ export class QuizService {
     return this.http.get<any>("assets/questions.json");
   }
 
-  getQuizQuestion(id:number): Observable<any[]>
+  getQuizQuestion(id:string): Observable<any[]>
   {
     return this.http.get<any[]>("http://localhost:4000/api/quiz/getQuizQuestion/"+id,{headers : this.getHeaders()});
   }
 
-  getQuestionByQuiz(id:number): Observable<Question[]>
+  getQuestionByQuiz(id:string): Observable<Question[]>
   {
     return this.http.get<Question[]>("http://localhost:4000/api/quiz/getQuestionByQuiz/"+id,{headers : this.getHeaders()});
   }
 
-  saveScore(re : Result,idU:number,idQ:number):Observable<any>
+  saveScore(re : Result,idU:string,idQ:string):Observable<any>
   {
     const headers = { 'content-type': 'application/json'};
     const body=JSON.stringify(re);
@@ -40,23 +40,23 @@ export class QuizService {
   }
 
 
-  addQuiz(quiz : Quiz,idF:number):Observable<Quiz>
+  addQuiz(quiz : Quiz,idF:string):Observable<Quiz>
   {
     return this.http.post<Quiz>("http://localhost:4000/api/quiz/addQuiz/"+idF,quiz,{headers : this.getHeaders()});
   }
 
-  addQuestion(qu : Question,idQuiz:number):Observable<Question>
+  addQuestion(qu : Question,idQuiz:string):Observable<Question>
   {
     return this.http.post<Question>("http://localhost:4000/api/quiz/addQuestionAndAsigntoQuiz/"+idQuiz,qu,{headers : this.getHeaders()});
   }
 
-  getQuizByForm(id:number):Observable<Quiz[]>
+  getQuizByForm(id:string):Observable<Quiz[]>
   {
     return this.http.get<Quiz[]>('http://localhost:4000/api/quiz/getQuizByFormation/'+id,{headers : this.getHeaders()});
   }
 
 
-  deleteQuiz(i:number): Observable<any> {
+  deleteQuiz(i:string): Observable<any> {
 
     return this.http.delete<number>("http://localhost:4000/api/quiz/DeleteQuiz/"+i,{headers : this.getHeaders()})
   }
@@ -64,7 +64,7 @@ export class QuizService {
 
 
 
-    deleteQuestion(i:number): Observable<any> {
+    deleteQuestion(i:string): Observable<any> {
 
     return this.http.delete<number>(" http://localhost:4000/api/quiz/DeleteQuestion/"+i,{headers : this.getHeaders()})
   }

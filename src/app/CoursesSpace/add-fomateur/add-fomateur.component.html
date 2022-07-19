@@ -175,7 +175,7 @@
 
               <div class="form-group col-md-4">
                 <label  >Add Image </label>
-                <input  type="file"  (change)="onFileSelected($event)" multiple>
+                <input  type="file"  (change)="selectImage($event)" multiple>
                 <img [src]="imgURL" height="100" width="150"  *ngIf="imgURL">
 
               </div>
@@ -188,7 +188,7 @@
         <div class="add-data-footer d-flex justify-content-around px-3 mt-2">
           <div class="add-data-btn">
             <button class="btn btn-primary" *ngIf="show" (click)="UpdateFormation(fr,idF)">Edit Data</button>
-            <button class="btn btn-primary" *ngIf="!show" (click)="addFormation(8)">Add Data</button>
+            <button class="btn btn-primary" *ngIf="!show" (click)="addFormation('')">Add Data</button>
           </div>
           <div class="cancel-data-btn">
             <button class="btn btn-outline-danger">Cancel</button>

@@ -18,7 +18,7 @@
         <th>CreateAt</th>
         <th>Score</th>
         <th>Delete</th>
-        <th>addQuiz</th>
+        <th>addQuestion</th>
         <th>QrCode</th>
       </tr>
       </thead>
@@ -27,7 +27,7 @@
 
         <td>{{l.title}}</td>
         <td>{{l.content}}</td>
-        <td> {{l.createAt}}</td>
+        <td> {{l.createdAt}}</td>
         <td>{{l.score}}</td>
         <td>
           <button class="btn btn-outline-danger"  (click)="deleteQuiz(l.id)" >Delete</button>
@@ -50,8 +50,7 @@
         <th>CreateAt</th>
         <th>Score</th>
         <th>Delete</th>
-        <th>Update</th>
-        <th>addQuiz</th>
+        <th>addQuestion</th>
         <th>QrCode</th>
       </tr>
       </tfoot>
@@ -88,7 +87,7 @@
             </div>
               <div class="input-group  row-cols-md-3 mat-h3 " >
                 <span class="input-groupe-text "> Published At day </span>
-                <input type="date" name="title" class="form-control" [(ngModel)]="quiz.createAt" >
+                <input type="date" name="title" class="form-control" [(ngModel)]="quiz.createdAt" >
               </div>
             <div class="input-group row-cols-md-3 mat-h3" >
               <span class="input-groupe-text "> Content </span>
