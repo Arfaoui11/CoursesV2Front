@@ -46,26 +46,26 @@
           }  , let i=index">
         <div class="bd-blog mb-30">
           <div class="bd-blog-img" >
-            <img  [src]="l.course.image" alt="blog image not found 1">
+            <img  [src]="l.image" alt="blog image not found 1">
 
           </div>
           <div class="bd-blog-text">
             <div class="bd-blog-meta mb-15">
               <ul>
-                <li><a href="blog-details.html"><i class="flaticon-calendar"></i>Start : {{l.course.start | date | slice:0 : 12   }} <br> End : {{l.course.end | date | slice:0 : 12}} </a></li>
-                <li><a href="blog-details.html"><i class="flaticon-chat"></i>{{l.course.comments.length}} Comments</a></li>
+                <li><a href="blog-details.html"><i class="flaticon-calendar"></i>Start : {{l.start | date | slice:0 : 12   }} <br> End : {{l.end | date | slice:0 : 12}} </a></li>
+                <li><a href="blog-details.html"><i class="flaticon-chat"></i>{{l.comments.length}} Comments</a></li>
               </ul>
             </div>
-            <h4 class="bd-blog-title mb-40"><a href="blog-details.html"> Title : {{l.course.title.toUpperCase()}} </a></h4>
+            <h4 class="bd-blog-title mb-40"><a href="blog-details.html"> Title : {{l.title.toUpperCase()}} </a></h4>
           <!--  <h6 class="bd-blog-title mb-20">Former : {{l.userF.displayName.toUpperCase()}}</h6> -->
             <div class="bd-blog-author">
               <div class="bd-blog-author-info">
                 <img src="../../../assets/front/img/blog/blog-author-1.jpg" alt="author image not found">
-                <h6 class="bd-blog-author-info-title"> {{l.course.domain}}</h6>
+                <h6 class="bd-blog-author-info-title"> {{l.domain}}</h6>
 
               </div>
               <div class="bd-blog-author-link">
-                <a href="blog-details.html" [routerLink]="['../detailsF',l.course.id]" >Read More <i class="far fa-arrow-right"></i></a>
+                <a href="blog-details.html" [routerLink]="['../detailsF',l.id]" >Read More <i class="far fa-arrow-right"></i></a>
               </div>
             </div>
           </div>

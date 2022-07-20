@@ -168,7 +168,7 @@ export class FormationService {
   }
 
   getFormationByApprenant(id:string):Observable<any[]> {
-    return this.http.get<any[]>('http://localhost:4000/api/courses/getMycourses/'+id);
+    return this.http.get<any[]>('http://localhost:4000/api/courses/getMycourses/'+id,{headers : this.getHeaders()});
   }
 
   getListQuizByUser(id : string,idf : string):Observable<any[]>
