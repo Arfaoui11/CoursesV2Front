@@ -221,7 +221,7 @@ export class BlogDetailsComponent implements OnInit {
 
     for (let q of this.listQuizTested)
     {
-      let createAt = new Date(q.createAt);
+      let createAt = new Date(q.createdAt);
       let today = new Date(Date.parse(Date()));
       if (createAt < today )
       {

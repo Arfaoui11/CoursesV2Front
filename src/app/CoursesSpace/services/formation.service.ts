@@ -4,6 +4,7 @@ import {Observable} from "rxjs";
 import {Formation} from "../../core/model/Formation";
 import {User} from "../../core/model/User";
 import {PostComment} from "../../core/model/PostComment";
+import {Quiz} from "../../core/model/Quiz";
 
 
 
@@ -171,9 +172,9 @@ export class FormationService {
     return this.http.get<any[]>('http://localhost:4000/api/courses/getMycourses/'+id,{headers : this.getHeaders()});
   }
 
-  getListQuizByUser(id : string,idf : string):Observable<any[]>
+  getListQuizByUser(id : string,idf : string):Observable<Quiz[]>
   {
-    return this.http.get<any[]>('http://localhost:8099/Courses/listQuiqtestedbuUser/'+id+"/"+idf);
+    return this.http.get<Quiz[]>('http://localhost:8099/Courses/listQuiqtestedbuUser/'+id+"/"+idf,{headers : this.getHeaders()});
   }
 
 
