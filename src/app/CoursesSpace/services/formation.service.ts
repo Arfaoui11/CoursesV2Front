@@ -174,7 +174,7 @@ export class FormationService {
 
   getListQuizByUser(id : string,idf : string):Observable<Quiz[]>
   {
-    return this.http.get<Quiz[]>('http://localhost:8099/Courses/listQuiqtestedbuUser/'+id+"/"+idf,{headers : this.getHeaders()});
+    return this.http.get<Quiz[]>('http://localhost:4000/api/quiz/listQuiqtestedbuUser/'+id+"/"+idf,{headers : this.getHeaders()});
   }
 
 

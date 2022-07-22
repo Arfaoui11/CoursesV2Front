@@ -31,12 +31,9 @@ export class QuizService {
     return this.http.get<Question[]>("http://localhost:4000/api/quiz/getQuestionByQuiz/"+id,{headers : this.getHeaders()});
   }
 
-  saveScore(re : Result,idU:string,idQ:string):Observable<any>
+  saveScore(re : Result,idU:string,idQ:string):Observable<Result>
   {
-    const headers = { 'content-type': 'application/json'};
-    const body=JSON.stringify(re);
-    console.log(body);
-    return this.http.post<Result>("http://localhost:4000/api/quiz/SaveScore/"+idU+"/"+idQ,re,{headers : this.getHeaders()})
+    return this.http.post<Result>('http://localhost:4000/api/quiz/SaveScore/'+idU+'/'+idQ,re,{headers : this.getHeaders()})
   }
 
 

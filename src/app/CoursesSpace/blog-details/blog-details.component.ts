@@ -62,11 +62,11 @@ export class BlogDetailsComponent implements OnInit {
   public isTested: boolean =false;
   public listFormation: Formation;
 
-  public nbrQuiztoCertifcate: number = 5;
+  public nbrQuiztoCertifcate: number;
   private counter: number=0;
   private users: User[]=[];
   public user: User;
-  public listQuizTested: any[]=[];
+  public listQuizTested: Quiz[];
 
 
 
@@ -84,27 +84,27 @@ export class BlogDetailsComponent implements OnInit {
     this.idFormation = this.route.snapshot.params['idCourses'];
 
    if (this.currentUser)
-    this.getLsitQuizTestByUser();
+    this.getListQuizTestByUser();
 
 
     this.getFormation();
     if (this.currentUser)
-    this.getLsitQuizTestByUser();
+    this.getListQuizTestByUser();
     setTimeout( () => {
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.formation.lieu}&units=metric&appid=50a7aa80fa492fa92e874d23ad061374`)
         .then(response => response.json())
         .then(data => {
-          var tempValue = data['main']['temp'];
-          var drizzle = data['weather'][0]['main'];
+          let tempValue = data['main']['temp'];
+          let drizzle = data['weather'][0]['main'];
 
-          var name = data['name'];
-          var pressure = data['main']['pressure'];
-          var humidity = data['main']['humidity'];
-          var descValue = data['weather'][0]['description'];
-          var wind = data['wind']['speed'];
+          let name = data['name'];
+          let pressure = data['main']['pressure'];
+          let humidity = data['main']['humidity'];
+          let descValue = data['weather'][0]['description'];
+          let wind = data['wind']['speed'];
           this.img = data['weather'][0]['icon'];
-          var lat = data['coord']['lat'];
-          var lot = data['coord']['lon'];
+          let lat = data['coord']['lat'];
+          let lot = data['coord']['lon'];
 
 
           this.lat = lat;
@@ -132,10 +132,10 @@ export class BlogDetailsComponent implements OnInit {
       this.getCommentByFormation();
 
 
-      this.rating = this.formation.ratings;
+     // this.rating = this.formation.ratings;
     },2000);
 
-    console.log(this.comment)
+
 
     this.serviceForm.getFormationById(this.idFormation)
      .subscribe(
@@ -183,12 +183,13 @@ export class BlogDetailsComponent implements OnInit {
     });
   }
 
-  getLsitQuizTestByUser()
+  getListQuizTestByUser()
   {
 
-    this.serviceForm.getListQuizByUser(this.currentUser.id,this.idFormation).subscribe((data) =>
+    this.serviceForm.getListQuizByUser(this.currentUser.id,this.idFormation).subscribe((data:Quiz[]) =>
     {
       this.listQuizTested = data;
+      console.log(this.listQuizTested)
     })
   }
 
@@ -210,13 +211,19 @@ export class BlogDetailsComponent implements OnInit {
         this.show = true;
       }
     }
-    if (this.formation.quizzes.length >0 )
+    if (this.formation.quizzes.length > 0 )
     {
-      this.nbrQuiztoCertifcate =   ( this.listQuizTested.length);
+      if (this.listQuizTested.length === 0)
+      {
+        this.nbrQuiztoCertifcate =  5 - ( this.formation.quizzes.length ) ;
+      }else {
+        this.nbrQuiztoCertifcate =  5 - ( this.formation.quizzes.length - ( this.formation.quizzes.length - this.listQuizTested.length )) ;
+      }
+
     }
 
 
-
+  console.log(this.listQuizTested)
 
 
     for (let q of this.listQuizTested)
@@ -231,7 +238,7 @@ export class BlogDetailsComponent implements OnInit {
     }
 
 
-      this.rating = this.formation.ratings;
+      //this.rating = this.formation.ratings;
 
 
 

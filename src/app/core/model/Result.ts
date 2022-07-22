@@ -3,13 +3,13 @@ import {User} from "./User";
 
 export class Result {
 
-  id:number;
+  id:string;
   username : string;
   correctAnswer:number;
   inCorrectAnswer:number;
   totalCorrect : number;
   quiz:Quiz;
-  suser!:User;
+  user!:User;
 
 
 

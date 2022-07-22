@@ -86,7 +86,7 @@ export class LoginComponent implements OnInit {
     }else if (this.showStudentBoard)
     {
 
-      window.location.href = '#/front/End/homeF';
+      window.location.href = '/front/End/homeF';
     }else if (this.showFormerBoard){
       window.location.href = '#/home/Formation-management';
     }else {

@@ -54,7 +54,7 @@ export class QuizComponent implements OnInit {
 
     this.idQuiz = this.route.snapshot.params['idQuiz'];
 
-   // this.name = localStorage.getItem("name")!;
+
    // this.getAllQuestions();
     this.startCounter();
     this.getQuizQuestion();
@@ -162,14 +162,14 @@ export class QuizComponent implements OnInit {
     this.res.totalCorrect=this.points;
     this.res.correctAnswer=this.correctAnswer;
     this.res.inCorrectAnswer=this.inCorrectAnswer;
-    this.res.username=this.currentUser.displayName;
+    this.res.username=this.currentUser.lastName;
     this.questionService.saveScore(this.res,idU,idQ).subscribe(
       res => {console.log(res);});
 
     setTimeout( () =>
     {
       window.location.href = '#/front/End/myCourses';
-    },2000);
+    },4000);
   }
 
 }
