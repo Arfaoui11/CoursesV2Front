@@ -127,13 +127,7 @@ export class BlogDetailsComponent implements OnInit {
 
 
 
-    setTimeout( () => {
 
-      this.getCommentByFormation();
-
-
-     // this.rating = this.formation.ratings;
-    },2000);
 
 
 
@@ -313,8 +307,7 @@ export class BlogDetailsComponent implements OnInit {
   }
 
 
-  public nbrL : number=0;
-  public nbrD:number=0;
+
 
 
 private ratTrue = false;
@@ -469,7 +462,7 @@ private ratTrue = false;
   gotTo404() {
     if (this.currentUser)
     {
-      window.location.href = '/front/End/myCalender'
+      window.location.href = '#/front/End/myCalender'
     }else
     {
 
@@ -477,7 +470,7 @@ private ratTrue = false;
         duration: 2000
       });
       setTimeout(()=> {
-        window.location.href = '#/front/End/asd';
+        window.location.href = '#/register';
       },2000 );
 
     }
