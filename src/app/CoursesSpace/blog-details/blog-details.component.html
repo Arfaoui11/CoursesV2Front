@@ -91,8 +91,8 @@
                   </span>
               </ng-template>
 
-              <ngb-rating [(rate)]="rat.typeRating" [starTemplate]="t"  [max]="5" (rateChange)="changeRating()"></ngb-rating>
-              <pre>Rate: <b>{{rat.typeRating.toString() | slice: 0 : 4  }}</b></pre>
+              <ngb-rating [(rate)]="rating" [starTemplate]="t"  [max]="5" (rateChange)="changeRating()"></ngb-rating>
+              <pre>Rate: <b>{{rating.toString() | slice: 0 : 4  }}</b></pre>
               <h2 class="bd-blog-details-title mb-25">{{formation.title.toUpperCase()}}</h2>
 
 

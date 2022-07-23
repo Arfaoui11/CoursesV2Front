@@ -371,7 +371,7 @@ private ratTrue = false;
   changeRating() {
 
 
-     // this.rat.typeRating = this.rating;
+      this.rat.typeRating = this.rating;
 
 
       this.serviceForm.addRatingFormation(this.idFormation,this.currentUser.id,this.rat).subscribe(
@@ -380,14 +380,20 @@ private ratTrue = false;
 
           setTimeout(()=>
           {
-
+            this.ratTrue= true;
             this.getRatingByFormation();
 
           },1000);
 
+        },(err)=> {
+
+          if (this.ratTrue)
+          this.snackbar.open(' You have one rating for this courses ', 'Undo', {
+            duration: 2000
+          });
         }
       );
-      this.ratTrue= true;
+
 
 
 
@@ -395,7 +401,7 @@ private ratTrue = false;
 
   getRatingByFormation()
   {
-    this.serviceForm.getRatingFormation(this.idFormation).subscribe(data => { this.rat.typeRating = data})
+    this.serviceForm.getRatingFormation(this.idFormation).subscribe(data => { this.rating = data})
   }
 
   DisLikesComment(id:string)
