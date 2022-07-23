@@ -88,8 +88,8 @@ export class BlogDetailsComponent implements OnInit {
 
 
     this.getFormation();
-    if (this.currentUser)
-    this.getListQuizTestByUser();
+   // if (this.currentUser)
+    //this.getListQuizTestByUser();
     setTimeout( () => {
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.formation.lieu}&units=metric&appid=50a7aa80fa492fa92e874d23ad061374`)
         .then(response => response.json())
@@ -127,7 +127,13 @@ export class BlogDetailsComponent implements OnInit {
 
 
 
+    setTimeout( () => {
 
+      this.getCommentByFormation();
+      this.getData();
+
+     // this.rating = this.formation.ratings;
+    },2000);
 
 
 
@@ -197,7 +203,7 @@ export class BlogDetailsComponent implements OnInit {
       this.formation = data;
 
 
-
+/*
     for (let app of this.formation.courseApprenants)
     {
       if (app.userA.id == this.currentUser.id)
@@ -235,9 +241,54 @@ export class BlogDetailsComponent implements OnInit {
       //this.rating = this.formation.ratings;
 
 
+ */
+
 
     });
     return this.formation;
+  }
+
+
+
+  getData()
+  {
+
+    for (let app of this.formation.courseApprenants)
+    {
+      if (app.userA.id == this.currentUser.id)
+      {
+        this.show = true;
+      }
+    }
+    if (this.formation.quizzes.length > 0 )
+    {
+      if (this.listQuizTested.length === 0)
+      {
+        this.nbrQuiztoCertifcate =  5 - ( this.formation.quizzes.length ) ;
+      }else if(this.formation.quizzes.length > this.listQuizTested.length) {
+        this.nbrQuiztoCertifcate =  5 - ( this.formation.quizzes.length - this.listQuizTested.length ) ;
+      }else if(this.formation.quizzes.length === this.listQuizTested.length)
+      {
+        this.nbrQuiztoCertifcate =  5;
+      }
+
+    }
+
+
+    console.log(this.listQuizTested)
+
+
+    for (let q of this.listQuizTested)
+    {
+      let createAt = new Date(q.createdAt);
+      let today = new Date(Date.parse(Date()));
+      if (createAt < today )
+      {
+        this.quiz =q;
+        this.go = true;
+      }
+    }
+
   }
 
   public status: number;
@@ -307,7 +358,8 @@ export class BlogDetailsComponent implements OnInit {
   }
 
 
-
+  public nbrL : number=0;
+  public nbrD:number=0;
 
 
 private ratTrue = false;
@@ -462,7 +514,7 @@ private ratTrue = false;
   gotTo404() {
     if (this.currentUser)
     {
-      window.location.href = '#/front/End/myCalender'
+      window.location.href = '/front/End/myCalender'
     }else
     {
 
@@ -470,7 +522,7 @@ private ratTrue = false;
         duration: 2000
       });
       setTimeout(()=> {
-        window.location.href = '#/register';
+        window.location.href = '#/front/End/asd';
       },2000 );
 
     }
