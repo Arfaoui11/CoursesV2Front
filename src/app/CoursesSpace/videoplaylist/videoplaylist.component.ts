@@ -8,6 +8,7 @@ import {User} from "../../core/model/User";
 import {PostComment} from "../../core/model/PostComment";
 import {TokenService} from "../services/token.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {Rating} from "../../core/model/Rating";
 
 @Component({
   selector: 'app-videoplaylist',
@@ -26,7 +27,7 @@ export class VideoplaylistComponent implements OnInit {
   public listComment: Record<string, any>[];
 
   @Input() post : PostComment = new PostComment;
-
+  @Input() rat : Rating = new Rating();
   rating: number;
   retrieveResonse : any;
 
@@ -447,15 +448,32 @@ export class VideoplaylistComponent implements OnInit {
   }
 
 
+  private ratTrue = false;
   changeRating() {
 
-    this.serviceForm.addRatingFormation(this.idFormation,this.rating).subscribe(
-      data => {
+    if (!this.ratTrue)
+    {
+      this.serviceForm.addRatingFormation(this.idFormation,this.currentUser.id,this.rat).subscribe(
+        data => {
 
-        this.getFormation();
 
-        //  this.rating = this.formation.rating;
-      }
-    )
+          setTimeout(()=>
+          {
+
+            this.getRatingByFormation();
+
+          },500);
+
+        }
+      );
+      this.ratTrue= true;
+    }
+
+
+  }
+
+  getRatingByFormation()
+  {
+    this.serviceForm.getRatingFormation(this.idFormation).subscribe(data => { this.rating = data})
   }
 }

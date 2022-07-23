@@ -10,6 +10,7 @@ import {ActivatedRoute} from "@angular/router";
 import {TokenService} from "../services/token.service";
 import {Quiz} from "../../core/model/Quiz";
 import {AppService} from "../services/app.service";
+import {Rating} from "../../core/model/Rating";
 
 @Component({
   selector: 'app-blog-details',
@@ -24,10 +25,12 @@ export class BlogDetailsComponent implements OnInit {
 
   @Input() post : PostComment = new PostComment;
 
+  @Input() rat : Rating = new Rating();
+
   @ViewChild('thenfirst', {static: true}) thenfirst: TemplateRef<any>|null = null;
   @ViewChild('thenSec', {static: true}) thenSec: TemplateRef<any>|null = null;
 
-  rating: number;
+  public rating: number;
   retrieveResonse : any;
   activeIndex = 0;
   index : number =0;
@@ -131,9 +134,10 @@ export class BlogDetailsComponent implements OnInit {
 
       this.getCommentByFormation();
       this.getData();
+      this.getRatingByFormation();
 
-     // this.rating = this.formation.ratings;
-    },2000);
+
+    },1000);
 
 
 
@@ -366,25 +370,32 @@ private ratTrue = false;
 
   changeRating() {
 
-    if (!this.ratTrue)
-    {
-      this.serviceForm.addRatingFormation(this.idFormation,this.rating).subscribe(
+
+     // this.rat.typeRating = this.rating;
+
+
+      this.serviceForm.addRatingFormation(this.idFormation,this.currentUser.id,this.rat).subscribe(
         data => {
 
 
           setTimeout(()=>
           {
 
-            this.getFormation()
+            this.getRatingByFormation();
 
-          },500);
+          },1000);
 
         }
       );
       this.ratTrue= true;
-    }
 
 
+
+  }
+
+  getRatingByFormation()
+  {
+    this.serviceForm.getRatingFormation(this.idFormation).subscribe(data => { this.rat.typeRating = data})
   }
 
   DisLikesComment(id:string)

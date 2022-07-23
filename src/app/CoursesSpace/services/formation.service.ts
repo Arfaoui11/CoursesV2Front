@@ -5,6 +5,7 @@ import {Formation} from "../../core/model/Formation";
 import {User} from "../../core/model/User";
 import {PostComment} from "../../core/model/PostComment";
 import {Quiz} from "../../core/model/Quiz";
+import {Rating} from "../../core/model/Rating";
 
 
 
@@ -288,10 +289,16 @@ export class FormationService {
     return this.http.get<any>('http://localhost:8099/Courses/getNbrDislikesByComment/'+id);
   }
 
-  addRatingFormation(idF:string,rate :number):Observable<any>
+  addRatingFormation(idF:string,idU:string,rate :Rating):Observable<Rating>
   {
-    return this.http.put<any>("http://localhost:8099/Courses/FormationWIthRate/"+idF+"/"+rate,null)
+    return this.http.post<Rating>("http://localhost:4000/api/rating/"+idF+"/"+idU,rate,{headers : this.getHeaders()})
   }
+
+  getRatingFormation(idF:string):Observable<number>
+  {
+    return this.http.get<number>("http://localhost:4000/api/rating/"+idF,{headers : this.getHeaders()})
+  }
+
 
 
   uploadFile(file: FormData, i: string): Observable<any>
