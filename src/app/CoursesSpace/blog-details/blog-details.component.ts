@@ -380,14 +380,14 @@ private ratTrue = false;
 
           setTimeout(()=>
           {
-            this.ratTrue= true;
+           // this.ratTrue= true;
             this.getRatingByFormation();
 
           },1000);
 
         },(err)=> {
 
-          if (this.ratTrue)
+         // if (this.ratTrue)
           this.snackbar.open(' You have one rating for this courses ', 'Undo', {
             duration: 2000
           });
