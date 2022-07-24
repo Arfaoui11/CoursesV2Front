@@ -7,6 +7,7 @@ import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {TokenService} from "../services/token.service";
 import {NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels} from "ngx-qrcode2";
+import {ChatServiceService} from "../services/chat-service.service";
 
 @Component({
   selector: 'app-blog-formation',
@@ -30,7 +31,7 @@ export class BlogFormationComponent implements OnInit {
   page = 1;
   public Items: number;
 
-  constructor(private serviceForm : FormationService,private snackbar:MatSnackBar  ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) { }
+  constructor(private chatService : ChatServiceService,private serviceForm : FormationService,private snackbar:MatSnackBar  ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) { }
 
   ngOnInit(): void {
 

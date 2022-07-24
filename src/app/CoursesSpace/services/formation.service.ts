@@ -128,7 +128,10 @@ export class FormationService {
   }
 
 
-
+  listUserByCourses(idF : string): Observable<User[]>
+  {
+    return this.http.get<User[]>('http://localhost:4000/api/user/'+idF,{headers : this.getHeaders()});
+  }
 
   getAllComment(): Observable<PostComment[]>
   {

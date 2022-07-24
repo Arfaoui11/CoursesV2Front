@@ -83,6 +83,8 @@ import { CallVideoComponent } from './CoursesSpace/call-video/call-video.compone
 
 import { TeamComponent } from './CoursesSpace/team/team.component';
 import {RegisterComponent} from "./BackEnd/register/register.component";
+import { ChatComponent } from './CoursesSpace/chatClient/chat/chat.component';
+import { UsersComponent } from './CoursesSpace/chatClent/users/users.component';
 
 
 
@@ -135,6 +137,8 @@ FullCalendarModule.registerPlugins([
     E404Component,
     CallVideoComponent,
     TeamComponent,
+    ChatComponent,
+    UsersComponent,
 
   ],
   imports: [

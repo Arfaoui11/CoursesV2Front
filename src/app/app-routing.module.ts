@@ -30,6 +30,7 @@ import {E404Component} from "./FontEnd/e404/e404.component";
 import {CallVideoComponent} from "./CoursesSpace/call-video/call-video.component";
 import {TeamComponent} from "./CoursesSpace/team/team.component";
 import {RegisterComponent} from "./BackEnd/register/register.component";
+import {ChatComponent} from "./CoursesSpace/chatClient/chat/chat.component";
 
 
 
@@ -81,6 +82,7 @@ const routes: Routes =
              { path: 'blogF', component: BlogFormationComponent },
              { path: 'portF/:idCourses', component: PortfelioFormDetailsComponent },
              { path: 'chat', component: RoutComponent },
+             { path: 'chatNode', component: ChatComponent },
              { path:  'map',component: MapComponent },
              { path: 'homeF', component: HomeFComponent },
              { path: 'myCourses', component: MyCoursesComponent },
