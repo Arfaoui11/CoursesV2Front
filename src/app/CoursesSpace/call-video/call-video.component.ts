@@ -34,7 +34,7 @@ export class CallVideoComponent implements OnInit {
   } = {};
   id: string = '';
   remoteNames: string[] = [];
-  public idFormation :number;
+  public idFormation :string;
 
 
   constructor(private cdr: ChangeDetectorRef,private token: TokenService, private route:ActivatedRoute) {
@@ -75,14 +75,14 @@ export class CallVideoComponent implements OnInit {
   }
 
   setName() {
-    if (this.currentUser.displayName) {
-      this.name = this.currentUser.displayName;
+    if (this.currentUser.lastName) {
+      this.name = this.currentUser.lastName;
       this.sendMessage(this.name, 'connection');
     }
   }
 
   initVideo() {
-    from(navigator.mediaDevices.getUserMedia({ audio: false, video: true }))
+    from(navigator.mediaDevices.getUserMedia({ audio: true, video: true }))
       .pipe(
         tap((stream) => (this.localStream = stream)),
         mergeMap(() =>
@@ -139,7 +139,7 @@ export class CallVideoComponent implements OnInit {
     this.end$.next(1);
   }
 
-  desconnect() {
+  disconnect() {
     window.location.href = '../homeF';
     this.ngOnDestroy();
   }

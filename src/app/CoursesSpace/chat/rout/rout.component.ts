@@ -21,9 +21,10 @@ export class RoutComponent implements OnInit {
   currentUser: any = [];
 
   userName = '';
+  image = '';
   message = '';
   messageList: {message: string, userName: string, mine: boolean}[] = [];
-  userList: string[] = [];
+  userList: any[] = [];
   socket: any;
 
 
@@ -44,12 +45,14 @@ this.chatApp();
   }
 
   chatApp(): void {
-    this.socket = io.io(`localhost:4000?userName=${this.currentUser.lastName}`);
-    this.userName = this.currentUser.lastName;
+    this.socket = io.io(`localhost:4000?userName=${this.currentUser.lastName+','+ this.currentUser.file}`);
+    this.userName = this.currentUser.lastName+','+ this.currentUser.file;
 
-    this.socket.emit('set-user-name', this.currentUser.lastName);
 
-    this.socket.on('user-list', (userList: string[]) => {
+
+    this.socket.emit('set-user-name', this.userName);
+
+    this.socket.on('user-list', (userList: any[]) => {
       this.userList = userList;
     });
 

@@ -4,7 +4,7 @@
        &nbsp; &nbsp;<strong> Name :&nbsp;{{ name.toUpperCase() }}</strong>
       &nbsp;|&nbsp;<strong> Room Id :&nbsp;{{ room }}</strong>
     </div>
-    <div class="header__avatar"><a (click)="desconnect()" > Disconnect </a></div>
+    <div class="header__avatar"><a (click)="disconnect()" > Disconnect </a></div>
   </header>
   <aside class="sidenav">
     <div class="card-container" *ngFor="let m of messages">
