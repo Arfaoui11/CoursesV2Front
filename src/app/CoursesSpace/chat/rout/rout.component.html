@@ -24,10 +24,10 @@
 
 
                       <a class="list-group-item-dark active list-group-item-action text-white rounded-pill"  >
-                        <div class="media"  ><img [src]="user.image" alt="user"   width="60" class="rounded-circle">
+                        <div class="media"  ><img [src]="user.split(',')[1]" alt="user"   width="60" class="rounded-circle">
                           <div class="media-body ml-4">
                             <div >
-                              <h6 class="user-name">{{user.userName}}</h6>
+                              <h6 class="user-name">{{user.split(',')[0]}}</h6>
 
 
 
@@ -60,15 +60,37 @@
                      </div>-->
 
                   <!-- Sender Message-->
-                  <div class="media w-50 ml-auto mb-3" *ngFor="let msg of messageList" ><img src="../../../../assets/images/profile/user-uploads/user-01.jpg" alt="user" width="50" class="rounded-circle">
-                    <div class="media-body ml-3">
-                      <div class="bg-light rounded py-2 px-3 mb-2">
-                        <P>{{ msg.userName }}</P>
-                        <p class="text-small mb-0 text-muted" style="color: #0dcaf0">{{ msg.message }}</p>
+
+                  <div  *ngFor="let msg of messageList">
+                    <div *ngIf="currentUser.lastName === msg.userName.split(',')[0]">
+                      <div class="pull-left w-75" >
+                        <img [src]="msg.userName.split(',')[1]" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-3">
+                          <div class="bg-light rounded py-2 px-3 mb-2" >
+                            <P>{{ msg.userName.split(',')[0] }}</P>
+                            <p class="text-small mb-0 text-muted" style="color: #0dcaf0">{{ msg.message }}</p>
+                          </div>
+                          <p class="small text-muted">{{heurs.getHours().toString().toUpperCase()+":"+ heurs.getMinutes() .toString().toUpperCase() }} PM | {{daysa.getDate().toString().toUpperCase() +" "+daysa.getMonth().toString().toUpperCase() +" "+daysa.getFullYear().toString().toUpperCase() }}</p>
+                        </div>
                       </div>
-                      <p class="small text-muted">{{heurs.getHours().toString().toUpperCase()+":"+ heurs.getMinutes() .toString().toUpperCase() }} PM | {{daysa.getDate().toString().toUpperCase() +" "+daysa.getMonth().toString().toUpperCase() +" "+daysa.getFullYear().toString().toUpperCase() }}</p>
                     </div>
+                    <div *ngIf="currentUser.lastName !== msg.userName.split(',')[0]">
+                      <div  class="pull-right w-75" >
+                        <img [src]="msg.userName.split(',')[1]" alt="user" width="50" class="rounded-circle">
+                        <div class="media-body ml-3">
+                          <div class="bg-light rounded py-2 px-3 mb-2" >
+                            <P>{{ msg.userName.split(',')[0] }}</P>
+                            <p class="text-small mb-0 text-muted" style="color: #0dcaf0">{{ msg.message }}</p>
+                          </div>
+                          <p class="small text-muted">{{heurs.getHours().toString().toUpperCase()+":"+ heurs.getMinutes() .toString().toUpperCase() }} PM | {{daysa.getDate().toString().toUpperCase() +" "+daysa.getMonth().toString().toUpperCase() +" "+daysa.getFullYear().toString().toUpperCase() }}</p>
+                        </div>
+                      </div>
+                    </div>
+
+
+
                   </div>
+
 
                   <!-- Reciever Message-->
 

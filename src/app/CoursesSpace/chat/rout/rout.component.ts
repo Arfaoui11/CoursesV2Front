@@ -52,7 +52,7 @@ this.chatApp();
 
     this.socket.emit('set-user-name', this.userName);
 
-    this.socket.on('user-list', (userList: any[]) => {
+    this.socket.on('user-list', (userList: string[]) => {
       this.userList = userList;
     });
 
