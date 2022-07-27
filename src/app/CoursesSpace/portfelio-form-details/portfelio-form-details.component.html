@@ -183,6 +183,21 @@
                 <span>{{formation.start | date | slice:0 : 12}}</span>
               </div>
             </div>
+            <h3 class="sidebar__widget--title mb-30"  >Recent Files </h3>
+            <div class="sidebar--widget__post mb-1" *ngFor="let file of retrieveFiles; let $index = index">
+              <div class="sidebar__post--thumb">
+                <a  >
+                  <div class="post__img" >
+                    <img src="../../../assets/images/icons/pdf.png" style="width: 30px" alt="">
+                  </div>
+
+                </a>
+              </div>
+              <div class="sidebar__post--text">
+                <h4 class="sidebar__post--title"><a (click)="sendIndex($index,file)">{{file | slice:37 : -18  }}</a></h4>
+
+              </div>
+            </div>
 
           </div>
           <div class="bd-service-widget gray-bg mb-30">
@@ -206,8 +221,10 @@
             </div>
           </div>
           <div class="bd-service-sidebar-btn">
-            <a  class="theme-btn w-full mb-20 " style="color: white" (click)="playvideo(retrieveVideo[index])">Watch Live</a>
-            <a  class="theme-btn-black w-full" style="color: white" (click)="downloadFiles(retrieveVideo[index])">Download Brochure <i class="far fa-arrow-alt-to-bottom"></i></a>
+            <a  class="theme-btn w-full mb-20 " style="color: white" (click)="playvideo(retrieveFiles[index])">Watch Live</a>
+            <h6>{{retrieveFiles[index].slice(37)}}</h6>
+           <!-- <a  class="theme-btn-black w-full" style="color: white" [href]="retrieveFiles[index]">Download Brochure <i class="far fa-arrow-alt-to-bottom"></i></a> -->
+            <a  class="theme-btn-black w-full" style="color: white" (click)="downloadFiles(retrieveFiles[index].slice(37))">Download  <i class="far fa-arrow-alt-to-bottom"></i></a>
           </div>
         </div>
       </div>

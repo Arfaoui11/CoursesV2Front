@@ -316,7 +316,11 @@ export class FormationService {
 
   DownloadFile(file: string):Observable<Blob>
   {
-    return this.http.get('http://localhost:8099/Courses/downloadFile/'+file,{responseType:'blob'});
+    const body = {filename :file};
+    return this.http.post('http://localhost:4000/api/downloadFile',body,{
+      responseType:'blob',
+      headers : new HttpHeaders().append('Content-Type','application/json')
+    });
   }
 
 

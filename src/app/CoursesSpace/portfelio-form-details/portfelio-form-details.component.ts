@@ -79,7 +79,7 @@ export class PortfelioFormDetailsComponent implements OnInit {
             if(l.toString().includes('mp4') || l.toString().includes('mkv') || l.toString().includes('wmv'))
             {
               this.retrieveVideo.push(l)  ;
-              console.log(this.retrieveVideo[this.index]);
+
             }else if(l.toString().includes('word') || l.toString().includes('pdf'))
             {
               this.retrieveFiles.push(l);
@@ -138,29 +138,8 @@ export class PortfelioFormDetailsComponent implements OnInit {
 
   downloadFiles( s :string) {
     this.serviceForm.DownloadFile(s).subscribe(
-      x=>
-      {
-        const blob = new Blob([x],{type : 'video/mp4'});
-
-        if(window.navigator && window.navigator.msSaveOrOpenBlob)
-        {
-          window.navigator.msSaveOrOpenBlob(blob);
-          return;
-        }
-
-        const data = window.URL.createObjectURL(blob);
-        const link = document.createElement('a');
-        link.href = data;
-        link.download = "video.mp4";
-
-        link.dispatchEvent( new MouseEvent('click',{bubbles:true,cancelable:true,view:window}))
-
-        setTimeout(function () {
-          window.URL.revokeObjectURL(data);
-          link.remove();
-        },1000)
-
-      }
+      data => window.navigator.msSaveOrOpenBlob(data),
+           error => console.log(error)
     )
 
   }
@@ -187,7 +166,10 @@ export class PortfelioFormDetailsComponent implements OnInit {
   public pathUrl : string ;
   sendIndex($index: number ,path : string) {
     this.index =$index;
+    this.retrieveFiles[this.index];
     this.retrieveVideo[this.index];
+
+    console.log(this.retrieveVideo[this.index])
 
     this.pathUrl = 'http://localhost:4000/api/video/'+ path.slice(37);
 
