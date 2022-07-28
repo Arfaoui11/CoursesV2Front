@@ -169,7 +169,7 @@ export class PortfelioFormDetailsComponent implements OnInit {
     this.retrieveFiles[this.index];
     this.retrieveVideo[this.index];
 
-    console.log(this.retrieveVideo[this.index])
+
 
     this.pathUrl = 'http://localhost:4000/api/video/'+ path.slice(37);
 
