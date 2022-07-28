@@ -1544,15 +1544,15 @@ select {
   /**
   @color declaration
   */
-  --clr-common-white: #efe1f4;
+  --clr-common-white: #cfbecd;
   --clr-common-black: #000;
   --clr-body-heading: #161616;
   --clr-body-heading2: #232323;
-  --clr-body-text: #6A6A6A;
+  --clr-body-text: #19001b;
   --clr-body-text2: #878787;
   --clr-body-text3: #787878;
-  --clr-theme-1: #EF0454;
-  --clr-bg-gray: #F9F9F9;
+  --clr-theme-1: #a7a7a7;
+  --clr-bg-gray: #a7a7a7;
   --clr-bg-gray2: #EFEFEF;
   --clr-border-1: #474747;
   --clr-border-2: #757575;
