@@ -382,6 +382,7 @@ private ratTrue = false;
           {
            // this.ratTrue= true;
             this.getRatingByFormation();
+            this.getFormation();
 
           },1000);
 

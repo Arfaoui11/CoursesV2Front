@@ -92,7 +92,7 @@
               </ng-template>
 
               <ngb-rating [(rate)]="rating" [starTemplate]="t"  [max]="5" (rateChange)="changeRating()"></ngb-rating>
-              <pre>Rate: <b>{{rating.toString() | slice: 0 : 4  }}</b></pre>
+              <pre>Rate: <b>{{rating.toString() | slice: 0 : 4  }} </b>({{formation.ratings.length}}) ({{formation.courseApprenants.length}}) students</pre>
               <h2 class="bd-blog-details-title mb-25">{{formation.title.toUpperCase()}}</h2>
 
 
@@ -221,6 +221,7 @@
             </div>
           </div>
           <div >
+            <h3>{{formation.costs}} $</h3>
 
             <div  *ngIf="!show && currentUser" >
               <a  class="theme-btn w-full mb-20 " style="color: white" (click)="assingAppToCourses()"> Add This Courses</a>

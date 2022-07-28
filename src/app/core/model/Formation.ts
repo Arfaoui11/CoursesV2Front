@@ -3,6 +3,7 @@ import {User} from "./User";
 
 import {Quiz} from "./Quiz";
 import {CourseApprenants} from "./courseApprenants";
+import {Rating} from "./Rating";
 
 export class Formation {
 
@@ -15,7 +16,8 @@ export class Formation {
   image!:string;
   images!:string[];
   domain!:string;
-  ratings!:number;
+  description!: string;
+  ratings!:Rating[];
   nbrMaxParticipant!:number;
   costs!:number;
   lieu!: string;
