@@ -206,8 +206,8 @@
             </div>
           </div>
           <div class="bd-service-sidebar-btn">
-            <a  class="theme-btn w-full mb-20 " style="color: white" (click)="playvideo(retrieveVideo[index])">Watch Live</a>
-            <a  class="theme-btn-black w-full" style="color: white" (click)="downloadFiles(retrieveFiles[index].slice(37))">Download Brochure <i class="far fa-arrow-alt-to-bottom"></i></a>
+            <a  class="theme-btn w-full mb-20 " *ngIf="certificate" style="color: white" (click)="downloadFiles(certificate.path)">Your Certificate </a>
+            <a  class="theme-btn-black w-full" style="color: white" (click)="downloadFiles(retrieveFiles[index].slice(37))">Download  <i class="far fa-arrow-alt-to-bottom"></i></a>
           </div>
         </div>
       </div>

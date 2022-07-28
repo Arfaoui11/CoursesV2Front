@@ -279,7 +279,7 @@ export class BlogDetailsComponent implements OnInit {
     }
 
 
-    console.log(this.listQuizTested)
+
 
 
     for (let q of this.listQuizTested)

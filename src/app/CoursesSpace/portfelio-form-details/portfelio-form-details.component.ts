@@ -8,6 +8,8 @@ import {MatSnackBar} from "@angular/material/snack-bar";
 import {HttpClient} from "@angular/common/http";
 import {ActivatedRoute} from "@angular/router";
 import {TokenService} from "../services/token.service";
+import {Result} from "../../core/model/Result";
+import {Certificate} from "../../core/model/Certificate";
 
 @Component({
   selector: 'app-portfelio-form-details',
@@ -42,6 +44,7 @@ export class PortfelioFormDetailsComponent implements OnInit {
   public retrieveVideo: any[]=[];
   public retrieveImage: any[]=[];
   public listFormation: Formation;
+  public certificate: Certificate;
 
 
   constructor(private serviceForm : FormationService,private sanitizer : DomSanitizer,private snackbar:MatSnackBar ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) {
@@ -61,10 +64,10 @@ export class PortfelioFormDetailsComponent implements OnInit {
     setTimeout( () => {
 
 
+      this.getCertifcateByCoursesAndUser();
 
 
-      this.rating = this.formation.ratings;
-    },2000);
+    },1000);
 
     this.serviceForm.getFormationById(this.idFormation)
       .subscribe(
@@ -184,5 +187,13 @@ export class PortfelioFormDetailsComponent implements OnInit {
 
   goToChatRoom(idFormation: string) {
     window.location.href = '#/chatRoom/'+idFormation;
+  }
+
+
+  getCertifcateByCoursesAndUser()
+  {
+    this.serviceForm.getCertifcateByCoursesAndUser(this.idFormation,this.currentUser.id).subscribe((data:Certificate) =>{
+      this.certificate = data;
+    })
   }
 }

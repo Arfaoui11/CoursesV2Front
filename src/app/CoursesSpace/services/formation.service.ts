@@ -6,6 +6,8 @@ import {User} from "../../core/model/User";
 import {PostComment} from "../../core/model/PostComment";
 import {Quiz} from "../../core/model/Quiz";
 import {Rating} from "../../core/model/Rating";
+import {Result} from "../../core/model/Result";
+import {Certificate} from "../../core/model/Certificate";
 
 
 
@@ -327,6 +329,11 @@ export class FormationService {
   getFilesFormation( i: string): Observable<any>
   {
     return this.http.get<any>('http://localhost:8099/Courses/getFiles/'+i);
+  }
+
+  getCertifcateByCoursesAndUser( idC: string,idU : string): Observable<Certificate>
+  {
+    return this.http.get<Certificate>('http://localhost:4000/api/courses/'+idC+'/'+idU,{headers : this.getHeaders()});
   }
 
 
