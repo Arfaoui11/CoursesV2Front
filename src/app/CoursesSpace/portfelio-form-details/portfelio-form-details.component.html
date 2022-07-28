@@ -171,17 +171,18 @@
 
             <div class="sidebar--widget__post mb-20" *ngFor="let vdo of retrieveVideo; let $index = index">
               <div class="sidebar__post--thumb">
-                <a  >
-                  <div class="post__img" >
-                    <img src="../../../assets/front/img/blog/b6.jpg" alt="">
+                <div class="bd-slider-five-video">
+                  <div class="bd-slider-five-video-icon wow fadeInUp" data-wow-delay=".6s">
+                    <a (click)="sendIndex($index,vdo)" class="play_btn popup-video"><i class="flaticon-play"></i></a>
                   </div>
+                  <div class="bd-slider-five-video-text wow fadeInUp" data-wow-delay=".8s">
+                    <span>Watch</span>
+                    <h5> {{vdo | slice:37 : -18  }} </h5>
+                    <span>{{formation.start | date | slice:0 : 12}}</span>
+                  </div>
+                </div>
+              </div>
 
-                </a>
-              </div>
-              <div class="sidebar__post--text">
-                <h4 class="sidebar__post--title"><a (click)="sendIndex($index,vdo)">{{vdo | slice:37 : -18  }}</a></h4>
-                <span>{{formation.start | date | slice:0 : 12}}</span>
-              </div>
             </div>
 
           </div>
@@ -207,7 +208,7 @@
           </div>
           <div class="bd-service-sidebar-btn">
             <a  class="theme-btn w-full mb-20 " *ngIf="certificate" style="color: white" (click)="downloadFiles(certificate.path)">Your Certificate </a>
-            <a  class="theme-btn-black w-full" style="color: white" (click)="downloadFiles(retrieveFiles[index].slice(37))">Download  <i class="far fa-arrow-alt-to-bottom"></i></a>
+            <a  class="theme-btn-black w-full" style="color: white" [href]="pathUrl">Download  <i class="far fa-arrow-alt-to-bottom"></i></a>
           </div>
         </div>
       </div>

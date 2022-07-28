@@ -232,20 +232,21 @@
 
               <h3 class="sidebar__widget--title mb-30"  >Recent Videos</h3>
 
+
               <div class="sidebar--widget__post mb-20" *ngFor="let vdo of retrieveVideo; let $index = index">
                 <div class="sidebar__post--thumb">
-                  <a  >
-                    <div class="post__img" >
-                      <img src="../../../assets/front/img/blog/b6.jpg" alt="">
+                  <div class="bd-slider-five-video">
+                    <div class="bd-slider-five-video-icon wow fadeInUp" data-wow-delay=".6s">
+                      <a [routerLink]="['../../portF',formation.id]" class="play_btn popup-video"><i class="flaticon-play"></i></a>
                     </div>
+                    <div class="bd-slider-five-video-text wow fadeInUp" data-wow-delay=".8s">
+                      <span>Watch</span>
+                      <h5> {{vdo | slice:37 : -18  }} </h5>
+                      <span>{{formation.start | date | slice:0 : 12}}</span>
+                    </div>
+                  </div>
+                </div>
 
-                  </a>
-                </div>
-                <div class="sidebar__post--text">
-                  <!--  <h4 class="sidebar__post--title"><a (click)="sendIndex($index)">{{vdo.fileName}}</a></h4>-->
-                  <h4 class="sidebar__post--title"><a [routerLink]="['../../portF',formation.id]">{{vdo}}</a></h4>
-                  <span>{{formation.start | date | slice:0 : 12}}</span>
-                </div>
               </div>
 
             </div>
