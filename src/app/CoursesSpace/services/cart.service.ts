@@ -64,11 +64,17 @@ export class CartService {
         this.cartItemList.splice(index,1);
       }
     })
-    this.coursesList.next(this.cartItemList);
+
+    this.saveCartList(this.cartItemList);
+    const list = this.getCart();
+    this.coursesList.next(list);
   }
   removeAllCart(){
     this.cartItemList = []
-    this.coursesList.next(this.cartItemList);
+    this.saveCartList(this.cartItemList);
+    const list = this.getCart();
+    this.coursesList.next(list);
+
   }
 
 
