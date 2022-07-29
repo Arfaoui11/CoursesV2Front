@@ -31,6 +31,7 @@ import {CallVideoComponent} from "./CoursesSpace/call-video/call-video.component
 import {TeamComponent} from "./CoursesSpace/team/team.component";
 import {RegisterComponent} from "./BackEnd/register/register.component";
 import {ChatComponent} from "./CoursesSpace/chatClient/chat/chat.component";
+import {CartComponent} from "./CoursesSpace/cart/cart.component";
 
 
 
@@ -90,6 +91,7 @@ const routes: Routes =
              { path: 'detailsF/:idCourses', component: BlogDetailsComponent },
              { path: 'quiz/:idQuiz', component: QuizComponent },
              { path: 'quizWelcome', component: WelcomeComponent },
+             { path: 'cart', component: CartComponent },
              { path: '**',  component: E404Component },
 
            ]

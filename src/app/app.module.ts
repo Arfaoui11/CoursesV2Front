@@ -85,6 +85,7 @@ import { TeamComponent } from './CoursesSpace/team/team.component';
 import {RegisterComponent} from "./BackEnd/register/register.component";
 import { ChatComponent } from './CoursesSpace/chatClient/chat/chat.component';
 import { UsersComponent } from './CoursesSpace/chatClent/users/users.component';
+import {CartComponent} from "./CoursesSpace/cart/cart.component";
 
 
 
@@ -109,6 +110,7 @@ FullCalendarModule.registerPlugins([
     CoursesFormComponent,
     HomeComponent,
     FooterComponent,
+    CartComponent,
     NavbarComponent,
     LayoutComponent,
     SidbarComponent,

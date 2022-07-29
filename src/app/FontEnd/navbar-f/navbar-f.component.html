@@ -91,6 +91,10 @@
                   <img [src]="currentUser.file" class="img-lg" alt="img">
                 </div>
                 <div class="bd-header-contacts-text">
+                  <button [routerLink]="['/front/End/cart']" class="btn btn-primary">
+                    <i style="font-size: 30px;" class="fas fa-cart-plus"></i>
+                    <div style="font-size: 10px;" class="badge bg-danger">{{totalItem}}</div>
+                  </button>
                   <span *ngIf="currentUser"> Welcome {{currentUser.lastName.toUpperCase()}}</span>
                   <button class="theme-btn w-full mb-12" style="width: 22px;height: 55px" *ngIf="!currentUser" [routerLink]="['/login']">Login</button>
                   <button class="theme-btn w-full mb-12" style="width: 30px;height: 55px" *ngIf="currentUser"  (click)="logout()">Logout</button>

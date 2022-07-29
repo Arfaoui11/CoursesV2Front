@@ -11,6 +11,7 @@ import {TokenService} from "../services/token.service";
 import {Quiz} from "../../core/model/Quiz";
 import {AppService} from "../services/app.service";
 import {Rating} from "../../core/model/Rating";
+import {CartService} from "../services/cart.service";
 
 @Component({
   selector: 'app-blog-details',
@@ -73,7 +74,7 @@ export class BlogDetailsComponent implements OnInit {
 
 
 
-  constructor(private serviceForm : FormationService,private appService: AppService,private sanitizer : DomSanitizer,private snackbar:MatSnackBar ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) {
+  constructor( private cartService : CartService,private serviceForm : FormationService,private appService: AppService,private sanitizer : DomSanitizer,private snackbar:MatSnackBar ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) {
     this.currentUser = this.token.getUser();
     this.getUserTested();
 
@@ -545,5 +546,9 @@ private ratTrue = false;
 
     }
     return false;
+  }
+
+  addtocart(item: any) {
+    this.cartService.addtoCart(item);
   }
 }

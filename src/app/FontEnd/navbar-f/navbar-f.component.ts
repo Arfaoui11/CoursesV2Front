@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenService} from "../../CoursesSpace/services/token.service";
+import {CartService} from "../../CoursesSpace/services/cart.service";
 
 @Component({
   selector: 'app-navbar-f',
@@ -9,7 +10,7 @@ import {TokenService} from "../../CoursesSpace/services/token.service";
 export class NavbarFComponent implements OnInit {
 
 
-
+  public totalItem : number = 0;
   private roles: string[];
   isLoggedIn = false;
   showAdminBoard = false;
@@ -17,10 +18,13 @@ export class NavbarFComponent implements OnInit {
   username: string;
   currentUser: any;
 
-  constructor(private token: TokenService) {
+  constructor(private token: TokenService,private cartService : CartService) {
     this.currentUser = this.token.getUser();
   }
   ngOnInit(): void {
+
+
+
 
     this.isLoggedIn = !!this.token.getToken();
 
@@ -35,6 +39,12 @@ export class NavbarFComponent implements OnInit {
 
       this.username = user.displayName;
     }
+
+
+    this.cartService.getCourses()
+      .subscribe(res=>{
+        this.totalItem = res.length;
+      })
   }
   logout(): void {
     this.token.signOut();
