@@ -207,48 +207,6 @@ export class BlogDetailsComponent implements OnInit {
     this.serviceForm.getFormationById(this.idFormation).subscribe(data => {
       this.formation = data;
 
-
-/*
-    for (let app of this.formation.courseApprenants)
-    {
-      if (app.userA.id == this.currentUser.id)
-      {
-        this.show = true;
-      }
-    }
-    if (this.formation.quizzes.length > 0 )
-    {
-      if (this.listQuizTested.length === 0)
-      {
-        this.nbrQuiztoCertifcate =  5 - ( this.formation.quizzes.length ) ;
-      }else {
-        this.nbrQuiztoCertifcate =  5 - ( this.formation.quizzes.length - ( this.formation.quizzes.length - this.listQuizTested.length )) ;
-      }
-
-    }
-
-
-  console.log(this.listQuizTested)
-
-
-    for (let q of this.listQuizTested)
-    {
-      let createAt = new Date(q.createdAt);
-      let today = new Date(Date.parse(Date()));
-      if (createAt < today )
-      {
-        this.quiz =q;
-        this.go = true;
-      }
-    }
-
-
-      //this.rating = this.formation.ratings;
-
-
- */
-
-
     });
     return this.formation;
   }

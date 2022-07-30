@@ -1,6 +1,7 @@
-import {Injectable, OnInit} from '@angular/core';
+import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
 import {HttpClient} from "@angular/common/http";
+import {Formation} from "../../core/model/Formation";
 
 const Cart = 'cart-list';
 @Injectable({
@@ -8,7 +9,8 @@ const Cart = 'cart-list';
 })
 export class CartService {
 
-  public cartItemList : any =[];
+  public cartItemList : Formation[] =[];
+ // public coursesList = new BehaviorSubject<any>([]);
   public coursesList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
@@ -32,12 +34,19 @@ export class CartService {
     this.coursesList.next(product);
   }
   addtoCart(product : any){
-    this.cartItemList.push(product);
-    this.saveCartList(this.cartItemList);
-    const list = this.getCart();
-    this.coursesList.next(list);
 
-    console.log(this.coursesList);
+    const exist = this.cartItemList.filter(item => item.id == product.id);
+    if (exist.length === 0)
+    {
+      this.cartItemList.push(product);
+      this.saveCartList(this.cartItemList);
+      const list = this.getCart();
+      this.coursesList.next(list);
+    }else {
+      console.log(exist)
+    }
+
+
 
     this.getTotalPrice();
     console.log(this.cartItemList)
@@ -53,6 +62,7 @@ export class CartService {
   }
   getTotalPrice() : number{
     let grandTotal = 0;
+    this.cartItemList= this.getCart();
     this.cartItemList.map((a:any)=>{
       grandTotal += a.costs;
     })
