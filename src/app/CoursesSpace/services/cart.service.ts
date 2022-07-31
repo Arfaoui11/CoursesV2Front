@@ -1,6 +1,6 @@
 import {Injectable} from '@angular/core';
 import {BehaviorSubject, Observable} from 'rxjs';
-import {HttpClient} from "@angular/common/http";
+import {HttpClient, HttpHeaders} from "@angular/common/http";
 import {Formation} from "../../core/model/Formation";
 
 const Cart = 'cart-list';
@@ -9,14 +9,15 @@ const Cart = 'cart-list';
 })
 export class CartService {
 
-  public cartItemList : Formation[] =[];
- // public coursesList = new BehaviorSubject<any>([]);
+  public cartItemList : any[] =[];
   public coursesList = new BehaviorSubject<any>([]);
   public search = new BehaviorSubject<string>("");
 
   constructor(private http : HttpClient) { }
 
-
+  getHeaders() {
+    return new HttpHeaders().set('Authorization', `Bearer ${sessionStorage.getItem('auth-token')}`);
+  }
 
 
   getCourses(){
@@ -25,8 +26,12 @@ export class CartService {
     return this.coursesList.asObservable();
   }
 
-  saveOrder(): Observable<any> {
-    return this.http.post<any>("http://localhost:4000/api/orgs",this.cartItemList)
+  saveOrder(id : string): Observable<any> {
+
+    const l = this.cartItemList;
+    this.removeAllCart();
+    return this.http.post('http://localhost:4000/api/checkout/'+id,l,{headers : this.getHeaders()});
+
   }
 
   setProduct(product : any){
@@ -36,6 +41,7 @@ export class CartService {
   addtoCart(product : any){
 
     const exist = this.cartItemList.filter(item => item.id == product.id);
+    console.log(exist);
     if (exist.length === 0)
     {
       this.cartItemList.push(product);

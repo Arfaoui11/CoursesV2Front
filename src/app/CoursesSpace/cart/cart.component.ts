@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {CartService} from "../services/cart.service";
+import {TokenService} from "../services/token.service";
+import {User} from "../../core/model/User";
 
 
 
@@ -12,15 +14,24 @@ export class CartComponent implements OnInit {
 
   public courses : any = [];
   public grandTotal !: number;
-  constructor(private cartService : CartService) { }
+  currentUser: User;
+  constructor(private cartService : CartService,private token: TokenService) {
+    this.currentUser = this.token.getUser();
+
+
+  }
 
   ngOnInit(): void {
+
+
+
     this.cartService.getCourses()
     .subscribe((res)=>{
       this.courses = res;
       console.log(res)
       this.grandTotal = this.cartService.getTotalPrice();
-    })
+    });
+
   }
   removeItem(item: any){
     this.cartService.removeCartItem(item);
@@ -30,6 +41,6 @@ export class CartComponent implements OnInit {
   }
 
   checkout() {
-    this.cartService.saveOrder().subscribe(data => console.log(data))
+    this.cartService.saveOrder(this.currentUser.id).subscribe(data => console.log(data))
   }
 }
