@@ -3,6 +3,7 @@ import { BrowserModule } from '@angular/platform-browser';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+
 import {HttpClientModule} from "@angular/common/http";
 import {FormsModule, ReactiveFormsModule} from "@angular/forms";
 import {GoogleChartsModule} from "angular-google-charts";
@@ -13,9 +14,7 @@ import {MatButtonModule} from "@angular/material/button";
 import {MatSnackBarModule} from "@angular/material/snack-bar";
 
 import {
-
   ScheduleAllModule,
-
   RecurrenceEditorModule, ScheduleModule
 } from "@syncfusion/ej2-angular-schedule";
 import { CalendarComponent } from './CoursesSpace/calendar/calendar.component';
@@ -88,6 +87,12 @@ import { UsersComponent } from './CoursesSpace/chatClent/users/users.component';
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
 
 
+import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
+import {
+  GoogleLoginProvider
+} from 'angularx-social-login';
+
+
 
 FullCalendarModule.registerPlugins([
   dayGridPlugin,
@@ -140,7 +145,7 @@ FullCalendarModule.registerPlugins([
     CallVideoComponent,
     TeamComponent,
     ChatComponent,
-    UsersComponent,
+    UsersComponent
 
   ],
   imports: [
@@ -151,6 +156,7 @@ FullCalendarModule.registerPlugins([
     DropDownListModule,
     MultiSelectModule,
     ComboBoxModule,
+    SocialLoginModule,
     CheckBoxModule,
     ButtonModule,
     SwitchModule,
@@ -194,8 +200,22 @@ FullCalendarModule.registerPlugins([
     FlatpickrModule.forRoot(),
 
   ],
-  providers: [CalendarComponent, { provide: APP_BASE_HREF, useValue: '/' }, Location,
-    { provide: LocationStrategy, useClass: HashLocationStrategy }],
+  providers: [
+    {
+      provide: 'SocialAuthServiceConfig',
+      useValue: {
+        autoLogin: false,
+        providers: [
+          {
+            id: GoogleLoginProvider.PROVIDER_ID,
+            provider: new GoogleLoginProvider(
+              '340122199327-o9gdlce1uan9k434s0rf5lr75oi5ccb0.apps.googleusercontent.com' // add web app client id
+            )
+          }
+        ]
+      } as SocialAuthServiceConfig
+    }
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

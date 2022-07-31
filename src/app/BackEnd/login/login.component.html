@@ -11,7 +11,7 @@
           <div class="card bg-authentication rounded-0 mb-0">
             <div class="row m-0">
               <div class="col-lg-6 d-lg-block d-none text-center align-self-center px-1 py-0">
-                <img src="assets/images/pages/login.png" alt="branding logo">
+                <img src="../../../assets/images/pages/login.png" alt="branding logo">
               </div>
               <div class="col-lg-6 col-12 p-0">
                 <div class="card rounded-0 mb-0 px-2">
@@ -59,13 +59,20 @@
                               </div>
                             </fieldset>
                           </div>
-                          <div class="text-right"><a href="auth-forgot-password.html" class="card-link">Forgot Password?</a></div>
+                          <div class="text-right"><a  class="card-link">Forgot Password?</a></div>
                         </div>
                         <a [routerLink]="['../register']" class="btn btn-outline-primary float-left btn-inline">Register</a>
                         <button type="submit" class="btn btn-primary float-right btn-inline">Login</button>
 
 
                       </form>
+                      <button class="btn btn-block google-sign-in" (click)="signInHandler()">
+                        <img src="../../../assets/front/img/logo/google_48px.png" alt="google"/>
+                        <span>Continue with Google</span>
+                      </button>
+                      <button *ngIf="user" (click)="signOut()">signOut</button>
+                      <img [src]="user.photoUrl" alt="">
+
                       <div class="alert alert-success" *ngIf="isLoggedIn">Welcome {{currentUser.lastName}} <br>Logged in as {{ currentUser.type }}.</div>
                     </div>
                   </div>

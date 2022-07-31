@@ -87,7 +87,7 @@
                 </form>
               </div>
              <div class="rounded-pill">
-               <button [routerLink]="['/front/End/cart']" class="btn btn-bitbucket">
+               <button [routerLink]="['/front/End/cart']" class="btn btn-google">
                  <i style="font-size: 30px;" class="fas fa-shopping-cart"></i>
                  <div style="font-size: 10px;" class="badge bg-dark">{{totalItem}}</div>
                </button>
@@ -97,6 +97,7 @@
                   <img [src]="currentUser.file" class="img-lg" alt="img">
                 </div>
                 <div class="bd-header-contacts-text">
+
 
                   <span *ngIf="currentUser"> Welcome {{currentUser.lastName.toUpperCase()}}</span>
                   <button class="theme-btn w-full mb-12" style="width: 22px;height: 55px" *ngIf="!currentUser" [routerLink]="['/login']">Login</button>

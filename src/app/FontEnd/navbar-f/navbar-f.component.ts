@@ -1,6 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenService} from "../../CoursesSpace/services/token.service";
 import {CartService} from "../../CoursesSpace/services/cart.service";
+import {FormationService} from "../../CoursesSpace/services/formation.service";
+import {Router} from "@angular/router";
 
 @Component({
   selector: 'app-navbar-f',
@@ -9,7 +11,7 @@ import {CartService} from "../../CoursesSpace/services/cart.service";
 })
 export class NavbarFComponent implements OnInit {
 
-
+  public userDetails:any ;
   public totalItem : number = 0;
   private roles: string[];
   isLoggedIn = false;
@@ -18,10 +20,18 @@ export class NavbarFComponent implements OnInit {
   username: string;
   currentUser: any;
 
-  constructor(private token: TokenService,private cartService : CartService) {
+  constructor(private token: TokenService,private cartService : CartService,private router:Router) {
     this.currentUser = this.token.getUser();
   }
   ngOnInit(): void {
+
+    const storage = localStorage.getItem('google_auth');
+
+    if (storage) {
+      this.userDetails = JSON.parse(storage);
+    } else {
+      //this.signOut();
+    }
 
     this.cartService.getCourses()
       .subscribe(res=>{
@@ -46,6 +56,11 @@ export class NavbarFComponent implements OnInit {
 
 
   }
+  signOut(): void {
+    localStorage.removeItem('google_auth')
+    this.router.navigateByUrl('/login').then();
+  }
+
   logout(): void {
     this.token.signOut();
    window.location.reload();

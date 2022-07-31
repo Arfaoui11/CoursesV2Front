@@ -6,6 +6,10 @@ import {TokenService} from "../../CoursesSpace/services/token.service";
 import {UserServicesService} from "../../CoursesSpace/services/user-services.service";
 import {User} from "../../core/model/User";
 import {AppdataService} from "../../CoursesSpace/services/appdata.service";
+import {GoogleLoginProvider, SocialAuthService, SocialUser} from 'angularx-social-login';
+
+
+
 
 @Component({
   selector: 'app-login',
@@ -24,10 +28,19 @@ export class LoginComponent implements OnInit {
   showAdminBoard = false;
   showStudentBoard = false;
   showFormerBoard = false;
+  public user: SocialUser;
 
-  constructor(private appDataService: AppdataService,private authService: FormationService,private router:Router, private tokenStorage: TokenService, private route: ActivatedRoute, private userService: UserServicesService) { }
+
+
+
+  constructor(private authServiceGoogle: SocialAuthService,private appDataService: AppdataService,private authService: FormationService,private router:Router, private tokenStorage: TokenService, private route: ActivatedRoute, private userService: UserServicesService) { }
 
   ngOnInit(): void {
+
+    this.authServiceGoogle.authState.subscribe((user) => {
+      this.user = user;
+    })
+
     const token: string | null = this.route.snapshot.queryParamMap.get('token');
     const error: string | null = this.route.snapshot.queryParamMap.get('error');
     if (this.tokenStorage.getToken()) {
@@ -93,5 +106,18 @@ export class LoginComponent implements OnInit {
       window.location.href = '#';
     }
   }
+
+
+  signInHandler(): void {
+    this.authServiceGoogle.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
+      localStorage.setItem('google_auth', JSON.stringify(data));
+     // this.router.navigateByUrl('/front/End/homeF').then();
+    });
+  }
+  signOut(): void {
+    localStorage.removeItem('google_auth')
+    this.router.navigateByUrl('/login').then();
+  }
+
 
 }

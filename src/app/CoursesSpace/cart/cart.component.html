@@ -14,7 +14,7 @@
                             <th>Courses Image</th>
                             <th>Description</th>
                             <th>Price</th>
-                            <th>Rating</th>
+                            <th>Ratings</th>
                             <th>Action</th>
                         </tr>
                     </thead>
@@ -25,9 +25,7 @@
                             <td><img style="width: 120px;" src="{{item.image}}" alt=""></td>
                             <td style="width: 25%;">{{item.domain}}</td>
                             <th style="width: 12%;">{{item.costs}}</th>
-                            <td style="width: 12%;"> <span class="star" [class.full]="item.ratings.length === 100">
-                    <span class="half" [style.width.%]="item.ratings.length">&star;</span>&star;
-                  </span></td>
+                            <td style="width: 12%;"> {{item.ratings.length}} &star;&star; </td>
                             <td>
                                 <button (click)="removeItem(item)" class="btn btn-danger"><i class="fas fa-trash-alt"></i></button>
                             </td>
