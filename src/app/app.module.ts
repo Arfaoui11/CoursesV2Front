@@ -91,6 +91,7 @@ import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-logi
 import {
   GoogleLoginProvider
 } from 'angularx-social-login';
+import { LoginFComponent } from './CoursesSpace/login-f/login-f.component';
 
 
 
@@ -145,7 +146,8 @@ FullCalendarModule.registerPlugins([
     CallVideoComponent,
     TeamComponent,
     ChatComponent,
-    UsersComponent
+    UsersComponent,
+    LoginFComponent
 
   ],
   imports: [

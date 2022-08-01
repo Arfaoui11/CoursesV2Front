@@ -82,7 +82,7 @@
     "ngx-toastr": "^14.3.0",
     "ngx-videogular": "^13.2.4",
     "ngx-webstorage": "^9.0.0",
-    "rxjs": "~6.6.0",
+    "rxjs": "^6.6.7",
     "save": "^2.5.0",
     "save-as": "^0.1.8",
     "socket.io": "^4.5.1",
