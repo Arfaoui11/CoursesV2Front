@@ -6,21 +6,20 @@ import {
   HttpInterceptor
 } from '@angular/common/http';
 import { Observable } from 'rxjs';
-import {OAuthService} from "angular-oauth2-oidc";
+
 
 @Injectable()
 export class HeadersInterceptor implements HttpInterceptor {
-
-  constructor(private readonly oAuthService: OAuthService) {}
+  constructor() {}
 
   intercept(request: HttpRequest<unknown>, next: HttpHandler): Observable<HttpEvent<unknown>> {
     if (request.url.includes('openid-configuration')) {
       return next.handle(request);
     }
 
-    const userToken = this.oAuthService.getAccessToken();
+
     const modifiedReq = request.clone({
-      headers: request.headers.set('Authorization', `Bearer ${userToken}`),
+      headers: request.headers.set('Authorization', `Bearer ${sessionStorage.getItem('auth-token')}`),
     });
 
     return next.handle(modifiedReq);

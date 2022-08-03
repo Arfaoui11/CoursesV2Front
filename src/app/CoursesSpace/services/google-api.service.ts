@@ -53,7 +53,7 @@ export class GoogleApiService {
       // // This method just tries to parse the token(s) within the url when
       // // the auth-server redirects the user back to the web-app
       // // It doesn't send the user the the login page
-      oAuthService.tryLoginImplicitFlow().then( () => {
+      oAuthService.tryLogin().then( () => {
 
         // when not logged in, redirecvt to google for login
         // else load user profile

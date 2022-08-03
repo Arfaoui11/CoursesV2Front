@@ -37,9 +37,9 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.authServiceGoogle.authState.subscribe((user) => {
+   /* this.authServiceGoogle.authState.subscribe((user) => {
       this.user = user;
-    })
+    })*/
 
     const token: string | null = this.route.snapshot.queryParamMap.get('token');
     const error: string | null = this.route.snapshot.queryParamMap.get('error');
@@ -110,13 +110,11 @@ export class LoginComponent implements OnInit {
 
   signInHandler(): void {
     this.authServiceGoogle.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
+      console.log(data)
+      sessionStorage.setItem("google_auth", JSON.stringify(data))
       localStorage.setItem('google_auth', JSON.stringify(data));
-     // this.router.navigateByUrl('/front/End/homeF').then();
-    });
-  }
-  signOut(): void {
-    localStorage.removeItem('google_auth')
-    this.router.navigateByUrl('/login').then();
+      this.router.navigateByUrl('/dashboardF').then();
+    })
   }
 
 

@@ -87,11 +87,13 @@ import { UsersComponent } from './CoursesSpace/chatClent/users/users.component';
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
 
 
-import { SocialLoginModule, SocialAuthServiceConfig } from 'angularx-social-login';
-import {
-  GoogleLoginProvider
-} from 'angularx-social-login';
-import { LoginFComponent } from './CoursesSpace/login-f/login-f.component';
+
+import {SocialLoginModule} from "angularx-social-login";
+import {GoogleLoginProvider, SocialAuthServiceConfig, } from "angularx-social-login";
+import { LoginFComponent } from './Courses/login-f/login-f.component';
+import {OAuthModule} from "angular-oauth2-oidc";
+import { DashboardFComponent } from './Courses/dashboard-f/dashboard-f.component';
+
 
 
 
@@ -99,8 +101,6 @@ FullCalendarModule.registerPlugins([
   dayGridPlugin,
   interactionPlugin
 ]);
-
-
 
 
 @NgModule({
@@ -147,7 +147,8 @@ FullCalendarModule.registerPlugins([
     TeamComponent,
     ChatComponent,
     UsersComponent,
-    LoginFComponent
+    LoginFComponent,
+    DashboardFComponent
 
   ],
   imports: [
@@ -156,6 +157,7 @@ FullCalendarModule.registerPlugins([
     ScheduleModule,
     RecurrenceEditorModule,
     DropDownListModule,
+    OAuthModule.forRoot(),
     MultiSelectModule,
     ComboBoxModule,
     SocialLoginModule,

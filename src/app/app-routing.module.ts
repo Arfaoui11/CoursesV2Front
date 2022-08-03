@@ -32,6 +32,9 @@ import {TeamComponent} from "./CoursesSpace/team/team.component";
 import {RegisterComponent} from "./BackEnd/register/register.component";
 import {ChatComponent} from "./CoursesSpace/chatClient/chat/chat.component";
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
+import {LoginFComponent} from "./Courses/login-f/login-f.component";
+import {DashboardFComponent} from "./Courses/dashboard-f/dashboard-f.component";
+
 
 
 
@@ -41,10 +44,12 @@ const routes: Routes =
    [
 
      {path:'login',component: LoginComponent },
+     {path:'loginF',component: LoginFComponent },
+     {path:'dashboardF',component: DashboardFComponent },
      {path:'register',component: RegisterComponent },
      {path:'chatRoom/:idCourses',component: CallVideoComponent },
      {path:'homeF',component: HomeFComponent },
-     { path: '',  redirectTo: '/front/End/homeF', pathMatch: 'full' },
+     { path: '',  redirectTo: 'front/End/homeF', pathMatch: 'full' },
      {
        path: 'home',
        component: HomeComponent,

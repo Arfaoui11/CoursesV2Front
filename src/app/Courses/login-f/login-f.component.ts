@@ -1,8 +1,5 @@
-import {Component, OnInit} from '@angular/core';
-import { lastValueFrom } from 'rxjs';
-import {GoogleApiService, UserInfo} from "../services/google-api.service";
-
-
+import { Component, OnInit } from '@angular/core';
+import {GoogleApiService, UserInfo} from "../../CoursesSpace/services/google-api.service";
 
 @Component({
   selector: 'app-login-f',
@@ -11,7 +8,8 @@ import {GoogleApiService, UserInfo} from "../services/google-api.service";
 })
 export class LoginFComponent implements OnInit {
 
-  mailSnippets: string[] = []
+
+  mailSnippets: string[] = [];
   userInfo?: UserInfo;
 
   constructor(private readonly googleApi: GoogleApiService) {
@@ -33,14 +31,10 @@ export class LoginFComponent implements OnInit {
       return;
     }
 
-    const userId = this.userInfo?.info.sub as string
-    const messages = await lastValueFrom(this.googleApi.emails(userId))
-    messages.messages.forEach( (element: any) => {
-      const mail = lastValueFrom(this.googleApi.getMail(userId, element.id))
-      mail.then( mail => {
-        this.mailSnippets.push(mail.snippet)
-      })
-    });
+    const userId = this.userInfo?.info.sub as string;
+
+    setTimeout( () =>{ window.location.href = '/front/End/homeF';},500);
+    console.log(userId)
   }
 
   ngOnInit(): void {

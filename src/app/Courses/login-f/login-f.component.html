@@ -1,7 +1,7 @@
 <div *ngIf="isLoggedIn()">
   <div class="container">Hi and welcome!</div>
   <div class="container">Name: {{ userInfo?.info?.name }}</div>
-  <div class="container"><img src="{{ userInfo?.info?.picture }}"></div>
+  <div class="container"><img src="{{ userInfo?.info?.picture }}" alt=""></div>
   <div class="container">
     <button (click)="getEmails()">List Emails</button>
   </div>
@@ -12,4 +12,3 @@
     <button (click)="logout()">Logout from Google</button>
   </div>
 </div>
-

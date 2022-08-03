@@ -66,12 +66,12 @@
 
 
                       </form>
-                      <button class="btn btn-block google-sign-in" (click)="signInHandler()">
+                      <button class="btn btn-block google-sign-in" [routerLink]="['/loginF']">
                         <img src="../../../assets/front/img/logo/google_48px.png" alt="google"/>
                         <span>Continue with Google</span>
                       </button>
-                      <button *ngIf="user" (click)="signOut()">signOut</button>
-                      <img [src]="user.photoUrl" alt="">
+
+
 
                       <div class="alert alert-success" *ngIf="isLoggedIn">Welcome {{currentUser.lastName}} <br>Logged in as {{ currentUser.type }}.</div>
                     </div>
