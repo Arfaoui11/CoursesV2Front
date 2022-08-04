@@ -111,9 +111,9 @@ export class LoginComponent implements OnInit {
   signInHandler(): void {
     this.authServiceGoogle.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
       console.log(data)
-      sessionStorage.setItem("google_auth", JSON.stringify(data))
-      localStorage.setItem('google_auth', JSON.stringify(data));
-      this.router.navigateByUrl('/dashboardF').then();
+     // sessionStorage.setItem("google_auth", JSON.stringify(data))
+     // localStorage.setItem('google_auth', JSON.stringify(data));
+    //  this.router.navigateByUrl('/dashboardF').then();
     })
   }
 

@@ -88,11 +88,11 @@ import {CartComponent} from "./CoursesSpace/cart/cart.component";
 
 
 
-import {SocialLoginModule} from "angularx-social-login";
-import {GoogleLoginProvider, SocialAuthServiceConfig, } from "angularx-social-login";
+
 import { LoginFComponent } from './Courses/login-f/login-f.component';
 import {OAuthModule} from "angular-oauth2-oidc";
 import { DashboardFComponent } from './Courses/dashboard-f/dashboard-f.component';
+import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "angularx-social-login";
 
 
 

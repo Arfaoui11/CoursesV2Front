@@ -92,8 +92,8 @@ export class BlogDetailsComponent implements OnInit {
 
 
     this.getFormation();
-   // if (this.currentUser)
-    //this.getListQuizTestByUser();
+    if (this.currentUser)
+    this.getListQuizTestByUser();
     setTimeout( () => {
       fetch(`https://api.openweathermap.org/data/2.5/weather?q=${this.formation.lieu}&units=metric&appid=50a7aa80fa492fa92e874d23ad061374`)
         .then(response => response.json())
@@ -264,7 +264,11 @@ export class BlogDetailsComponent implements OnInit {
         this.getCommentByFormation()
 
       },
-
+      (error => {
+        this.snackbar.open(' You are excluded with any comment write 20 days ', 'Undo', {
+          duration: 2000
+        });
+      })
     );
   }
 
@@ -277,6 +281,34 @@ export class BlogDetailsComponent implements OnInit {
     this.serviceForm.getCommentByFormation(this.idFormation).subscribe(
       (data: PostComment[]) => {
         this.comment = data;
+
+        for (let l of this.comment) {
+          let xx = new XMLHttpRequest();
+          let xmll = new XMLHttpRequest();
+
+          let nbL=0;
+          let nbD=0;
+          xmll.onreadystatechange = ()=>
+          {
+            l.nbrDisLikes = JSON.parse(xmll.responseText)
+          };
+          xx.onreadystatechange = ()=>
+          {
+            l.nbrLikes = JSON.parse(xx.responseText)
+          };
+
+          xx.open('get','http://localhost:8099/Courses/getNbrLikesByComment/'+l.idComn,true);
+
+
+          xx.send(null);
+
+
+          xmll.open('get','http://localhost:8099/Courses/getNbrDislikesByComment/'+l.idComn,true);
+
+
+          xmll.send(null);
+
+        }
 
       }
     );
