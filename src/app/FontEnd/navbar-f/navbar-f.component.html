@@ -95,17 +95,15 @@
               <div class="bd-header-contacts">
                 <div class="comments-avatar" >
                   <img *ngIf="currentUser" [src]="currentUser.file" class="img-lg" alt="img">
-                  <img *ngIf="userInfo" src="{{ userInfo?.info?.picture }}" class="img-lg" alt="img">
                 </div>
                 <div class="bd-header-contacts-text">
 
-                  <div class="container" *ngIf="userInfo" >Name: {{ userInfo?.info?.name }}</div>
+
 
                   <span *ngIf="currentUser"> Welcome {{currentUser.lastName.toUpperCase()}}</span>
                   <button class="theme-btn w-full mb-12" style="width: 22px;height: 55px" *ngIf="!currentUser" [routerLink]="['/login']">Login</button>
                   <button class="theme-btn w-full mb-12" style="width: 30px;height: 55px" *ngIf="currentUser"  (click)="logout()">Logout</button>
-                  <button class="theme-btn w-full mb-12" style="width: 30px;height: 55px" *ngIf="userInfo"  (click)="logoutG()">Logout</button>
-                </div>
+                    </div>
               </div>
             </div>
           </div>

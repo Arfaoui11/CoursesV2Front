@@ -1,0 +1,90 @@
+
+<div class="app-main" id="main">
+  <!-- begin container-fluid -->
+  <div class="container-fluid">
+    <!-- begin row -->
+    <h1> Search </h1>
+
+
+    <form  (click)="SearchMultiple(key.value)">
+      <div class="from-group row">
+        <div class="col-6 col-sm-5">
+          <input class="form-control ag-row-hover" style="width: 400px;height: 50px ;font-size:large"  type="search"  #key="ngModel" ngModel
+                 name="key" placeholder="Search Courses">
+        </div>
+        <div class="col-5 col-sm-3">
+          <button class="theme-btn-border w-full" style="width: 60px" type="submit"> Search </button>
+        </div>
+      </div>
+    </form>
+
+
+
+    <br>
+
+    <div class="card-header">
+      <h3 class="card-title"> DataTable with Courses details </h3>
+      <br>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body">
+
+      <div class="container"  >
+        <table id="example1" class="table table-bordered table-striped">
+          <thead>
+          <tr>
+            <th>Titre</th>
+            <th>Level</th>
+            <th>Domain</th>
+            <th>Costs</th>
+            <th>Delete</th>
+            <th>Update</th>
+            <th>Add quiz</th>
+            <th>Details</th>
+            <th>QrCode</th>
+          </tr>
+          </thead>
+          <tbody>
+          <tr *ngFor="let l of listFomation">
+
+            <td>{{l.title}}</td>
+            <td>{{l.level}}</td>
+            <td>{{l.domain}}</td>
+            <td>{{l.costs}} DT</td>
+            <td >
+              <button class="btn btn-outline-danger" (click)="deleteFormation(l.id)">Delete</button>
+            </td>
+            <td>
+              <button  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="dataId(l.id)" >Update</button>
+            </td>
+            <td>
+              <button class="btn btn-outline-instagram" [routerLink]="['../Quiz',l.id]">Add Quiz</button>
+            </td>
+            <td>
+              <button class="btn btn-outline-foursquare" [routerLink]="['../videoplaylist',l.id]">Details</button>
+            </td>
+            <td>
+              <ngx-qrcode [elementType]="elementType"  [value]="l.toString()" [width]="50"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode>
+            </td>
+
+          </tr>
+
+          </tbody>
+          <tfoot>
+          <tr>
+            <th>Titre</th>
+            <th>Level</th>
+            <th>Domain</th>
+            <th>Costs</th>
+            <th>Delete</th>
+            <th>Update</th>
+            <th>Add quiz</th>
+            <th>Details</th>
+            <th>QrCode</th>
+          </tr>
+          </tfoot>
+        </table>
+
+      </div>
+    </div>
+  </div>

@@ -155,7 +155,7 @@ export class FormationService {
 
   SerachMultiple(key:string) :Observable<Formation[]>
   {
-    return this.http.get<Formation[]>('http://localhost:8099/Courses/SearchMultiple/'+key);
+    return this.http.post<any>('http://localhost:4000/api/courses/searchSingleKey',{"key":key},{headers : this.getHeaders()});
   }
 
   getFormateurbyFormation(id : string):Observable<User>

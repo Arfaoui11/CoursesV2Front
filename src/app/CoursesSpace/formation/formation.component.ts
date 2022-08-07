@@ -278,6 +278,10 @@ export class FormationComponent implements OnInit {
     this.serviceForm.SerachMultiple(key).subscribe(
       (data:Formation[]) => {
         this.listFomation =data
+        if (this.listFomation.length == 0 )
+          this.snackbar.open(' Not Found', 'Undo', {
+            duration: 2000
+          });
       }
     )
   }

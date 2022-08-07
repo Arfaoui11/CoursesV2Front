@@ -85,14 +85,10 @@ import {RegisterComponent} from "./BackEnd/register/register.component";
 import { ChatComponent } from './CoursesSpace/chatClient/chat/chat.component';
 import { UsersComponent } from './CoursesSpace/chatClent/users/users.component';
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
-
-
-
-
-import { LoginFComponent } from './Courses/login-f/login-f.component';
 import {OAuthModule} from "angular-oauth2-oidc";
-import { DashboardFComponent } from './Courses/dashboard-f/dashboard-f.component';
+
 import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "angularx-social-login";
+import { UserListComponent } from './CoursesSpace/user-list/user-list.component';
 
 
 
@@ -147,8 +143,8 @@ FullCalendarModule.registerPlugins([
     TeamComponent,
     ChatComponent,
     UsersComponent,
-    LoginFComponent,
-    DashboardFComponent
+    UserListComponent,
+
 
   ],
   imports: [
