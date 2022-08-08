@@ -14,6 +14,7 @@ export class User {
   tarifHoraire !:number;
   profession!:String;
   salary! : number;
+  country!:string;
   type!:string;
   age!:number;
   state!:string;

@@ -32,6 +32,7 @@ import {TeamComponent} from "./CoursesSpace/team/team.component";
 import {RegisterComponent} from "./BackEnd/register/register.component";
 import {ChatComponent} from "./CoursesSpace/chatClient/chat/chat.component";
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
+import {UserListComponent} from "./CoursesSpace/user-list/user-list.component";
 
 
 
@@ -61,6 +62,7 @@ const routes: Routes =
              { path: 'formateur', component: ListFomateurComponent },
              { path: 'addFormation', component: FormationComponent },
              { path: 'listFormateur', component: ListFomateurComponent } ,
+             { path: 'listUsers', component: UserListComponent } ,
              { path: 'calendar', component: CalendarComponent },
              { path: 'calendarCourses/:idFormer', component: CalendarCoursesComponent },
              { path: 'listFormation', component: ListeFormationComponent },

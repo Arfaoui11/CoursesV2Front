@@ -18,14 +18,80 @@
       </div>
     </form>
 
-
-
     <br>
+    <!-- Split Button Dropdown Starts -->
+    <section id="dropdown-with-split-btn">
+      <!-- users filter start -->
+      <div class="card">
+        <div class="card-header">
+          <h4 class="card-title">Filters</h4>
+          <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+          <div class="heading-elements">
+            <ul class="list-inline mb-0">
+              <li><a data-action="collapse"><i class="feather icon-chevron-down"></i></a></li>
+              <li><a data-action=""><i class="feather icon-rotate-cw users-data-filter"></i></a></li>
+              <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="card-content collapse show">
+          <div class="card-body">
+            <div class="users-list-filter">
+              <form>
+                <div class="row">
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <label for="users-list-role">Role</label>
+                    <fieldset class="form-group">
+                      <select class="form-control" id="users-list-role">
+                        <option value="">All</option>
+                        <option value="user">User</option>
+                        <option value="staff">Staff</option>
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <label for="users-list-status">Status</label>
+                    <fieldset class="form-group">
+                      <select class="form-control" id="users-list-status">
+                        <option value="">All</option>
+                        <option value="Active">Active</option>
+                        <option value="Blocked">Blocked</option>
+                        <option value="deactivated">Deactivated</option>
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <label for="users-list-verified">Verified</label>
+                    <fieldset class="form-group">
+                      <select class="form-control" id="users-list-verified">
+                        <option value="">All</option>
+                        <option value="true">Yes</option>
+                        <option value="false">No</option>
+                      </select>
+                    </fieldset>
+                  </div>
+                  <div class="col-12 col-sm-6 col-lg-3">
+                    <label for="users-list-department">Department</label>
+                    <fieldset class="form-group">
+                      <select class="form-control" id="users-list-department">
+                        <option value="">All</option>
+                        <option value="Sales">Sales</option>
+                        <option value="Devlopment">Devlopment</option>
+                        <option value="Management">Management</option>
+                      </select>
+                    </fieldset>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- users filter end -->
+    </section>
+    <!-- Split Button Dropdown Ends -->
 
-    <div class="card-header">
-      <h3 class="card-title"> DataTable with Courses details </h3>
-      <br>
-    </div>
+
     <!-- /.card-header -->
     <div class="card-body">
 
@@ -33,36 +99,29 @@
         <table id="example1" class="table table-bordered table-striped">
           <thead>
           <tr>
-            <th>Titre</th>
-            <th>Level</th>
-            <th>Domain</th>
-            <th>Costs</th>
-            <th>Delete</th>
-            <th>Update</th>
-            <th>Add quiz</th>
-            <th>Details</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Role</th>
+            <th>Status</th>
             <th>QrCode</th>
           </tr>
           </thead>
           <tbody>
-          <tr *ngFor="let l of listFomation">
+          <tr *ngFor="let l of listUsers | paginate : {
+            itemsPerPage: 5,
+            currentPage: page,
+            totalItems: Items
+          }  , let i=index">
 
-            <td>{{l.title}}</td>
-            <td>{{l.level}}</td>
-            <td>{{l.domain}}</td>
-            <td>{{l.costs}} DT</td>
-            <td >
-              <button class="btn btn-outline-danger" (click)="deleteFormation(l.id)">Delete</button>
-            </td>
-            <td>
-              <button  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="dataId(l.id)" >Update</button>
-            </td>
-            <td>
-              <button class="btn btn-outline-instagram" [routerLink]="['../Quiz',l.id]">Add Quiz</button>
-            </td>
-            <td>
-              <button class="btn btn-outline-foursquare" [routerLink]="['../videoplaylist',l.id]">Details</button>
-            </td>
+            <td>{{l.lastName}}</td>
+            <td>{{l.email}}</td>
+            <td>{{l.firstName +" "+ l.lastName}}</td>
+            <td>{{l.country}}</td>
+            <td>{{l.type}}</td>
+            <td>{{l.state}}</td>
+
             <td>
               <ngx-qrcode [elementType]="elementType"  [value]="l.toString()" [width]="50"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode>
             </td>
@@ -72,19 +131,26 @@
           </tbody>
           <tfoot>
           <tr>
-            <th>Titre</th>
-            <th>Level</th>
-            <th>Domain</th>
-            <th>Costs</th>
-            <th>Delete</th>
-            <th>Update</th>
-            <th>Add quiz</th>
-            <th>Details</th>
+            <th>Username</th>
+            <th>Email</th>
+            <th>Name</th>
+            <th>Country</th>
+            <th>Role</th>
+            <th>Status</th>
             <th>QrCode</th>
           </tr>
           </tfoot>
         </table>
 
       </div>
+
+            <pagination-controls
+              previousLabel="Prev"
+              nextLabel="Next"
+              [responsive]="true"
+              (pageChange)="handlePageChange($event)"
+            ></pagination-controls>
+
     </div>
   </div>
+</div>
