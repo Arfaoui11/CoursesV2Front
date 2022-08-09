@@ -90,6 +90,20 @@ import {OAuthModule} from "angular-oauth2-oidc";
 import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "angularx-social-login";
 import { UserListComponent } from './CoursesSpace/user-list/user-list.component';
 import { VerificationAcountComponent } from './CoursesSpace/verification-acount/verification-acount.component';
+import {MatCardModule} from "@angular/material/card";
+import {MatInputModule} from "@angular/material/input";
+import {MatDatepickerModule} from "@angular/material/datepicker";
+import {MatFormFieldModule} from "@angular/material/form-field";
+import {MatTabsModule} from "@angular/material/tabs";
+import {MatProgressSpinnerModule} from "@angular/material/progress-spinner";
+import {MatIconModule} from "@angular/material/icon";
+import {MatTableModule} from "@angular/material/table";
+import {MatSortModule} from "@angular/material/sort";
+import {MatPaginatorModule} from "@angular/material/paginator";
+import {MatDividerModule} from "@angular/material/divider";
+import {MatToolbarModule} from "@angular/material/toolbar";
+import {MatTooltipModule} from "@angular/material/tooltip";
+import {MatSidenavModule} from "@angular/material/sidenav";
 
 
 
@@ -183,6 +197,20 @@ FullCalendarModule.registerPlugins([
     NgxQRCodeModule,
     GoogleChartsModule,
     MatButtonModule,
+    MatCardModule,
+    MatFormFieldModule,
+    MatDatepickerModule,
+    MatInputModule,
+    MatProgressSpinnerModule,
+    MatIconModule,
+    MatTabsModule,
+    MatTableModule,
+    MatSortModule,
+    MatPaginatorModule,
+    MatDividerModule,
+    MatToolbarModule,
+    MatTooltipModule,
+    MatSidenavModule,
     MatSnackBarModule,
     NgbModule,
     FullCalendarModule,

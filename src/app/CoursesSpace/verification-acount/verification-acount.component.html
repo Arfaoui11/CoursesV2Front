@@ -8,26 +8,39 @@
         <div class="card text-center w-100 mb-0">
           <div class="card-header justify-content-center pb-0">
             <div class="card-title">
-              <h2 class="mb-0">We are launching soon</h2>
+              <h2 class="mb-0">Verification Account </h2>
             </div>
           </div>
           <div class="card-content">
             <div class="card-body pt-0">
-              <img src="../../../app-assets/images/pages/rocket.png" class="img-responsive block width-150 mx-auto" width="150" alt="bg-img">
-              <div id="clockFlat" class="card-text text-center getting-started pt-2 d-flex justify-content-center flex-wrap"></div>
+              <img src="../../../assets/images/icons/verified_account_512px.png" class="img-responsive block width-150 mx-auto" width="150" alt="bg-img">
+              <div  class="card-text text-center getting-started pt-2 d-flex justify-content-center flex-wrap">
+                <mat-card-content *ngIf="token != 'reset'">
+                  <div class="container-timer">
+                    <ul>
+                      <li><span>{{currentTime.day}}</span><br>DAYS</li>
+                      <li><span>{{currentTime.hour}}</span><br>HOURS</li>
+                      <li><span>{{currentTime.minute}}</span><br>MINUTES</li>
+                      <li><span>{{currentTime.second}}</span><br>SECONDS</li>
+                    </ul>
+                  </div>
+                </mat-card-content>
+              </div>
               <div class="divider">
                 <div class="divider-text">Subscribe</div>
               </div>
               <p class="text-left">
-                If you would like to be notified when our app is live, Please subscribe to our mailing list.
+                If you would like to be Activated account when our app is live, Please Reactivate your Account to get our mailing Activation.
               </p>
-              <form class="form-horizontal">
+              <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && ReactivationAccount()" #f="ngForm" novalidate>
                 <fieldset class="form-label-group">
-                  <input type="text" class="form-control" id="user-email" placeholder="Email">
-                  <label for="user-email">Email</label>
+                  <input type="email" class="form-control"  [(ngModel)]="form.email"  name="email"  >
+                  <label >Email</label>
                 </fieldset>
+                <button *ngIf="!currentTime.second || token == 'reset'" class="btn btn-primary w-100" type="submit" >Reactivate Account </button>
               </form>
-              <button class="btn btn-primary w-100" (click)="activationAcoount()" >Activate Account </button>
+              <button *ngIf="currentTime.second && token != 'reset'" class="btn btn-primary w-100" (click)="activationAccount()" >Activate Account </button>
+
             </div>
           </div>
         </div>

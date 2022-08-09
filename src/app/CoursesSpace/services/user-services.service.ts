@@ -51,4 +51,9 @@ export class UserServicesService {
   {
     return this.http.post('http://localhost:4000/api/user/activate',{"token" : token})
   }
+
+  resendToken(email : String)
+  {
+    return this.http.post('http://localhost:4000/api/user/resendToken',{"email" : email})
+  }
 }

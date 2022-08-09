@@ -78,6 +78,7 @@ export class LoginComponent implements OnInit {
         this.snackbar.open(' please verify your account go to email we have link to activate you account', 'Undo', {
           duration: 2000
         });
+        window.location.href = '/verification/'+"reset";
       }
     );
   }
