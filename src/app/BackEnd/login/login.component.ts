@@ -7,6 +7,7 @@ import {UserServicesService} from "../../CoursesSpace/services/user-services.ser
 import {User} from "../../core/model/User";
 import {AppdataService} from "../../CoursesSpace/services/appdata.service";
 import {GoogleLoginProvider, SocialAuthService, SocialUser} from 'angularx-social-login';
+import {MatSnackBar} from "@angular/material/snack-bar";
 
 
 
@@ -33,7 +34,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private authServiceGoogle: SocialAuthService,private appDataService: AppdataService,private authService: FormationService,private router:Router, private tokenStorage: TokenService, private route: ActivatedRoute, private userService: UserServicesService) { }
+  constructor(private authServiceGoogle: SocialAuthService,private appDataService: AppdataService,private authService: FormationService,private router:Router, private tokenStorage: TokenService, private route: ActivatedRoute, private userService: UserServicesService,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -74,6 +75,9 @@ export class LoginComponent implements OnInit {
       err => {
         this.errorMessage = err.error.message;
         this.isLoginFailed = true;
+        this.snackbar.open(' please verify your account go to email we have link to activate you account', 'Undo', {
+          duration: 2000
+        });
       }
     );
   }

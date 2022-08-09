@@ -44,4 +44,11 @@ export class UserServicesService {
   getCurrentUser(): Observable<any> {
     return this.http.get('http://localhost:8099/api/user/me', httpOptions);
   }
+
+
+
+  activateAcoount(token : String)
+  {
+    return this.http.post('http://localhost:4000/api/user/activate',{"token" : token})
+  }
 }

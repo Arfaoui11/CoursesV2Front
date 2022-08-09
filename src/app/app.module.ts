@@ -89,6 +89,7 @@ import {OAuthModule} from "angular-oauth2-oidc";
 
 import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "angularx-social-login";
 import { UserListComponent } from './CoursesSpace/user-list/user-list.component';
+import { VerificationAcountComponent } from './CoursesSpace/verification-acount/verification-acount.component';
 
 
 
@@ -144,6 +145,7 @@ FullCalendarModule.registerPlugins([
     ChatComponent,
     UsersComponent,
     UserListComponent,
+    VerificationAcountComponent,
 
 
   ],

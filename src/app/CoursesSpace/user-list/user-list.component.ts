@@ -23,8 +23,6 @@ export class UserListComponent implements OnInit {
   constructor(private serviceUser : UserServicesService,private snackbar:MatSnackBar) { }
 
 
-
-
   ngOnInit(): void {
     this.getUsers();
 

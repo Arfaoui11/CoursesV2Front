@@ -33,6 +33,7 @@ import {RegisterComponent} from "./BackEnd/register/register.component";
 import {ChatComponent} from "./CoursesSpace/chatClient/chat/chat.component";
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
 import {UserListComponent} from "./CoursesSpace/user-list/user-list.component";
+import {VerificationAcountComponent} from "./CoursesSpace/verification-acount/verification-acount.component";
 
 
 
@@ -45,6 +46,7 @@ const routes: Routes =
 
      {path:'login',component: LoginComponent },
      {path:'register',component: RegisterComponent },
+     {path: 'verification/:token', component: VerificationAcountComponent },
      {path:'chatRoom/:idCourses',component: CallVideoComponent },
      {path:'homeF',component: HomeFComponent },
      { path: '',  redirectTo: 'front/End/homeF', pathMatch: 'full' },
@@ -69,7 +71,7 @@ const routes: Routes =
              { path: 'Courses', component: CoursesFormComponent },
              { path: 'Quiz/:idCourses', component: QuestionComponent },
              { path: 'Question/:idQuiz', component: QestionQuizCoursesComponent },
-             { path: 'userview/:idUser', component: UserViewComponent },
+             { path: 'userview/:idUser', component: UserViewComponent }
            ]
          }
 
