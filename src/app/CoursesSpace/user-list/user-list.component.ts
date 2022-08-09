@@ -15,9 +15,10 @@ export class UserListComponent implements OnInit {
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
   public listUsers: User[];
-
   page = 1;
   public Items: number;
+
+  public user: User=new User();
 
   constructor(private serviceUser : UserServicesService,private snackbar:MatSnackBar) { }
 
@@ -26,6 +27,7 @@ export class UserListComponent implements OnInit {
 
   ngOnInit(): void {
     this.getUsers();
+
   }
 
   getUsers(){
@@ -43,9 +45,10 @@ export class UserListComponent implements OnInit {
 
   SearchMultiple(key:string): void
   {
-    this.serviceUser.Search(key).subscribe(
+    this.user.lastName = key;
+    this.serviceUser.Search(this.user).subscribe(
       (data:User[]) => {
-        this.listUsers =data;
+        this.listUsers = data ;
         if (this.listUsers.length == 0 )
           this.snackbar.open(' Not Found', 'Undo', {
             duration: 2000

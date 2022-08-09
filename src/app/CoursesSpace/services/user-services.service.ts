@@ -22,8 +22,8 @@ export class UserServicesService {
     return this.http.get('http://localhost:8099/api/all', { responseType: 'text' });
   }
 
-  Search(key : String): Observable<any> {
-    return this.http.post('http://localhost:4000/api/user/searchUser', { "key": key },{headers : this.getHeaders()});
+  Search(user : User): Observable<any> {
+    return this.http.post('http://localhost:4000/api/user/search', user,{headers : this.getHeaders()});
   }
 
 
