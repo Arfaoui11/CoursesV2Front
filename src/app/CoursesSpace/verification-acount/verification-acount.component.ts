@@ -100,7 +100,7 @@ export class VerificationAcountComponent implements OnInit {
       const day = hour * 24;
 
       const twentyMinutesLater = new Date();
-      twentyMinutesLater.setMinutes(twentyMinutesLater.getMinutes() + 1);
+      twentyMinutesLater.setMinutes(twentyMinutesLater.getMinutes() + 20);
       const timer = twentyMinutesLater.getTime();
       setInterval(() => {
         const now = new Date().getTime();

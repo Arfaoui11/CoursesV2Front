@@ -26,12 +26,10 @@ export class NavbarFComponent implements OnInit {
 
 
 
-  constructor(private token: TokenService,private cartService : CartService,private router:Router,private readonly googleApi: GoogleApiService) {
+  constructor(private token: TokenService,private cartService : CartService,private router:Router) {
     this.currentUser = this.token.getUser();
 
-    googleApi.userProfileSubject.subscribe( info => {
-      this.userInfo = info
-    })
+
 
   }
   ngOnInit(): void {
@@ -58,12 +56,6 @@ export class NavbarFComponent implements OnInit {
 
 
 
-  }
-
-
-
-  logoutG() {
-    this.googleApi.signOut()
   }
 
   logout(): void {

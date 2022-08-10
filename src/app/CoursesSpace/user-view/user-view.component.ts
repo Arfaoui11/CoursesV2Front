@@ -76,7 +76,7 @@ export class UserViewComponent implements OnInit {
         console.log(data);
       });
 
-    this.snackbar.open(' ajout avec succees', 'Undo', {
+    this.snackbar.open(' add with success', 'Undo', {
       duration: 2000
     });
 

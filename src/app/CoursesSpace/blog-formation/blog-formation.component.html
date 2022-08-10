@@ -22,7 +22,7 @@
   </div>
   <!-- breadcrumb area end -->
   <br>
-  <div class="col-xl-5 col-lg-8 col-md-8 col-sm-8 col-3 order-2 order-xl-3">
+  <div class="col-xl-12 col-lg-8 col-md-8 col-sm-8 col-6 order-4 order-xl-3">
     <div class="bd-header-right bd-header-right-four text-end">
       <div class="bd-header-input-search bd-header-input-search-six">
         <form (click)="SearchMultiple(key.value);SearchHistoric(key.value)" class="position-relative">
@@ -34,7 +34,82 @@
 
 
     </div>
+    <div >
+      <section id="dropdown-with-split-btn">
+        <!-- users filter start -->
+        <div class="card">
+          <div class="card-header">
+            <h4 class="card-title">Filters</h4>
+            <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+            <div class="heading-elements">
+              <ul class="list-inline mb-0">
+                <li><a data-action="collapse"><i class="feather icon-chevron-down"></i></a></li>
+                <li><a data-action=""><i class="feather icon-rotate-cw users-data-filter"></i></a></li>
+                <li><a data-action="close"><i class="feather icon-x"></i></a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="card-content collapse show">
+            <div class="card-body">
+              <div class="users-list-filter">
+                <form>
+                  <div class="row">
+                    <div class="col-12 col-sm-6 col-lg-3">
+                      <label id="users-list-role"  >Role</label >
+                      <fieldset class="form-group">
+                        <label>
+                          <select #type="ngModel" [(ngModel)]="formation.domain" name="type" class="form-control"  >
+                            <option value="ADMIN">Admin</option>
+                            <option value="STUDENT">Student</option>
+                            <option value="FORMER">Former</option>
+                          </select>
+                        </label>
+                      </fieldset>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                      <label for="users-list-status">Status</label>
+                      <fieldset class="form-group">
+                        <select #state="ngModel" [(ngModel)]="formation.level" name="state" class="form-control">
+                          <option value="DISCIPLINED">Disciplined</option>
+                          <option value="WARNED">Warned</option>
+                          <option value="PUNISHED">Punished</option>
+                          <option value="EXCLUDED">Excluded</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                      <label for="users-list-verified">Verified</label>
+                      <fieldset class="form-group">
+                        <select class="form-control" id="users-list-verified">
+                          <option value="">All</option>
+                          <option value="true">Yes</option>
+                          <option value="false">No</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                    <div class="col-12 col-sm-6 col-lg-3">
+                      <label for="users-list-department">Department</label>
+                      <fieldset class="form-group">
+                        <select class="form-control" id="users-list-department">
+                          <option value="">All</option>
+                          <option value="Sales">Sales</option>
+                          <option value="Devlopment">Devlopment</option>
+                          <option value="Management">Management</option>
+                        </select>
+                      </fieldset>
+                    </div>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+        <!-- users filter end -->
+      </section>
+    </div>
   </div>
+
+
   <!-- blog area start here -->
   <section class="bd-blog-area pt-150 pb-145">
     <div class="container">

@@ -169,7 +169,6 @@ FullCalendarModule.registerPlugins([
     ScheduleModule,
     RecurrenceEditorModule,
     DropDownListModule,
-    OAuthModule.forRoot(),
     MultiSelectModule,
     ComboBoxModule,
     SocialLoginModule,

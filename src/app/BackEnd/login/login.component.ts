@@ -34,7 +34,7 @@ export class LoginComponent implements OnInit {
 
 
 
-  constructor(private authServiceGoogle: SocialAuthService,private appDataService: AppdataService,private authService: FormationService,private router:Router, private tokenStorage: TokenService, private route: ActivatedRoute, private userService: UserServicesService,private snackbar:MatSnackBar) { }
+  constructor(private appDataService: AppdataService,private authService: FormationService,private router:Router, private tokenStorage: TokenService, private route: ActivatedRoute, private userService: UserServicesService,private snackbar:MatSnackBar) { }
 
   ngOnInit(): void {
 
@@ -113,14 +113,7 @@ export class LoginComponent implements OnInit {
   }
 
 
-  signInHandler(): void {
-    this.authServiceGoogle.signIn(GoogleLoginProvider.PROVIDER_ID).then((data) => {
-      console.log(data)
-     // sessionStorage.setItem("google_auth", JSON.stringify(data))
-     // localStorage.setItem('google_auth', JSON.stringify(data));
-    //  this.router.navigateByUrl('/dashboardF').then();
-    })
-  }
+
 
 
 }

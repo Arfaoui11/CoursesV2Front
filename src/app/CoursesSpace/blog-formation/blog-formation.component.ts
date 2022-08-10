@@ -30,6 +30,7 @@ export class BlogFormationComponent implements OnInit {
   sowFormateur : boolean = false;
   page = 1;
   public Items: number;
+  formation: Formation = new Formation();
 
   constructor(private chatService : ChatServiceService,private serviceForm : FormationService,private snackbar:MatSnackBar  ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) { }
 

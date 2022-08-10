@@ -39,13 +39,20 @@ export class CoursesFormComponent implements OnInit {
 
    this.specializationData = [
       { DepartmentId: 1, Id: '', Text: 'ALL', Color: '#516275' },
-      { DepartmentId: 2, Id: 'IT', Text: 'IT', Color: '#F538B2' },
-      { DepartmentId: 3, Id: 'MUSIC', Text: 'MUSIC', Color: '#33C7E8' },
-      { DepartmentId: 4, Id: 'ART', Text: 'ART', Color: '#916DE4' },
-      { DepartmentId: 5, Id: 'DANCE', Text: 'DANCE', Color: '#388CF5' },
-      { DepartmentId: 6, Id: 'PHY', Text: 'PHY', Color: '#60F238' },
-      { DepartmentId: 7, Id: 'ECONOMIC', Text: 'ECONOMIC', Color: '#F29438' },
-      { DepartmentId: 8, Id: 'MARKETING', Text: 'MARKETING', Color: '#F29438' }
+      { DepartmentId: 2, Id: 'DEVELOPMENT', Text: 'DEVELOPMENT', Color: '#F538B2' },
+      { DepartmentId: 3, Id: 'BUSINESS', Text: 'BUSINESS', Color: '#33C7E8' },
+      { DepartmentId: 4, Id: 'FINANCE&ACCOUNTING', Text: 'FINANCE&ACCOUNTING', Color: '#916DE4' },
+      { DepartmentId: 5, Id: 'IT&SOFTWARE', Text: 'IT&SOFTWARE', Color: '#388CF5' },
+      { DepartmentId: 6, Id: 'OFFICEPRODUCTIVITY', Text: 'OFFICEPRODUCTIVITY', Color: '#60F238' },
+      { DepartmentId: 7, Id: 'PERSONALDEVELOPMENT', Text: 'PERSONALDEVELOPMENT', Color: '#F29438' },
+      { DepartmentId: 8, Id: 'DESIGN', Text: 'DESIGN', Color: '#ca242c' },
+      { DepartmentId: 8, Id: 'MARKETING', Text: 'MARKETING', Color: '#a7a7a7' },
+      { DepartmentId: 8, Id: 'LIFESTYLE', Text: 'LIFESTYLE', Color: '#f2e736' },
+      { DepartmentId: 8, Id: 'PHOTOGRAPHY&VIDEO', Text: 'PHOTOGRAPHY&VIDEO', Color: '#2e5aa7' },
+      { DepartmentId: 8, Id: 'HEALTH&FITNESS', Text: 'HEALTH&FITNESS', Color: '#19001b' },
+      { DepartmentId: 8, Id: 'MUSIC', Text: 'MUSIC', Color: '#f7f7f7' },
+      { DepartmentId: 8, Id: 'TEACHING&ACADEMICS', Text: 'TEACHING&ACADEMICS', Color: '#eeccf2' }
+
     ];
 
 

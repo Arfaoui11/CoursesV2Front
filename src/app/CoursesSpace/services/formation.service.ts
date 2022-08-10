@@ -143,7 +143,7 @@ export class FormationService {
 
   writeComment(mess :PostComment,idF :string , idU : string): Observable<number>
   {
-    return this.http.post<number>("http://localhost:4000/api/comment/"+idF+"/"+idU+"/",mess,{headers : this.getHeaders()})
+    return this.http.post<number>("http://localhost:4000/api/comment/"+idF+"/"+idU,mess,{headers : this.getHeaders()})
   }
 
 
