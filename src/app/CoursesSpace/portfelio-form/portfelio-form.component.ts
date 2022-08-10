@@ -90,7 +90,7 @@ export class PortfelioFormComponent implements OnInit {
     }
     else if (key!=null)
     {
-      this.serviceForm.SerachMultiple(key).subscribe(
+      this.serviceForm.SingleKey(key).subscribe(
         (data:Formation[]) => {
           this.listFormation =data
         }

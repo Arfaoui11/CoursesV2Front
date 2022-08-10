@@ -18,7 +18,8 @@ export class BlogFormationComponent implements OnInit {
 
   listFormation  : Formation[];
   toggle = true;
-  domain : string;
+  public domain : string = "DEVELOPMENT";
+  public level : string = "BEGINNER";
 
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
@@ -30,7 +31,8 @@ export class BlogFormationComponent implements OnInit {
   sowFormateur : boolean = false;
   page = 1;
   public Items: number;
-  formation: Formation = new Formation();
+  public formation: Formation = new Formation();
+  public order : number = -1;
 
   constructor(private chatService : ChatServiceService,private serviceForm : FormationService,private snackbar:MatSnackBar  ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) { }
 
@@ -87,15 +89,15 @@ export class BlogFormationComponent implements OnInit {
 
 
 
-
+/*
   SearchMultiple(key:string): void
   {
     if (key=='') {
       this.getAllFormation()
     }
-    else if (key!=null)
+    else if (key!=null || this.formation != null)
     {
-      this.serviceForm.SerachMultiple(key).subscribe(
+      this.serviceForm.SerachMultiple(this.formation).subscribe(
         (data:Formation[]) => {
           this.listFormation =data
         }
@@ -103,6 +105,25 @@ export class BlogFormationComponent implements OnInit {
     }
 
   }
+
+ */
+
+  SearchMultiple(key:string): void
+  {
+    this.formation.title = key;
+    this.formation.domain = this.domain;
+    this.formation.level = this.level;
+    this.serviceForm.SerachMultiple(this.formation,this.order).subscribe(
+      (data:Formation[]) => {
+        this.listFormation =data;
+        if (this.listFormation.length == 0 )
+          this.snackbar.open(' Not Found', 'Undo', {
+            duration: 2000
+          });
+      }
+    )
+  }
+
 
   SearchHistoric(value: any) {
     if (value=='') {

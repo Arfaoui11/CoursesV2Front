@@ -24,8 +24,8 @@
   <br>
   <div class="col-xl-12 col-lg-8 col-md-8 col-sm-8 col-6 order-4 order-xl-3">
     <div class="bd-header-right bd-header-right-four text-end">
-      <div class="bd-header-input-search bd-header-input-search-six">
-        <form (click)="SearchMultiple(key.value);SearchHistoric(key.value)" class="position-relative">
+      <div class="bd-header-input-search bd-header-input-search-six" >
+        <form (click)="SearchMultiple(key.value)" class="position-relative">
           <input type="text" placeholder="Search keywords" #key="ngModel" ngModel
                  name="key">
           <button type="submit"><i class="fas fa-search"></i></button>
@@ -34,6 +34,7 @@
 
 
     </div>
+    <br>
     <div >
       <section id="dropdown-with-split-btn">
         <!-- users filter start -->
@@ -55,35 +56,46 @@
                 <form>
                   <div class="row">
                     <div class="col-12 col-sm-6 col-lg-3">
-                      <label id="users-list-role"  >Role</label >
+                      <label id="users-list-role"  >level</label >
                       <fieldset class="form-group">
                         <label>
-                          <select #type="ngModel" [(ngModel)]="formation.domain" name="type" class="form-control"  >
-                            <option value="ADMIN">Admin</option>
-                            <option value="STUDENT">Student</option>
-                            <option value="FORMER">Former</option>
+                          <select #type="ngModel" [(ngModel)]="level" name="type" class="form-control"  >
+                            <option value=""></option>
+                            <option value="BEGINNER">BEGINNER</option>
+                            <option value="INTERMEDIATE">INTERMEDIATE</option>
+                            <option value="ADVANCED">ADVANCED</option>
                           </select>
                         </label>
                       </fieldset>
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3">
-                      <label for="users-list-status">Status</label>
+                      <label >Domain</label>
                       <fieldset class="form-group">
-                        <select #state="ngModel" [(ngModel)]="formation.level" name="state" class="form-control">
-                          <option value="DISCIPLINED">Disciplined</option>
-                          <option value="WARNED">Warned</option>
-                          <option value="PUNISHED">Punished</option>
-                          <option value="EXCLUDED">Excluded</option>
+                        <select #domains="ngModel" [(ngModel)]="domain"    name="domains" id="domains" class="form-control" >
+                          <option value=""></option>
+                          <option value="DEVELOPMENT">Development</option>
+                          <option value="BUSINESS">Business</option>
+                          <option value="FINANCE&ACCOUNTING">Finance & Accounting</option>
+                          <option value="IT&SOFTWARE">IT & Software</option>
+                          <option value="OFFICEPRODUCTIVITY">Office Productivity</option>
+                          <option value="PERSONALDEVELOPMENT">Personal Development</option>
+                          <option value="DESIGN">Design</option>
+                          <option value="MARKETING">Marketing</option>
+                          <option value="LIFESTYLE">Lifestyle</option>
+                          <option value="PHOTOGRAPHY&VIDEO">Photography & Video</option>
+                          <option value="HEALTH&FITNESS">Health & Fitness</option>
+                          <option value="MUSIC">Music</option>
+                          <option value="TEACHING&ACADEMICS">Teaching & Academics</option>
                         </select>
                       </fieldset>
                     </div>
                     <div class="col-12 col-sm-6 col-lg-3">
-                      <label for="users-list-verified">Verified</label>
+                      <label >Price</label>
                       <fieldset class="form-group">
-                        <select class="form-control" id="users-list-verified">
+                        <select #price="ngModel" [(ngModel)]="order" name="price" id="price" class="form-control" >
                           <option value="">All</option>
-                          <option value="true">Yes</option>
-                          <option value="false">No</option>
+                          <option value="-1">ascendant</option>
+                          <option value="1">descendant </option>
                         </select>
                       </fieldset>
                     </div>
@@ -135,10 +147,10 @@
 
                 </ul>
               </div>
-              <h4 class="bd-blog-title mb-40"><a class="e-title" href="#"> Title : {{l.title.toUpperCase()}} </a></h4>
+              <h4 class="bd-blog-title mb-40"><a class="e-title" > Title : {{l.title.toUpperCase()}} </a></h4>
               <h6 >Skills Covered  : {{l.domain.toUpperCase()}}</h6>
             <!--  <h6 class="bd-blog-title mb-20">Former : {{l.userF.displayName.toUpperCase()}}</h6>-->
-              <h6 >Prerequisites  : {{l.lieu.toUpperCase()}}</h6>
+              <h5 class="bd-blog-title mb-40" >Price  : {{l.costs}} $ </h5>
               <div class="bd-blog-author">
                 <div class="bd-blog-author-info">
                 <img [src]="l.userF.file" alt="author image not found">

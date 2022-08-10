@@ -275,7 +275,7 @@ export class FormationComponent implements OnInit {
 
   SearchMultiple(key:string): void
   {
-    this.serviceForm.SerachMultiple(key).subscribe(
+    this.serviceForm.SingleKey(key).subscribe(
       (data:Formation[]) => {
         this.listFomation =data
         if (this.listFomation.length == 0 )

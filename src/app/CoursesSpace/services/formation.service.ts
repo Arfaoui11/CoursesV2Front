@@ -153,10 +153,19 @@ export class FormationService {
     return this.http.post<any>("http://localhost:4000/api/courses/"+i,form,{headers : this.getHeaders()})
   }
 
-  SerachMultiple(key:string) :Observable<Formation[]>
+  SingleKey(key:string) :Observable<Formation[]>
   {
     return this.http.post<any>('http://localhost:4000/api/courses/searchSingleKey',{"key":key},{headers : this.getHeaders()});
   }
+
+
+  SerachMultiple(course : Formation,order:number) :Observable<Formation[]>
+  {
+    return this.http.post<any>('http://localhost:4000/api/courses/search',{"title" : course.title,"domain" : course.domain,"level" : course.level ,"order" : order },{headers : this.getHeaders()});
+  }
+
+
+
 
   getFormateurbyFormation(id : string):Observable<User>
   {
