@@ -23,7 +23,7 @@ export class RoutComponent implements OnInit {
   userName = '';
   image = '';
   message = '';
-  messageList: {message: string, userName: string, mine: boolean}[] = [];
+  messageList: {message: string, userName: string,image : string, mine: boolean}[] = [];
   userList: any[] = [];
   socket: any;
 
@@ -45,10 +45,9 @@ this.chatApp();
   }
 
   chatApp(): void {
-    this.socket = io.io(`localhost:4000?userName=${this.currentUser.lastName+','+ this.currentUser.file}`);
+    this.socket = io.io(`localhost:4000?userName=${this.currentUser.lastName+'&image='+ this.currentUser.file}`);
     this.userName = this.currentUser.lastName+','+ this.currentUser.file;
-
-
+    this.image = this.currentUser.file;
 
     this.socket.emit('set-user-name', this.userName);
 
@@ -56,9 +55,9 @@ this.chatApp();
       this.userList = userList;
     });
 
-    this.socket.on('message-broadcast', (data: {message: string, userName: string}) => {
+    this.socket.on('message-broadcast', (data: {message: string, userName: string,image : string}) => {
       if (data) {
-        this.messageList.push({message: data.message, userName: data.userName, mine: false});
+        this.messageList.push({message: data.message, userName: data.userName ,image : data.image, mine: false});
       }
     });
   }
@@ -68,7 +67,7 @@ this.chatApp();
     if (msg == '' || msg == undefined) return;
 
     this.socket.emit('message', msg);
-    this.messageList.push({message: msg, userName: this.userName, mine: true});
+    this.messageList.push({message: msg, userName: this.userName,image : this.image, mine: true});
     this.message = '';
   }
 

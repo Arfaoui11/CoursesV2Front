@@ -1544,15 +1544,15 @@ select {
   /**
   @color declaration
   */
-  --clr-common-white: #cfbecd;
+  --clr-common-white: #fff;
   --clr-common-black: #000;
   --clr-body-heading: #161616;
   --clr-body-heading2: #232323;
-  --clr-body-text: #19001b;
+  --clr-body-text: #6A6A6A;
   --clr-body-text2: #878787;
   --clr-body-text3: #787878;
-  --clr-theme-1: #a7a7a7;
-  --clr-bg-gray: #a7a7a7;
+  --clr-theme-1: #EF0454;
+  --clr-bg-gray: #F9F9F9;
   --clr-bg-gray2: #EFEFEF;
   --clr-border-1: #474747;
   --clr-border-2: #757575;
@@ -1678,8 +1678,8 @@ select {
 
 @media (max-width: 767px) {
   .theme-btn,
-  .theme-btn-border,
-  .theme-btn-black {
+.theme-btn-border,
+.theme-btn-black {
     height: 50px;
     line-height: 50px;
     padding: 0px 30px;
@@ -2030,7 +2030,7 @@ input.main-search-input:-ms-input-placeholder {
   -o-transition: all 0.3s ease-out 0s;
   transition: all 0.3s ease-out 0s;
 }
-#ffdeea
+
 .bd-header-area-three.header-sticky.sticky-menu {
   background: var(--clr-common-white);
 }
@@ -4222,8 +4222,8 @@ input.main-search-input:-ms-input-placeholder {
 }
 @media (max-width: 575px) {
   .bd-portfolio-active-two.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-  .bd-testimonial-four-active.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
-  .bd-team-active.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
+.bd-testimonial-four-active.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet,
+.bd-team-active.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
     margin: 0px 4px;
   }
 }
@@ -5461,19 +5461,19 @@ input.main-search-input:-ms-input-placeholder {
 }
 @media only screen and (min-width: 992px) and (max-width: 1199px) {
   .bd-fact-title,
-  .bd-fact-title .odometer {
+.bd-fact-title .odometer {
     font-size: 50px;
   }
 }
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   .bd-fact-title,
-  .bd-fact-title .odometer {
+.bd-fact-title .odometer {
     font-size: 46px;
   }
 }
 @media (max-width: 767px) {
   .bd-fact-title,
-  .bd-fact-title .odometer {
+.bd-fact-title .odometer {
     font-size: 36px;
   }
 }
@@ -5521,7 +5521,7 @@ input.main-search-input:-ms-input-placeholder {
 }
 @media (max-width: 575px) {
   .bd-slider-facts .bd-slider-fact-title,
-  .bd-slider-facts .bd-slider-fact-title .odometer-value {
+.bd-slider-facts .bd-slider-fact-title .odometer-value {
     font-size: 24px;
   }
 }

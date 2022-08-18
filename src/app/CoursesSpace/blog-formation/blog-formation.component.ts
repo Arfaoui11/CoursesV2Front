@@ -18,8 +18,8 @@ export class BlogFormationComponent implements OnInit {
 
   listFormation  : Formation[];
   toggle = true;
-  public domain : string = "DEVELOPMENT";
-  public level : string = "BEGINNER";
+  public domain : string = "All";
+  public level : string = "All";
 
   elementType= NgxQrcodeElementTypes.URL;
   correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
@@ -110,7 +110,13 @@ export class BlogFormationComponent implements OnInit {
 
   SearchMultiple(key:string): void
   {
-    this.formation.title = key;
+    if (key !== null)
+    {
+      this.formation.title = key;
+    }else {
+      this.formation.title = '';
+    }
+
     this.formation.domain = this.domain;
     this.formation.level = this.level;
     this.serviceForm.SerachMultiple(this.formation,this.order).subscribe(

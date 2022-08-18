@@ -60,7 +60,7 @@
                       <fieldset class="form-group">
                         <label>
                           <select #type="ngModel" [(ngModel)]="level" name="type" class="form-control"  >
-                            <option value=""></option>
+                            <option value="All">All</option>
                             <option value="BEGINNER">BEGINNER</option>
                             <option value="INTERMEDIATE">INTERMEDIATE</option>
                             <option value="ADVANCED">ADVANCED</option>
@@ -72,7 +72,7 @@
                       <label >Domain</label>
                       <fieldset class="form-group">
                         <select #domains="ngModel" [(ngModel)]="domain"    name="domains" id="domains" class="form-control" >
-                          <option value=""></option>
+                          <option value="All">All</option>
                           <option value="DEVELOPMENT">Development</option>
                           <option value="BUSINESS">Business</option>
                           <option value="FINANCE&ACCOUNTING">Finance & Accounting</option>
@@ -93,7 +93,7 @@
                       <label >Price</label>
                       <fieldset class="form-group">
                         <select #price="ngModel" [(ngModel)]="order" name="price" id="price" class="form-control" >
-                          <option value="">All</option>
+                          <option value="All">All</option>
                           <option value="-1">ascendant</option>
                           <option value="1">descendant </option>
                         </select>

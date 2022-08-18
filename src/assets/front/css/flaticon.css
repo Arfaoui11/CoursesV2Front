@@ -1,10 +1,10 @@
 @font-face {
     font-family: "flaticon";
-    src: url("../../../assets/front/fonts/flaticon.ttf_9ebff1f419153de5413e807a62ca4534") format("truetype"),
+    src: url("../../../assets/front/fonts/flaticon.ttf_9ebff1f419153de5413e807a62ca4534 ") format("truetype"),
 url("../../../assets/front/fonts/flaticon.woff_9ebff1f419153de5413e807a62ca4534") format("woff"),
 url("../../../assets/front/fonts/flaticon.woff2_9ebff1f419153de5413e807a62ca4534") format("woff2"),
 url("../../../assets/front/fonts/flaticon.eot_9ebff1f419153de5413e807a62ca4534#iefix") format("embedded-opentype"),
-url("../../../assets/front/fonts/flaticon.svg?9ebff1f419153de5413e807a62ca4534#flaticon") format("svg");
+url("../../../assets/front/fonts/flaticon.woff_9ebff1f419153de5413e807a62ca4534") format("svg");
 }
 
 i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {

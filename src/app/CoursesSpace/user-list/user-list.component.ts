@@ -17,8 +17,11 @@ export class UserListComponent implements OnInit {
   public listUsers: User[];
   page = 1;
   public Items: number;
+  public type = 'All';
+  public state = 'All';
 
   public user: User=new User();
+  public verified: true;
 
   constructor(private serviceUser : UserServicesService,private snackbar:MatSnackBar) { }
 
@@ -43,7 +46,15 @@ export class UserListComponent implements OnInit {
 
   SearchMultiple(key:string): void
   {
-    this.user.lastName = key;
+    if (key !== null)
+    {
+      this.user.lastName = key;
+    }else {
+      this.user.lastName = '';
+    }
+    this.user.state = this.state;
+    this.user.type = this.type;
+
     this.serviceUser.Search(this.user).subscribe(
       (data:User[]) => {
         this.listUsers = data ;

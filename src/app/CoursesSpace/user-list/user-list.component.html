@@ -43,7 +43,8 @@
                     <label id="users-list-role"  >Role</label >
                     <fieldset class="form-group">
                       <label>
-                        <select #type="ngModel" [(ngModel)]="user.type" name="type" class="form-control"  >
+                        <select #typee="ngModel" [(ngModel)]="type" name="type" class="form-control"  >
+                          <option value="All">All</option>
                           <option value="ADMIN">Admin</option>
                           <option value="STUDENT">Student</option>
                           <option value="FORMER">Former</option>
@@ -52,9 +53,10 @@
                     </fieldset>
                   </div>
                   <div class="col-12 col-sm-6 col-lg-3">
-                    <label for="users-list-status">Status</label>
+                    <label >Status</label>
                     <fieldset class="form-group">
-                      <select #state="ngModel" [(ngModel)]="user.state" name="state" class="form-control">
+                      <select #statee="ngModel" [(ngModel)]="state" name="state" class="form-control">
+                        <option value="All">All</option>
                         <option value="DISCIPLINED">Disciplined</option>
                         <option value="WARNED">Warned</option>
                         <option value="PUNISHED">Punished</option>
@@ -63,10 +65,10 @@
                     </fieldset>
                   </div>
                   <div class="col-12 col-sm-6 col-lg-3">
-                    <label for="users-list-verified">Verified</label>
+                    <label >Verified</label>
                     <fieldset class="form-group">
-                      <select class="form-control" id="users-list-verified">
-                        <option value="">All</option>
+                      <select class="form-control" #verif="ngModel" [(ngModel)]="verified" >
+                        <option value="All">All</option>
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                       </select>
