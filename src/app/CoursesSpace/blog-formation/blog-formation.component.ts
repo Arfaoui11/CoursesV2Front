@@ -48,6 +48,8 @@ export class BlogFormationComponent implements OnInit {
   }
 
 
+
+
   getAllFormation()
   {
     return  this.serviceForm.getFormation().subscribe(
