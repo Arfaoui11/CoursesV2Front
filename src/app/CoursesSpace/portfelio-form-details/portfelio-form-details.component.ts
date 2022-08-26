@@ -186,7 +186,7 @@ export class PortfelioFormDetailsComponent implements OnInit {
   }
 
   goToChatRoom(idFormation: string) {
-    window.location.href = '#/chatRoom/'+idFormation;
+    window.location.href = '/chatRoom/'+idFormation;
   }
 
 

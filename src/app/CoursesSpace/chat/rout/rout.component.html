@@ -24,12 +24,11 @@
 
 
                       <a class="list-group-item-dark active list-group-item-action text-white rounded-pill"  >
-                        <div class="media"  ><img [src]="user.split(',')[1]" alt="user"   width="60" class="rounded-circle">
+                        <div class="media"  ><img [src]="user.split(',')[1]" alt="user"   width="40" class="rounded-circle">
                           <div class="media-body ml-4">
                             <div >
                               <h6 class="user-name">{{user.split(',')[0]}}</h6>
-
-
+                              <p class="small text-muted">{{heurs.getHours().toString().toUpperCase()+":"+ heurs.getMinutes() .toString().toUpperCase() }} PM | {{daysa.getDate().toString().toUpperCase() +" "+daysa.getMonth().toString().toUpperCase() +" "+daysa.getFullYear().toString().toUpperCase() }}</p>
 
                             </div>
 

@@ -27,13 +27,19 @@
       <div class="col-12">
         <div class="bd-portfolio-three-menu text-center">
           <button data-filter="*" (click)="SearchMultiple('')" class="active">All</button>
-          <button data-filter=".cat1" (click)="SearchMultiple('IT')" >It</button>
-          <button data-filter=".cat2" (click)="SearchMultiple('PHY')" >Phy</button>
-          <button data-filter=".cat3" (click)="SearchMultiple('MARKETING')" >Marketing</button>
-          <button data-filter=".cat1" (click)="SearchMultiple('ART')" >Art</button>
-          <button data-filter=".cat2" (click)="SearchMultiple('CINEMA')" >Cinema</button>
-          <button data-filter=".cat3" (click)="SearchMultiple('ECONOMIC')" >Economic</button>
-          <button data-filter=".cat3" (click)="SearchMultiple('DANCE')" >Dance</button>
+          <button data-filter=".cat1" (click)="SearchMultiple('DEVELOPMENT')" >Development</button>
+          <button data-filter=".cat2" (click)="SearchMultiple('BUSINESS')" >Business</button>
+          <button data-filter=".cat2" (click)="SearchMultiple('PERSONALDEVELOPMENT')" >Personal Development</button>
+          <button data-filter=".cat2" (click)="SearchMultiple('OFFICEPRODUCTIVITY')" >Office Productivity</button>
+          <button data-filter=".cat3" (click)="SearchMultiple('IT&SOFTWARE')" >IT & Software</button>
+          <button data-filter=".cat1" (click)="SearchMultiple('MARKETING')" >Marketing</button>
+          <button data-filter=".cat2" (click)="SearchMultiple('FINANCE&ACCOUNTING')" >Finance & Accounting</button>
+          <button data-filter=".cat3" (click)="SearchMultiple('DESIGN')" >Design</button>
+          <button data-filter=".cat3" (click)="SearchMultiple('LIFESTYLE')" >Lifestyle</button>
+          <button data-filter=".cat3" (click)="SearchMultiple('PHOTOGRAPHY&VIDEO')" >Photography & Video</button>
+          <button data-filter=".cat3" (click)="SearchMultiple('HEALTH&FITNESS')" >Health & Fitness</button>
+          <button data-filter=".cat3" (click)="SearchMultiple('MUSIC')" >Music</button>
+          <button data-filter=".cat3" (click)="SearchMultiple('TEACHING&ACADEMICS')" >Teaching & Academics</button>
         </div>
       </div>
     </div>
@@ -42,45 +48,45 @@
           <div class="col-lg-8 col-md-6 grid-item cat1" *ngIf="listFormation[0]">
             <div class="bd-portfolio bd-portfolio-three mb-30" >
 
-               <img   [src]="'data:image/jpeg;base64,'+listFormation[0].image" alt="porfolio not found 1">
+               <img   [src]="listFormation[0].image" alt="porfolio not found 1">
               <div class="bd-portfolio-text">
-                <span>{{listFormation[0].domain}}</span>
+                <span >{{listFormation[0].domain}}</span>
                 <h5 class="bd-portfolio-title"><a [routerLink]="['../detailsF',listFormation[0].id]">{{listFormation[0].title}}</a></h5>
-                <p>{{listFormation[0].start | date | slice:0 : 12}}</p>
+                <a href="#"><i class="flaticon-calendar"></i>  Start : {{listFormation[0].start | date | slice:0 : 12   }} <br> End : {{listFormation[0].end | date | slice:0 : 12}} </a>
               </div>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 grid-item cat2" *ngIf="listFormation[1]">
             <div class="bd-portfolio bd-portfolio-three mb-30">
-              <img   [src]="'data:image/jpeg;base64,'+listFormation[1].image" alt="porfolio not found 1">
+              <img   [src]="listFormation[1].image" alt="porfolio not found 1">
 
               <div class="bd-portfolio-text">
-                <span>{{listFormation[1].domain}}</span>
+                <span>{{listFormation[1].domain.toUpperCase()}}</span>
                 <h5 class="bd-portfolio-title"><a [routerLink]="['../detailsF',listFormation[1].id]">{{listFormation[1].title}}</a></h5>
-                <p>{{listFormation[1].start | date | slice:0 : 12}}</p>
+                <a href="#"><i class="flaticon-calendar"></i>  Start : {{listFormation[1].start | date | slice:0 : 12   }} <br> End : {{listFormation[1].end | date | slice:0 : 12}} </a>
               </div>
             </div>
           </div>
 
            <div class="col-lg-4 col-md-6 grid-item cat3" *ngIf="listFormation[2]">
                 <div class="bd-portfolio bd-portfolio-three mb-30">
-                  <img   [src]="'data:image/jpeg;base64,'+listFormation[2].image" alt="porfolio not found 1">
+                  <img   [src]="listFormation[2].image" alt="porfolio not found 1">
 
                   <div class="bd-portfolio-text">
-                    <span>{{listFormation[2].domain}}</span>
+                    <span>{{listFormation[2].domain.toUpperCase()}}</span>
                     <h5 class="bd-portfolio-title"><a [routerLink]="['../detailsF',listFormation[2].id]">{{listFormation[2].title}}</a></h5>
-                    <p>{{listFormation[2].start | date | slice:0 : 12}}</p>
+                    <a href="#"><i class="flaticon-calendar"></i>  Start : {{listFormation[2].start | date | slice:0 : 12   }} <br> End : {{listFormation[2].end | date | slice:0 : 12}} </a>
                   </div>
                 </div>
            </div>
            <div class="col-lg-4 col-md-6 grid-item cat1" *ngIf="listFormation[3]">
                 <div class="bd-portfolio bd-portfolio-three mb-30">
-                  <img   [src]="'data:image/jpeg;base64,'+listFormation[3].image" alt="porfolio not found 1">
+                  <img   [src]="listFormation[3].image" alt="porfolio not found 1">
 
                   <div class="bd-portfolio-text">
-                    <span>{{listFormation[3].domain}}</span>
+                    <span>{{listFormation[3].domain.toUpperCase()}}</span>
                     <h5 class="bd-portfolio-title"><a [routerLink]="['../detailsF',listFormation[3].id]">{{listFormation[3].title}}</a></h5>
-                    <p>{{listFormation[3].start | date | slice:0 : 12}}</p>
+                    <a href="#"><i class="flaticon-calendar"></i>  Start : {{listFormation[3].start | date | slice:0 : 12   }} <br> End : {{listFormation[3].end | date | slice:0 : 12}} </a>
                   </div>
                 </div>
            </div>
@@ -88,46 +94,46 @@
 
            <div class="col-lg-4 col-md-6 grid-item cat2" *ngIf="listFormation[4]">
               <div class="bd-portfolio bd-portfolio-three mb-30">
-                <img   [src]="'data:image/jpeg;base64,'+listFormation[4].image" alt="porfolio not found 1">
+                <img   [src]="listFormation[4].image" alt="porfolio not found 1">
 
                 <div class="bd-portfolio-text">
-                  <span>{{listFormation[4].domain}}</span>
+                  <span>{{listFormation[4].domain.toUpperCase()}}</span>
                   <h5 class="bd-portfolio-title"><a [routerLink]="['../detailsF',listFormation[4].id]">{{listFormation[4].title}}</a></h5>
-                  <p>{{listFormation[4].start | date | slice:0 : 12}}</p>
+                  <a href="#"><i class="flaticon-calendar"></i>  Start : {{listFormation[4].start | date | slice:0 : 12   }} <br> End : {{listFormation[4].end | date | slice:0 : 12}} </a>
                 </div>
               </div>
            </div>
            <div class="col-lg-4 col-md-6 grid-item cat3" *ngIf="listFormation[5]">
            <div class="bd-portfolio bd-portfolio-three mb-30">
-             <img   [src]="'data:image/jpeg;base64,'+listFormation[5].image" alt="porfolio not found 1">
+             <img   [src]="listFormation[5].image" alt="porfolio not found 1">
 
               <div class="bd-portfolio-text">
-                <span>{{listFormation[5].domain}}</span>
+                <span>{{listFormation[5].domain.toUpperCase()}}</span>
                 <h5 class="bd-portfolio-title"><a [routerLink]="['../detailsF',listFormation[5].id]">{{listFormation[5].title}}</a></h5>
-                <p>{{listFormation[5].start | date | slice:0 : 12}}</p>
+                <a href="#"><i class="flaticon-calendar"></i>  Start : {{listFormation[5].start | date | slice:0 : 12   }} <br> End : {{listFormation[5].end | date | slice:0 : 12}} </a>
               </div>
             </div>
            </div>
 
            <div class="col-lg-4 col-md-6 grid-item cat2" *ngIf="listFormation[6]">
              <div class="bd-portfolio bd-portfolio-three mb-30" >
-               <img   [src]="'data:image/jpeg;base64,'+listFormation[6].image" alt="porfolio not found 1">
+               <img   [src]="listFormation[6].image" alt="porfolio not found 1">
 
                 <div class="bd-portfolio-text">
-                  <span>{{listFormation[6].domain}}</span>
+                  <span>{{listFormation[6].domain.toUpperCase()}}</span>
                   <h5 class="bd-portfolio-title"><a [routerLink]="['../detailsF',listFormation[6].id]">{{listFormation[6].title}}</a></h5>
-                  <p>{{listFormation[6].start | date | slice:0 : 12}}</p>
+                  <a href="#"><i class="flaticon-calendar"></i>  Start : {{listFormation[6].start | date | slice:0 : 12   }} <br> End : {{listFormation[6].end | date | slice:0 : 12}} </a>
                 </div>
              </div>
             </div>
             <div class="col-lg-4 col-md-6 grid-item cat1" *ngIf="listFormation[7]">
                <div class="bd-portfolio bd-portfolio-three mb-30">
-                 <img   [src]="'data:image/jpeg;base64,'+listFormation[7].image" alt="porfolio not found 1">
+                 <img   [src]="listFormation[7].image" alt="porfolio not found 1">
 
                     <div class="bd-portfolio-text">
-                      <span>{{listFormation[7].domain}}</span>
+                      <span>{{listFormation[7].domain.toUpperCase()}}</span>
                       <h5 class="bd-portfolio-title"><a [routerLink]="['../detailsF',listFormation[7].id]">{{listFormation[7].title}}</a></h5>
-                      <p>{{listFormation[7].start | date | slice:0 : 12}}</p>
+                      <a href="#"><i class="flaticon-calendar"></i>Start : {{listFormation[7].start | date | slice:0 : 12   }} <br> End : {{listFormation[7].end | date | slice:0 : 12}} </a>
                     </div>
                   </div>
             </div>
