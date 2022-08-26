@@ -23,7 +23,7 @@
       <li class="navigation-header"><span>Apps</span>
       </li>
 
-      <li class="nav-item" ><a [routerLink]="['/home/Formation-management/addFormation']"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Courses Space</span><span class="badge badge badge-warning badge-pill float-right mr-2">3</span></a>
+      <li class="nav-item" *ngIf="currentUser.type == 'ADMIN'" ><a [routerLink]="['/home/Formation-management/addFormation']"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Courses Space</span><span class="badge badge badge-warning badge-pill float-right mr-2">3</span></a>
         <ul class="menu-content">
           <li><a [routerLink]="['/home/Formation-management/addFormation']"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo"> Courses </span></a>
           </li>
@@ -33,8 +33,15 @@
           </li>
         </ul>
       </li>
+      <li class="nav-item" *ngIf="currentUser.type == 'FORMER'"><a [routerLink]="['/home/Formation-management/calendarCourses/'+currentUser.id]"><i class="feather icon-home"></i><span class="menu-title" data-i18n="Dashboard">Former Space</span><span class="badge badge badge-warning badge-pill float-right mr-2">3</span></a>
+        <ul class="menu-content">
+          <li><a [routerLink]="['/home/Formation-management/calendarCourses/'+currentUser.id]"><i class="feather icon-check-square"></i><span class="menu-title" data-i18n="Todo"> Calendar </span></a>
+          </li>
 
-     <li class=" nav-item" ><a [routerLink]="['/home/Formation-management/listUsers']"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">User</span></a>
+        </ul>
+      </li>
+
+     <li class=" nav-item" *ngIf="currentUser.type == 'ADMIN'" ><a [routerLink]="['/home/Formation-management/listUsers']"><i class="feather icon-user"></i><span class="menu-title" data-i18n="User">User</span></a>
        <ul class="menu-content">
          <li><a [routerLink]="['/home/Formation-management/listUsers']"><i class="feather icon-circle"></i><span class="menu-item" data-i18n="List">List</span></a>
          </li>

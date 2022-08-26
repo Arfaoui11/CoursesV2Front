@@ -180,7 +180,7 @@ export class FormationService {
 
 
   getFormationByFormateur(id:string):Observable<Formation[]> {
-    return this.http.get<Formation[]>('http://localhost:4000/api/courses/coursesByCourses/'+id,{headers : this.getHeaders()});
+    return this.http.get<Formation[]>('http://localhost:4000/api/courses/coursesByFormer/'+id,{headers : this.getHeaders()});
   }
 
   getFormationByApprenant(id:string):Observable<any[]> {

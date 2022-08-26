@@ -118,7 +118,7 @@ export class CalendarCoursesComponent implements OnInit {
   public ListApprenant: Record<string, any>[];
 
   constructor(private serviceForm : FormationService,private snackbar:MatSnackBar,private token: TokenService,private route:ActivatedRoute ) {
-    this.getdata();
+
     this.currentUser = this.token.getUser();
 
     this.idFormateur = this.route.snapshot.params['idFormer'];
@@ -139,7 +139,7 @@ export class CalendarCoursesComponent implements OnInit {
 
   public  field : {[key : string]:any};
 
-  public fields: Object = { text: 'domain', value: 'idFormation' };
+  public fields: Object = { text: 'lastName', value: 'id' };
   // set the placeholder to DropDownList input element
   public waterMark: string = 'Select a game';
   // set the value to select an item based on mapped value at initial rendering
@@ -168,9 +168,10 @@ export class CalendarCoursesComponent implements OnInit {
 
 
     this.getformation();
-    this.getFormateur();
-    console.log(this.idF);
-    this.getFormateurByFormation();
+
+
+    this.getdata();
+
 
 
 
@@ -230,34 +231,6 @@ export class CalendarCoursesComponent implements OnInit {
   getdata()
   {
 
-    let xx = new XMLHttpRequest();
-    let xmll = new XMLHttpRequest();
-
-
-    xmll.onreadystatechange = ()=>
-    {
-      this.event = JSON.parse(xmll.responseText)
-    };
-    xx.onreadystatechange = ()=>
-    {
-      this.formateur = JSON.parse(xx.responseText)
-    };
-
-    xx.open('get','http://localhost:8099/Courses/retrieveFormateur',true);
-
-
-    xx.send(null);
-
-
-    xmll.open('get',"http://localhost:8099/Courses/getFormationByFormateur/"+this.route.snapshot.params['idFormer'],true);
-
-
-    xmll.send(null);
-
-
-
-
-
     setTimeout( () =>
     {
 
@@ -265,7 +238,7 @@ export class CalendarCoursesComponent implements OnInit {
 
 
       this.eventObject = {
-        dataSource :this.event,
+        dataSource :this.listFormation,
         fields : {
           subject : {name : 'title',default : " Event "},
           startTime : {name : 'start'},
@@ -278,7 +251,7 @@ export class CalendarCoursesComponent implements OnInit {
 /*
 
 */
-    },2000)
+    },500)
 
 
 
@@ -405,7 +378,7 @@ export class CalendarCoursesComponent implements OnInit {
 
   // setViews: View[] = ["Day","Month","Agenda","TimelineMonth","TimelineDay","TimelineWeek"];
   // public setView :View = "Month";
-  public selectedDate : Date = new Date(2022,3,1);
+  public selectedDate : Date = new Date(2022,7,1);
   public timeScale: TimeScaleModel = { enable: true, interval: 60 };
 
   StartTime: Date = new Date(2022, 3, 1, 10, 0);
@@ -670,7 +643,7 @@ export class CalendarCoursesComponent implements OnInit {
     this.ListApprenant = filteredData;
 
     this.field = {
-      dataSource : this.ListApprenant,id:'id',text : 'displayName'
+      dataSource : this.ListApprenant,id:'id',text : 'lastName'
     };
   }
 }
