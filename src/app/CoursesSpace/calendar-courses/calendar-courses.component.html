@@ -67,11 +67,11 @@
             <div class="event-content">
               <div class="patient-name-wrap">
                 <label>Courses Title</label>:
-                <div><span>{{data.title.toString().toUpperCase()}}</span></div>
+                <div><span>{{data.title}}</span></div>
               </div>
               <div class="doctor-name-wrap">
-                <label>{{data.idFormation ? "Former Name" : "Department Name"}}</label>:
-                <div><span>{{data.formateur.displayName.toUpperCase()}}</span></div>
+                <label>{{data.id ? "Former Name" : "Department Name"}}</label>:
+                <div><span>{{data.userF.lastName.toUpperCase()}} </span></div>
               </div>
               <div class="notes-wrap">
                 <label>Domain</label>:
@@ -79,14 +79,14 @@
               </div>
               <div class="notes-wrap">
                 <label>Number hours</label>:
-                <div><span>{{data.nbrHeures}} H </span></div>
+                <div><span>{{data.nbrHours}}</span></div>
               </div>
 
               <div class="col-lg-6 col-md-12 mb-1 position-sticky">
                 <div class="btn-group" role="group" aria-label="Basic example">
-                  <button  class="btn btn-primary" [routerLink]="['../../videoplaylist',data.idFormation]">Details</button>
-                  <button data-bs-toggle="modal" data-bs-target="#exampleModal"   class="btn btn-danger" (click)="dataId(data)" *ngIf="this.currentUser.roles[0] == 'ROLE_ADMIN'" >Update</button>
-                  <button  class="btn btn-info" *ngIf="currentUser.roles[0] == 'ROLE_ADMIN'" (click)="deleteFormation(data.idFormation);getdata()" >Delete</button>
+                  <button  class="btn btn-primary" [routerLink]="['../videoplaylist',data.idFormation]">Details</button>
+                  <button data-bs-toggle="modal" data-bs-target="#exampleModal"   class="btn btn-danger" (click)="dataId(data)" >Update</button>
+                  <button  class="btn btn-info" (click)="deleteFormation(data.idFormation);getdata()">Delete</button>
                 </div>
               </div>
             </div>
@@ -101,7 +101,7 @@
     </div>
     <div class="treeview-container">
       <div class="choose-Specialist-container">
-        <ejs-dropdownlist id='Former' cssClass="e-specialist-doctors" #dropdownObj [dataSource]='ListApprenant' [fields]='fields' [placeholder]='waterMark'
+        <ejs-dropdownlist id='Former' cssClass="e-specialist-doctors" #dropdownObj [dataSource]='listFormation' [fields]='fields' [placeholder]='waterMark'
                           placeholder='List Former ' popupHeight='auto' popupWidth='221px' showClearButton='true'
                           (change)='onSpecializationChange($event)' [itemTemplate]='itemTemplate'
                           [footerTemplate]='footerTemplate'>  </ejs-dropdownlist>
@@ -119,8 +119,8 @@
           <div id="waiting">
             <div id="waitdetails">
               <img class="round" src="assets/images/portrait/small/avatar-s-10.jpg" alt="avatar" height="27" width="30">
-              <div id='event-title'>Name : {{data.displayName}} </div>
-              <div id="event-time">Hourly rate : {{data.email}} DT </div>
+              <div id='event-title'>Name : {{data.lastName}} </div>
+              <div id="event-time"> {{data.email}}  </div>
             </div>
             <div id="item-icon-container">
               <span class="item-icon icon-reorder"></span>

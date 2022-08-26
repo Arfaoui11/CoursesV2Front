@@ -4,19 +4,7 @@ import {
   TemplateRef, ViewEncapsulation, Input,
 } from '@angular/core';
 
-import {
-  startOfDay,
-  endOfDay,
-  subDays,
-  addDays,
-  endOfMonth,
-  isSameDay,
-  isSameMonth,
-  addHours,
-} from 'date-fns';
-import { Subject } from 'rxjs';
-import { NgbModal } from '@ng-bootstrap/ng-bootstrap';
-import {CalendarEvent, CalendarEventAction, CalendarEventTimesChangedEvent, CalendarView} from "angular-calendar";
+
 import {addClass, Browser, closest, Internationalization, L10n} from "@syncfusion/ej2-base";
 import {
   AgendaService, CellClickEventArgs,
@@ -76,7 +64,7 @@ export class CalendarFrontComponent implements OnInit {
     <div class="add-doctor-text">Add New Former</div></div>`;
 
   public itemTemplate: string = '<div class="specialist-item"><img class="value" style="width: 50px ;height: 50px" src="assets/images/profile/user-uploads/user-03.jpg" alt="doctor"/>' +
-    '<div class="doctor-details"><div class="name">Mr.${title}</div><div class="designation">${domain}</div></div></div>';
+    '<div class="doctor-details"><div class="name">${title}</div><div class="designation">${domain}</div></div></div>';
 
   public animationSettings: Record<string, any> = { effect: 'None' };
 
@@ -558,48 +546,66 @@ export class CalendarFrontComponent implements OnInit {
 
   public resource : Object[] = [
 
-    { domain: "IT", Text: 'IT', Color: '#F538B2' },
-    { domain: "ART", Text: 'ART', Color: '#33C7E8' },
-    { domain: "CINEMA", Text: 'CINEMA', Color: '#916DE4' },
-    { domain: "MUSIC", Text: 'MUSIC', Color: '#388CF5' },
-    { domain: "DANCE", Text: 'DANCE', Color: '#60F238' },
-    { domain: "PHY", Text: 'PHY', Color: '#516275' },
-    { domain: "ECONOMIC", Text: 'ECONOMIC', Color: '#F29438' },
-    { domain: "MARKETING", Text: 'MARKETING', Color: '#f21526' }
+    { domain: "DEVELOPMENT", Text: 'DEVELOPMENT', Color: '#F538B2' },
+    { domain: "BUSINESS", Text: 'BUSINESS', Color: '#33C7E8' },
+    { domain: "FINANCE&ACCOUNTING", Text: 'FINANCE&ACCOUNTING', Color: '#916DE4' },
+    { domain: "IT&SOFTWARE", Text: 'IT&SOFTWARE', Color: '#388CF5' },
+    { domain: "OFFICEPRODUCTIVITY", Text: 'OFFICEPRODUCTIVITY', Color: '#60F238' },
+    { domain: "PERSONALDEVELOPMENT", Text: 'PERSONALDEVELOPMENT', Color: '#f21526' },
+    { domain: "DESIGN", Text: 'DESIGN', Color: '#a7a7a7' },
+    { domain: "MARKETING", Text: 'MARKETING', Color: '#4adede' },
+    { domain: "LIFESTYLE", Text: 'LIFESTYLE', Color: '#319413' },
+    { domain: "PHOTOGRAPHY&VIDEO", Text: 'PHOTOGRAPHY&VIDEO', Color: '#9a141a' },
+    { domain: "HEALTH&FITNESS", Text: 'HEALTH&FITNESS', Color: '#3a76d3' },
+    { domain: "MUSIC", Text: 'MUSIC', Color: '#ffd923' },
+    { domain: "TEACHING&ACADEMICS", Text: 'TEACHING&ACADEMICS', Color: '#f27f13' },
   ];
 
 
   getBackGroundColor(data : Formation) {
     let color: string;
-    if(data.domain === "IT")
+    if(data.domain === "DEVELOPMENT")
     {
       color = '#F538B2';
-    }else if(data.domain == "ART") {
+    }else if(data.domain == "BUSINESS") {
       color = '#33C7E8';
     }
-    else if(data.domain == "CINEMA") {
+    else if(data.domain == "FINANCE&ACCOUNTING") {
       color = '#916DE4';
     }
-    else if(data.domain == "MUSIC") {
+    else if(data.domain == "IT&SOFTWARE") {
       color = '#388CF5';
     }
-    else if(data.domain == "DANCE") {
+    else if(data.domain == "OFFICEPRODUCTIVITY") {
       color = '#60F238';
     }
-    else if(data.domain == "PHY") {
-      color = '#516275';
+    else if(data.domain == "PERSONALDEVELOPMENT") {
+      color = '#f21526';
     }
-    else if(data.domain == "ECONOMIC") {
-      color = '#F29438';
+    else if(data.domain == "DESIGN") {
+      color = '#a7a7a7';
+    }else if(data.domain == "LIFESTYLE") {
+      color = '#319413';
+    }
+    else if(data.domain == "PHOTOGRAPHY&VIDEO") {
+      color = '#9a141a';
+    }
+    else if(data.domain == "HEALTH&FITNESS") {
+      color = '#3a76d3';
+    }
+    else if(data.domain == "MUSIC") {
+      color = '#ffc03c';
+    }
+    else if(data.domain == "TEACHING&ACADEMICS") {
+      color = '#f27f13';
     }
     else if(data.domain == "MARKETING") {
-      color = '#f21526';
-    }else
+      color = '#4adede';
+    }
+    else
     {
       color = '#ffc9da';
     }
-
-
 
     return { 'background-color': color, color: '#FFFFFF' };
   }
