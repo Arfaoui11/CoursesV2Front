@@ -140,9 +140,7 @@ export class CoursesFormComponent implements OnInit {
 
 
 
-  updateDoctors() {
 
-  }
 
   getFormateur()
   {

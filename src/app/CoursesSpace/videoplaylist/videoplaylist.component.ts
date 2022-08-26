@@ -47,6 +47,7 @@ export class VideoplaylistComponent implements OnInit {
   currentUser: any = [];
   public formateur :User;
 
+  public pathUrl : string ;
 
   public listFormation: Formation;
   PathURL: any;
@@ -59,49 +60,75 @@ export class VideoplaylistComponent implements OnInit {
   ngOnInit(): void {
     this.idFormation = this.route.snapshot.params['idCourses'];
 
-  this.getFormation();
-  this.getformationList();
-  this.getData();
 
-   // this.getFormation();
+  this.getformationList();
+
+
+   this.getFormation();
 
     setTimeout( () => {
 
       this.getCommentByFormation();
 
+      this.getRatingByFormation();
 
-      this.rating = this.formation.nbrMaxParticipant;
-    },2000);
-  }
 
-  getData()
-  {
+    },1000);
+
     this.serviceForm.getFormationById(this.idFormation)
       .subscribe(
         data=> {
 
           this.listFormation =data;
 
-          for (let l of this.listFormation.image)
+          for (let l of this.listFormation.images)
           {
-           /* if(l.fileType.toString().includes('video'))
+
+
+            if(l.toString().includes('mp4') || l.toString().includes('mkv') || l.toString().includes('wmv'))
             {
               this.retrieveVideo.push(l)  ;
-            }else if(l.fileType.toString().includes('application'))
+
+            }else if(l.toString().includes('word') || l.toString().includes('pdf'))
             {
               this.retrieveFiles.push(l);
             }
-            else if (l.fileType.toString().includes('image'))
+            else if (l.toString().includes('jpg') || l.toString().includes('png') || l.toString().includes('jpeg'))
             {
               this.retrieveImage.push(l) ;
             }
 
-            */
-          }
 
+          }
+          this.pathUrl = 'http://localhost:4000/api/video/'+ this.retrieveVideo[this.index].slice(37);
         }
       );
+
+
+
   }
+
+
+
+  sendIndex($index: number ,path : string) {
+    this.index =$index;
+    this.retrieveFiles[this.index];
+    this.retrieveVideo[this.index];
+
+
+
+    this.pathUrl = 'http://localhost:4000/api/video/'+ path.slice(37);
+
+
+    /* this.serviceForm.getVideo(path.slice(37)).subscribe( data => {
+       this.pathUrl = data;
+     });
+
+     */
+
+  }
+
+
 
 
   uploadFile()
@@ -127,12 +154,20 @@ export class VideoplaylistComponent implements OnInit {
 
   }
 
+  getFormation()
+  {
+    this.serviceForm.getFormationById(this.idFormation).subscribe(data => {
+      this.formation = data;
+
+    });
+    return this.formation;
+  }
 
   onFileSelected(event : any) {
 
     const file : FileList = event?.target?.files;
 
-    var reader = new FileReader();
+    const reader = new FileReader();
 
     this.filePath = file;
 
@@ -146,15 +181,15 @@ export class VideoplaylistComponent implements OnInit {
     {
       const element  =  this.filePath[i];
 
-      formData.append('files',element);
+      formData.append('images',element);
     }
     this.serviceForm.uploadFile(formData,this.idFormation).subscribe(res => {
       console.log(res);
-      this.getData();
+
 
     });
 
-    this.snackbar.open(' files add with succees', 'Undo', {
+    this.snackbar.open(' files add with success', 'Undo', {
       duration: 2000
     });
 
@@ -169,7 +204,7 @@ export class VideoplaylistComponent implements OnInit {
         this.retrieveVideo = this.retrieveVideo.filter(item => item.id !== id);
        // this.getData();
     } );
-    this.snackbar.open(' files delete with succees', 'Undo', {
+    this.snackbar.open(' files delete with success', 'Undo', {
       duration: 2000
     });
     setTimeout(()=> {    window.location.reload(); },5000);
@@ -177,51 +212,29 @@ export class VideoplaylistComponent implements OnInit {
   }
 
 
-  getFormation()
-  {
 
-    this.serviceForm.getFormationById(this.idFormation).subscribe(data => {
-      this.formation = data;
-      this.rating = this.formation.nbrMaxParticipant;
-    });
-    return this.formation;
-  }
 
-  videoPlayerInit(data:any) {
-    this.dataa = data;
 
-    this.dataa.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.initVdo.bind(this));
-    this.dataa.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
-  }
 
-  nextVideo() {
-    this.activeIndex++;
 
-    if (this.activeIndex === this.retrieveResonse.length) {
-      this.activeIndex = 0;
-    }
 
-    this.videoUrl = this.retrieveResonse[this.activeIndex];
-  }
 
   public status: number;
+
+
   sendComments()
   {
     this.serviceForm.writeComment(this.post,this.idFormation,this.currentUser.id).subscribe(
       data=>{
-        this.getCommentByFormation();
-        if(data==0)
-        {
-          this.snackbar.open( 'You Are create bad Comment in this Courses ', 'Undo', {
-            duration: 2000
-          });
-        }else {
-          this.snackbar.open(' Comment added ', 'Undo', {
-            duration: 2000
-          });
-        }
-      },
+        this.getFormation();
+        // this.getCommentByFormation()
 
+      },
+      (error => {
+        this.snackbar.open(' You are excluded with any comment write 20 days ', 'Undo', {
+          duration: 2000
+        });
+      })
     );
   }
 
@@ -234,85 +247,119 @@ export class VideoplaylistComponent implements OnInit {
     this.serviceForm.getCommentByFormation(this.idFormation).subscribe(
       (data: PostComment[]) => {
         this.comment = data;
-        for (let l of this.comment) {
-          let xx = new XMLHttpRequest();
-          let xmll = new XMLHttpRequest();
-
-          let nbL=0;
-          let nbD=0;
-          xmll.onreadystatechange = ()=>
-          {
-            l.nbrDisLikes = JSON.parse(xmll.responseText)
-          };
-          xx.onreadystatechange = ()=>
-          {
-            l.nbrLikes = JSON.parse(xx.responseText)
-          };
-
-          xx.open('get','http://localhost:8099/Courses/getNbrLikesByComment/'+l.idComn,true);
 
 
-          xx.send(null);
-
-
-          xmll.open('get','http://localhost:8099/Courses/getNbrDislikesByComment/'+l.idComn,true);
-
-
-          xmll.send(null);
-
-        }
 
       }
     );
     return this.comment;
   }
+  public stat : boolean = true;
 
   LikesComment(id:string)
   {
+    let status = true;
+    for (let c of this.formation.comments)
+    {
+      if (c.id == id)
+      {
+        for (let l of c.likes)
+        {
+
+          if(l.user.id == this.currentUser.id)
+          {
+            status=false;
+          }
+
+        }
+
+      }
+
+    }
+
+
+    if (status) {
+      this.serviceForm.addLikes(id, this.currentUser.id).subscribe(data => {
+          console.log(data);
+
+
+          this.getFormation();
+
+        }
+      );
+    }
+
+
+  }
 
 
 
-    this.serviceForm.addLikes(id,this.currentUser.id).subscribe(data=>
-      {console.log(data);
+
+  changeRating(){
 
 
-        this.getCommentByFormation();
+    this.rat.typeRating = this.rating;
+
+
+    this.serviceForm.addRatingFormation(this.idFormation,this.currentUser.id,this.rat).subscribe(
+      data => {
+
+
+        setTimeout(()=>
+        {
+          // this.ratTrue= true;
+          this.getRatingByFormation();
+          this.getFormation();
+
+        },1000);
+
+      },(err)=> {
+
+        // if (this.ratTrue)
+        this.snackbar.open(' You have one rating for this courses ', 'Undo', {
+          duration: 2000
+        });
       }
     );
 
-  }
-  public nbrL : number=0;
-  public nbrD:number=0;
 
-  getnbrLikes(id:string)
+
+
+  }
+
+  getRatingByFormation()
   {
-
-    this.serviceForm.getNbrLikes(id).subscribe(data =>
-      this.nbrL = data);
-    return this.nbrL;
-
+    this.serviceForm.getRatingFormation(this.idFormation).subscribe(data => { this.rating = data})
   }
-
-  getnbrDisLikes(id:string)
-  {
-
-    this.serviceForm.getNbrDisLikes(id).subscribe(data =>
-      this.nbrD = data);
-    return this.nbrD;
-
-  }
-
-
-
 
   DisLikesComment(id:string)
   {
 
+    let status = true;
+    for (let c of this.formation.comments)
+    {
+      if (c.id == id)
+      {
+        for (let l of c.dislikes)
+        {
 
-    this.serviceForm.addDisLikes(id,this.currentUser.id).subscribe(data=> {console.log(data);
-      this.getCommentByFormation();
-    });
+          if(l.user.id == this.currentUser.id)
+          {
+            status=false;
+          }
+
+        }
+
+      }
+
+    }
+    if (status) {
+      this.serviceForm.addDisLikes(id, this.currentUser.id).subscribe(data => {
+        this.getFormation();
+      });
+    }
   }
+
 
   getFormateurByFormation(id:string)
   {
@@ -322,8 +369,24 @@ export class VideoplaylistComponent implements OnInit {
     return this.formateur;
   }
 
+  videoPlayerInit(data:any) {
+    this.dataa = data;
+
+    this.dataa.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.initVdo.bind(this));
+    this.dataa.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
+  }
   initVdo() {
-    this.dataa.pause();
+    this.dataa.play();
+  }
+
+  nextVideo() {
+    this.index++;
+
+    if (this.index === this.retrieveResonse.length) {
+      this.activeIndex = 0;
+    }
+
+    this.retrieveVideo = this.retrieveVideo[this.index];
   }
 
   startPlaylistVdo(item :any, index: number) {
@@ -401,10 +464,7 @@ export class VideoplaylistComponent implements OnInit {
     )
 
   }
-  sendIndex($index: number) {
-    this.index =$index;
-    this.retrieveVideo[this.index].play();
-  }
+
 
   getformationList(){
 
@@ -448,32 +508,6 @@ export class VideoplaylistComponent implements OnInit {
   }
 
 
-  private ratTrue = false;
-  changeRating() {
-
-    if (!this.ratTrue)
-    {
-      this.serviceForm.addRatingFormation(this.idFormation,this.currentUser.id,this.rat).subscribe(
-        data => {
 
 
-          setTimeout(()=>
-          {
-
-            this.getRatingByFormation();
-
-          },500);
-
-        }
-      );
-      this.ratTrue= true;
-    }
-
-
-  }
-
-  getRatingByFormation()
-  {
-    this.serviceForm.getRatingFormation(this.idFormation).subscribe(data => { this.rating = data})
-  }
 }

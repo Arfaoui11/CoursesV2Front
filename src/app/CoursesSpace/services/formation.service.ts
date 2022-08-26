@@ -169,7 +169,7 @@ export class FormationService {
 
   getFormateurbyFormation(id : string):Observable<User>
   {
-    return this.http.get<User>('http://localhost:8099/Courses/getFormateurFromFormation/'+id);
+    return this.http.get<User>('http://localhost:8099/Courses/getFormateurFromFormation/'+id,{headers : this.getHeaders()});
   }
 
 
@@ -180,7 +180,7 @@ export class FormationService {
 
 
   getFormationByFormateur(id:string):Observable<Formation[]> {
-    return this.http.get<Formation[]>('http://localhost:8099/Courses/getFormationByFormateur/'+id);
+    return this.http.get<Formation[]>('http://localhost:4000/api/courses/coursesByCourses/'+id,{headers : this.getHeaders()});
   }
 
   getFormationByApprenant(id:string):Observable<any[]> {
@@ -317,7 +317,7 @@ export class FormationService {
 
   uploadFile(file: FormData, i: string): Observable<any>
   {
-    return this.http.post<any>('http://localhost:8099/Courses/uploadMultipleFiles/'+i,file);
+    return this.http.put<any>('http://localhost:4000/api/courses/multiple/'+i,file,{headers : this.getHeaders()});
   }
 
   getFile(file: string): Observable<any>

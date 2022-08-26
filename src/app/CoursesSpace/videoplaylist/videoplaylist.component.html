@@ -1,7 +1,7 @@
 
 
 <!-- Admin and Video Section Starts -->
-<section *ngIf="formation.images.length > 0" >
+<section  >
   <div class="row">
     <div class="col-lg-4 col-sm-12">
       <div class="card">
@@ -9,7 +9,7 @@
           <h4 class="card-title w-100">
            Videos List
           </h4>
-          <p class="">by {{currentUser.displayName.toUpperCase()}}</p>
+          <p class="">by {{currentUser.lastName.toUpperCase()}}</p>
           <div class="heading-elements">
             <ul class="list-inline mb-0">
               <li><span><i class="feather icon-more-vertical"></i></span></li>
@@ -18,19 +18,26 @@
         </div>
         <div class="card-content">
           <div class="card-body">
-            <div class="sidebar--widget__post mb-20" *ngFor="let vdo of retrieveVideo; let $index = index">
-              <div class="sidebar__post--thumb">
-                <a  >
-                  <div class="post__img" >
-                    <img src="../../../assets/front/img/blog/b6.jpg" alt="">
-                  </div>
+            <div class="widget mb-45"  >
 
-                </a>
+              <h3 class="sidebar__widget--title mb-30"  >Recent Videos </h3>
+
+              <div class="sidebar--widget__post mb-20" *ngFor="let vdo of retrieveVideo; let $index = index">
+                <div class="sidebar__post--thumb">
+                  <div class="bd-slider-five-video">
+                    <div class="bd-slider-five-video-icon wow fadeInUp" data-wow-delay=".6s">
+                      <a (click)="sendIndex($index,vdo)" class="play_btn popup-video"><i class="flaticon-play"></i></a>
+                    </div>
+                    <div class="bd-slider-five-video-text wow fadeInUp" data-wow-delay=".8s">
+                      <span>Watch</span>
+                      <h5> {{vdo | slice:37 : -18  }} </h5>
+                      <span>{{formation.start | date | slice:0 : 12}}</span>
+                    </div>
+                  </div>
+                </div>
+
               </div>
-              <div class="sidebar__post--text">
-                <h4 class="sidebar__post--title"><a (click)="sendIndex($index)">{{vdo.fileName}}</a></h4>
-                <span>{{formation.start | date | slice:0 : 12}}</span>
-              </div>
+
             </div>
            <!-- <div id="carousel-example-generic" class="carousel slide" data-ride="carousel" *ngIf="retrieveImage.length > 0">
 
@@ -65,48 +72,49 @@
 
 
 
-          <div class="video-player-wrapper" *ngIf="retrieveVideo.length  > 0" >
+        <div class="video-player-wrapper" >
 
-            <vg-player (onPlayerReady)="videoPlayerInit($event)">
-              <vg-overlay-play></vg-overlay-play>
-              <vg-buffering></vg-buffering>
+          <vg-player (onPlayerReady)="videoPlayerInit($event)">
+            <vg-overlay-play></vg-overlay-play>
+            <vg-buffering></vg-buffering>
 
-              <vg-scrub-bar>
-                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-                <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-              </vg-scrub-bar>
+            <vg-scrub-bar>
+              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+            </vg-scrub-bar>
 
-              <vg-controls>
-
-
-
-                <vg-play-pause></vg-play-pause>
-                <vg-playback-button></vg-playback-button>
-
-                <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
-
-                <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-
-                <vg-mute></vg-mute>
-                <vg-volume></vg-volume>
-                <vg-track-selector></vg-track-selector>
-                <vg-fullscreen></vg-fullscreen>
-              </vg-controls>
+            <vg-controls>
 
 
 
-              <video #media *ngIf="retrieveVideo[0].fileType.toString().includes('video')" [vgMedia]="$any(media)"  [src]="'data:video/mp4;base64,'+retrieveVideo[index].data" width='150' height='100'
-                     id="singleVideo"
-                     preload="auto" [autoplay]="true" crossorigin controls="controls">
-                <track src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt" kind="subtitles" label="English" srclang="en" default>
-                <track src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt" kind="subtitles" label="Español" srclang="es">
-              </video>
-            </vg-player>
+              <vg-play-pause></vg-play-pause>
+              <vg-playback-button></vg-playback-button>
 
-            <div class="card-body" *ngIf="retrieveVideo[0].fileType.toString().includes('video')">
-              <p class="card-text">{{ retrieveVideo[0].fileName | slice:0:-4 }}</p>
-              <a   class="btn btn-outline-primary round mr-1 mb-1 waves-effect waves-light" (click)="playvideo(retrieveVideo[index].id)">Video link</a>
-              <a   class="btn btn-outline-info round mr-1 mb-1 waves-effect waves-light" (click)="downloadFiles(retrieveVideo[index].id)" > Download files </a>
+              <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+              <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+              <vg-mute></vg-mute>
+              <vg-volume></vg-volume>
+              <vg-track-selector></vg-track-selector>
+              <vg-fullscreen></vg-fullscreen>
+            </vg-controls>
+
+
+
+            <video #media  [vgMedia]="$any(media)"  [src]="pathUrl" width='150' height='100'
+                   id="singleVideo"
+                   preload="auto" crossorigin controls="controls">
+              <track src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt" kind="subtitles" label="English" srclang="en" default>
+              <track src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt" kind="subtitles" label="Español" srclang="es">
+            </video>
+          </vg-player>
+
+
+            <div class="card-body" >
+              <p class="card-text"></p>
+
+              <a   class="btn btn-outline-info round mr-1 mb-1 waves-effect waves-light" [href]="pathUrl" > Download files </a>
               <a   class="btn btn-outline-danger round mr-1 mb-1 waves-effect waves-light" (click)="deleteFiles(retrieveVideo[index].id)" > Delete </a>
             </div>
           </div>
@@ -129,7 +137,7 @@
 
 <div class="content-body" >
 
-  <!-- Timeline Starts -->
+
   <section >
     <div class="row">
 
@@ -141,7 +149,7 @@
           <img src="../../../assets/images/profile/user-uploads/user-01.jpg" alt="avtar img holder" height="45" width="45">
         </div>
         <div class="user-page-info">
-          <p class="mb-0">{{currentUser.displayName.toUpperCase()}}</p>
+          <p class="mb-0">{{currentUser.lastName.toUpperCase()}}</p>
           <span class="font-small-2">Start : {{formation.start | date | slice:0 : 12   }}  -  End : {{formation.end | date | slice:0 : 12   }}</span>
         </div>
         <div class="ml-auto user-like text-danger"><i class="fa fa-heart"></i></div>
@@ -149,7 +157,7 @@
 
       <div *ngIf="formation.images.length > 0">
 
-        <img  [src]="'data:image/jpeg;base64,'+formation.image" alt="blog image not found 1">
+        <img  [src]="formation.image" alt="blog image not found 1">
       </div>
 
       <div class="d-flex justify-content-start align-items-center mb-1">
@@ -159,36 +167,36 @@
         </div>
         <div class="ml-2">
           <ul class="list-unstyled users-list m-0  d-flex align-items-center"  >
-            <li data-toggle="tooltip" *ngFor="let l of comment" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Trina Lynes" class="avatar pull-up">
-              <img class="media-object rounded-circle" src="../../../assets/images/portrait/small/avatar-s-2.jpg" alt="Avatar" height="30" width="30">
+            <li data-toggle="tooltip" *ngFor="let l of formation.comments" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Trina Lynes" class="avatar pull-up">
+              <img class="media-object rounded-circle" [src]="l.user.file" alt="Avatar" height="30" width="30">
             </li>
           </ul>
         </div>
         <p class="ml-auto d-flex align-items-center"> <a (click)="showComment()">
-          <i class="feather icon-message-square font-medium-2 mr-50"></i>{{comment.length}}
+          <i class="feather icon-message-square font-medium-2 mr-50"></i>{{formation.comments.length}}
         </a> </p>
       </div>
 
       <div *ngIf="showC">
 
-        <div class="d-flex justify-content-start align-items-center mb-1" *ngFor="let post of comment">
+        <div class="d-flex justify-content-start align-items-center mb-1" *ngFor="let post of formation.comments">
           <div class="avatar mr-50">
-            <img src="../../../assets/images/portrait/small/avatar-s-2.jpg" alt="Avatar" height="30" width="30">
+            <img [src]="post.user.file" alt="Avatar" height="30" width="30">
           </div>
           <div class="user-page-info">
-            <h6 class="mb-0">{{post.userC.displayName.toUpperCase()}}</h6>
+            <h6 class="mb-0">{{post.user.lastName.toUpperCase()}}</h6>
             <span class="font-small-2">{{post.message}}</span>
           </div>
           <div class="ml-auto cursor-pointer float-lg-right">
-            <button class="like" (click)="LikesComment(post.idComn)">
+            <button class="like" (click)="LikesComment(post.id)">
               <i class="fa fa-thumbs-o-up" aria-hidden="true"> </i>
             </button>
-            <label>{{post.nbrLikes}}</label>
+            <label>{{post.likes.length}}</label>
             &nbsp;
-            <button class="dislike" (click)="DisLikesComment(post.idComn)">
+            <button class="dislike" (click)="DisLikesComment(post.id)">
               <i class="fa fa-thumbs-o-down" aria-hidden="true"></i>
             </button>
-            <label>{{post.nbrDisLikes}}</label>
+            <label>{{post.likes.length}}</label>
           </div>
         </div>
 
@@ -223,7 +231,7 @@
       <div class="card-body">
         <div *ngIf="formation.images.length > 0">
 
-          <img  [src]="'data:image/jpeg;base64,'+formation.image" alt="blog image not found 1">
+          <img  [src]="formation.image" alt="blog image not found 1">
 
         </div>
         <div class="d-flex justify-content-start mt-2">
@@ -231,14 +239,13 @@
 
             <ng-template #t let-fill="fill">
                   <span class="star" [class.full]="fill === 100">
-                    <span class="half" [style.width.%]="fill">&hearts;</span>&hearts;
+                    <span class="half" [style.width.%]="fill">&star;</span>&star;
                   </span>
             </ng-template>
 
-            <ngb-rating [(rate)]="rating" [starTemplate]="t"  [max]="5" ></ngb-rating>
+            <ngb-rating [(rate)]="rating" [starTemplate]="t"  [max]="5" (rateChange)="changeRating()"></ngb-rating>
+            <pre>Rate: <b>{{rating.toString() | slice: 0 : 4  }} </b>({{formation.ratings.length}}) ({{formation.courseApprenants.length}}) students</pre>
 
-
-            <pre>Rate: <b>{{rating}}</b></pre>
           </div>
 
         </div>

@@ -79,6 +79,7 @@ export class AddEditFormerComponent implements OnInit {
     formData.append('phoneNumber',this.user.phoneNumber.toString())
     formData.append('age',this.user.age.toString())
     formData.append('type',"FORMER");
+    formData.append('profession',this.user.profession.toString());
 
     this.serviceForm.register(formData).subscribe(data => {
         console.log(data);
