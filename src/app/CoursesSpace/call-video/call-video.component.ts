@@ -140,7 +140,7 @@ export class CallVideoComponent implements OnInit {
   }
 
   disconnect() {
-    window.location.href = '../homeF';
+    window.location.href = '../front/End/homeF';
     this.ngOnDestroy();
   }
 

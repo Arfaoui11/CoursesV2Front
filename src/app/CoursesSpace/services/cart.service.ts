@@ -41,7 +41,7 @@ export class CartService {
   addtoCart(product : any){
 
     const exist = this.cartItemList.filter(item => item.id == product.id);
-    console.log(exist);
+
     if (exist.length === 0)
     {
       this.cartItemList.push(product);
@@ -49,13 +49,13 @@ export class CartService {
       const list = this.getCart();
       this.coursesList.next(list);
     }else {
-      console.log(exist)
+      console.log(exist);
     }
 
 
 
     this.getTotalPrice();
-    console.log(this.cartItemList)
+
   }
 
   public saveCartList(cart: any): void {

@@ -37,7 +37,7 @@ export class NavbarFComponent implements OnInit {
     this.cartService.getCourses()
       .subscribe(res=>{
         this.totalItem = res.length;
-      })
+      });
 
 
     this.isLoggedIn = !!this.token.getToken();
