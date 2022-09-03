@@ -197,12 +197,18 @@
                 <div class="user-btn-inner p-relative d-none d-md-block">
                   <div class="user-btn-wrapper">
                     <div class="user-btn-content ">
-                      <button class="user-btn-sign-in" data-bs-toggle="modal" data-bs-target="#signinModal">Sign In</button>
+                      <button class="user-btn-sign-in" *ngIf="!currentUser" data-bs-toggle="modal" data-bs-target="#signinModal">Sign In</button>
+                      <img *ngIf="currentUser" [src]="currentUser.file" class="img-lg" alt="img">
+                      <span *ngIf="currentUser" style="font-family: Georgia, Times New Roman, serif">  {{currentUser.lastName.toUpperCase()}}</span>
                     </div>
                   </div>
                 </div>
                 <div class="d-none d-md-block">
-                  <button class="user-btn-sign-up edu-btn" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
+
+                  <button class="user-btn-sign-up edu-btn" *ngIf="currentUser" (click)="logout()" >Log out</button>
+                </div>
+                <div class="d-none d-md-block">
+                  <button class="user-btn-sign-up edu-btn" *ngIf="!currentUser" data-bs-toggle="modal" data-bs-target="#signupModal">Sign Up</button>
                 </div>
                 <div class="menu-bar d-xl-none ml-20">
                   <a class="side-toggle" href="javascript:void(0)">

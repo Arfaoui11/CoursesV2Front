@@ -17,19 +17,35 @@
           </div>
         </div>
         <div class="signup-form-wrapper">
+          <form *ngIf="!isSuccessful" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
           <div class="signup-input-wrapper">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="First Name">
+            <input type="text" class="form-control" name="firstName" [(ngModel)]="form.firstName" required minlength="3"
+                   maxlength="20" #firstName="ngModel" placeholder="First Name">
+            <input type="text" class="form-control" name="lastName" [(ngModel)]="form.lastName" required minlength="3"
+                   maxlength="20" #lastName="ngModel" placeholder="Last Name">
           </div>
           <div class="signup-wrapper">
-            <input type="text" placeholder="Email">
+            <input type="email" class="form-control" name="email" [(ngModel)]="form.email" required email #email="ngModel">
           </div>
           <div class="signup-wrapper">
-            <input type="text" placeholder="Username">
+            <input  type="number" class="form-control" name="age" [(ngModel)]="form.age" required minlength="3"
+                   maxlength="20" #age="ngModel" placeholder="Age">
           </div>
+            <div class="signup-wrapper">
+              <input  type="text" class="form-control" name="phoneNumber" [(ngModel)]="form.phoneNumber" required minlength="3"
+                     maxlength="20" #phoneNumber="ngModel" placeholder="Phone Number">
+            </div>
           <div class="signup-wrapper">
-            <input type="text" placeholder="Password">
+            <input type="password" class="form-control" name="password" [(ngModel)]="form.password" required minlength="6"
+                   #password="ngModel" placeholder="Password">
           </div>
+            <div class="form-group col-md-4">
+              <label  >Add Image </label>
+              <input  type="file" name="file"  (change)="selectImage($event)" multiple>
+              <img [src]="imgURL" height="100" width="150"  *ngIf="imgURL" >
+
+
+            </div>
           <div class="signup-action">
             <div class="course-sidebar-list">
               <input class="signup-checkbo" type="checkbox" >
@@ -39,6 +55,12 @@
           </div>
           <div class="sing-buttom mb-20">
             <button class="sing-btn">Register now</button>
+          </div>
+            <div class="alert alert-warning" *ngIf="f.submitted && isSignUpFailed">
+              Signup failed!<br />{{ errorMessage }}
+            </div>
+          </form>
+          <div class="alert alert-success" *ngIf="isSuccessful">Your registration is successful!
           </div>
           <div class="acount-login text-center">
             <span>Already have an account? <a href="#">Log in</a></span>

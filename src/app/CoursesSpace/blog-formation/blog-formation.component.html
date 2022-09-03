@@ -81,70 +81,90 @@
             <ul>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-bus">
-                  <label class="edu-check-label" for="e-bus">Business (12)</label>
+                  <input class="edu-check-box" type="radio"  value="All" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >All</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-dev">
-                  <label class="edu-check-label" for="e-dev">Development (9)</label>
+                  <input class="edu-check-box" type="radio" value="DEVELOPMENT" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Development</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-data">
-                  <label class="edu-check-label" for="e-data">Data Science (25)</label>
+                  <input class="edu-check-box" type="radio" value="BUSINESS" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Business</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-art">
-                  <label class="edu-check-label" for="e-art">Arts & Design (10)</label>
+                  <input class="edu-check-box" type="radio" value="FINANCE&ACCOUNTING" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Finance & Accounting</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-fin">
-                  <label class="edu-check-label" for="e-fin">Finance (8)</label>
+                  <input class="edu-check-box" type="radio" value="IT&SOFTWARE" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >IT & Software</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-mark">
-                  <label class="edu-check-label" for="e-mark">Marketing (22)</label>
+                  <input class="edu-check-box" type="radio" value="OFFICEPRODUCTIVITY" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Office Productivity</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-per">
-                  <label class="edu-check-label" for="e-per">Management (12)</label>
+                  <input class="edu-check-box" type="radio" value="PERSONALDEVELOPMENT" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Personal Development</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-heal">
-                  <label class="edu-check-label" for="e-heal">Health & Fitness (5)</label>
+                  <input class="edu-check-box" type="radio" value="DESIGN" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Design</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-photo">
-                  <label class="edu-check-label" for="e-photo">Photography (18)</label>
+                  <input class="edu-check-box" type="radio" value="MARKETING" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Marketing</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-music">
-                  <label class="edu-check-label" for="e-music">Music (21)</label>
+                  <input class="edu-check-box" type="radio" value="LIFESTYLE" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label">Lifestyle</label>
                 </div>
               </li>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-acad">
-                  <label class="edu-check-label" for="e-acad">Academic (16)</label>
+                  <input class="edu-check-box" type="radio" value="PHOTOGRAPHY&VIDEO" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Photography & Video</label>
                 </div>
               </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="HEALTH&FITNESS" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Health & Fitness</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="MUSIC" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Music</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="TEACHING&ACADEMICS" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Teaching & Academics</label>
+                </div>
+              </li>
+
+
             </ul>
           </div>
         </div>

@@ -15,7 +15,7 @@
           </div>
         </div>
         <div class="signup-form-wrapper">
-          <form *ngIf="!isLoggedIn" name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
+          <form  name="form" (ngSubmit)="f.form.valid && onSubmit()" #f="ngForm" novalidate>
           <div class="signup-wrapper">
             <input type="text" name="username" [(ngModel)]="form.username" required #username="ngModel" placeholder="Email or Username">
           </div>
