@@ -1,2045 +1,440 @@
-<section data-anim="fade" class="breadcrumbs ">
+<!-- hero-area-start -->
+<div class="hero-arera course-item-height" data-background="../../../assets/front/img/slider/course-slider.jpg">
   <div class="container">
     <div class="row">
-      <div class="col-auto">
-        <div class="breadcrumbs__content">
-
-          <div class="breadcrumbs__item ">
-            <a href="#">Home</a>
-          </div>
-
-          <div class="breadcrumbs__item ">
-            <a href="#">All courses</a>
-          </div>
-
-          <div class="breadcrumbs__item ">
-            <a href="#">User Experience Design</a>
-          </div>
-
-          <div class="breadcrumbs__item ">
-            <a href="#">User Interface</a>
-          </div>
-
+      <div class="col-xl-12">
+        <div class="hero-course-1-text">
+          <h2>Courses</h2>
+        </div>
+        <div class="course-title-breadcrumb">
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><span>Courses</span></li>
+            </ol>
+          </nav>
         </div>
       </div>
     </div>
   </div>
-</section>
+</div>
+<!-- hero-area-end -->
 
-
-<section class="page-header -type-1">
+<!-- course-barup-area -->
+<div class="course-bar-up-area pt-120">
   <div class="container">
-    <div class="page-header__content">
-      <div class="row">
-        <div class="col-auto">
-          <div data-anim="slide-up delay-1">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="course-main-wrapper mb-30">
+          <div class="bar-filter">
+            <i class="flaticon-filter"></i>
+            <span>Filter</span>
+            <span>(2)</span>
+          </div>
+          <div class="corse-bar-wrapper">
+            <div class="bar-search">
+              <form (click)="SearchMultiple(key.value)">
+                <div class="bar-secrch-icon position-relative">
+                  <input type="text" placeholder="Search keywords" #key="ngModel" ngModel
+                         name="key">
+                  <button type="submit"><i class="far fa-search"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="course-sidebar-tab">
+            <div class="course-sidebar-wrapper">
+              <div class="curse-tab-left-wrap">
+                <div class="course-results">
+                  Showing <span class="course-result-showing">15</span> of <span
+                  class="course-result-number">60</span> results
+                </div>
+              </div>
+              <div class="couse-dropdown">
+                <div class="course-drop-inner">
+                  <select>
+                    <option value="">Newly published</option>
+                    <option value="">Most Viewed</option>
+                    <option value="">5 Star Rated</option>
+                    <option value="">Duration</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
 
-            <h1 class="page-header__title">User Interface Courses</h1>
+    </div>
+  </div>
+</div>
+<!-- course-barup-area-end -->
+
+<!-- course-content-start -->
+<section class="course-content-area pb-90">
+  <div class="container">
+    <div class="row mb-10">
+      <div class="col-xl-3 col-lg-4 col-md-8">
+        <div class="course-sidebar-widget mb-20">
+          <div class="course-sidebar-info">
+            <h3 class="drop-btn">Categories</h3>
+            <ul>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-bus">
+                  <label class="edu-check-label" for="e-bus">Business (12)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-dev">
+                  <label class="edu-check-label" for="e-dev">Development (9)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-data">
+                  <label class="edu-check-label" for="e-data">Data Science (25)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-art">
+                  <label class="edu-check-label" for="e-art">Arts & Design (10)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-fin">
+                  <label class="edu-check-label" for="e-fin">Finance (8)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-mark">
+                  <label class="edu-check-label" for="e-mark">Marketing (22)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-per">
+                  <label class="edu-check-label" for="e-per">Management (12)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-heal">
+                  <label class="edu-check-label" for="e-heal">Health & Fitness (5)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-photo">
+                  <label class="edu-check-label" for="e-photo">Photography (18)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-music">
+                  <label class="edu-check-label" for="e-music">Music (21)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-acad">
+                  <label class="edu-check-label" for="e-acad">Academic (16)</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="course-sidebar-widget mb-20">
+          <div class="course-sidebar-info">
+            <h3 class="drop-btn">Ratings</h3>
+            <ul>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-25" name="rating">
+                  <label class="edu-check-star" for="e-25">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    (25)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-24" name="rating">
+                  <label class="edu-check-star" for="e-24">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    (25)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-12" name="rating">
+                  <label class="edu-check-star" for="e-12">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    (12)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-28" name="rating">
+                  <label class="edu-check-star" for="e-28">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    (28)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-14" name="rating">
+                  <label class="edu-check-star" for="e-14">
+                    <i class="fas fa-star">
+                    </i> <i class="fal fa-star">
+                  </i> <i class="fal fa-star">
+                  </i><i class="fal fa-star">
+                  </i><i class="fal fa-star"></i>
+                    (14)</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="course-sidebar-widget mb-20">
+          <div class="course-sidebar-info">
+            <h3 class="drop-btn">Level</h3>
+
+            <ul>
+              <li>
+                <div class="course-sidebar-list">
+                  <input id="All" class="edu-check-box" type="radio"  value="All" name="Level" ngModel [(ngModel)]="level">
+                  <label class="edu-check-label" for="e-85">All </label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input id="BEGINNER" class="edu-check-box" type="radio"  value="BEGINNER" name="Level" ngModel [(ngModel)]="level">
+                  <label class="edu-check-label" for="e-all">Beginner (21)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input id="INTERMEDIATE" class="edu-check-box" type="radio"  value="INTERMEDIATE" name="Level" ngModel [(ngModel)]="level">
+                  <label class="edu-check-label" for="f-all">Intermediate (54)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input id="ADVANCED" class="edu-check-box" type="radio"  value="ADVANCED" name="Level" ngModel [(ngModel)]="level">
+                  <label class="edu-check-label" for="f-all">Expert (54)</label>
+                </div>
+              </li>
+            </ul>
 
           </div>
+        </div>
+        <div class="course-sidebar-widget mb-20">
+          <div class="course-sidebar-info">
+            <h3 class="drop-btn">Language</h3>
+            <ul>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-eng">
+                  <label class="edu-check-label" for="e-eng">English (21))</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-hin">
+                  <label class="edu-check-label" for="e-hin">Hindi (12)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-fren">
+                  <label class="edu-check-label" for="e-fren">French (7)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-japa">
+                  <label class="edu-check-label" for="e-japa">Japanese (10)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-kore">
+                  <label class="edu-check-label" for="e-kore">Korean (5)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="m-japa">
+                  <label class="edu-check-label" for="m-japa">Japanese (10))</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-span">
+                  <label class="edu-check-label" for="e-span">Spanish (14)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-ita">
+                  <label class="edu-check-label" for="e-ita">Italian (8)</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div class="course-sidebar-widget mb-20">
+          <div class="course-sidebar-info">
+            <h3 class="drop-btn">Duration</h3>
+            <ul>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-less">
+                  <label class="edu-check-label" for="e-less">Less than 1 Hours (24)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-36">
+                  <label class="edu-check-label" for="e-36">1-2 Hours (36)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="m-25">
+                  <label class="edu-check-label" for="m-25">2-5 Hours (25)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="m-32">
+                  <label class="edu-check-label" for="m-32">6-7 Hours (32)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="m-11">
+                  <label class="edu-check-label" for="m-11">7-10 Hours (11)</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-9 col-lg-8 col-md-12">
+        <div class="row">
+          <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let l of listFormation | paginate : {
+            itemsPerPage: 6,
+            currentPage: page,
+            totalItems: Items
+          }  , let i=index">
+            <div class="course-wrapper-2 mb-30">
+              <div class="student-course-img">
+                <img [src]="l.image" alt="courde-img">
+              </div>
+              <div class="course-cart">
+                <div class="course-info-wrapper">
+                  <div class="cart-info-body">
+                                    <span class="category-color category-color-1"><a
+                                      [routerLink]="['../detailsF',l.id]">{{l.title.toUpperCase()}}</a></span>
+                    <a href="course-details.html">
+                      <h3>WordPress Development Course for Plugins & Themes</h3>
+                    </a>
+                    <div class="cart-lavel">
+                      <h5>Level : <span>{{l.level}}</span></h5>
+                      <p>Knowledge is power. Information is liberating. Education is the premise of
+                        progress, in every society, in every family</p>
+                    </div>
 
-          <div data-anim="slide-up delay-2">
-
-            <p class="page-header__text">Write an introductory description of the category.</p>
-
+                    <div class="info-cart-text">
+                      <ul>
+                        <li><i class="far fa-check"></i>Scratch to HTML</li>
+                        <li><i class="far fa-check"></i>Learn how to code in Python</li>
+                        <li><i class="far fa-check"></i>Unlimited backend database creation</li>
+                        <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
+                      </ul>
+                    </div>
+                    <div class="course-action">
+                      <a [routerLink]="['../detailsF',l.id]" class="view-details-btn">View Details</a>
+                      <button class="wishlist-btn"><i class="flaticon-like"></i></button>
+                      <a href="course-details.html" class="c-share-btn"><i
+                        class="flaticon-previous"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="student-course-footer">
+                <div class="student-course-linkter">
+                  <div class="course-lessons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
+                         viewBox="0 0 16.471 16.471">
+                      <g id="blackboard-8" transform="translate(-0.008)">
+                        <path id="Path_106" data-name="Path 101"
+                              d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
+                              fill="#575757" />
+                      </g>
+                    </svg>
+                    <span class="ms-2">{{l.nbrHours}} Hours</span>
+                  </div>
+                  <div class="portfolio-price">
+                    <span>${{l.costs}}</span>
+                    <del>${{l.costs + 55}}</del>
+                  </div>
+                </div>
+                <div class="student-course-text">
+                  <h3><a href="course-details.html">WordPress Development Course for Plugins & Themes</a>
+                  </h3>
+                </div>
+                <div class="portfolio-user">
+                  <div class="user-icon">
+                    <a href="instructor-profile.html"><i class="fas fa-user"></i> {{l.userF.lastName}}</a>
+                  </div>
+                  <div class="course-icon">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    <span>{{l.ratings.length}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="row">
+          <div class="edu-pagination mt-30 mb-20">
+            <pagination-controls
+              previousLabel="Prev"
+              nextLabel="Next"
+              [responsive]="true"
+              (pageChange)="handlePageChange($event)"
+            ></pagination-controls>
           </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-
-
-<section class="layout-pt-md layout-pb-lg">
-  <div data-anim-wrap class="container">
-    <div class="row y-gap-50">
-      <div data-anim-child="slide-up delay-3" class="col-xl-9 col-lg-8">
-        <div class="accordion js-accordion">
-          <div class="accordion__item">
-            <div class="row y-gap-20 items-center justify-between pb-30">
-              <div class="col-auto">
-                <div class="text-14 lh-12">Showing <span class="text-dark-1 fw-500">250</span> total results</div>
-              </div>
-
-              <div class="col-auto">
-                <div class="row x-gap-20 y-gap-20">
-                  <div class="col-auto">
-                    <div class="d-flex items-center">
-                      <div class="text-14 lh-12 fw-500 text-dark-1 mr-20">Sort by:</div>
-
-                      <div class="dropdown js-dropdown js-category-active">
-                        <div class="dropdown__button d-flex items-center text-14 rounded-8 px-20 py-10 text-14 lh-12" data-el-toggle=".js-category-toggle" data-el-toggle-active=".js-category-active">
-                          <span class="js-dropdown-title">Most Popular</span>
-                          <i class="icon text-9 ml-40 icon-chevron-down"></i>
-                        </div>
-
-                        <div class="toggle-element -dropdown -dark-bg-dark-2 -dark-border-white-10 js-click-dropdown js-category-toggle">
-                          <div class="text-14 y-gap-15 js-dropdown-list">
-
-                            <div><a href="#" class="d-block js-dropdown-link">Animation</a></div>
-
-                            <div><a href="#" class="d-block js-dropdown-link">Design</a></div>
-
-                            <div><a href="#" class="d-block js-dropdown-link">Illustration</a></div>
-
-                            <div><a href="#" class="d-block js-dropdown-link">Business</a></div>
-
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-                  </div>
-
-                  <div class="col-auto d-none lg:d-block">
-                    <div class="accordion__button w-unset">
-                      <button class="button h-50 px-30 -light-7 text-purple-1">
-                        <i class="icon-filter mr-10"></i>
-                        Filter
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="accordion__content d-none lg:d-block">
-              <div class="sidebar -courses px-30 py-30 rounded-8 bg-light-3 mb-50">
-                <div class="row x-gap-60 y-gap-40">
-                  <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="sidebar__item">
-                      <h5 class="sidebar__title">Category</h5>
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Art</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Exercise</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Software Development</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Music</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Material Design</div>
-                          <div class="sidebar-checkbox__count">(34)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Photography</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                      </div>
-                      <div class="sidebar__more mt-15">
-                        <a href="#" class="text-14 fw-500 underline text-purple-1">Show more</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="sidebar__item">
-                      <h5 class="sidebar__title">Ratings</h5>
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title d-flex items-center">
-                            <div class="d-flex x-gap-5 pr-10">
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                            </div>
-                            4.5 &amp; up
-                          </div>
-                          <div class="sidebar-checkbox__count">(1991)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title d-flex items-center">
-                            <div class="d-flex x-gap-5 pr-10">
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                            </div>
-                            4.0 &amp; up
-                          </div>
-                          <div class="sidebar-checkbox__count">(200)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title d-flex items-center">
-                            <div class="d-flex x-gap-5 pr-10">
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                            </div>
-                            3.5 &amp; up
-                          </div>
-                          <div class="sidebar-checkbox__count">(300)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title d-flex items-center">
-                            <div class="d-flex x-gap-5 pr-10">
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                            </div>
-                            3.0 &amp; up
-                          </div>
-                          <div class="sidebar-checkbox__count">(500)</div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="sidebar__item">
-                      <h5 class="sidebar__title">Instructors</h5>
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Jane Cooper</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Jenny Wilson</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Robert Fox</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Jacob Jones</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Albert Flores</div>
-                          <div class="sidebar-checkbox__count">(34)</div>
-                        </div>
-
-                      </div>
-                      <div class="sidebar__more mt-15">
-                        <a href="#" class="text-14 fw-500 underline text-purple-1">Show more</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="sidebar__item">
-                      <h5 class="sidebar__title">Price</h5>
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio-2" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">All</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio-2" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Free</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio-2" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Paid</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="sidebar__item">
-                      <h5 class="sidebar__title">Level</h5>
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">All Levels</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Beginner</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Intermediate</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Expert</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="sidebar__item">
-                      <h5 class="sidebar__title">Languange</h5>
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">English</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">French</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">German</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Italian</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Turkish</div>
-                          <div class="sidebar-checkbox__count">(34)</div>
-                        </div>
-
-                      </div>
-                      <div class="sidebar__more mt-15">
-                        <a href="#" class="text-14 fw-500 underline text-purple-1">Show more</a>
-                      </div>
-                    </div>
-                  </div>
-
-                  <div class="col-xl-3 col-lg-4 col-sm-6">
-                    <div class="sidebar__item">
-                      <h5 class="sidebar__title">Duration</h5>
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Less than 3 hours</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">4 - 7 hours</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">8 -18 hours </div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">20 + Hours</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div class="row y-gap-30">
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/1.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Learn Figma - UI/UX Design Essential Training</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/2.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                  <div>
-                    <div class="px-15 rounded-200 bg-purple-1">
-                      <span class="text-11 lh-1 uppercase fw-500 text-white">Popular</span>
-                    </div>
-                  </div>
-
-                  <div>
-                    <div class="px-15 rounded-200 bg-green-1">
-                      <span class="text-11 lh-1 uppercase fw-500 text-dark-1">Best sellers</span>
-                    </div>
-                  </div>
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Complete Python Bootcamp From Zero to Hero in Python</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/3.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Angular - The Complete Guide (2022 Edition)</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/4.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">The Ultimate Drawing Course Beginner to Advanced</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/5.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Photography Masterclass: A Complete Guide to Photography</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/6.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Instagram Marketing 2021: Complete Guide To Instagram Growth</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/7.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Complete Blender Creator: Learn 3D Modelling for Beginners</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/8.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">The Complete Financial Analyst Training &amp; Investing Course</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/9.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Photography Masterclass: A Complete Guide to Photography</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/10.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Complete Python Bootcamp From Zero to Hero in Python</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/11.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">Angular - The Complete Guide (2022 Edition)</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-          <div class="col-xl-4 col-lg-6 col-md-4 col-sm-6">
-
-            <a href="courses-single-1.html" class="coursesCard -type-1 ">
-              <div class="relative">
-                <div class="coursesCard__image overflow-hidden rounded-8">
-                  <img class="w-1/1" src="../../../assets/front/img/coursesCards/12.png" alt="image">
-                  <div class="coursesCard__image_overlay rounded-8"></div>
-                </div>
-                <div class="d-flex justify-between py-10 px-10 absolute-full-center z-3">
-
-                </div>
-              </div>
-
-              <div class="h-100 pt-15">
-                <div class="d-flex items-center">
-                  <div class="text-14 lh-1 text-yellow-1 mr-10">4.5</div>
-                  <div class="d-flex x-gap-5 items-center">
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                    <div class="icon-star text-9 text-yellow-1"></div>
-                  </div>
-                  <div class="text-13 lh-1 ml-10">(1991)</div>
-                </div>
-
-                <div class="text-17 lh-15 fw-500 text-dark-1 mt-10">The Ultimate Drawing Course Beginner to Advanced</div>
-
-                <div class="d-flex x-gap-10 items-center pt-10">
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/1.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">6 lesson</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/2.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">3h 56m</div>
-                  </div>
-
-                  <div class="d-flex items-center">
-                    <div class="mr-8">
-                      <img src="../../../assets/front/img/coursesCards/icons/3.svg" alt="icon">
-                    </div>
-                    <div class="text-14 lh-1">Beginner</div>
-                  </div>
-
-                </div>
-
-                <div class="coursesCard-footer">
-                  <div class="coursesCard-footer__author">
-                    <img src="../../../assets/front/img/general/avatar-1.png" alt="image">
-                    <div>Ali Tufan</div>
-                  </div>
-
-                  <div class="coursesCard-footer__price">
-                    <div>$179</div>
-                    <div>$79</div>
-                  </div>
-                </div>
-              </div>
-            </a>
-
-          </div>
-
-        </div>
-
-        <div class="row justify-center pt-90 lg:pt-50">
-          <div class="col-auto">
-            <div class="pagination -buttons">
-              <button class="pagination__button -prev">
-                <i class="icon icon-chevron-left"></i>
-              </button>
-
-              <div class="pagination__count">
-                <a href="#">1</a>
-                <a class="-count-is-active" href="#">2</a>
-                <a href="#">3</a>
-                <span>...</span>
-                <a href="#">67</a>
-              </div>
-
-              <button class="pagination__button -next">
-                <i class="icon icon-chevron-right"></i>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-xl-3 col-lg-4 lg:d-none">
-        <div class="pl-30 lg:pl-0">
-
-          <div data-anim="slide-up delay-2" class="sidebar -courses">
-            <div class="sidebar__item">
-              <div class="accordion js-accordion">
-                <div class="accordion__item js-accordion-item-active">
-                  <div class="accordion__button items-center">
-                    <h5 class="sidebar__title">Category</h5>
-
-                    <div class="accordion__icon">
-                      <div class="icon icon-chevron-down"></div>
-                      <div class="icon icon-chevron-up"></div>
-                    </div>
-                  </div>
-
-                  <div class="accordion__content">
-                    <div class="accordion__content__inner">
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Art</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Exercise</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Software Development</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Music</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Material Design</div>
-                          <div class="sidebar-checkbox__count">(34)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Photography</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                      </div>
-
-                      <div class="sidebar__more mt-15">
-                        <a href="#" class="text-14 fw-500 underline text-purple-1">Show more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sidebar__item">
-              <div class="accordion js-accordion">
-                <div class="accordion__item js-accordion-item-active">
-                  <div class="accordion__button items-center">
-                    <h5 class="sidebar__title">Ratings</h5>
-
-                    <div class="accordion__icon">
-                      <div class="icon icon-chevron-down"></div>
-                      <div class="icon icon-chevron-up"></div>
-                    </div>
-                  </div>
-
-                  <div class="accordion__content">
-                    <div class="accordion__content__inner">
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title d-flex items-center">
-                            <div class="d-flex x-gap-5 pr-10">
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                            </div>
-                            4.5 &amp; up
-                          </div>
-                          <div class="sidebar-checkbox__count">(1991)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title d-flex items-center">
-                            <div class="d-flex x-gap-5 pr-10">
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                            </div>
-                            4.0 &amp; up
-                          </div>
-                          <div class="sidebar-checkbox__count">(200)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title d-flex items-center">
-                            <div class="d-flex x-gap-5 pr-10">
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                            </div>
-                            3.5 &amp; up
-                          </div>
-                          <div class="sidebar-checkbox__count">(300)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title d-flex items-center">
-                            <div class="d-flex x-gap-5 pr-10">
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                              <div class="icon-star text-11 text-yellow-1"></div>
-                            </div>
-                            3.0 &amp; up
-                          </div>
-                          <div class="sidebar-checkbox__count">(500)</div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sidebar__item">
-              <div class="accordion js-accordion">
-                <div class="accordion__item js-accordion-item-active">
-                  <div class="accordion__button items-center">
-                    <h5 class="sidebar__title">Instructors</h5>
-
-                    <div class="accordion__icon">
-                      <div class="icon icon-chevron-down"></div>
-                      <div class="icon icon-chevron-up"></div>
-                    </div>
-                  </div>
-
-                  <div class="accordion__content">
-                    <div class="accordion__content__inner">
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Jane Cooper</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Jenny Wilson</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Robert Fox</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Jacob Jones</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Albert Flores</div>
-                          <div class="sidebar-checkbox__count">(34)</div>
-                        </div>
-
-                      </div>
-                      <div class="sidebar__more mt-15">
-                        <a href="#" class="text-14 fw-500 underline text-purple-1">Show more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sidebar__item">
-              <div class="accordion js-accordion">
-                <div class="accordion__item js-accordion-item-active">
-                  <div class="accordion__button items-center">
-                    <h5 class="sidebar__title">Price</h5>
-
-                    <div class="accordion__icon">
-                      <div class="icon icon-chevron-down"></div>
-                      <div class="icon icon-chevron-up"></div>
-                    </div>
-                  </div>
-
-                  <div class="accordion__content">
-                    <div class="accordion__content__inner">
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio-2" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">All</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio-2" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Free</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-radio mr-10">
-                            <div class="radio">
-                              <input type="radio" name="radio-2" checked="checked">
-                              <div class="radio__mark">
-                                <div class="radio__icon"></div>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Paid</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sidebar__item">
-              <div class="accordion js-accordion">
-                <div class="accordion__item js-accordion-item-active">
-                  <div class="accordion__button items-center">
-                    <h5 class="sidebar__title">Level</h5>
-
-                    <div class="accordion__icon">
-                      <div class="icon icon-chevron-down"></div>
-                      <div class="icon icon-chevron-up"></div>
-                    </div>
-                  </div>
-
-                  <div class="accordion__content">
-                    <div class="accordion__content__inner">
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">All Levels</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Beginner</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Intermediate</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-
-                          <div class="sidebar-checkbox__title">Expert</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sidebar__item">
-              <div class="accordion js-accordion">
-                <div class="accordion__item js-accordion-item-active">
-                  <div class="accordion__button items-center">
-                    <h5 class="sidebar__title">Languange</h5>
-
-                    <div class="accordion__icon">
-                      <div class="icon icon-chevron-down"></div>
-                      <div class="icon icon-chevron-up"></div>
-                    </div>
-                  </div>
-
-                  <div class="accordion__content">
-                    <div class="accordion__content__inner">
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">English</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">French</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">German</div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Italian</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Turkish</div>
-                          <div class="sidebar-checkbox__count">(34)</div>
-                        </div>
-
-                      </div>
-                      <div class="sidebar__more mt-15">
-                        <a href="#" class="text-14 fw-500 underline text-purple-1">Show more</a>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <div class="sidebar__item">
-              <div class="accordion js-accordion">
-                <div class="accordion__item js-accordion-item-active">
-                  <div class="accordion__button items-center">
-                    <h5 class="sidebar__title">Duration</h5>
-
-                    <div class="accordion__icon">
-                      <div class="icon icon-chevron-down"></div>
-                      <div class="icon icon-chevron-up"></div>
-                    </div>
-                  </div>
-
-                  <div class="accordion__content">
-                    <div class="accordion__content__inner">
-                      <div class="sidebar-checkbox">
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">Less than 3 hours</div>
-                          <div class="sidebar-checkbox__count">(18)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">4 - 7 hours</div>
-                          <div class="sidebar-checkbox__count">(12)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">8 -18 hours </div>
-                          <div class="sidebar-checkbox__count">(23)</div>
-                        </div>
-
-                        <div class="sidebar-checkbox__item">
-                          <div class="form-checkbox">
-                            <input type="checkbox">
-                            <div class="form-checkbox__mark">
-                              <div class="form-checkbox__icon icon-check"></div>
-                            </div>
-                          </div>
-                          <div class="sidebar-checkbox__title">20 + Hours</div>
-                          <div class="sidebar-checkbox__count">(67)</div>
-                        </div>
-
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- course-content-end -->

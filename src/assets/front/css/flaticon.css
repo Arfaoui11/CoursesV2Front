@@ -1,0 +1,170 @@
+@font-face {
+    font-family: "flaticon";
+    src: url("../../../assets/front/fonts/flaticon.ttf1f4210aecd65cc243f619cf017653a71") format("truetype"),
+url("../../../assets/front/fonts/flaticon.woff1f4210aecd65cc243f619cf017653a71") format("woff"),
+url("../../../assets/front/fonts/flaticon.woff21f4210aecd65cc243f619cf017653a71") format("woff2"),
+url("../../../assets/front/fonts/flaticon.eot1f4210aecd65cc243f619cf017653a71#iefix") format("embedded-opentype"),
+url("../../../assets/front/fonts/flaticon.svg1f4210aecd65cc243f619cf017653a71#flaticon") format("svg");
+}
+
+i[class^="flaticon-"]:before, i[class*=" flaticon-"]:before {
+    font-family: flaticon !important;
+    font-style: normal;
+    font-weight: normal !important;
+    font-variant: normal;
+    text-transform: none;
+    line-height: 1;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+.flaticon-menu:before {
+    content: "\f101";
+}
+.flaticon-search:before {
+    content: "\f102";
+}
+.flaticon-trolley-cart:before {
+    content: "\f103";
+}
+.flaticon-cancel:before {
+    content: "\f104";
+}
+.flaticon-web-programming:before {
+    content: "\f105";
+}
+.flaticon-career:before {
+    content: "\f106";
+}
+.flaticon-data-science:before {
+    content: "\f107";
+}
+.flaticon-bullhorn:before {
+    content: "\f108";
+}
+.flaticon-facial-treatment:before {
+    content: "\f109";
+}
+.flaticon-photography:before {
+    content: "\f10a";
+}
+.flaticon-curve:before {
+    content: "\f10b";
+}
+.flaticon-herbal:before {
+    content: "\f10c";
+}
+.flaticon-online-course:before {
+    content: "\f10d";
+}
+.flaticon-certificate:before {
+    content: "\f10e";
+}
+.flaticon-laptop:before {
+    content: "\f10f";
+}
+.flaticon-quotes:before {
+    content: "\f110";
+}
+.flaticon-align-left:before {
+    content: "\f111";
+}
+.flaticon-user-1:before {
+    content: "\f112";
+}
+.flaticon-like:before {
+    content: "\f113";
+}
+.flaticon-previous:before {
+    content: "\f114";
+}
+.flaticon-book:before {
+    content: "\f115";
+}
+.flaticon-menu-1:before {
+    content: "\f116";
+}
+.flaticon-clock:before {
+    content: "\f117";
+}
+.flaticon-clock-1:before {
+    content: "\f118";
+}
+.flaticon-pin:before {
+    content: "\f119";
+}
+.flaticon-idea:before {
+    content: "\f11a";
+}
+.flaticon-graduating-student-1:before {
+    content: "\f11b";
+}
+.flaticon-online-course-2:before {
+    content: "\f11c";
+}
+.flaticon-teacher-1:before {
+    content: "\f11d";
+}
+.flaticon-filter:before {
+    content: "\f11e";
+}
+.flaticon-play:before {
+    content: "\f11f";
+}
+.flaticon-youtube:before {
+    content: "\f120";
+}
+.flaticon-lock:before {
+    content: "\f121";
+}
+.flaticon-people:before {
+    content: "\f122";
+}
+.flaticon-computer:before {
+    content: "\f123";
+}
+.flaticon-wall-clock:before {
+    content: "\f124";
+}
+.flaticon-earth-grid-select-language-button:before {
+    content: "\f125";
+}
+.flaticon-files:before {
+    content: "\f126";
+}
+.flaticon-award:before {
+    content: "\f127";
+}
+.flaticon-list:before {
+    content: "\f128";
+}
+.flaticon-menu-2:before {
+    content: "\f129";
+}
+.flaticon-global:before {
+    content: "\f12a";
+}
+.flaticon-bookmark-white:before {
+    content: "\f12b";
+}
+.flaticon-calendar:before {
+    content: "\f12c";
+}
+.flaticon-pin-1:before {
+    content: "\f12d";
+}
+.flaticon-video-marketing:before {
+    content: "\f12e";
+}
+.flaticon-share:before {
+    content: "\f12f";
+}
+.flaticon-avatar:before {
+    content: "\f130";
+}
+.flaticon-video-camera:before {
+    content: "\f131";
+}
+.flaticon-place:before {
+    content: "\f132";
+}

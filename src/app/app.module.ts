@@ -106,6 +106,9 @@ import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatSidenavModule} from "@angular/material/sidenav";
 import {LoginComponent} from "./BackEnd/login/login.component";
 import {RegisterComponent} from "./BackEnd/register/register.component";
+import { LayoutCComponent } from './FontEnd/layout-c/layout-c.component';
+import { LayoutMyComponent } from './FontEnd/layout-my/layout-my.component';
+import { NavbarCComponent } from './FontEnd/navbar-c/navbar-c.component';
 
 
 
@@ -162,6 +165,9 @@ FullCalendarModule.registerPlugins([
     UsersComponent,
     UserListComponent,
     VerificationAcountComponent,
+    LayoutCComponent,
+    LayoutMyComponent,
+    NavbarCComponent,
 
 
   ],

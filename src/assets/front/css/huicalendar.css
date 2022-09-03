@@ -1,0 +1,79 @@
+.huicalendar.huicalendar1.huicalendar2 {
+	width: 180px;
+	padding: 2px;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+.huicalendar.huicalendar1.huicalendar2 th,
+.huicalendar.huicalendar1.huicalendar2 td {
+	color: #666;
+	font-size: 12px;
+	font-weight: normal;
+	text-align: center;
+	line-height: 18px;
+	height: 18px;
+}
+
+.huicalendar.huicalendar1.huicalendar2 td {
+	color: #ccc;
+	cursor: auto;
+}
+.huicalendar.huicalendar1.huicalendar2 td:hover {
+	background: #fff;
+}
+.huicalendar.huicalendar1.huicalendar2 td.enabled {
+	color: #666;
+	cursor: pointer;
+}
+.huicalendar.huicalendar1.huicalendar2 td.enabled:hover {
+	background: #e8ecef;
+}
+.huicalendar.huicalendar1.huicalendar2 .left {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	background: url("") -16px 0 no-repeat;
+}
+.huicalendar.huicalendar1.huicalendar2 .right {
+	display: inline-block;
+	width: 16px;
+	height: 16px;
+	cursor: pointer;
+	background: url("") -32px 0 no-repeat;
+}
+.huicalendar.huicalendar1.huicalendar2 thead tr th {
+	background: #fff;
+}
+.huicalendar.huicalendar1.huicalendar2 .week th {
+	background: #e8ecef;
+}
+.huicalendar.huicalendar1.huicalendar2 .month {
+	position: relative;
+	cursor: pointer;
+}
+.huicalendar.huicalendar1.huicalendar2 .month.show {
+}
+.huicalendar.huicalendar1.huicalendar2 .month ul {
+	display: none;
+	position: absolute;
+	top: 16px;
+	left: -1px;
+	width: 200%;
+	margin: 0;
+	padding: 10px 0;
+	border: 1px solid #ccc;
+	background: #fff;
+}
+.huicalendar.huicalendar1.huicalendar2 .month li {
+	float: left;
+	width: 50%;
+	list-style: none;
+	cursor: pointer;
+}
+.huicalendar.huicalendar1.huicalendar2 .month li:hover {
+	background: #e8ecef;
+}
+.huicalendar.huicalendar1.huicalendar2 .border-top {
+	border-top: 1px solid #ccc;
+}

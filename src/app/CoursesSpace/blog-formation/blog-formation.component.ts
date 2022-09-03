@@ -48,6 +48,11 @@ export class BlogFormationComponent implements OnInit {
   }
 
 
+  templateForm(value: any) {
+    alert(JSON.stringify(value.Level));
+    this.level = JSON.stringify(value.Level);
+  }
+
 
 
   getAllFormation()
