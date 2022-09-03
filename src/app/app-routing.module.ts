@@ -13,7 +13,7 @@ import {QuestionComponent} from "./CoursesSpace/question/question.component";
 import {CalendarCoursesComponent} from "./CoursesSpace/calendar-courses/calendar-courses.component";
 import {DashboardComponent} from "./BackEnd/dashboard/dashboard.component";
 import {VideoplaylistComponent} from "./CoursesSpace/videoplaylist/videoplaylist.component";
-import {LoginComponent} from "./BackEnd/login/login.component";
+
 import {RoutComponent} from "./CoursesSpace/chat/rout/rout.component";
 import {HomeFComponent} from "./FontEnd/home-f/home-f.component";
 import {BlogFormationComponent} from "./CoursesSpace/blog-formation/blog-formation.component";
@@ -29,11 +29,13 @@ import {QestionQuizCoursesComponent} from "./CoursesSpace/qestion-quiz-courses/q
 import {E404Component} from "./FontEnd/e404/e404.component";
 import {CallVideoComponent} from "./CoursesSpace/call-video/call-video.component";
 import {TeamComponent} from "./CoursesSpace/team/team.component";
-import {RegisterComponent} from "./BackEnd/register/register.component";
+
 import {ChatComponent} from "./CoursesSpace/chatClient/chat/chat.component";
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
 import {UserListComponent} from "./CoursesSpace/user-list/user-list.component";
 import {VerificationAcountComponent} from "./CoursesSpace/verification-acount/verification-acount.component";
+import {LoginComponent} from "./BackEnd/login/login.component";
+import {RegisterComponent} from "./BackEnd/register/register.component";
 
 
 

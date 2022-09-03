@@ -6,7 +6,7 @@ import {User} from "../../core/model/User";
 import {PostComment} from "../../core/model/PostComment";
 import {Quiz} from "../../core/model/Quiz";
 import {Rating} from "../../core/model/Rating";
-import {Result} from "../../core/model/Result";
+
 import {Certificate} from "../../core/model/Certificate";
 
 

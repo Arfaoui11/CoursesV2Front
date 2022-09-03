@@ -55,7 +55,7 @@ import {VgOverlayPlayModule} from "@videogular/ngx-videogular/overlay-play";
 import {VgControlsModule} from "@videogular/ngx-videogular/controls";
 import { VideoplaylistComponent } from './CoursesSpace/videoplaylist/videoplaylist.component';
 import { DashboardComponent } from './BackEnd/dashboard/dashboard.component';
-import { LoginComponent } from './BackEnd/login/login.component';
+
 import {DatePickerModule, TimePickerModule} from "@syncfusion/ej2-angular-calendars";
 import {NgxWebstorageModule} from "ngx-webstorage";
 import { RoutComponent } from './CoursesSpace/chat/rout/rout.component';
@@ -81,11 +81,11 @@ import { E404Component } from './FontEnd/e404/e404.component';
 import { CallVideoComponent } from './CoursesSpace/call-video/call-video.component';
 
 import { TeamComponent } from './CoursesSpace/team/team.component';
-import {RegisterComponent} from "./BackEnd/register/register.component";
+
 import { ChatComponent } from './CoursesSpace/chatClient/chat/chat.component';
 import { UsersComponent } from './CoursesSpace/chatClent/users/users.component';
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
-import {OAuthModule} from "angular-oauth2-oidc";
+
 
 import {GoogleLoginProvider, SocialAuthServiceConfig, SocialLoginModule} from "angularx-social-login";
 import { UserListComponent } from './CoursesSpace/user-list/user-list.component';
@@ -104,6 +104,8 @@ import {MatDividerModule} from "@angular/material/divider";
 import {MatToolbarModule} from "@angular/material/toolbar";
 import {MatTooltipModule} from "@angular/material/tooltip";
 import {MatSidenavModule} from "@angular/material/sidenav";
+import {LoginComponent} from "./BackEnd/login/login.component";
+import {RegisterComponent} from "./BackEnd/register/register.component";
 
 
 
