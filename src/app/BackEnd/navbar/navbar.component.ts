@@ -9,10 +9,9 @@ import {TokenService} from "../../CoursesSpace/services/token.service";
 export class NavbarComponent implements OnInit {
 
 
-  private roles: string[];
+
   isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
+
   username: string;
   currentUser: any;
 
@@ -21,24 +20,19 @@ export class NavbarComponent implements OnInit {
   }
   ngOnInit(): void {
 
-    this.isLoggedIn = !!this.token.getToken();
 
-    this.currentUser = this.token.getUser();
 
-    if (this.isLoggedIn) {
-      const user = this.token.getUser();
-      this.roles = user.roles;
-
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
-      this.username = user.displayName;
+    if (this.token.getToken()) {
+      this.isLoggedIn = true;
+      this.currentUser = this.token.getUser();
     }
+
+
   }
   logout(): void {
     this.token.signOut();
     //  window.location.reload();
 
-    window.location.href = '/login';
+    window.location.href = '/front/End/homeF';
   }
 }

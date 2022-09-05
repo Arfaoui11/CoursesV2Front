@@ -42,7 +42,7 @@ export class NavbarFComponent implements OnInit {
 
     this.isLoggedIn = !!this.token.getToken();
 
-    this.currentUser = this.token.getUser();
+
 
     if (this.isLoggedIn) {
       const user = this.token.getUser();
@@ -51,7 +51,7 @@ export class NavbarFComponent implements OnInit {
       this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
       this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
 
-      this.username = user.displayName;
+      this.username = user.lastName;
     }
 
 
