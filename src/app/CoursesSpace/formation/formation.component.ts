@@ -24,7 +24,8 @@ export class FormationComponent implements OnInit {
   Image : any;
 
   key: any;
-
+  page = 1;
+  public Items: number;
 
 
 
@@ -76,6 +77,11 @@ export class FormationComponent implements OnInit {
     this.serviceForm.getpourcentagesMonth().subscribe((data) => console.log(data));
   }
 
+
+  handlePageChange(event: number): void {
+    this.page = event;
+    this.getformation();
+  }
 
   ToggleForm()
   {
