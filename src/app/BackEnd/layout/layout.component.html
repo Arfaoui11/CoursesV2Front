@@ -1,35 +1,128 @@
 
 
 
-    <!-- BEGIN: Content-->
-    <div class="app-content content">
-      <div class="content-overlay"></div>
-      <div class="header-navbar-shadow"></div>
-      <div class="content-wrapper">
-        <div class="content-header row">
-          <div class="content-header-left col-md-9 col-12 mb-2">
-            <div class="row breadcrumbs-top">
-              <div class="col-12">
+  <div class="page-content">
+    <div class="container-fluid">
 
-                <h2 class="content-header-title float-left mb-0" style="color: deeppink ;font-family: 'Montserrat', Helvetica, Arial, serif"> Udacity Academy </h2>
+      <!-- start page title -->
+      <div class="row">
+        <div class="col-12">
+          <div class="page-title-box d-sm-flex align-items-center justify-content-between">
+            <h4 class="mb-sm-0 font-size-18">Horizontal Layout</h4>
 
-              </div>
+            <div class="page-title-right">
+              <ol class="breadcrumb m-0">
+                <li class="breadcrumb-item"><a href="javascript: void(0);">Layouts</a></li>
+                <li class="breadcrumb-item active">Horizontal Layout</li>
+              </ol>
             </div>
-          </div>
-          <div class="content-header-right text-md-right col-md-3 col-12 d-md-block d-none">
-            <div class="form-group breadcrum-right">
-              <div class="dropdown">
-                <button class="btn-icon btn btn-primary btn-round btn-sm dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="feather icon-settings"></i></button>
-                <div class="dropdown-menu dropdown-menu-right"><a class="dropdown-item" href="#">Chat</a><a class="dropdown-item" href="#">Email</a><a class="dropdown-item" href="#">Calendar</a></div>
-              </div>
-            </div>
+
           </div>
         </div>
+      </div>
 
-        <router-outlet></router-outlet>
+      <!-- end page title -->
 
+      <div class="row">
+        <div class="col-lg-12">
 
+            <router-outlet></router-outlet>
+          </div>
+
+    </div>
+    </div>
+  </div>
+    <!-- container-fluid -->
+
+  <!-- End Page-content -->
+<!-- Right bar overlay-->
+
+      <!-- Transaction Modal -->
+  <div class="modal fade transaction-detailModal" tabindex="-1" role="dialog" aria-labelledby="transaction-detailModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="transaction-detailModalLabel">Order Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">
+          <p class="mb-2">Product id: <span class="text-primary">#SK2540</span></p>
+          <p class="mb-4">Billing Name: <span class="text-primary">Neal Matthews</span></p>
+
+          <div class="table-responsive">
+            <table class="table align-middle table-nowrap">
+              <thead>
+              <tr>
+                <th scope="col">Product</th>
+                <th scope="col">Product Name</th>
+                <th scope="col">Price</th>
+              </tr>
+              </thead>
+              <tbody>
+              <tr>
+                <th scope="row">
+                  <div>
+                    <img src="../../../assets/images/product/img-7.png" alt="" class="avatar-sm">
+                  </div>
+                </th>
+                <td>
+                  <div>
+                    <h5 class="text-truncate font-size-14">Wireless Headphone (Black)</h5>
+                    <p class="text-muted mb-0">$ 225 x 1</p>
+                  </div>
+                </td>
+                <td>$ 255</td>
+              </tr>
+              <tr>
+                <th scope="row">
+                  <div>
+                    <img src="../../../assets/images/product/img-4.png" alt="" class="avatar-sm">
+                  </div>
+                </th>
+                <td>
+                  <div>
+                    <h5 class="text-truncate font-size-14">Phone patterned cases</h5>
+                    <p class="text-muted mb-0">$ 145 x 1</p>
+                  </div>
+                </td>
+                <td>$ 145</td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <h6 class="m-0 text-right">Sub Total:</h6>
+                </td>
+                <td>
+                  $ 400
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <h6 class="m-0 text-right">Shipping:</h6>
+                </td>
+                <td>
+                  Free
+                </td>
+              </tr>
+              <tr>
+                <td colspan="2">
+                  <h6 class="m-0 text-right">Total:</h6>
+                </td>
+                <td>
+                  $ 400
+                </td>
+              </tr>
+              </tbody>
+            </table>
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
       </div>
     </div>
-    <!-- END: Content-->
+  </div>
+  <!-- end modal -->
+
+
+
 

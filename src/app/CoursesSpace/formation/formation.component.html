@@ -1,205 +1,83 @@
+<div class="row">
+  <div class="col-12">
+    <div class="card">
+      <div class="card-body">
 
-<div class="app-main" id="main">
-  <!-- begin container-fluid -->
-  <div class="container-fluid">
-    <!-- begin row -->
-    <h1> Search </h1>
+        <h4 class="card-title">Table Edit</h4>
+        <p class="card-title-desc">Table Edits is a lightweight jQuery plugin for making table rows editable.</p>
 
-
-    <form  (click)="SearchMultiple(key.value)">
-      <div class="from-group row">
-        <div class="col-6 col-sm-5">
-          <input class="form-control ag-row-hover" style="width: 400px;height: 50px ;font-size:large"  type="search"  #key="ngModel" ngModel
-                 name="key" placeholder="Search Courses">
+        <div class="table-responsive">
+          <table class="table table-editable table-nowrap align-middle table-edits">
+            <thead>
+            <tr>
+              <th>ID</th>
+              <th>Name</th>
+              <th>Age</th>
+              <th>Gender</th>
+              <th>Edit</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr data-id="1">
+              <td data-field="id" style="width: 80px">1</td>
+              <td data-field="name">David McHenry</td>
+              <td data-field="age">24</td>
+              <td data-field="gender">Male</td>
+              <td style="width: 100px">
+                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
+              </td>
+            </tr>
+            <tr data-id="2">
+              <td data-field="id">2</td>
+              <td data-field="name">Frank Kirk</td>
+              <td data-field="age">22</td>
+              <td data-field="gender">Male</td>
+              <td>
+                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
+              </td>
+            </tr>
+            <tr data-id="3">
+              <td data-field="id">3</td>
+              <td data-field="name">Rafael Morales</td>
+              <td data-field="age">26</td>
+              <td data-field="gender">Male</td>
+              <td>
+                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
+              </td>
+            </tr>
+            <tr data-id="4">
+              <td data-field="id">4</td>
+              <td data-field="name">Mark Ellison</td>
+              <td data-field="age">32</td>
+              <td data-field="gender">Male</td>
+              <td>
+                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
+              </td>
+            </tr>
+            <tr data-id="5">
+              <td data-field="id">5</td>
+              <td data-field="name">Minnie Walter</td>
+              <td data-field="age">27</td>
+              <td data-field="gender">Female</td>
+              <td>
+                <a class="btn btn-outline-secondary btn-sm edit" title="Edit">
+                  <i class="fas fa-pencil-alt"></i>
+                </a>
+              </td>
+            </tr>
+            </tbody>
+          </table>
         </div>
-        <div class="col-5 col-sm-3">
-          <button class="theme-btn-border w-full" style="width: 60px" type="submit"> Search </button>
-        </div>
-      </div>
-    </form>
 
-
-
-  <br>
-
-  <div class="card-header">
-    <h3 class="card-title"> DataTable with Courses details </h3>
-    <br>
-  </div>
-  <!-- /.card-header -->
-  <div class="card-body">
-
-    <div class="container"  >
-      <table id="example1" class="table table-bordered table-striped">
-        <thead>
-        <tr>
-          <th>Titre</th>
-          <th>Level</th>
-          <th>Domain</th>
-          <th>Costs</th>
-          <th>Delete</th>
-          <th>Update</th>
-          <th>Add quiz</th>
-          <th>Details</th>
-          <th>QrCode</th>
-        </tr>
-        </thead>
-        <tbody>
-        <tr *ngFor="let l of listFomation">
-
-          <td>{{l.title}}</td>
-          <td>{{l.level}}</td>
-          <td>{{l.domain}}</td>
-          <td>{{l.costs}} DT</td>
-          <td >
-            <button class="btn btn-outline-danger" (click)="deleteFormation(l.id)">Delete</button>
-          </td>
-          <td>
-            <button  class="btn btn-outline-primary" data-bs-toggle="modal" data-bs-target="#exampleModal" (click)="dataId(l.id)" >Update</button>
-          </td>
-          <td>
-            <button class="btn btn-outline-instagram" [routerLink]="['../Quiz',l.id]">Add Quiz</button>
-          </td>
-          <td>
-            <button class="btn btn-outline-foursquare" [routerLink]="['../videoplaylist',l.id]">Details</button>
-          </td>
-          <td>
-            <ngx-qrcode [elementType]="elementType"  [value]="l.toString()" [width]="50"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode>
-          </td>
-
-        </tr>
-
-        </tbody>
-        <tfoot>
-        <tr>
-          <th>Titre</th>
-          <th>Level</th>
-          <th>Domain</th>
-          <th>Costs</th>
-          <th>Delete</th>
-          <th>Update</th>
-          <th>Add quiz</th>
-          <th>Details</th>
-          <th>QrCode</th>
-        </tr>
-        </tfoot>
-      </table>
-
-    </div>
-
-
-
-    <div class="card card-success">
-      <div class="card-header">
-        <h3 class="card-title"> number of students </h3>
-
-        <div class="card-body">
-
-          <button class="btn btn-outline-microsoft " (click)="ToggleForm()">
-            Show Date statistics  </button>
-
-          <div class="btn btn-outline-primary toast-toggler mt-2 mr-1">Auto Hide Off</div>
-          <div class="toast" role="alert" aria-live="assertive" aria-atomic="true" data-autohide="false">
-            <div class="toast-header">
-              <img src="../../../assets/images/logo/logo.png" class="rounded mr-2" alt="Toast Image">
-              <strong class="mr-auto">Vue Admin</strong>
-              <small class="text-muted">just now</small>
-              <button type="button" class="ml-1 close" data-dismiss="toast" aria-label="Close">
-                <span aria-hidden="true">&times;</span>
-              </button>
-            </div>
-            <div class="toast-body">
-              See? Just like this.
-            </div>
-          </div>
-
-
-
-        </div>
       </div>
     </div>
-    <section id="timeline-card" *ngIf="sowFormateur">
-      <div class="row">
-        <div class="col-lg-6 col-sm-12" *ngIf="pourcentage.length >0">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title">Courses Domain Percentage</h4>
-            </div>
-            <div class="card-content">
-              <div class="card-body">
-
-                  <google-chart #chart
-
-                                [type]="type2"
-                                [data]="pourcentage"
-                                [options]="options"
-                                [width]="width"
-                                [height]="height">
-                  </google-chart>
-
-              </div>
-            </div>
-          </div>
-        </div>
-
-
-
-
-        <div class="col-lg-6 col-sm-12" *ngIf="data2.length > 0">
-          <div class="card">
-            <div class="card-header">
-              <h4 class="card-title"> Number Of Learner </h4>
-            </div>
-            <div class="card-content">
-              <div class="card-body">
-
-
-                    <google-chart #chart
-
-                                  [type]="type2"
-                                  [data]="list"
-                                  [options]="options"
-                                  [width]="width"
-                                  [height]="height">
-                    </google-chart>
-
-
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-lg-6 col-sm-12" *ngIf="SearchList.length > 0">
-              <div class="card">
-                <div class="card-header">
-                  <h4 class="card-title"> Data Shows Most Women Search for Courses </h4>
-                </div>
-                <div class="card-content">
-                  <div class="card-body">
-                    <google-chart #chart
-
-                                  [type]="typ3"
-                                  [data]="SearchList"
-                                  [options]="options"
-                                  [width]="500"
-                                  [height]="500">
-                    </google-chart>
-
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-        </div>
-      </div>
-    </section>
-
-
-
-    </div>
-  </div>
-  </div>
-
-
-
-
+  </div> <!-- end col -->
+</div> <!-- end row -->
