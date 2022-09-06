@@ -81,7 +81,7 @@ export class CalendarCoursesComponent implements OnInit {
   public footerTemplate = `<div class="add-doctor"><div class="e-icon-add e-icons"></div>
     <div class="add-doctor-text">Add New Former</div></div>`;
 
-  public itemTemplate: string = '<div class="specialist-item"><img class="value" style="width: 50px ;height: 50px" src="assets/images/profile/user-uploads/user-03.jpg" alt="doctor"/>' +
+  public itemTemplate: string = '<div class="specialist-item"><img class="value" style="width: 50px ;height: 50px" src="${image}" alt="doctor"/>' +
     '<div class="doctor-details"><div class="name">${title}</div><div class="designation">${domain}</div></div></div>';
 
   public animationSettings: Record<string, any> = { effect: 'None' };
@@ -378,7 +378,7 @@ export class CalendarCoursesComponent implements OnInit {
 
   // setViews: View[] = ["Day","Month","Agenda","TimelineMonth","TimelineDay","TimelineWeek"];
   // public setView :View = "Month";
-  public selectedDate : Date = new Date(2022,7,1);
+  public selectedDate : Date = new Date();
   public timeScale: TimeScaleModel = { enable: true, interval: 60 };
 
   StartTime: Date = new Date(2022, 3, 1, 10, 0);

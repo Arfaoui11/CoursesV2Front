@@ -2,15 +2,102 @@
   <div id="loading-center">
     <div id="loading-center-absolute">
       <div class="loading-icon text-center d-flex flex-column align-items-center justify-content-center">
-        <p href="#" style="font-size: 19px;color: black;font-style: normal"><img src="../../../assets/images/ico/unisinos_university_64px.png" alt="logo not found"> Udacity Academy</p>
+        <p href="#" style="font-size: 28px;color: #072f7c;font-family: 'Bold Italic Art',fantasy"><img src="../../../assets/images/ico/unisinos_university_64px.png" alt="logo not found"> Udacity Academy</p>
       </div>
     </div>
   </div>
 </div>
 <!-- pre loader area end -->
+<div id="fade3" class=" modal fade"  id="cartModal" tabindex="-1" aria-labelledby="cartModalLabel" aria-hidden="true"  >
 
+  <div class="modal-dialog modal-lg modal-dialog-centered">
 
+    <div class="modal-content">
 
+      <div >
+        <div class="cartmini__title">
+          <h4>Shopping cart</h4>
+        </div>
+        <div class="cartmini__close">
+          <button type="button" class="cartmini__close-btn"><i class="fal fa-times"></i></button>
+        </div>
+        <div class="cartmini__widget">
+          <div class="cartmini__inner">
+            <ul>
+              <li>
+                <div class="cartmini__thumb">
+                  <a href="#">
+                    <img src="../../../assets/front/img/products/product-thumb-01.png" alt="image not found">
+                  </a>
+                </div>
+                <div class="cartmini__content">
+                  <h5><a href="#">Turn Yourself</a></h5>
+                  <div class="product-quantity mt-10 mb-10">
+                    <span class="cart-minus">-</span>
+                    <input class="cart-input" type="text" value="1" />
+                    <span class="cart-plus">+</span>
+                  </div>
+                  <div class="product__sm-price-wrapper">
+                    <span class="product__sm-price">$24.00</span>
+                  </div>
+                </div>
+                <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
+              </li>
+              <li>
+                <div class="cartmini__thumb">
+                  <a href="#">
+                    <img src="../../../assets/front/img/products/product-thumb-02.png" alt="image not found">
+                  </a>
+                </div>
+                <div class="cartmini__content">
+                  <h5><a href="#">Art of Not Giving</a></h5>
+                  <div class="product-quantity mt-10 mb-10">
+                    <span class="cart-minus">-</span>
+                    <input class="cart-input" type="text" value="1" />
+                    <span class="cart-plus">+</span>
+                  </div>
+                  <div class="product__sm-price-wrapper">
+                    <span class="product__sm-price">$12.00</span>
+                  </div>
+                </div>
+                <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
+              </li>
+              <li>
+                <div class="cartmini__thumb">
+                  <a href="#">
+                    <img src="../../../assets/front/img/products/product-thumb-03.png" alt="image not found">
+                  </a>
+                </div>
+                <div class="cartmini__content">
+                  <h5><a href="#">Attract Women</a></h5>
+                  <div class="product-quantity mt-10 mb-10">
+                    <span class="cart-minus">-</span>
+                    <input class="cart-input" type="text" value="1" />
+                    <span class="cart-plus">+</span>
+                  </div>
+                  <div class="product__sm-price-wrapper">
+                    <span class="product__sm-price">$42.00</span>
+                  </div>
+                </div>
+                <a href="#" class="cartmini__del"><i class="fal fa-times"></i></a>
+              </li>
+            </ul>
+          </div>
+          <div class="cartmini__checkout">
+            <div class="cartmini__checkout-title mb-30">
+              <h4>Subtotal:</h4>
+              <span>$78.00</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+  </div>
+</div>
+
+<div class="body-overlay"></div>
 <!-- side toggle start -->
 <div class="fix">
   <div class="side-info">
@@ -173,7 +260,7 @@
               </div>
               <div class="header-btn">
                 <div class="cart-wrapper mr-45">
-                  <button data-bs-toggle="modal" data-bs-target="#cartModal">
+                  <button  [routerLink]="['/front/End/cart']" >
                     <div class="header__cart-icon p-relative">
                       <svg xmlns="http://www.w3.org/2000/svg" width="19.988" height="19.988"
                            viewBox="0 0 19.988 19.988">
@@ -189,7 +276,7 @@
                                 transform="translate(-2.67 -8.01)" fill="#141517" />
                         </g>
                       </svg>
-                      <span class="item-number">3</span>
+                      <span class="item-number">{{totalItem}}</span>
                     </div>
                   </button>
                 </div>

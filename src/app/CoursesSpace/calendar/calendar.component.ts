@@ -69,7 +69,7 @@ export class CalendarComponent implements OnInit {
  // public itemTemplate: string = '<div class="specialist-item"><img class="value" src="assets/images/profile/user-uploads/user-03.jpg" alt="doctor"/>' +
    // '<div class="doctor-details"><div class="name">Mr.${displayName}</div><div class="designation">${profession}</div></div></div>';
 
-  public itemTemplate: string = '<div class="specialist-item"><img class="value" src="assets/images/profile/user-uploads/user-03.jpg" alt="doctor"/>' +
+  public itemTemplate: string = '<div class="specialist-item"><img class="value" src="${image}" />' +
     '<div class="doctor-details"><div class="name">Mr.${title}</div><div class="designation">${domain}</div></div></div>';
 
   public animationSettings: Record<string, any> = { effect: 'None' };
@@ -382,7 +382,7 @@ formData : any;
 
  // setViews: View[] = ["Day","Month","Agenda","TimelineMonth","TimelineDay","TimelineWeek"];
  // public setView :View = "Month";
-  public selectedDate : Date = new Date(2022,3,1);
+  public selectedDate : Date = new Date();
   public timeScale: TimeScaleModel = { enable: true, interval: 60 };
 
   StartTime: Date = new Date(2022, 3, 1, 10, 0);

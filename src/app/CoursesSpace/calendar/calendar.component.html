@@ -102,7 +102,7 @@
   <div class="treeview-container">
     <div class="choose-Specialist-container">
       <ejs-dropdownlist id='Former' cssClass="e-specialist-doctors" #dropdownObj [dataSource]='listFomation' [fields]='fields' [placeholder]='waterMark'
-                        placeholder='List Former ' popupHeight='auto' popupWidth='221px' showClearButton='true'
+                        placeholder='Courses List ' popupHeight='auto' popupWidth='221px' showClearButton='true'
                         (change)='onSpecializationChange($event)' [itemTemplate]='itemTemplate'
                         [footerTemplate]='footerTemplate'>  </ejs-dropdownlist>
     </div>
@@ -111,7 +111,7 @@
       <button ejs-button (click)='createNewEvent($event)'  class="e-primary">Add Courses</button>
     </div>
     <div class="title-container">
-      <h2 class="title-text">Former List</h2>
+      <h2 class="title-text"></h2>
     </div>
     <ejs-treeview #treeObj [fields]='field' cssClass='treeview-external-drag' [allowDragAndDrop]='allowDragAndDrop'
                   (nodeDragStop)="onTreeDragStartStop($event)" (nodeDragging)="onItemDrag($event)" >
@@ -186,7 +186,7 @@
       <div class="waitlist-header">
         <div class="text-container">
           <span class="back-icon icon-previous" ></span>
-          <span class="title-text">Former List</span>
+          <span class="title-text"></span>
         </div>
         <div class="button-container">
           <span class="delete-button">

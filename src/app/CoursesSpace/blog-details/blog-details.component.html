@@ -9,7 +9,7 @@
         <div class="course-title-breadcrumb">
           <nav>
             <ol class="breadcrumb">
-              <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+              <li class="breadcrumb-item"><a [routerLink]="['/front/End/homeF']">Home</a></li>
               <li class="breadcrumb-item"><span>Courses</span></li>
               <li class="breadcrumb-item active" aria-current="page">MySQL Database : Beginner SQL
                 Database Design</li>
@@ -28,24 +28,17 @@
       <div class=" col-xxl-8 col-xl-8">
         <div class="course-detalis-wrapper mb-30">
           <div class="course-heading mb-20">
-            <h2>MySQL Database : Beginner SQL Database Design</h2>
-            <div class="course-star">
-              <ul>
-                <li><i class="fas fa-star"></i></li>
-              </ul>
-              <ul>
-                <li><i class="fas fa-star"></i></li>
-              </ul>
-              <ul>
-                <li><i class="fas fa-star"></i></li>
-              </ul>
-              <ul>
-                <li><i class="fas fa-star"></i></li>
-              </ul>
-              <ul>
-                <li><i class="fal fa-star"></i></li>
-              </ul>
-              <span>(254 reviews)</span>
+            <h2>{{formation.title.toUpperCase()}} : {{formation.skills}}</h2>
+            <div >
+              <ng-template #t let-fill="fill">
+                  <span class="star" [class.full]="fill === 100">
+                    <span class="half" [style.width.%]="fill">&star;</span>&star;
+                  </span>
+              </ng-template>
+
+              <ngb-rating [(rate)]="rating" [starTemplate]="t"  [max]="5" (rateChange)="changeRating()"></ngb-rating>
+              <pre>Rate: <b>{{rating.toString() | slice: 0 : 4  }} </b> ({{formation.courseApprenants.length}}) students</pre>
+              <span>({{formation.ratings.length}} reviews)</span>
             </div>
           </div>
           <div class="course-detelis-meta">
@@ -56,12 +49,12 @@
               </div>
               <div class="course-meta-text">
                 <span>Created by</span>
-                <h6><a href="instructor-profile.html">David Allberto</a></h6>
+                <h6><a href="instructor-profile.html">{{formation.userF.lastName}}</a></h6>
               </div>
             </div>
             <div class="course-Enroll border-line-meta">
               <p>Total Enrolled</p>
-              <span>5,420</span>
+              <span>{{formation.courseApprenants.length}}</span>
             </div>
             <div class="course-update border-line-meta">
               <p>Last Update</p>
@@ -69,18 +62,14 @@
             </div>
             <div class="course-category">
               <p>01 January 2022 </p>
-              <span><a href="course.html">Data Science</a></span>
+              <span><a href="course.html">{{formation.domain}}</a></span>
             </div>
           </div>
           <div class="course-description pt-45 pb-30">
             <div class="course-Description">
               <h4>Description</h4>
             </div>
-            <p>This course has been designed by two professional Data Scientists so that we can
-              share our knowledge and help you learn complex theory, algorithms, and coding
-              libraries in a simple way. We will walk you step-by-step into the World of Machine
-              Learning. With every tutorial, you will develop new skills and improve your
-              understanding of this challenging yet lucrative sub-field of Data Science.</p>
+            <p>{{formation.description}}</p>
           </div>
           <div class="course-learn-wrapper">
             <div class="course-learn">
@@ -91,10 +80,8 @@
                 <div class="col-xl-6">
                   <div class="course-leran-text f-left">
                     <ul>
-                      <li>Handle advanced techniques like Dimensionality Reduction</li>
-                      <li>Handle specific topics like Reinforcement Learning best</li>
-                      <li>Know which Machine Learning model to choose for each type of
-                        problem</li>
+                      <li>{{formation.prerequisites}}</li>
+
                     </ul>
                   </div>
                 </div>
@@ -128,7 +115,7 @@
               <h4>Curriculum</h4>
             </div>
             <ul>
-              <li>15 lectures • 2h 29m 12s total length</li>
+              <li>5 Quiz • {{formation.nbrHours}} total length</li>
             </ul>
             <div class="course-curriculam-accodion mt-30">
               <div class="accordion" id="accordionExample">
@@ -388,12 +375,12 @@
             <div class="instructors-heading">
               <div class="instructors-img w-img">
                 <a href="instructor-profile.html"><img
-                  src="../../../assets/front/img/course/course-instructors.png"
+                  [src]="formation.userF.file"
                   alt="image not found"></a>
               </div>
               <div class="instructors-body">
-                <h5><a href="instructor-profile.html">David Allberto</a></h5>
-                <span>Data Scientist, BDevs Ltd.</span>
+                <h5><a href="instructor-profile.html">{{formation.userF.lastName }} {{formation.userF.firstName}}</a></h5>
+                <span>{{formation.userF.profession}}, Udacity Academy Team Ltd.</span>
                 <div class="intructors-review">
                   <i class="fas fa-star"></i>
                   <span>4.7 (54 reviews)</span>
@@ -419,7 +406,7 @@
               <div class="col-xl-3">
                 <div class="reating-point mb-30">
                   <div class="rating-point-wrapper text-center">
-                    <h2>4.7</h2>
+                    <h2>{{rating}}</h2>
                     <div class="rating-star">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -427,7 +414,7 @@
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
                     </div>
-                    <span>5785 Rating</span>
+                    <span>{{formation.ratings.length}}</span>
                   </div>
                 </div>
               </div>
@@ -531,113 +518,54 @@
           </div>
           <div class="course-detalis-reviews pt-15">
             <div class="course-detalis-reviews-tittle">
-              <h3>Reviews</h3>
+              <h3>Reviews </h3>
+              <h3>{{formation.comments.length}} Comments</h3>
             </div>
-            <div class="course-review-item mb-30">
+            <div class="course-review-item mb-30" *ngFor="let post of formation.comments" >
               <div class="course-reviews-img">
-                <a href="#"><img src="../../../assets/front/img/course/course-reviews-1.png"
+                <a href="#"><img [src]="post.user.file"  class="img-lg"
                                  alt="image not found"></a>
               </div>
               <div class="course-review-list">
-                <h5><a href="#">Sotapdi Kunda</a></h5>
-                <div class="course-start-icon">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <span>55 min ago</span>
+                <h5><a href="#">{{post.user.lastName.toUpperCase()}}</a></h5>
+
+                <div  style="float: right ;margin-left: 2.5em">
+                  <button class="like" (click)="LikesComment(post.id)">
+                    <i class="fa fas fa-grin-hearts" aria-hidden="true"> </i>
+                  </button>
+                  <label style="color: black ;font-size: 15px">{{post.likes.length }}</label>
+                  &nbsp;
+                  <button class="dislike" (click)="DisLikesComment(post.id)">
+                    <i class="fa fa-angry" aria-hidden="true"></i>
+                  </button>
+                  <label style="color: #f7485a ;font-size: 15px" > {{post.dislikes.length}}</label>
                 </div>
-                <p>Very clean and organized with easy to follow tutorials, Exercises, and
-                  solutions.
-                  This course does start from the beginning with very little knowledge and
-                  gives a
-                  great overview of common tools used for data science and progresses into
-                  more
-                  complex concepts and ideas.</p>
+                <a >{{post.createdAt | date | slice:0 : 12 }}</a>
+                <br>
+                <br>
+                <p style="font-size: 25px">{{post.message}}</p>
               </div>
             </div>
-            <div class="course-review-item mb-30">
-              <div class="course-reviews-img">
-                <a href="#"><img src="../../../assets/front/img/course/course-reviews-2.png"
-                                 alt="image not found"></a>
-              </div>
-              <div class="course-review-list">
-                <h5><a href="#">Samantha</a></h5>
-                <div class="course-start-icon">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <span>45 min ago</span>
-                </div>
-                <p>The course is good at explaining very basic intuition of the concepts. It
-                  will get
-                  you scratching the surface so to say. where this course is unique is the
-                  implementation methods are so well defined Thank you to the team !.</p>
-              </div>
-            </div>
-            <div class="course-review-item mb-30">
-              <div class="course-reviews-img">
-                <a href="#"><img src="../../../assets/front/img/course/course-reviews-3.png"
-                                 alt="image not found"></a>
-              </div>
-              <div class="course-review-list">
-                <h5><a href="#">Michell Mariya</a></h5>
-                <div class="course-start-icon">
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <i class="fas fa-star"></i>
-                  <span>30 min ago</span>
-                </div>
-                <p>This course is amazing..!
-                  I started this course as a beginner and learnt a lot. Instructors are great.
-                  Query
-                  handling can be improved.Overall very happy with the course.</p>
-              </div>
-            </div>
+
+
           </div>
           <div class="col-xl-12">
             <div class="course-review-btn">
-              <a id="show-review-box" class="edu-btn" href="javascript:void(0)">Write a Review</a>
-              <div id="review-box" class="review-comment mt-45">
-                <div class="comment-title mb-20">
-                  <p>Your email address will not be published. Required fields are marked *
-                  </p>
-                </div>
-                <div class="comment-rating mb-20">
-                  <span>Overall ratings</span>
-                  <ul>
-                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                    <li><a href="#"><i class="fas fa-star"></i></a></li>
-                    <li><a href="#"><i class="fal fa-star"></i></a></li>
-                  </ul>
-                </div>
+
+              <div  class="review-comment mt-45">
+
+
                 <div class="comment-input-box mb-15">
                   <form action="#">
                     <div class="row">
                       <div class="col-xxl-12">
-                                                        <textarea placeholder="Your review"
+                                                        <textarea class="form-control"  placeholder="Message ..."  [(ngModel)]="post.message"
                                                                   class="comment-input comment-textarea mb-20"></textarea>
                       </div>
-                      <div class="col-xxl-6">
-                        <div class="comment-input mb-20">
-                          <input type="text" placeholder="Your Name">
-                        </div>
-                      </div>
-                      <div class="col-xxl-6">
-                        <div class="comment-input mb-20">
-                          <input type="email" placeholder="Your Email">
-                        </div>
-                      </div>
+
                       <div class="col-xxl-12">
                         <div class="comment-submit">
-                          <button type="submit" class="edu-btn">Submit</button>
+                          <button type="submit" class="edu-btn" (click)="sendComments()">Submit</button>
                         </div>
                       </div>
                     </div>
