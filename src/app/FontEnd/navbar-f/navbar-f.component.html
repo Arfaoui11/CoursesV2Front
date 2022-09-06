@@ -2,8 +2,7 @@
   <div id="loading-center">
     <div id="loading-center-absolute">
       <div class="loading-icon text-center d-flex flex-column align-items-center justify-content-center">
-        <img src="../../../assets/front/img/logo/logo-text.png" alt="logo-img">
-        <img class="loading-logo" src="../../../assets/front/img/logo/preloader.svg" alt="">
+        <p href="#" style="font-size: 19px;color: black;font-style: normal"><img src="../../../assets/images/ico/unisinos_university_64px.png" alt="logo not found"> Udacity Academy</p>
       </div>
     </div>
   </div>
@@ -20,7 +19,7 @@
         <div class="row align-items-center">
           <div class="col-9">
             <a href="index.html">
-              <img src="../../../assets/front/img/logo/logo-black.png" alt="Logo">
+              <img src="../../../assets/images/ico/unisinos_university_64px.png" alt="Logo">
             </a>
           </div>
           <div class="col-3 text-end"><button class="side-info-close"><i
@@ -39,9 +38,9 @@
       </div>
       <div class="offset-widget offset_menu-top mb-20">
         <div class="header-menu-top-icon mb-20">
-          <a href="#"><i class="fas fa-phone"></i>(555) 674 890 556</a>
+          <a href="#"><i class="fas fa-phone"></i>(+216) 72 854 639</a>
           <a href="#"><i class="fal fa-envelope"></i><span class="__cf_email__" data-cfemail="aec7c0c8c1eecbd6cfc3dec2cb80cdc1c3">[email&#160;protected]</span></a>
-          <i class="fal fa-map-marker-alt"></i><span>3rd Avenue, San Francisco</span>
+          <i class="fal fa-map-marker-alt"></i><span>El Ghazela ,Ariana</span>
         </div>
       </div>
       <div class="offset-widget button mb-20">
@@ -62,15 +61,15 @@
         <div class="row align-items-center">
           <div class="col-xl-8 col-lg-8">
             <div class="header-top-icon">
-              <a href="tel:(555)674890556"><i class="fas fa-phone"></i>(555) 674 890 556</a>
-              <a href="../../../assets/cdn-cgi/l/email-protection#066f68606946637e676b766a632865696b"><i class="fal fa-envelope"></i><span class="__cf_email__" data-cfemail="1970777f76597c61787469757c377a7674">[email&#160;protected]</span></a>
-              <i class="fal fa-map-marker-alt"></i><span>3rd Avenue, San Francisco</span>
+              <a href="tel:(555)674890556"><i class="fas fa-phone"></i>(+216) 72 854 639</a>
+              <a *ngIf="currentUser" href="../../../assets/cdn-cgi/l/email-protection#066f68606946637e676b766a632865696b"><i class="fal fa-envelope"></i><span class="__cf_email__" data-cfemail="1970777f76597c61787469757c377a7674">{{currentUser.email}}</span></a>
+              <i class="fal fa-map-marker-alt"></i><span>El Ghazela ,Ariana</span>
             </div>
           </div>
           <div class="col-xl-4 col-lg-4">
             <div class="header-top-login d-flex f-right">
               <div class="header-user-login p-relative">
-                <span><a class="user-btn-sign-up" href="#">Login / Register</a></span>
+                <span><a class="user-btn-sign-up" data-bs-toggle="modal" data-bs-target="#signinModal">Login / Register</a></span>
               </div>
               <div class="header-social">
                 <a href="#"><i class="fab fa-facebook-f"></i></a>
@@ -91,7 +90,7 @@
         <div class="row align-items-center">
           <div class="col-3 col-lg-3 col-md-3 col-sm-3 col-3">
             <div class="header-logo">
-              <a href="index.html"><img src="../../../assets/front/img/logo/logo-black.png" alt="img"></a>
+              <a [routerLink]="['/front/End/homeF']"><p href="#" style="font-size: 28px;color: #072f7c;font-family: 'Bold Italic Art',fantasy"><img src="../../../assets/images/ico/unisinos_university_64px.png" alt="logo not found"> Udacity Academy</p> </a>
             </div>
           </div>
           <div class="col-xl-9 col-lg-9 col-md-9 col-sm-9 col-9">

@@ -8,7 +8,7 @@
           <li class="nav-item dropdown" *ngIf="currentUser.type == 'ADMIN'" >
             <a class="nav-link dropdown-toggle arrow-none" [routerLink]="['/home/Formation-management/addFormation']" role="button"
             >
-              <i class="bx bx-home-circle me-2"></i><span key="t-dashboards">Courses Space</span> <div class="arrow-down"></div>
+              <i class="bx bx-book-content me-2"></i><span key="t-dashboards">Courses Space</span> <div class="arrow-down"></div>
             </a>
             <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
 
@@ -21,7 +21,7 @@
           <li class="nav-item dropdown" *ngIf="currentUser.type == 'FORMER'">
             <a class="nav-link dropdown-toggle arrow-none" [routerLink]="['/home/Formation-management/calendarCourses/'+currentUser.id]"  role="button"
             >
-              <i class="bx bx-home-circle me-2"></i><span key="t-dashboards">Courses Space</span> <div class="arrow-down"></div>
+              <i class="bx bx-bookmark-plus me-2"></i><span key="t-dashboards">Courses Space</span> <div class="arrow-down"></div>
             </a>
             <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
 
@@ -34,7 +34,7 @@
           <li class="nav-item dropdown" *ngIf="currentUser.type == 'ADMIN'">
             <a class="nav-link dropdown-toggle arrow-none" [routerLink]="['/home/Formation-management/listUsers']" role="button"
             >
-              <i class="bx bx-home-circle me-2"></i><span key="t-dashboards">User Space</span> <div class="arrow-down"></div>
+              <i class="bx bx-user-circle me-2"></i><span key="t-dashboards">User Space</span> <div class="arrow-down"></div>
             </a>
             <div class="dropdown-menu" aria-labelledby="topnav-dashboard">
 
