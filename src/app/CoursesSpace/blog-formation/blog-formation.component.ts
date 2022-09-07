@@ -18,7 +18,9 @@ export class BlogFormationComponent implements OnInit {
 
   listFormation  : Formation[];
   toggle = true;
-  public domain : string = "All";
+
+  public nbH : number = 2;
+  public domain : string = "all";
   public level : string = "All";
 
   elementType= NgxQrcodeElementTypes.URL;
@@ -126,6 +128,7 @@ export class BlogFormationComponent implements OnInit {
 
     this.formation.domain = this.domain;
     this.formation.level = this.level;
+    this.formation.nbrHours = this.nbH;
     this.serviceForm.SerachMultiple(this.formation,this.order).subscribe(
       (data:Formation[]) => {
         this.listFormation =data;

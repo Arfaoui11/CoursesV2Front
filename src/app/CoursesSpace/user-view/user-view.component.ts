@@ -69,6 +69,8 @@ export class UserViewComponent implements OnInit {
     formData.append('lieu',this.fr.lieu);
     formData.append('nbrMaxParticipant',this.fr.nbrMaxParticipant.toString());
     formData.append('costs',this.fr.costs.toString());
+    formData.append('skills',this.fr.skills)
+    formData.append('prerequisites',this.fr.prerequisites)
 
 
     this.serviceForm.addFormation(formData,this.idUser).subscribe(

@@ -29,7 +29,7 @@
           <div class="bar-filter">
             <i class="flaticon-filter"></i>
             <span>Filter</span>
-            <span>(2)</span>
+            <span>({{listFormation.length}})</span>
           </div>
           <div class="corse-bar-wrapper">
             <div class="bar-search">
@@ -46,8 +46,8 @@
             <div class="course-sidebar-wrapper">
               <div class="curse-tab-left-wrap">
                 <div class="course-results">
-                  Showing <span class="course-result-showing">15</span> of <span
-                  class="course-result-number">60</span> results
+                  Showing <span class="course-result-showing">6</span> of <span
+                  class="course-result-number">{{listFormation.length}}</span> results
                 </div>
               </div>
               <div class="couse-dropdown">
@@ -81,7 +81,7 @@
             <ul>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="radio"  value="ALL" name="Level" ngModel [(ngModel)]="domain">
+                  <input  class="edu-check-box" type="radio" aria-selected="true"  value="all" name="Level" ngModel [(ngModel)]="domain">
                   <label class="edu-check-label" >All</label>
                 </div>
               </li>
@@ -243,7 +243,7 @@
             <ul>
               <li>
                 <div class="course-sidebar-list">
-                  <input id="All" class="edu-check-box" type="radio"  value="All" name="Level" ngModel [(ngModel)]="level">
+                  <input  id="All" class="edu-check-box" aria-selected="true" type="radio"  value="All" name="Level" ngModel [(ngModel)]="level">
                   <label class="edu-check-label" for="e-85">All </label>
                 </div>
               </li>
