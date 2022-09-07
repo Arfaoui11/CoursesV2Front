@@ -9,37 +9,37 @@
         <div class="card-body">
           <div class="row">
             <div class="users-view-image">
-              <img [src]="user.file" class="users-avatar-shadow w-100 rounded mb-2 pr-2 ml-1" alt="avatar">
+              <img [src]="user.file" class="rounded-circle " alt="avatar" style="width: 200px;height: 200px">
             </div>
             <div class="col-12 col-sm-9 col-md-6 col-lg-5">
               <table>
                 <tr>
-                  <td class="font-weight-bold">Username</td>
-                  <td>{{user.firstName}}</td>
+                  <td class="font-weight-bold"> Username  </td>
+                  <td> :  {{ user.firstName}}</td>
                 </tr>
                 <tr>
-                  <td class="font-weight-bold">Name</td>
-                  <td>{{user.lastName}}</td>
+                  <td class="font-weight-bold"> Name </td>
+                  <td> {{user.lastName}}</td>
                 </tr>
                 <tr>
-                  <td class="font-weight-bold">Email</td>
-                  <td>{{user.email}}</td>
+                  <td class="font-weight-bold"> Email </td>
+                  <td> {{user.email}}</td>
                 </tr>
               </table>
             </div>
             <div class="col-12 col-md-12 col-lg-5">
               <table class="ml-0 ml-sm-0 ml-lg-0">
                 <tr>
-                  <td class="font-weight-bold">Status</td>
-                  <td>active</td>
+                  <td class="font-weight-bold"> Status </td>
+                  <td> active</td>
                 </tr>
                 <tr>
-                  <td class="font-weight-bold">Role</td>
-                  <td>Former</td>
+                  <td class="font-weight-bold"> Role  </td>
+                  <td> Former</td>
                 </tr>
                 <tr>
-                  <td class="font-weight-bold">Domain</td>
-                  <td>{{user.profession}}</td>
+                  <td class="font-weight-bold"> Domain  </td>
+                  <td>  : {{user.profession}}</td>
                 </tr>
               </table>
             </div>
@@ -156,6 +156,39 @@
               </select>
             </div>
             <br>
+              <div class="input-group row-cols-md-3" >
+                <span class="input-groupe-text "> Skills </span>
+                <input type="text" #skills="ngModel" class="form-control" [(ngModel)]="fr.skills" name="skills" placeholder="Skills"  required  >
+                <div *ngIf="skills.invalid && skills.touched" style="color: red">
+                  <div *ngIf="skills.errors?.required" class="alert">
+                    Required
+                  </div>
+
+                </div>
+              </div>
+              <br>
+              <div class="input-group row-cols-md-3" >
+                <span class="input-groupe-text "> Prerequisites </span>
+                <input type="text" #prerequisites="ngModel" class="form-control" [(ngModel)]="fr.prerequisites" name="prerequisites" placeholder="Prerequisites"  required  >
+                <div *ngIf="prerequisites.invalid && prerequisites.touched" style="color: red">
+                  <div *ngIf="prerequisites.errors?.required" class="alert">
+                    Required
+                  </div>
+
+                </div>
+              </div>
+              <br>
+              <div class="input-group row-cols-md-3" >
+                <span class="input-groupe-text "> Description </span>
+                <input type="text" #description="ngModel" class="form-control" [(ngModel)]="fr.description" name="description" placeholder="Description"  required  >
+                <div *ngIf="description.invalid && description.touched" style="color: red">
+                  <div *ngIf="description.errors?.required" class="alert">
+                    Required
+                  </div>
+
+                </div>
+              </div>
+              <br>
             <div class="input-group row-cols-md-3">
               <label for="domain" >Domain</label>
               <select #domain="ngModel" [(ngModel)]="fr.domain" name="domain" id="domain" class="form-control"  required >

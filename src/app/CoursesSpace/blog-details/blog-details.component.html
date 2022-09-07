@@ -22,10 +22,11 @@
 </div>
 <!-- hero-area-end -->
 <!-- course-details-area-start -->
-<section class="course-detalis-area pb-90">
+<!--<section class="course-detalis-area pb-90">-->
+  <div class="blog-area pt-120 pb-90">
   <div class="container">
     <div class="row">
-      <div class=" col-xxl-8 col-xl-8">
+      <div class="col-xl-8 col-lg-12">
         <div class="course-detalis-wrapper mb-30">
           <div class="blog-thumb ">
             <a href="blog-details.html"><img [src]="formation.image" alt="blog-img"></a>
@@ -537,12 +538,12 @@
                   <button class="like" (click)="LikesComment(post.id)">
                     <i class="fa fas fa-grin-hearts" aria-hidden="true"> </i>
                   </button>
-                  <label style="color: black ;font-size: 15px">{{post.likes.length }}</label>
+                  <label style="color: #19001b ;font-size: 15px"> {{ post.likes.length }}</label>
                   &nbsp;
                   <button class="dislike" (click)="DisLikesComment(post.id)">
                     <i class="fa fa-angry" aria-hidden="true"></i>
                   </button>
-                  <label style="color: #f7485a ;font-size: 15px" > {{post.dislikes.length}}</label>
+                  <label style="color: #19001b ;font-size: 15px" > {{ post.dislikes.length}}</label>
                 </div>
                 <a >{{post.createdAt | date | slice:0 : 12 }}</a>
                 <br>
@@ -560,10 +561,10 @@
 
 
                 <div class="comment-input-box mb-15">
-                  <form action="#">
+
                     <div class="row">
                       <div class="col-xxl-12">
-                                                        <textarea class="form-control"  placeholder="Message ..."  [(ngModel)]="post.message"
+                                                        <textarea   placeholder="Message ..."  [(ngModel)]="post.message"
                                                                   class="comment-input comment-textarea mb-20"></textarea>
                       </div>
 
@@ -573,7 +574,7 @@
                         </div>
                       </div>
                     </div>
-                  </form>
+
                 </div>
               </div>
             </div>
@@ -581,9 +582,31 @@
           </div>
         </div>
       </div>
-      <div class="col-xxl-4 col-xl-4 col-lg-8 col-md-8">
-        <div class="course-video-widget">
-          <div class="course-widget-wrapper mb-30">
+
+      <div class="col-xl-4 col-lg-8 col-md-8">
+        <div class="sidebar-widget-wrapper">
+          <div class="sidebar__search p-relative mb-30">
+            <form action="#">
+              <input type="text" placeholder="Search for courses...">
+              <button type="submit">
+                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
+                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 584.4 584.4"
+                     style="enable-background:new 0 0 584.4 584.4;" xml:space="preserve">
+                                 <g>
+                                    <g>
+                                       <path class="st0"
+                                             d="M565.7,474.9l-61.1-61.1c-3.8-3.8-8.8-5.9-13.9-5.9c-6.3,0-12.1,3-15.9,8.3c-16.3,22.4-36,42.1-58.4,58.4    c-4.8,3.5-7.8,8.8-8.3,14.5c-0.4,5.6,1.7,11.3,5.8,15.4l61.1,61.1c12.1,12.1,28.2,18.8,45.4,18.8c17.1,0,33.3-6.7,45.4-18.8    C590.7,540.6,590.7,499.9,565.7,474.9z">
+                                       </path>
+                                      <path class="st1"
+                                            d="M254.6,509.1c140.4,0,254.5-114.2,254.5-254.5C509.1,114.2,394.9,0,254.6,0C114.2,0,0,114.2,0,254.5    C0,394.9,114.2,509.1,254.6,509.1z M254.6,76.4c98.2,0,178.1,79.9,178.1,178.1s-79.9,178.1-178.1,178.1S76.4,352.8,76.4,254.5    S156.3,76.4,254.6,76.4z">
+                                       </path>
+                                    </g>
+                                 </g>
+                              </svg>
+              </button>
+            </form>
+          </div>
+          <div class="sidebar__widget mb-30">
             <div class="course-video-thumb w-img">
               <img [src]="formation.image" alt="image not found">
               <div class="sidber-video-btn">
@@ -687,90 +710,58 @@
               </div>
             </div>
           </div>
-        </div>
-      </div>
-      <div class="col-xl-4 col-lg-8 col-md-8">
-        <div class="sidebar-widget-wrapper">
-          <div class="sidebar__search p-relative mb-30">
-            <form action="#">
-              <input type="text" placeholder="Search for courses...">
-              <button type="submit">
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg"
-                     xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 584.4 584.4"
-                     style="enable-background:new 0 0 584.4 584.4;" xml:space="preserve">
-                                 <g>
-                                    <g>
-                                       <path class="st0"
-                                             d="M565.7,474.9l-61.1-61.1c-3.8-3.8-8.8-5.9-13.9-5.9c-6.3,0-12.1,3-15.9,8.3c-16.3,22.4-36,42.1-58.4,58.4    c-4.8,3.5-7.8,8.8-8.3,14.5c-0.4,5.6,1.7,11.3,5.8,15.4l61.1,61.1c12.1,12.1,28.2,18.8,45.4,18.8c17.1,0,33.3-6.7,45.4-18.8    C590.7,540.6,590.7,499.9,565.7,474.9z">
-                                       </path>
-                                      <path class="st1"
-                                            d="M254.6,509.1c140.4,0,254.5-114.2,254.5-254.5C509.1,114.2,394.9,0,254.6,0C114.2,0,0,114.2,0,254.5    C0,394.9,114.2,509.1,254.6,509.1z M254.6,76.4c98.2,0,178.1,79.9,178.1,178.1s-79.9,178.1-178.1,178.1S76.4,352.8,76.4,254.5    S156.3,76.4,254.6,76.4z">
-                                       </path>
-                                    </g>
-                                 </g>
-                              </svg>
-              </button>
-            </form>
-          </div>
+
           <div class="sidebar__widget mb-30">
             <div class="sidebar__widget-head mb-35">
-              <h4 class="sidebar__widget-title">Recent posts</h4>
+              <h4 class="sidebar__widget-title">Weather</h4>
             </div>
             <div class="sidebar__widget-content">
-              <div class="rc__post-wrapper">
-                <div class="rc__post d-flex align-items-center">
-                  <div class="rc__thumb mr-20">
-                    <a href="blog-details.html"><img src="assets/img/course/course-10.jpg" alt=""></a>
-                  </div>
-                  <div class="rc__content">
-                    <div class="rc__meta">
-                      <span>October 15, 2021</span>
+
+              <div class="sidebar__widget__cat mb-20">
+                <div class="card overlay-img-card text-light">
+                  <img src="../../../assets/images/companies/card-image-6.jpg"  alt="card-img-6">
+                  <div class="card-img-overlay overlay-ligth">
+                    <h5 class="font-medium-5 text-light text-center mt-4">{{desc}}</h5>
+                    <p class="text-light text-center">{{lieu}}</p>
+                    <div class="card-content">
+                      <div class="d-flex justify-content-around mt-2">
+                        <div class="icon">
+                          <img src="http://openweathermap.org/img/wn/{{img}}.png" alt="">
+                        </div>
+                        <div class="temprature mt-3">
+                          <p class="font-large-3 text-light" style="font-size: 25px" > {{temp}}  <span class="mt-2">&#176;</span></p>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <div class="d-flex justify-content-between mt-4">
+                          <div class="precipitation">
+                            <span class="font-medium-3">Precipitation</span>
+                          </div>
+                          <div class="degree">
+                            <span class="font-medium-3">{{drizzle}}</span>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between my-2">
+                          <div class="humidity">
+                            <span class="font-medium-3">Humidity</span>
+                          </div>
+                          <div class="degree">
+                            <span class="font-medium-3">{{humidite}} %</span>
+                          </div>
+                        </div>
+                        <div class="d-flex justify-content-between my-2">
+                          <div class="wind">
+                            <span class="font-medium-3">Wind</span>
+                          </div>
+                          <div class="degree">
+                            <span class="font-medium-3">{{wind}}  km/h</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
-                    <h6 class="rc__title"><a href="blog-details.html">The Importance Intrinsic
-                      Motivation.</a></h6>
                   </div>
                 </div>
-                <div class="rc__post d-flex align-items-center">
-                  <div class="rc__thumb mr-20">
-                    <a href="blog-details.html"><img src="assets/img/course/course-11.jpg" alt=""></a>
-                  </div>
-                  <div class="rc__content">
-                    <div class="rc__meta">
-                      <span>March 26, 2021</span>
-                    </div>
-                    <h6 class="rc__title"><a href="blog-details.html">A Better Alternative To Grading
-                      Student.</a></h6>
-                  </div>
-                </div>
-                <div class="rc__post d-flex align-items-center">
-                  <div class="rc__thumb mr-20">
-                    <a href="blog-details.html"><img src="assets/img/course/course-15.jpg" alt=""></a>
-                  </div>
-                  <div class="rc__content">
-                    <div class="rc__meta">
-                      <span>October 15, 2021</span>
-                    </div>
-                    <h6 class="rc__title"><a href="blog-details.html">Strategic Social Media &amp;
-                      Evolution of Visual</a>
-                    </h6>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="sidebar__widget mb-30">
-            <div class="sidebar__widget-head mb-35">
-              <h4 class="sidebar__widget-title">Category</h4>
-            </div>
-            <div class="sidebar__widget-content">
-              <div class="sidebar__category">
-                <ul>
-                  <li><a href="blog.html">Data Science(2)</a></li>
-                  <li><a href="blog.html">Video &amp; Tips (4)</a></li>
-                  <li><a href="blog.html">Education (8)</a></li>
-                  <li><a href="blog.html">Business (5)</a></li>
-                  <li><a href="blog.html">UX Design (3)</a></li>
-                </ul>
+
               </div>
             </div>
           </div>
@@ -791,9 +782,9 @@
               </div>
             </div>
           </div>
-
         </div>
       </div>
     </div>
   </div>
-</section>
+  </div>
+<!--</section>-->

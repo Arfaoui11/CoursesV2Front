@@ -46,7 +46,7 @@ export class VerificationAcountComponent implements OnInit {
         this.snackbar.open(' Account activated with success', 'Undo', {
           duration: 2000
         });
-        window.location.href = '/login';
+        window.location.href = '/front/End/homeF';
     },
       (error => {
 
@@ -65,7 +65,7 @@ export class VerificationAcountComponent implements OnInit {
         this.snackbar.open(' Account activated with success', 'Undo', {
           duration: 2000
         });
-        window.location.href = '/login';
+        window.location.href = '/front/End/homeF';
       },
       (error => {
 

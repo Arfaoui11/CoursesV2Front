@@ -258,16 +258,19 @@ export class BlogDetailsComponent implements OnInit {
 
   sendComments()
   {
+    console.log(this.post.message);
     this.serviceForm.writeComment(this.post,this.idFormation,this.currentUser.id).subscribe(
       data=>{
         this.getFormation();
        // this.getCommentByFormation()
+        console.log(data);
 
       },
       (error => {
         this.snackbar.open(' You are excluded with any comment write 20 days ', 'Undo', {
           duration: 2000
         });
+        console.log(error)
       })
     );
   }

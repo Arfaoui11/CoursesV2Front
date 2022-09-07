@@ -81,7 +81,7 @@
             <ul>
               <li>
                 <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="radio"  value="All" name="Level" ngModel [(ngModel)]="domain">
+                  <input class="edu-check-box" type="radio"  value="ALL" name="Level" ngModel [(ngModel)]="domain">
                   <label class="edu-check-label" >All</label>
                 </div>
               </li>
@@ -379,20 +379,17 @@
                                     <span class="category-color category-color-1"><a
                                       [routerLink]="['../detailsF',l.id]">{{l.title.toUpperCase()}}</a></span>
                     <a href="course-details.html">
-                      <h3>WordPress Development Course for Plugins & Themes</h3>
+                      <h3>{{l.description}}</h3>
                     </a>
                     <div class="cart-lavel">
-                      <h5>Level : <span>{{l.level}}</span></h5>
-                      <p>Knowledge is power. Information is liberating. Education is the premise of
-                        progress, in every society, in every family</p>
+                      <h5>Level : <span> {{l.level}}</span></h5>
+                      <p>{{l.prerequisites}}</p>
                     </div>
 
                     <div class="info-cart-text">
                       <ul>
-                        <li><i class="far fa-check"></i>Scratch to HTML</li>
-                        <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                        <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                        <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
+                        <li><i class="far fa-check"></i>{{l.skills}}</li>
+
                       </ul>
                     </div>
                     <div class="course-action">

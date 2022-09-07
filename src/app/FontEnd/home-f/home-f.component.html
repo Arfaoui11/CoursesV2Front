@@ -1036,34 +1036,31 @@
       </div>
     </div>
     <div class="row grid">
-      <div class="col-xl-3 col-lg-4 col-md-6  grid-item c-2">
+      <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[0]">
         <div class="course-wrapper-2 mb-30">
           <div class="student-course-img">
-            <img src="../../../assets/front/img/student-choose/student-chourse-1.jpg" alt="image not found">
+            <img [src]="listFormation[0].image" alt="image not found">
           </div>
           <div class="course-cart">
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">Development</a></span>
+                                          href="course.html">{{listFormation[0].domain}}</a></span>
                 <a href="course-details.html">
-                  <h3>WordPress Development Course for Plugins & Themes</h3>
+                  <h3>{{listFormation[0].description}}</h3>
                 </a>
                 <div class="cart-lavel">
-                  <h5>Level : <span>Beginner</span></h5>
-                  <p>Knowledge is power. Information is liberating. Education is the premise
-                    of progress, in every society, in every family</p>
+                  <h5>Level : <span>{{listFormation[0].level}}</span></h5>
+                  <p>{{listFormation[0].prerequisites}}</p>
                 </div>
                 <div class="info-cart-text">
                   <ul>
-                    <li><i class="far fa-check"></i>Scratch to HTML</li>
-                    <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                    <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                    <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
+                    <li><i class="far fa-check"></i>{{listFormation[0].skills}}</li>
+
                   </ul>
                 </div>
                 <div class="course-action">
-                  <a href="course-details.html" class="view-details-btn">View Details</a>
+                  <a [routerLink]="['../detailsF',listFormation[0].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
                   <a href="course-details.html" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
@@ -1082,134 +1079,56 @@
                           fill="#575757" />
                   </g>
                 </svg>
-                <span class="ms-2">12 Lessons</span>
+                <span class="ms-2">{{listFormation[0].nbrHours}} Lessons</span>
               </div>
               <div class="portfolio-price">
-                <span>$12.57</span>
-                <del>$24.50</del>
+                <span>${{listFormation[0].costs}}</span>
+                <del>${{listFormation[0].costs}}+30</del>
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">WordPress Development Course for Plugins &
-                Themes</a></h3>
+              <h3><a href="course-details.html">{{listFormation[0].title}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>Danial</a>
+                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[0].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <span>4.9(25)</span>
+                <span>4.2({{listFormation[0].ratings.length}})</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-4 col-md-6  grid-item c-3">
+      <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[1]">
         <div class="course-wrapper-2 mb-30">
           <div class="student-course-img">
-            <img src="../../../assets/front/img/student-choose/student-chourse-2.jpg" alt="image not found">
-          </div>
-          <div class="course-cart">
-            <div class="course-info-wrapper">
-              <div class="cart-info-body">
-                                        <span class="category-color category-color-3"><a
-                                          href="course.html">Business</a></span>
-                <a href="course-details.html">
-                  <h3>Write Better Emails: Tactics for Smarter Team
-                    Communication</h3>
-                </a>
-                <div class="cart-lavel">
-                  <p>Level : <span>Beginner</span></p>
-                  <p>Knowledge is power. Information is liberating. Education is the premise
-                    of progress, in every society, in every family</p>
-                </div>
-                <div class="info-cart-text">
-                  <ul>
-                    <li><i class="far fa-check"></i>Scratch to HTML</li>
-                    <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                    <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                    <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
-                  </ul>
-                </div>
-                <div class="course-action d-flex justify-content: space-between">
-                  <a href="course-details.html" class="view-details-btn">View Details</a>
-                  <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
-                    class="flaticon-previous"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="student-course-footer">
-            <div class="student-course-linkter">
-              <div class="course-lessons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
-                     viewBox="0 0 16.471 16.471">
-                  <g id="blackboard-1" transform="translate(-0.008)">
-                    <path id="Path_102" data-name="Path 101"
-                          d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
-                          fill="#575757" />
-                  </g>
-                </svg>
-                <span class="ms-2">12 Lessons</span>
-              </div>
-              <div class="portfolio-price">
-                <span>$12.57</span>
-                <del>$24.50</del>
-              </div>
-            </div>
-            <div class="student-course-text">
-              <h3><a href="course-details.html">Write Better Emails: Tactics for Smarter Team
-                Communication</a></h3>
-            </div>
-            <div class="portfolio-user">
-              <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>Dcosta</a>
-              </div>
-              <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.9(25)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-4 col-md-6  grid-item c-3">
-        <div class="course-wrapper-2 mb-30">
-          <div class="student-course-img">
-            <img src="../../../assets/front/img/student-choose/student-chourse-3.jpg" alt="image not found">
+            <img [src]="listFormation[1].image" alt="image not found">
           </div>
           <div class="course-cart">
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">Development</a></span>
+                                          href="course.html">{{listFormation[1].domain}}</a></span>
                 <a href="course-details.html">
-                  <h3>Master Google Docs: Free online documents for
-                    personal use</h3>
+                  <h3>{{listFormation[1].description}}</h3>
                 </a>
                 <div class="cart-lavel">
-                  <h5>Level : <span>Beginner</span></h5>
-                  <p>Knowledge is power. Information is liberating. Education is the premise
-                    of progress, in every society, in every family</p>
+                  <h5>Level : <span>{{listFormation[1].level}}</span></h5>
+                  <p>{{listFormation[1].prerequisites}}</p>
                 </div>
                 <div class="info-cart-text">
                   <ul>
-                    <li><i class="far fa-check"></i>Scratch to HTML</li>
-                    <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                    <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                    <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
+                    <li><i class="far fa-check"></i>{{listFormation[1].skills}}</li>
+
                   </ul>
                 </div>
                 <div class="course-action">
-                  <a href="course-details.html" class="view-details-btn">View Details</a>
+                  <a [routerLink]="['../detailsF',listFormation[1].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
                   <a href="course-details.html" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
@@ -1222,66 +1141,62 @@
               <div class="course-lessons">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
                      viewBox="0 0 16.471 16.471">
-                  <g id="blackboard-2" transform="translate(-0.008)">
-                    <path id="Path_103" data-name="Path 101"
+                  <g id="blackboard-8" transform="translate(-0.008)">
+                    <path id="Path_106" data-name="Path 101"
                           d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
                           fill="#575757" />
                   </g>
                 </svg>
-                <span class="ms-2">12 Lessons</span>
+                <span class="ms-2">{{listFormation[1].nbrHours}} Lessons</span>
               </div>
               <div class="portfolio-price">
-                <span>$12.57</span>
-                <del>$24.50</del>
+                <span>${{listFormation[1].costs}}</span>
+                <del>${{listFormation[1].costs}}+30</del>
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">Master Google Docs: Free online documents for
-                personal use</a></h3>
+              <h3><a href="course-details.html">{{listFormation[1].title}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>Mark</a>
+                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[1].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <span>4.9(25)</span>
+                <span>4.2({{listFormation[1].ratings.length}})</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-4 col-md-6  grid-item c-2">
+      <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[2]">
         <div class="course-wrapper-2 mb-30">
           <div class="student-course-img">
-            <img src="../../../assets/front/img/student-choose/student-chourse-4.jpg" alt="image not found">
+            <img [src]="listFormation[2].image" alt="image not found">
           </div>
           <div class="course-cart">
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">Development</a></span>
+                                          href="course.html">{{listFormation[2].domain}}</a></span>
                 <a href="course-details.html">
-                  <h3>MySQL Database : Beginner SQL Database Design</h3>
+                  <h3>{{listFormation[2].description}}</h3>
                 </a>
                 <div class="cart-lavel">
-                  <h5>Level : <span>Beginner</span></h5>
-                  <p>Knowledge is power. Information is liberating. Education is the premise
-                    of progress, in every society, in every family</p>
+                  <h5>Level : <span>{{listFormation[2].level}}</span></h5>
+                  <p>{{listFormation[2].prerequisites}}</p>
                 </div>
                 <div class="info-cart-text">
                   <ul>
-                    <li><i class="far fa-check"></i>Scratch to HTML</li>
-                    <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                    <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                    <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
+                    <li><i class="far fa-check"></i>{{listFormation[2].skills}}</li>
+
                   </ul>
                 </div>
                 <div class="course-action">
-                  <a href="course-details.html" class="view-details-btn">View Details</a>
+                  <a [routerLink]="['../detailsF',listFormation[2].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
                   <a href="course-details.html" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
@@ -1294,284 +1209,62 @@
               <div class="course-lessons">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
                      viewBox="0 0 16.471 16.471">
-                  <g id="blackboard-3" transform="translate(-0.008)">
-                    <path id="Path_104" data-name="Path 101"
+                  <g id="blackboard-8" transform="translate(-0.008)">
+                    <path id="Path_106" data-name="Path 101"
                           d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
                           fill="#575757" />
                   </g>
                 </svg>
-                <span class="ms-2">12 Lessons</span>
+                <span class="ms-2">{{listFormation[2].nbrHours}} Lessons</span>
               </div>
               <div class="portfolio-price">
-                <span>$12.57</span>
-                <del>$24.50</del>
+                <span>${{listFormation[2].costs}}</span>
+                <del>${{listFormation[2].costs}}+30</del>
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">MySQL Database : Beginner SQL Database Design</a>
-              </h3>
+              <h3><a href="course-details.html">{{listFormation[2].title}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>Stephen</a>
+                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[2].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <span>4.9(25)</span>
+                <span>4.2({{listFormation[2].ratings.length}})</span>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div class="col-xl-3 col-lg-4 col-md-6  grid-item c-4">
+      <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[3]">
         <div class="course-wrapper-2 mb-30">
           <div class="student-course-img">
-            <img src="../../../assets/front/img/student-choose/student-chourse-5.jpg" alt="image not found">
-          </div>
-          <div class="course-cart">
-            <div class="course-info-wrapper">
-              <div class="cart-info-body">
-                                        <span class="category-color category-color-2"><a href="course.html">Life
-                                                Style</a></span>
-                <a href="course-details.html">
-                  <h3>Become a Super Human: Naturally & Safely Boost</h3>
-                </a>
-                <div class="cart-lavel">
-                  <h5>Level : <span>Beginner</span></h5>
-                  <p>Knowledge is power. Information is liberating. Education is the premise
-                    of progress, in every society, in every family</p>
-                </div>
-                <div class="info-cart-text">
-                  <ul>
-                    <li><i class="far fa-check"></i>Scratch to HTML</li>
-                    <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                    <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                    <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
-                  </ul>
-                </div>
-                <div class="course-action">
-                  <a href="course-details.html" class="view-details-btn">View Details</a>
-                  <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
-                    class="flaticon-previous"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="student-course-footer">
-            <div class="student-course-linkter">
-              <div class="course-lessons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
-                     viewBox="0 0 16.471 16.471">
-                  <g id="blackboard-4" transform="translate(-0.008)">
-                    <path id="Path_105" data-name="Path 101"
-                          d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
-                          fill="#575757" />
-                  </g>
-                </svg>
-                <span class="ms-2">12 Lessons</span>
-              </div>
-              <div class="portfolio-price">
-                <span>$12.57</span>
-                <del>$24.50</del>
-              </div>
-            </div>
-            <div class="student-course-text">
-              <h3><a href="course-details.html">Become a Super Human: Naturally & Safely Boost</a>
-              </h3>
-            </div>
-            <div class="portfolio-user">
-              <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>Henry</a>
-              </div>
-              <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.9(25)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-4 col-md-6  grid-item c-1">
-        <div class="course-wrapper-2 mb-30">
-          <div class="student-course-img">
-            <img src="../../../assets/front/img/student-choose/student-chourse-6.jpg" alt="image not found">
-          </div>
-          <div class="course-cart">
-            <div class="course-info-wrapper">
-              <div class="cart-info-body">
-                                        <span class="category-color category-color-5"><a href="course.html">Data
-                                                Science</a></span>
-                <a href="course-details.html">
-                  <h3>Data Science Real-Life Musical Science Exercises
-                    Included</h3>
-                </a>
-                <div class="cart-lavel">
-                  <h5>Level : <span>Beginner</span></h5>
-                  <p>Knowledge is power. Information is liberating. Education is the premise
-                    of progress, in every society, in every family</p>
-                </div>
-                <div class="info-cart-text">
-                  <ul>
-                    <li><i class="far fa-check"></i>Scratch to HTML</li>
-                    <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                    <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                    <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
-                  </ul>
-                </div>
-                <div class="course-action">
-                  <a href="course-details.html" class="view-details-btn">View Details</a>
-                  <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
-                    class="flaticon-previous"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="student-course-footer">
-            <div class="student-course-linkter">
-              <div class="course-lessons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
-                     viewBox="0 0 16.471 16.471">
-                  <g id="blackboard-41" transform="translate(-0.008)">
-                    <path id="Path_1055" data-name="Path 101"
-                          d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
-                          fill="#575757" />
-                  </g>
-                </svg>
-                <span class="ms-2">12 Lessons</span>
-              </div>
-              <div class="portfolio-price">
-                <span>$12.57</span>
-                <del>$24.50</del>
-              </div>
-            </div>
-            <div class="student-course-text">
-              <h3><a href="course-details.html">Data Science Real-Life Musical Science Exercises
-                Included</a></h3>
-            </div>
-            <div class="portfolio-user">
-              <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>Hozaron</a>
-              </div>
-              <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.9(25)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-4 col-md-6  grid-item c-1">
-        <div class="course-wrapper-2 mb-30">
-          <div class="student-course-img">
-            <img src="../../../assets/front/img/student-choose/student-chourse-7.jpg" alt="image not found">
-          </div>
-          <div class="course-cart">
-            <div class="course-info-wrapper">
-              <div class="cart-info-body">
-                                        <span class="category-color category-color-5"><a href="course.html">Data
-                                                Science</a></span>
-                <a href="course-details.html">
-                  <h3>Data Science Real-Life Data Science Exercises
-                    Included</h3>
-                </a>
-                <div class="cart-lavel">
-                  <h5>Level : <span>Beginner</span></h5>
-                  <p>Knowledge is power. Information is liberating. Education is the premise
-                    of progress, in every society, in every family</p>
-                </div>
-                <div class="info-cart-text">
-                  <ul>
-                    <li><i class="far fa-check"></i>Scratch to HTML</li>
-                    <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                    <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                    <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
-                  </ul>
-                </div>
-                <div class="course-action">
-                  <a href="course-details.html" class="view-details-btn">View Details</a>
-                  <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
-                    class="flaticon-previous"></i></a>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="student-course-footer">
-            <div class="student-course-linkter">
-              <div class="course-lessons">
-                <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
-                     viewBox="0 0 16.471 16.471">
-                  <g id="blackboard-6" transform="translate(-0.008)">
-                    <path id="Path_107" data-name="Path 101"
-                          d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
-                          fill="#575757" />
-                  </g>
-                </svg>
-                <span class="ms-2">12 Lessons</span>
-              </div>
-              <div class="portfolio-price">
-                <span>FREE</span>
-              </div>
-            </div>
-            <div class="student-course-text">
-              <h3><a href="course-details.html">Data Science Real-Life Data Science Exercises
-                Included</a></h3>
-            </div>
-            <div class="portfolio-user">
-              <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>Sarfaraz</a>
-              </div>
-              <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.9(25)</span>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-xl-3 col-lg-4 col-md-6  grid-item c-3 c-2">
-        <div class="course-wrapper-2 mb-30">
-          <div class="student-course-img">
-            <img src="../../../assets/front/img/student-choose/student-chourse-8.jpg" alt="image not found">
+            <img [src]="listFormation[3].image" alt="image not found">
           </div>
           <div class="course-cart">
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">Development</a></span>
+                                          href="course.html">{{listFormation[0].domain}}</a></span>
                 <a href="course-details.html">
-                  <h3>Python and Django Full Stack Web Developer
-                    Bootcamp</h3>
+                  <h3>{{listFormation[3].description}}</h3>
                 </a>
                 <div class="cart-lavel">
-                  <h5>Level : <span>Beginner</span></h5>
-                  <p>Knowledge is power. Information is liberating. Education is the premise
-                    of progress, in every society, in every family</p>
+                  <h5>Level : <span>{{listFormation[3].level}}</span></h5>
+                  <p>{{listFormation[3].prerequisites}}</p>
                 </div>
                 <div class="info-cart-text">
                   <ul>
-                    <li><i class="far fa-check"></i>Scratch to HTML</li>
-                    <li><i class="far fa-check"></i>Learn how to code in Python</li>
-                    <li><i class="far fa-check"></i>Unlimited backend database creation</li>
-                    <li><i class="far fa-check"></i>Adobe XD Tutorials</li>
+                    <li><i class="far fa-check"></i>{{listFormation[3].skills}}</li>
+
                   </ul>
                 </div>
                 <div class="course-action">
-                  <a href="course-details.html" class="view-details-btn">View Details</a>
+                  <a [routerLink]="['../detailsF',listFormation[3].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
                   <a href="course-details.html" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
@@ -1584,43 +1277,315 @@
               <div class="course-lessons">
                 <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
                      viewBox="0 0 16.471 16.471">
-                  <g id="blackboard-7" transform="translate(-0.008)">
-                    <path id="Path_108" data-name="Path 101"
+                  <g id="blackboard-8" transform="translate(-0.008)">
+                    <path id="Path_106" data-name="Path 101"
                           d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
                           fill="#575757" />
                   </g>
                 </svg>
-                <span class="ms-2">12 Lessons</span>
+                <span class="ms-2">{{listFormation[3].nbrHours}} Lessons</span>
               </div>
               <div class="portfolio-price">
-                <span>$12.57</span>
-                <del>$24.50</del>
+                <span>${{listFormation[3].costs}}</span>
+                <del>${{listFormation[3].costs}}+30</del>
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">Python and Django Full Stack Web Developer
-                Bootcamp</a></h3>
+              <h3><a href="course-details.html">{{listFormation[3].title}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>Sizan</a>
+                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[3].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
                 <i class="fas fa-star"></i>
-                <span>4.9(25)</span>
+                <span>4.2({{listFormation[3].ratings.length}})</span>
               </div>
             </div>
           </div>
         </div>
       </div>
+      <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[4]">
+        <div class="course-wrapper-2 mb-30">
+          <div class="student-course-img">
+            <img [src]="listFormation[4].image" alt="image not found">
+          </div>
+          <div class="course-cart">
+            <div class="course-info-wrapper">
+              <div class="cart-info-body">
+                                        <span class="category-color category-color-1"><a
+                                          href="course.html">{{listFormation[4].domain}}</a></span>
+                <a href="course-details.html">
+                  <h3>{{listFormation[4].description}}</h3>
+                </a>
+                <div class="cart-lavel">
+                  <h5>Level : <span>{{listFormation[4].level}}</span></h5>
+                  <p>{{listFormation[4].prerequisites}}</p>
+                </div>
+                <div class="info-cart-text">
+                  <ul>
+                    <li><i class="far fa-check"></i>{{listFormation[4].skills}}</li>
+
+                  </ul>
+                </div>
+                <div class="course-action">
+                  <a [routerLink]="['../detailsF',listFormation[4].id]" class="view-details-btn">View Details</a>
+                  <button class="wishlist-btn"><i class="flaticon-like"></i></button>
+                  <a href="course-details.html" class="c-share-btn"><i
+                    class="flaticon-previous"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="student-course-footer">
+            <div class="student-course-linkter">
+              <div class="course-lessons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
+                     viewBox="0 0 16.471 16.471">
+                  <g id="blackboard-8" transform="translate(-0.008)">
+                    <path id="Path_106" data-name="Path 101"
+                          d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
+                          fill="#575757" />
+                  </g>
+                </svg>
+                <span class="ms-2">{{listFormation[4].nbrHours}} Lessons</span>
+              </div>
+              <div class="portfolio-price">
+                <span>${{listFormation[4].costs}}</span>
+                <del>${{listFormation[4].costs}}+30</del>
+              </div>
+            </div>
+            <div class="student-course-text">
+              <h3><a href="course-details.html">{{listFormation[4].title}}</a></h3>
+            </div>
+            <div class="portfolio-user">
+              <div class="user-icon">
+                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[4].userF.lastName}}</a>
+              </div>
+              <div class="course-icon">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.2({{listFormation[4].ratings.length}})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[5]">
+        <div class="course-wrapper-2 mb-30">
+          <div class="student-course-img">
+            <img [src]="listFormation[5].image" alt="image not found">
+          </div>
+          <div class="course-cart">
+            <div class="course-info-wrapper">
+              <div class="cart-info-body">
+                                        <span class="category-color category-color-1"><a
+                                          href="course.html">{{listFormation[5].domain}}</a></span>
+                <a href="course-details.html">
+                  <h3>{{listFormation[5].description}}</h3>
+                </a>
+                <div class="cart-lavel">
+                  <h5>Level : <span>{{listFormation[5].level}}</span></h5>
+                  <p>{{listFormation[5].prerequisites}}</p>
+                </div>
+                <div class="info-cart-text">
+                  <ul>
+                    <li><i class="far fa-check"></i>{{listFormation[5].skills}}</li>
+
+                  </ul>
+                </div>
+                <div class="course-action">
+                  <a [routerLink]="['../detailsF',listFormation[5].id]" class="view-details-btn">View Details</a>
+                  <button class="wishlist-btn"><i class="flaticon-like"></i></button>
+                  <a href="course-details.html" class="c-share-btn"><i
+                    class="flaticon-previous"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="student-course-footer">
+            <div class="student-course-linkter">
+              <div class="course-lessons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
+                     viewBox="0 0 16.471 16.471">
+                  <g id="blackboard-8" transform="translate(-0.008)">
+                    <path id="Path_106" data-name="Path 101"
+                          d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
+                          fill="#575757" />
+                  </g>
+                </svg>
+                <span class="ms-2">{{listFormation[5].nbrHours}} Lessons</span>
+              </div>
+              <div class="portfolio-price">
+                <span>${{listFormation[5].costs}}</span>
+                <del>${{listFormation[5].costs}}+30</del>
+              </div>
+            </div>
+            <div class="student-course-text">
+              <h3><a href="course-details.html">{{listFormation[5].title}}</a></h3>
+            </div>
+            <div class="portfolio-user">
+              <div class="user-icon">
+                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[5].userF.lastName}}</a>
+              </div>
+              <div class="course-icon">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.2({{listFormation[5].ratings.length}})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[6]">
+        <div class="course-wrapper-2 mb-30">
+          <div class="student-course-img">
+            <img [src]="listFormation[6].image" alt="image not found">
+          </div>
+          <div class="course-cart">
+            <div class="course-info-wrapper">
+              <div class="cart-info-body">
+                                        <span class="category-color category-color-1"><a
+                                          href="course.html">{{listFormation[6].domain}}</a></span>
+                <a href="course-details.html">
+                  <h3>{{listFormation[6].description}}</h3>
+                </a>
+                <div class="cart-lavel">
+                  <h5>Level : <span>{{listFormation[6].level}}</span></h5>
+                  <p>{{listFormation[6].prerequisites}}</p>
+                </div>
+                <div class="info-cart-text">
+                  <ul>
+                    <li><i class="far fa-check"></i>{{listFormation[6].skills}}</li>
+
+                  </ul>
+                </div>
+                <div class="course-action">
+                  <a [routerLink]="['../detailsF',listFormation[6].id]" class="view-details-btn">View Details</a>
+                  <button class="wishlist-btn"><i class="flaticon-like"></i></button>
+                  <a href="course-details.html" class="c-share-btn"><i
+                    class="flaticon-previous"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="student-course-footer">
+            <div class="student-course-linkter">
+              <div class="course-lessons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
+                     viewBox="0 0 16.471 16.471">
+                  <g id="blackboard-8" transform="translate(-0.008)">
+                    <path id="Path_106" data-name="Path 101"
+                          d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
+                          fill="#575757" />
+                  </g>
+                </svg>
+                <span class="ms-2">{{listFormation[6].nbrHours}} Lessons</span>
+              </div>
+              <div class="portfolio-price">
+                <span>${{listFormation[6].costs}}</span>
+                <del>${{listFormation[6].costs}}+30</del>
+              </div>
+            </div>
+            <div class="student-course-text">
+              <h3><a href="course-details.html">{{listFormation[6].title}}</a></h3>
+            </div>
+            <div class="portfolio-user">
+              <div class="user-icon">
+                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[6].userF.lastName}}</a>
+              </div>
+              <div class="course-icon">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.2({{listFormation[6].ratings.length}})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[7]">
+        <div class="course-wrapper-2 mb-30">
+          <div class="student-course-img">
+            <img [src]="listFormation[7].image" alt="image not found">
+          </div>
+          <div class="course-cart">
+            <div class="course-info-wrapper">
+              <div class="cart-info-body">
+                                        <span class="category-color category-color-1"><a
+                                          href="course.html">{{listFormation[7].domain}}</a></span>
+                <a href="course-details.html">
+                  <h3>{{listFormation[7].description}}</h3>
+                </a>
+                <div class="cart-lavel">
+                  <h5>Level : <span>{{listFormation[7].level}}</span></h5>
+                  <p>{{listFormation[7].prerequisites}}</p>
+                </div>
+                <div class="info-cart-text">
+                  <ul>
+                    <li><i class="far fa-check"></i>{{listFormation[7].skills}}</li>
+
+                  </ul>
+                </div>
+                <div class="course-action">
+                  <a [routerLink]="['../detailsF',listFormation[7].id]" class="view-details-btn">View Details</a>
+                  <button class="wishlist-btn"><i class="flaticon-like"></i></button>
+                  <a href="course-details.html" class="c-share-btn"><i
+                    class="flaticon-previous"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="student-course-footer">
+            <div class="student-course-linkter">
+              <div class="course-lessons">
+                <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
+                     viewBox="0 0 16.471 16.471">
+                  <g id="blackboard-8" transform="translate(-0.008)">
+                    <path id="Path_106" data-name="Path 101"
+                          d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
+                          fill="#575757" />
+                  </g>
+                </svg>
+                <span class="ms-2">{{listFormation[7].nbrHours}} Lessons</span>
+              </div>
+              <div class="portfolio-price">
+                <span>${{listFormation[7].costs}}</span>
+                <del>${{listFormation[7].costs}}+30</del>
+              </div>
+            </div>
+            <div class="student-course-text">
+              <h3><a href="course-details.html">{{listFormation[7].title}}</a></h3>
+            </div>
+            <div class="portfolio-user">
+              <div class="user-icon">
+                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[7].userF.lastName}}</a>
+              </div>
+              <div class="course-icon">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <span>4.2({{listFormation[7].ratings.length}})</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
     </div>
     <div class="row justify-content-center">
       <div class="col-xl-3">
         <div class="portfolio-brn mt-20 text-center">
-          <a class="edu-sec-btn" href="course.html">View all courses</a>
+          <a class="edu-sec-btn" [routerLink]="['../blogF']" >View all courses</a>
         </div>
       </div>
     </div>
