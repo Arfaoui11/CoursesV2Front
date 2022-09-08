@@ -185,25 +185,22 @@
               <div class="main-menu mr-30">
                 <nav id="mobile-menu">
                   <ul>
-                    <li class="menu-item-has-children"><a href="index.html">Home</a>
+                    <li class="menu-item-has-children"><a [routerLink]="['/front/End/homeF']">Home</a>
                       <ul class="sub-menu">
-                        <li><a href="index.html">Home 1</a></li>
-                        <li><a href="index-2.html">Home 2</a></li>
-                        <li><a href="index-3.html">Home 3</a></li>
+                        <li><a [routerLink]="['/front/End/homeF']">Home </a></li>
+
                       </ul>
                     </li>
                     <li class="menu-item-has-children"><a [routerLink]="['/front/End/blogF']">Course</a>
                       <ul class="sub-menu">
-                        <li><a [routerLink]="['/front/End/blogF']">Course 1</a></li>
-                        <li><a href="course-2.html">Course 2</a></li>
-                        <li><a href="course-3.html">Course 3</a></li>
-                        <li><a href="course-4.html">Course 4</a></li>
-                        <li><a href="course-details.html">course-details</a></li>
+                        <li><a [routerLink]="['/front/End/blogF']">Course </a></li>
+                        <li *ngIf="this.currentUser"><a  [routerLink]="['/front/End/myCourses']">My Learning </a></li>
+                        <li *ngIf="this.currentUser"><a [routerLink]="['/front/End/myCalender']">My Calender </a></li>
                       </ul>
                     </li>
-                    <li class="menu-item-has-children"><a href="shop.html">shop</a>
+                    <li class="menu-item-has-children"><a href="shop.html">My Classroom</a>
                       <ul class="sub-menu">
-                        <li><a href="shop.html">shop</a></li>
+                        <li><a [routerLink]="['/front/End/chatNode']">Help</a></li>
                         <li><a href="shop-details.html">shop details</a></li>
                         <li><a href="wishlist.html">wishlist</a></li>
                         <li><a href="cart.html">cart</a></li>

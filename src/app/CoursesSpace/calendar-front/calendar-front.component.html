@@ -1,35 +1,29 @@
 <!-- breadcrumb area start -->
-<div class="bd-page-title-area bd-page-title-bg pt-220 pb-155">
+<div class="hero-arera course-item-height" data-background="assets/img/slider/course-slider.jpg">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <div class="bd-page-title text-center z-index">
-          <h2 class="breadcrumb-title">Calendar Courses</h2>
-          <div class="breadcrumb-menu">
-            <nav class="breadcrumb-trail breadcrumbs">
-              <ul class="trail-items">
-                <li class="trail-item trail-begin"><a href="index.html">Home</a></li>
-                <li class="trail-item trail-middle"><i class="far fa-chevron-right"></i></li>
-                <li class="trail-item trail-end"><span>Calendar Courses</span></li>
-              </ul>
-            </nav>
-          </div>
+      <div class="col-xl-12">
+        <div class="hero-course-1-text">
+          <h2>Calendar</h2>
+        </div>
+        <div class="course-title-breadcrumb">
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a [routerLink]="['/front/End/homeF']">Home</a></li>
+              <li class="breadcrumb-item"><a [routerLink]="['/front/End/myCalender']">Calendar</a></li>
+            </ol>
+          </nav>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- breadcrumb area end -->
+
 
 <!-- pricing area start here -->
 <section class="bd-pricing-area gray-bg pb-120">
   <div class="container">
-    <nav class="text-center mb-60 bd-pricing-top">
-      <div class="nav bd-pricing-tabs justify-content-center" id="nav-tab" role="tablist">
-        <button class="nav-link active" id="nav-home-tab" data-bs-toggle="tab" data-bs-target="#nav-home" type="button" role="tab" aria-controls="nav-home" aria-selected="true">Montly</button>
-        <button class="nav-link" id="nav-profile-tab" data-bs-toggle="tab" data-bs-target="#nav-profile" type="button" role="tab" aria-controls="nav-profile" aria-selected="false">Yearly</button>
-      </div>
-    </nav>
+
 
     <div class="tab-content" id="nav-tabContent">
 
@@ -137,7 +131,7 @@
           <div class="treeview-container">
             <div class="choose-Specialist-container">
               <ejs-dropdownlist id='Former' cssClass="e-specialist-doctors" #dropdownObj [dataSource]='listFormation' [fields]='fields' [placeholder]='waterMark'
-                                placeholder='List Former ' popupHeight='auto' popupWidth='221px' showClearButton='true'
+                                placeholder='List Formation ' popupHeight='auto' popupWidth='221px' showClearButton='true'
                                 (change)='onSpecializationChange($event)' [itemTemplate]='itemTemplate'
                                 [footerTemplate]='footerTemplate'>  </ejs-dropdownlist>
             </div>
@@ -153,7 +147,7 @@
               <ng-template #nodeTemplate="" let-data="">
                 <div id="waiting">
                   <div id="waitdetails">
-                    <img class="round" src="assets/images/portrait/small/avatar-s-10.jpg" alt="avatar" height="27" width="30">
+                    <img class="round" [src]="data.file" alt="avatar" height="27" width="30">
                     <div id='event-title'>Name : {{data.lastName}} </div>
                     <div id="event-time">{{data.email}} </div>
                   </div>

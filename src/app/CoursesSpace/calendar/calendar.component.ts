@@ -70,7 +70,7 @@ export class CalendarComponent implements OnInit {
    // '<div class="doctor-details"><div class="name">Mr.${displayName}</div><div class="designation">${profession}</div></div></div>';
 
   public itemTemplate: string = '<div class="specialist-item"><img class="value" src="${image}" />' +
-    '<div class="doctor-details"><div class="name">Mr.${title}</div><div class="designation">${domain}</div></div></div>';
+    '<div class="doctor-details"><div class="name">${title}</div><div class="designation">${domain}</div></div></div>';
 
   public animationSettings: Record<string, any> = { effect: 'None' };
 
@@ -119,7 +119,7 @@ export class CalendarComponent implements OnInit {
   public  field : {[key : string]:any};
 
   //public fields: Object = { text: 'displayName', value: 'id' };
-  public fields: Object = { text: 'domain', value: 'idFormation' };
+  public fields: Object = { text: 'domain', value: 'id' };
   // set the placeholder to DropDownList input element
   public waterMark: string = 'Select a game';
   // set the value to select an item based on mapped value at initial rendering
@@ -297,7 +297,7 @@ formData : any;
   public onSpecializationChange(args?: Record<string, any>): void {
     let filteredData: Record<string, any>[];
     if (args && args.value) {
-      this.selectedDepartmentId = args ? args.itemData.idFormation : this.selectedDepartmentId;
+      this.selectedDepartmentId = args ? args.itemData.id : this.selectedDepartmentId;
       // filteredData = this.listFormation.filter((item: any) => item.apprenant.idFormation === this.selectedDepartmentId);
       filteredData = this.getApprenantByFormation(this.selectedDepartmentId);
       // filteredData = this.formateur;
@@ -308,10 +308,10 @@ formData : any;
     this.ListApprenant = filteredData;
 
     this.field = {
-      dataSource : this.ListApprenant,id:'id',text : 'displayName'
+      dataSource : this.ListApprenant,id:'id',text : 'lastName'
     };
-  }
 
+}
 
   public onItemDrag(event: any): void {
     if (this.scheduleObj.isAdaptive) {
