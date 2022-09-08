@@ -1,108 +1,389 @@
-
-<!-- breadcrumb area start -->
-<div class="bd-page-title-area bd-page-title-bg pt-220 pb-155">
+<!-- hero-area-start -->
+<div class="hero-arera course-item-height" data-background="../../../assets/front/img/slider/course-slider.jpg">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <div class="bd-page-title text-center z-index">
-          <h2 class="breadcrumb-title">Courses</h2>
-          <div class="breadcrumb-menu">
-            <nav class="breadcrumb-trail breadcrumbs">
-              <ul class="trail-items">
-                <li class="trail-item trail-begin"><a [routerLink]="['/front/End/homeF']">Home</a></li>
-                <li class="trail-item trail-middle"><i class="far fa-chevron-right"></i></li>
-                <li class="trail-item trail-end"><span>List Courses</span></li>
-              </ul>
-            </nav>
-          </div>
+      <div class="col-xl-12">
+        <div class="hero-course-1-text">
+          <h2>Courses</h2>
+        </div>
+        <div class="course-title-breadcrumb">
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a [routerLink]="['/front/End/homeF']">Home</a></li>
+              <li class="breadcrumb-item"><span>Courses</span></li>
+            </ol>
+          </nav>
         </div>
       </div>
     </div>
   </div>
 </div>
-<!-- breadcrumb area end -->
-<br>
-<div class="col-xl-5 col-lg-8 col-md-8 col-sm-8 col-3 order-2 order-xl-3">
-  <div class="bd-header-right bd-header-right-four text-end">
-    <div class="bd-header-input-search bd-header-input-search-six">
-      <form (click)="SearchMultiple(key.value)" class="position-relative">
-        <input type="text" placeholder="Search keywords" #key="ngModel" ngModel
-               name="key">
-        <button type="submit"><i class="fas fa-search"></i></button>
-      </form>
-    </div>
+<!-- hero-area-end -->
 
+<!-- course-barup-area -->
+<div class="course-bar-up-area pt-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
+        <div class="course-main-wrapper mb-30">
+          <div class="bar-filter">
+            <i class="flaticon-filter"></i>
+            <span>Filter</span>
+            <span>({{listFormation.length}})</span>
+          </div>
+          <div class="corse-bar-wrapper">
+            <div class="bar-search">
+              <form (click)="SearchMultiple(key.value)">
+                <div class="bar-secrch-icon position-relative">
+                  <input type="text" placeholder="Search keywords" #key="ngModel" ngModel
+                         name="key">
+                  <button type="submit"><i class="far fa-search"></i></button>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="course-sidebar-tab">
+            <div class="course-sidebar-wrapper">
+              <div class="curse-tab-left-wrap">
+                <div class="course-results">
+                  Showing <span class="course-result-showing">6</span> of <span
+                  class="course-result-number">{{listFormation.length}}</span> results
+                </div>
+              </div>
+              <div class="couse-dropdown">
+                <div class="course-drop-inner">
+                  <select>
+                    <option value="">Newly published</option>
+                    <option value="">Most Viewed</option>
+                    <option value="">5 Star Rated</option>
+                    <option value="">Duration</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
   </div>
 </div>
-<!-- blog area start here -->
-<section class="bd-blog-area pt-150 pb-145">
-  <div class="container">
-    <div class="row mb-30">
+<!-- course-barup-area-end -->
 
-      <div class="col-xl-4 col-lg-4 col-md-6" *ngFor="let l of listFormation | paginate : {
+<!-- course-content-start -->
+<section class="course-content-area pb-90">
+  <div class="container">
+    <div class="row mb-10">
+      <div class="col-xl-3 col-lg-4 col-md-8">
+        <div class="course-sidebar-widget mb-20">
+          <div class="course-sidebar-info">
+            <h3 class="drop-btn">Categories</h3>
+            <ul>
+              <li>
+                <div class="course-sidebar-list">
+                  <input  class="edu-check-box" type="radio" aria-selected="true"  value="all" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >All</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="DEVELOPMENT" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Development</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="BUSINESS" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Business</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="FINANCE&ACCOUNTING" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Finance & Accounting</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="IT&SOFTWARE" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >IT & Software</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="OFFICEPRODUCTIVITY" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Office Productivity</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="PERSONALDEVELOPMENT" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Personal Development</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="DESIGN" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Design</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="MARKETING" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Marketing</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="LIFESTYLE" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label">Lifestyle</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="PHOTOGRAPHY&VIDEO" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Photography & Video</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="HEALTH&FITNESS" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Health & Fitness</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="MUSIC" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Music</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" value="TEACHING&ACADEMICS" name="Level" ngModel [(ngModel)]="domain">
+                  <label class="edu-check-label" >Teaching & Academics</label>
+                </div>
+              </li>
+
+
+            </ul>
+          </div>
+        </div>
+        <div class="course-sidebar-widget mb-20">
+          <div class="course-sidebar-info">
+            <h3 class="drop-btn">Ratings</h3>
+            <ul>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-25" name="rating">
+                  <label class="edu-check-star" for="e-25">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    (25)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-24" name="rating">
+                  <label class="edu-check-star" for="e-24">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    (25)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-12" name="rating">
+                  <label class="edu-check-star" for="e-12">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    (12)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-28" name="rating">
+                  <label class="edu-check-star" for="e-28">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    (28)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="radio" id="e-14" name="rating">
+                  <label class="edu-check-star" for="e-14">
+                    <i class="fas fa-star">
+                    </i> <i class="fal fa-star">
+                  </i> <i class="fal fa-star">
+                  </i><i class="fal fa-star">
+                  </i><i class="fal fa-star"></i>
+                    (14)</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+
+        <div class="course-sidebar-widget mb-20">
+          <div class="course-sidebar-info">
+            <h3 class="drop-btn">Language</h3>
+            <ul>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-eng">
+                  <label class="edu-check-label" for="e-eng">English (21))</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-hin">
+                  <label class="edu-check-label" for="e-hin">Hindi (12)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-fren">
+                  <label class="edu-check-label" for="e-fren">French (7)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-japa">
+                  <label class="edu-check-label" for="e-japa">Japanese (10)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-kore">
+                  <label class="edu-check-label" for="e-kore">Korean (5)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="m-japa">
+                  <label class="edu-check-label" for="m-japa">Japanese (10))</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-span">
+                  <label class="edu-check-label" for="e-span">Spanish (14)</label>
+                </div>
+              </li>
+              <li>
+                <div class="course-sidebar-list">
+                  <input class="edu-check-box" type="checkbox" id="e-ita">
+                  <label class="edu-check-label" for="e-ita">Italian (8)</label>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </div>
+
+      </div>
+      <div class="col-xl-9 col-lg-8 col-md-12">
+        <div class="row">
+          <div class="col-xl-4 col-lg-6 col-md-6" *ngFor="let l of listFormation | paginate : {
             itemsPerPage: 6,
             currentPage: page,
             totalItems: Items
           }  , let i=index">
-        <div class="bd-blog mb-30">
-          <div class="bd-blog-img" >
-            <img  [src]="l.image" alt="blog image not found 1">
-
-          </div>
-          <div class="bd-blog-text">
-            <div class="bd-blog-meta mb-15">
-              <ul>
-                <li><a href="blog-details.html"><i class="flaticon-calendar"></i>Start : {{l.start | date | slice:0 : 12   }} <br> End : {{l.end | date | slice:0 : 12}} </a></li>
-                <li><a href="blog-details.html"><i class="flaticon-chat"></i>{{l.comments.length}} Comments</a></li>
-              </ul>
-            </div>
-            <h4 class="bd-blog-title mb-40"><a href="blog-details.html"> Title : {{l.title.toUpperCase()}} </a></h4>
-          <!--  <h6 class="bd-blog-title mb-20">Former : {{l.userF.displayName.toUpperCase()}}</h6> -->
-            <div class="bd-blog-author">
-              <div class="bd-blog-author-info">
-                <img [src]="l.userF.file" alt="author image not found">
-                <h6 class="bd-blog-author-info-title"> {{l.userF.profession}}</h6>
-
-
+            <div class="course-wrapper-2 mb-30">
+              <div class="student-course-img">
+                <img [src]="l.image" alt="courde-img">
               </div>
-              <div class="bd-blog-author-link">
-                <a href="blog-details.html" [routerLink]="['../detailsF',l.id]" >Read More <i class="far fa-arrow-right"></i></a>
+              <div class="course-cart">
+                <div class="course-info-wrapper">
+                  <div class="cart-info-body">
+                                    <span class="category-color category-color-1"><a
+                                      [routerLink]="['../detailsF',l.id]">{{l.title.toUpperCase()}}</a></span>
+                    <a href="course-details.html">
+                      <h3>{{l.description}}</h3>
+                    </a>
+                    <div class="cart-lavel">
+                      <h5>Level : <span> {{l.level}}</span></h5>
+                      <p>{{l.prerequisites}}</p>
+                    </div>
+
+                    <div class="info-cart-text">
+                      <ul>
+                        <li><i class="far fa-check"></i>{{l.skills}}</li>
+
+                      </ul>
+                    </div>
+                    <div class="course-action">
+                      <a [routerLink]="['../detailsF',l.id]" class="view-details-btn">View Details</a>
+                      <button class="wishlist-btn"><i class="flaticon-like"></i></button>
+                      <a href="course-details.html" class="c-share-btn"><i
+                        class="flaticon-previous"></i></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="student-course-footer">
+                <div class="student-course-linkter">
+                  <div class="course-lessons">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="16.471" height="16.471"
+                         viewBox="0 0 16.471 16.471">
+                      <g id="blackboard-8" transform="translate(-0.008)">
+                        <path id="Path_106" data-name="Path 101"
+                              d="M16,1.222H8.726V.483a.483.483,0,1,0-.965,0v.74H.491A.483.483,0,0,0,.008,1.7V13.517A.483.483,0,0,0,.491,14H5.24L4.23,15.748a.483.483,0,1,0,.836.483L6.354,14H7.761v1.99a.483.483,0,0,0,.965,0V14h1.407l1.288,2.231a.483.483,0,1,0,.836-.483L11.247,14H16a.483.483,0,0,0,.483-.483V1.7A.483.483,0,0,0,16,1.222Zm-.483.965v8.905H.973V2.187Zm0,10.847H.973v-.976H15.514Z"
+                              fill="#575757" />
+                      </g>
+                    </svg>
+                    <span class="ms-2">{{l.nbrHours}} Hours</span>
+                  </div>
+                  <div class="portfolio-price">
+                    <span>${{l.costs}}</span>
+                    <del>${{l.costs + 55}}</del>
+                  </div>
+                </div>
+                <div class="student-course-text">
+                  <h3><a href="course-details.html">WordPress Development Course for Plugins & Themes</a>
+                  </h3>
+                </div>
+                <div class="portfolio-user">
+                  <div class="user-icon">
+                    <a href="instructor-profile.html"><i class="fas fa-user"></i> {{l.userF.lastName}}</a>
+                  </div>
+                  <div class="course-icon">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fal fa-star"></i>
+                    <span>{{l.ratings.length}}</span>
+                  </div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-      <div *ngIf="listFormation.length === 0">
-
-        <h2>Not found Courses for learning</h2>
-
-
-      </div>
-    </div>
-
-    <div class="row" *ngIf="listFormation.length > 0">
-      <div class="col-12">
-        <div class="basic-pagination">
-          <!--<ul>
-            <li><span aria-current="page" class="page-numbers current">1</span></li>
-            <li><a class="page-numbers" href="#">2</a></li>
-            <li><a class="page-numbers" href="#">3</a></li>
-            <li><a class="next page-numbers" href="#">
-              <i class="fal fa-long-arrow-right"></i>
-            </a>
-            </li>
-          </ul>-->
-          <pagination-controls
-            previousLabel="Prev"
-            nextLabel="Next"
-            [responsive]="true"
-            (pageChange)="handlePageChange($event)"
-          ></pagination-controls>
+        <div class="row">
+          <div class="edu-pagination mt-30 mb-20">
+            <pagination-controls
+              previousLabel="Prev"
+              nextLabel="Next"
+              [responsive]="true"
+              (pageChange)="handlePageChange($event)"
+            ></pagination-controls>
+          </div>
         </div>
       </div>
     </div>
   </div>
 </section>
-<!-- blog area end here -->
-
-
+<!-- course-content-end -->

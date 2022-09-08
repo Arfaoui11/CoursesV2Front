@@ -700,6 +700,9 @@
               <a (click)="addtocart(formation)" class="video-wishlist-btn"><i class="far fa-heart"></i>Add
                 to
                 Wishlist</a>
+              <div  *ngIf="go && show" >
+                <a  class="course-btn"  [routerLink]="['../../quiz',this.quiz.id]"> You Have Quiz  {{quiz.createdAt | date | slice:0 : 12}}</a>
+              </div>
             </div>
             <div class="course-gift">
               <div class="course-apply-coupon">

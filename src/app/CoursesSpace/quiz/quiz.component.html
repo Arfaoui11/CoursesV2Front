@@ -3,48 +3,50 @@
 
 
 <!-- breadcrumb area start -->
-<div class="bd-page-title-area bd-page-title-bg pt-220 pb-155">
+<div class="hero-arera course-item-height" data-background="../../../assets/front/img/slider/course-slider.jpg">
   <div class="container">
     <div class="row">
-      <div class="col-12">
-        <div class="bd-page-title text-center z-index">
-          <h2 class="breadcrumb-title">Quiz Courses</h2>
-          <div class="breadcrumb-menu">
-            <nav class="breadcrumb-trail breadcrumbs">
-              <ul class="trail-items">
-                <li class="trail-item trail-begin"><a href="index.html">Home</a></li>
-                <li class="trail-item trail-middle"><i class="far fa-chevron-right"></i></li>
-                <li class="trail-item trail-end"><span>Quiz Courses</span></li>
-              </ul>
-            </nav>
-          </div>
+      <div class="col-xl-12">
+        <div class="hero-course-1-text">
+          <h2>Quiz Tests</h2>
+        </div>
+        <div class="course-title-breadcrumb">
+          <nav>
+            <ol class="breadcrumb">
+              <li class="breadcrumb-item"><a [routerLink]="['/front/End/homeF']">Home</a></li>
+              <li class="breadcrumb-item"><span>Quiz </span></li>
+            </ol>
+          </nav>
         </div>
       </div>
     </div>
   </div>
 </div>
 <!-- breadcrumb area end -->
-
+<div class="course-bar-up-area pt-120">
+  <div class="container">
+    <div class="row">
+      <div class="col-xl-12">
 <!-- pricing area start here -->
 <section class="bd-pricing-area gray-bg pb-120">
   <div class="container">
 
 
-    <div class="tab-content" id="nav-tabContent">
+    <div class="tab-content" >
 
       <div class="container mt-5">
-        <div class="card" style="border-radius: 50px;
-  background: #ffdeea;
-  box-shadow: 60px 60px 60px #a7a7a7,
-  -26px -26px 60px #ffffff;">
-          <div class="d-flex justify-content-between p-3">
-            <div class="image">
-              <img src="assets/quiz.png" width="120" alt="logo">
-            </div>
-            <div class="text-info">
-              <span style="font-style: italic; font-size: 22px">Welcome {{name}}</span>
-            </div>
+        <div class="card" style="border-radius: 20px;
+        background: #f7f7f7;
+        box-shadow: 60px 60px 60px #a7a7a7,
+        -26px -26px 60px #f7f7f7;">
+          <div class="d-flex justify-content-between">
+          <div class="image">
+            <img src="../../../assets/quiz.png" width="120" alt="logo">
           </div>
+          <div class="text-info">
+            <span style="font-style: italic; font-size: 22px">Welcome {{currentUser.lastName}}</span>
+          </div>
+        </div>
 
           <ng-container *ngIf="!isQuizCompleted" >
             <div class="d-flex justify-content-around py-3">
@@ -127,6 +129,11 @@
   </div>
 </section>
 <!-- pricing area end here -->
+
+      </div>
+    </div>
+  </div>
+</div>
 
 
 

@@ -20,17 +20,17 @@
           <div class="card-body">
             <div class="widget mb-45"  >
 
-              <h3 class="sidebar__widget--title mb-30"  >Recent Videos </h3>
+              <h3 class="sidebar__widget mb-30"  >Recent Videos </h3>
 
               <div class="sidebar--widget__post mb-20" *ngFor="let vdo of retrieveVideo; let $index = index">
                 <div class="sidebar__post--thumb">
                   <div class="bd-slider-five-video">
-                    <div class="bd-slider-five-video-icon wow fadeInUp" data-wow-delay=".6s">
-                      <a (click)="sendIndex($index,vdo)" class="play_btn popup-video"><i class="flaticon-play"></i></a>
+                    <div class="bd-slider-five-video-icon wow fadeInUp" data-wow-delay=".3s">
+                      <button (click)="sendIndex($index,vdo)" class="play_btn popup-video"><i class="flaticon-play"></i></button>
                     </div>
                     <div class="bd-slider-five-video-text wow fadeInUp" data-wow-delay=".8s">
                       <span>Watch</span>
-                      <h5> {{vdo | slice:37 : -18  }} </h5>
+                      <h6> {{vdo | slice:37 : -18  }} </h6>
                       <span>{{formation.start | date | slice:0 : 12}}</span>
                     </div>
                   </div>
@@ -62,65 +62,61 @@
         </div>
       </div>
     </div>
-    <div class="col-lg-8 col-sm-12" >
-      <div class="card overflow-hidden" >
-        <div class="card-header"> <h1 style="color: lightpink" *ngIf="retrieveVideo.length  > 0" > Videos </h1></div>
-        <div style="width: 550px;height: 500px" *ngIf="retrieveVideo.length == 0">
-          <h1 style="padding-left: 200px;padding-top: 50px ;color: lightpink"> We Don't have Videos </h1>
-          <img style="padding-left: 200px;padding-top: 50px" class="img-fluid" src="../../../assets/images/pages/404.png" alt="img placeholder">
-        </div>
 
+    <div class="col-xl-6">
+      <div class="card">
+        <div class="card-body">
 
+          <h4 class="card-title" *ngIf="retrieveVideo.length  > 0">Videos</h4>
+          <p class="card-title-desc">Aspect ratios can be customized with modifier classes.</p>
 
-        <div class="video-player-wrapper" >
-
-          <vg-player (onPlayerReady)="videoPlayerInit($event)">
-            <vg-overlay-play></vg-overlay-play>
-            <vg-buffering></vg-buffering>
-
-            <vg-scrub-bar>
-              <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
-              <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
-            </vg-scrub-bar>
-
-            <vg-controls>
-
-
-
-              <vg-play-pause></vg-play-pause>
-              <vg-playback-button></vg-playback-button>
-
-              <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
-
-              <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
-
-              <vg-mute></vg-mute>
-              <vg-volume></vg-volume>
-              <vg-track-selector></vg-track-selector>
-              <vg-fullscreen></vg-fullscreen>
-            </vg-controls>
-
-
-
-            <video #media  [vgMedia]="$any(media)"  [src]="pathUrl" width='150' height='100'
-                   id="singleVideo"
-                   preload="auto" crossorigin controls="controls">
-              <track src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt" kind="subtitles" label="English" srclang="en" default>
-              <track src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt" kind="subtitles" label="Español" srclang="es">
-            </video>
-          </vg-player>
-
-
-            <div class="card-body" >
-              <p class="card-text"></p>
-
-              <a   class="btn btn-outline-info round mr-1 mb-1 waves-effect waves-light" [href]="pathUrl" > Download files </a>
-              <a   class="btn btn-outline-danger round mr-1 mb-1 waves-effect waves-light" (click)="deleteFiles(retrieveVideo[index].id)" > Delete </a>
+          <!-- 16:9 aspect ratio -->
+          <div class="ratio ratio-16x9">
+            <div style="width: 550px;height: 500px" *ngIf="retrieveVideo.length == 0">
+              <h1 style="padding-left: 200px;padding-top: 50px ;color: lightpink"> We Don't have Videos </h1>
+              <img style="padding-left: 200px;padding-top: 50px" class="img-fluid" src="../../../assets/images/404.png" alt="img placeholder">
             </div>
-          </div>
+        <!--    <iframe [src]="pathUrl" title="YouTube video" allowfullscreen></iframe>-->
+            <vg-player (onPlayerReady)="videoPlayerInit($event)">
+              <vg-overlay-play></vg-overlay-play>
+              <vg-buffering></vg-buffering>
 
-      </div>
-    </div>
+              <vg-scrub-bar>
+                <vg-scrub-bar-current-time></vg-scrub-bar-current-time>
+                <vg-scrub-bar-buffering-time></vg-scrub-bar-buffering-time>
+              </vg-scrub-bar>
+
+              <vg-controls>
+
+
+
+                <vg-play-pause></vg-play-pause>
+                <vg-playback-button></vg-playback-button>
+
+                <vg-time-display vgProperty="current" vgFormat="mm:ss"></vg-time-display>
+
+                <vg-time-display vgProperty="total" vgFormat="mm:ss"></vg-time-display>
+
+                <vg-mute></vg-mute>
+                <vg-volume></vg-volume>
+                <vg-track-selector></vg-track-selector>
+                <vg-fullscreen></vg-fullscreen>
+              </vg-controls>
+
+
+
+              <video #media  [vgMedia]="$any(media)"  [src]="pathUrl" width='150' height='100'
+                     id="singleVideo"
+                     preload="auto" crossorigin controls="controls">
+                <track src="http://static.videogular.com/assets/subs/pale-blue-dot.vtt" kind="subtitles" label="English" srclang="en" default>
+                <track src="http://static.videogular.com/assets/subs/pale-blue-dot-es.vtt" kind="subtitles" label="Español" srclang="es">
+              </video>
+            </vg-player>
+          </div>
+        </div><!-- end card-body -->
+      </div><!-- end card -->
+    </div> <!-- end col -->
+
   </div>
 </section>
 
@@ -146,7 +142,7 @@
     <div class="card-body" >
       <div class="d-flex justify-content-start align-items-center mb-1">
         <div class="avatar mr-1">
-          <img src="../../../assets/images/profile/user-uploads/user-01.jpg" alt="avtar img holder" height="45" width="45">
+          <img [src]="currentUser.file" alt="avtar img holder" height="45" width="45">
         </div>
         <div class="user-page-info">
           <p class="mb-0">{{currentUser.lastName.toUpperCase()}}</p>
@@ -157,7 +153,7 @@
 
       <div *ngIf="formation.images.length > 0">
 
-        <img  [src]="formation.image" alt="blog image not found 1">
+        <img  [src]="formation.image" width='300' height='300' alt="blog image not found 1">
       </div>
 
       <div class="d-flex justify-content-start align-items-center mb-1">
@@ -168,7 +164,7 @@
         <div class="ml-2">
           <ul class="list-unstyled users-list m-0  d-flex align-items-center"  >
             <li data-toggle="tooltip" *ngFor="let l of formation.comments" data-popup="tooltip-custom" data-placement="bottom" data-original-title="Trina Lynes" class="avatar pull-up">
-              <img class="media-object rounded-circle" [src]="l.user.file" alt="Avatar" height="30" width="30">
+              <img class="media-object rounded-circle" [src]="l.user.file" width='30' height='30'>
             </li>
           </ul>
         </div>
@@ -231,7 +227,7 @@
       <div class="card-body">
         <div *ngIf="formation.images.length > 0">
 
-          <img  [src]="formation.image" alt="blog image not found 1">
+          <img  [src]="formation.image" width='300' height='300' alt="blog image not found 1">
 
         </div>
         <div class="d-flex justify-content-start mt-2">
@@ -243,7 +239,7 @@
                   </span>
             </ng-template>
 
-            <ngb-rating [(rate)]="rating" [starTemplate]="t"  [max]="5" (rateChange)="changeRating()"></ngb-rating>
+         <!--   <ngb-rating [(rate)]="rating" [starTemplate]="t"  [max]="5" (rateChange)="changeRating()"></ngb-rating>-->
             <pre>Rate: <b>{{rating.toString() | slice: 0 : 4  }} </b>({{formation.ratings.length}}) ({{formation.courseApprenants.length}}) students</pre>
 
           </div>
@@ -306,7 +302,7 @@
                   </div>
                   <div class="timeline-info">
                     <p class="font-weight-bold">Quiz Date</p>
-                    <span>{{q.title.toUpperCase()}}</span>
+                    <span>{{q.title}}</span>
                   </div>
                   <a ><i class="flaticon-calendar"></i> Published At : {{q.createdAt | date | slice:0 : 12   }} </a>
                 </li>

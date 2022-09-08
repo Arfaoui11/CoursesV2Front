@@ -295,7 +295,7 @@ export class VideoplaylistComponent implements OnInit {
 
 
 
-  changeRating(){
+ /* changeRating(){
 
 
     this.rat.typeRating = this.rating;
@@ -327,6 +327,8 @@ export class VideoplaylistComponent implements OnInit {
 
   }
 
+
+  */
   getRatingByFormation()
   {
     this.serviceForm.getRatingFormation(this.idFormation).subscribe(data => { this.rating = data})
@@ -375,9 +377,7 @@ export class VideoplaylistComponent implements OnInit {
     this.dataa.getDefaultMedia().subscriptions.loadedMetadata.subscribe(this.initVdo.bind(this));
     this.dataa.getDefaultMedia().subscriptions.ended.subscribe(this.nextVideo.bind(this));
   }
-  initVdo() {
-    this.dataa.play();
-  }
+
 
   nextVideo() {
     this.index++;
@@ -464,7 +464,9 @@ export class VideoplaylistComponent implements OnInit {
     )
 
   }
-
+  initVdo() {
+    this.dataa.pause();
+  }
 
   getformationList(){
 
@@ -499,9 +501,8 @@ export class VideoplaylistComponent implements OnInit {
     return this.formation;
   }
 
-  openPdf() {
-    this.toggle= !this.toggle;
-  }
+
+
 
   showComment() {
     this.showC = ! this.showC;

@@ -1,17 +1,17 @@
 .card {
-  max-width: 800px;
+  max-width: 1200px;
   margin: 0 auto;
-  padding: 10px;
+  padding: 11px;
 }
 
 li {
   list-style-type: none;
   cursor: pointer;
-  margin: 10px 0;
+  margin: 20px 0;
 }
 
 li .card:hover {
-  border: 1px solid blue;
+  border: 5px solid blue;
 }
 
 ol {
