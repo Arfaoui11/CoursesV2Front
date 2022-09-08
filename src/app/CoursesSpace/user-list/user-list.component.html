@@ -25,7 +25,7 @@
       <div class="card">
         <div class="card-header">
           <h4 class="card-title">Filters</h4>
-          <a class="heading-elements-toggle"><i class="fa fa-ellipsis-v font-medium-3"></i></a>
+
           <div class="heading-elements">
             <ul class="list-inline mb-0">
               <li><a data-action="collapse"><i class="feather icon-chevron-down"></i></a></li>
@@ -67,8 +67,7 @@
                   <div class="col-12 col-sm-6 col-lg-3">
                     <label >Verified</label>
                     <fieldset class="form-group">
-                      <select class="form-control" #verif="ngModel" [(ngModel)]="verified" >
-                        <option value="All">All</option>
+                      <select  #verif="ngModel" [(ngModel)]="verified" name="verified" class="form-control" >
                         <option value="true">Yes</option>
                         <option value="false">No</option>
                       </select>
@@ -106,7 +105,7 @@
             <th>Username</th>
             <th>Email</th>
             <th>Name</th>
-            <th>Country</th>
+            <th>Verified</th>
             <th>Role</th>
             <th>Status</th>
             <th>QrCode</th>
@@ -122,7 +121,7 @@
             <td>{{l.lastName}}</td>
             <td>{{l.email}}</td>
             <td>{{l.firstName +" "+ l.lastName}}</td>
-            <td>{{l.country}}</td>
+            <td>{{l.verified}}</td>
             <td>{{l.type}}</td>
             <td>{{l.state}}</td>
 
@@ -138,7 +137,7 @@
             <th>Username</th>
             <th>Email</th>
             <th>Name</th>
-            <th>Country</th>
+            <th>Verified</th>
             <th>Role</th>
             <th>Status</th>
             <th>QrCode</th>

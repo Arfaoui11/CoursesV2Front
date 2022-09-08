@@ -36,6 +36,7 @@ import {UserListComponent} from "./CoursesSpace/user-list/user-list.component";
 import {VerificationAcountComponent} from "./CoursesSpace/verification-acount/verification-acount.component";
 import {LoginComponent} from "./BackEnd/login/login.component";
 import {RegisterComponent} from "./BackEnd/register/register.component";
+import {Pages404Component} from "./CoursesSpace/pages404/pages404.component";
 
 
 
@@ -73,7 +74,8 @@ const routes: Routes =
              { path: 'Courses', component: CoursesFormComponent },
              { path: 'Quiz/:idCourses', component: QuestionComponent },
              { path: 'Question/:idQuiz', component: QestionQuizCoursesComponent },
-             { path: 'userview/:idUser', component: UserViewComponent }
+             { path: 'userview/:idUser', component: UserViewComponent },
+             { path: '**', component: Pages404Component }
            ]
          }
 

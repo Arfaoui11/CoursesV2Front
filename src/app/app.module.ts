@@ -110,6 +110,7 @@ import { LayoutCComponent } from './FontEnd/layout-c/layout-c.component';
 import { LayoutMyComponent } from './FontEnd/layout-my/layout-my.component';
 import { NavbarCComponent } from './FontEnd/navbar-c/navbar-c.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
+import { Pages404Component } from './CoursesSpace/pages404/pages404.component';
 
 
 
@@ -169,6 +170,7 @@ FullCalendarModule.registerPlugins([
     LayoutCComponent,
     LayoutMyComponent,
     NavbarCComponent,
+    Pages404Component,
 
 
   ],

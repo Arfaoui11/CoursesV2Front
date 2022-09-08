@@ -18,6 +18,7 @@ export class User {
   type!:string;
   age!:number;
   state!:string;
+  verified!:boolean;
   file!:string;
   isAdmin!:boolean;
   password: any;

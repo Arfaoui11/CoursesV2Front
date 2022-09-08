@@ -9,17 +9,17 @@
         <div class="card-body">
           <div class="row">
             <div class="users-view-image">
-              <img [src]="user.file" class="rounded-circle " alt="avatar" style="width: 200px;height: 200px">
+              <img [src]="user.file" class="rounded-circle " alt="avatar" style="width: 300px;height: 300px">
             </div>
             <div class="col-12 col-sm-9 col-md-6 col-lg-5">
               <table>
                 <tr>
                   <td class="font-weight-bold"> Username  </td>
-                  <td> :  {{ user.firstName}}</td>
+                  <td> :   {{ user.lastName}}  </td>
                 </tr>
                 <tr>
                   <td class="font-weight-bold"> Name </td>
-                  <td> {{user.lastName}}</td>
+                  <td> {{ user.firstName}} {{ user.lastName}} </td>
                 </tr>
                 <tr>
                   <td class="font-weight-bold"> Email </td>
@@ -43,6 +43,7 @@
                 </tr>
               </table>
             </div>
+
             <div class="col-12">
               <a [routerLink]="['/home/Formation-management/calendarCourses',user.id]" class="btn btn-primary mr-1"><i class="feather icon-calendar"></i> Go to Calendar </a>
               &nbsp;
@@ -243,13 +244,13 @@
               <td>{{user.phoneNumber}}</td>
             </tr>
             <tr>
-              <td class="font-weight-bold">Website</td>
-              <td>https://rowboat.com/insititious/Angelo
+              <td class="font-weight-bold">Website </td>
+              <td> https://rowboat.com/insititious/Angelo
               </td>
             </tr>
             <tr>
-              <td class="font-weight-bold">Languages</td>
-              <td>English, Arabic
+              <td class="font-weight-bold">Languages </td>
+              <td>: English, Arabic
               </td>
             </tr>
 
