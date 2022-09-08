@@ -161,7 +161,7 @@ export class FormationService {
 
   SerachMultiple(course : Formation,order:number) :Observable<Formation[]>
   {
-    return this.http.post<any>('http://localhost:4000/api/courses/search',{"title" : course.title,"domain" : course.domain,"level" : course.level ,"order" : order },{headers : this.getHeaders()});
+    return this.http.post<any>('http://localhost:4000/api/courses/search',{"title" : course.title,"domain" : course.domain,"level" : course.level ,"order" : order,"nbrHours":course.nbrHours },{headers : this.getHeaders()});
   }
 
 

@@ -328,37 +328,23 @@
           <div class="course-sidebar-info">
             <h3 class="drop-btn">Duration</h3>
             <ul>
-              <li>
-                <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-less">
-                  <label class="edu-check-label" for="e-less">Less than 1 Hours (24)</label>
-                </div>
-              </li>
-              <li>
-                <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="e-36">
-                  <label class="edu-check-label" for="e-36">1-2 Hours (36)</label>
-                </div>
-              </li>
-              <li>
-                <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="m-25">
-                  <label class="edu-check-label" for="m-25">2-5 Hours (25)</label>
-                </div>
-              </li>
-              <li>
-                <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="m-32">
-                  <label class="edu-check-label" for="m-32">6-7 Hours (32)</label>
-                </div>
-              </li>
-              <li>
-                <div class="course-sidebar-list">
-                  <input class="edu-check-box" type="checkbox" id="m-11">
-                  <label class="edu-check-label" for="m-11">7-10 Hours (11)</label>
-                </div>
+              <li *ngFor="let item of list">
+            <section>
+
+              <div class="course-sidebar-list">
+              <span >
+                <label>
+              <input type="checkbox" [(ngModel)]="item.checked"
+                     (change)="changeCheckbox($event)" [value]="item.value">
+              </label>{{ item.value-4  }} - {{ item.value  }} Hours
+              </span>
+              </div>
+
+
+            </section>
               </li>
             </ul>
+
           </div>
         </div>
       </div>

@@ -8,6 +8,7 @@ import {ActivatedRoute} from "@angular/router";
 import {TokenService} from "../services/token.service";
 import {NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels} from "ngx-qrcode2";
 import {ChatServiceService} from "../services/chat-service.service";
+import {FormArray, FormBuilder, FormControl, FormGroup} from "@angular/forms";
 
 @Component({
   selector: 'app-blog-formation',
@@ -19,7 +20,7 @@ export class BlogFormationComponent implements OnInit {
   listFormation  : Formation[];
   toggle = true;
 
-  public nbH : number = 2;
+  public nbH : number = 25 ;
   public domain : string = "all";
   public level : string = "All";
 
@@ -35,19 +36,80 @@ export class BlogFormationComponent implements OnInit {
   public Items: number;
   public formation: Formation = new Formation();
   public order : number = -1;
+  list: any[] = [];
+  form: FormGroup;
 
-  constructor(private chatService : ChatServiceService,private serviceForm : FormationService,private snackbar:MatSnackBar  ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) { }
+
+  constructor(private fb: FormBuilder,private chatService : ChatServiceService,private serviceForm : FormationService,private snackbar:MatSnackBar  ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) {
+    this.form = fb.group({
+      selectedCountries:  new FormArray([])
+    });
+  }
 
   ngOnInit(): void {
+    this.list = [
 
+      {
+
+        value: 5,
+        checked: false,
+      },
+      {
+
+        value : 10,
+        checked: false,
+      },
+      {
+
+        value: 15,
+        checked: false,
+      },
+      {
+
+        value: 20,
+        checked: false,
+      },
+      {
+
+        value: 25,
+        checked: false,
+      },
+    ]
     // Methode  subscribe recuperer la liste de donnee .
     this.getAllFormation();
+  }
+
+  onCheckboxChange(event: any) {
+
+    const selectedCountries = (this.form.controls['selectedCountries'] as FormArray);
+    if (event.target.checked) {
+      selectedCountries.push(new FormControl(event.target.value));
+    } else {
+      const index = selectedCountries.controls
+        .findIndex(x => x.value === event.target.value);
+      selectedCountries.removeAt(index);
+    }
+  }
+
+  submit() {
+    console.log(this.form.value);
   }
 
   handlePageChange(event: number): void {
     this.page = event;
     this.getAllFormation();
   }
+
+  get result() {
+    return this.list.filter(item => item.checked);
+  }
+
+  changeCheckbox(event: any) {
+    let nb = event.target.value;
+    this.nbH = nb;
+
+  }
+
 
 
   templateForm(value: any) {
@@ -129,6 +191,8 @@ export class BlogFormationComponent implements OnInit {
     this.formation.domain = this.domain;
     this.formation.level = this.level;
     this.formation.nbrHours = this.nbH;
+
+
     this.serviceForm.SerachMultiple(this.formation,this.order).subscribe(
       (data:Formation[]) => {
         this.listFormation =data;

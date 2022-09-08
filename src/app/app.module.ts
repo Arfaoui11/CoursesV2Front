@@ -109,6 +109,7 @@ import {RegisterComponent} from "./BackEnd/register/register.component";
 import { LayoutCComponent } from './FontEnd/layout-c/layout-c.component';
 import { LayoutMyComponent } from './FontEnd/layout-my/layout-my.component';
 import { NavbarCComponent } from './FontEnd/navbar-c/navbar-c.component';
+import {MatCheckboxModule} from "@angular/material/checkbox";
 
 
 
@@ -235,6 +236,7 @@ FullCalendarModule.registerPlugins([
     CommonModule,
     NgbModalModule,
     FlatpickrModule.forRoot(),
+    MatCheckboxModule,
 
   ],
   providers: [
