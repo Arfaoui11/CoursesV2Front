@@ -16,11 +16,11 @@
     </div>
     <div class="input" *ngIf="room !== ''" style="padding-left: 20px">
       <form  class="bg-light" (ngSubmit)="sendMessage(msg)" >
-        <div class="input-group" style="width: 200px">
+        <div class="input-group" style="width: 230px">
           <input  placeholder="Type a message" aria-describedby="button-addon2"  autocomplete="off" type="text" name="message"
                   [(ngModel)]="msg" class="form-control rounded-0 border-0 py-4 bg-light">
           <div class="input-group-append">
-            <button  type="submit" class="btn btn-link" style="width: 10px;"><i class="fa fa-paper-plane"></i></button>
+            <button  type="submit" class="btn btn-link" style="width: 10px;"><i class="far fa-paper-plane"></i></button>
           </div>
         </div>
       </form>
@@ -28,13 +28,13 @@
 
   </aside>
   <main class="main" >
-    <div class="placeholder" *ngIf="room === ''">
+    <div  *ngIf="room === ''">
 
-      <div class="form__group field" >
+      <div  class="container" >
 
-        <h1 style="color: white" > Room Space </h1>
+        <h1 style="color: white; height: 100%;text-align: center;margin-top: 100px" > Room Space </h1>
 
-        <a class="theme-btn w-full mb-12" (click)="setRoom();setName()" style="width: 400px ;color: white" > Participate In The Meeting 👨‍👩‍👧‍👦 </a>
+        <a class="video-cart-btn" (click)="setRoom();setName()" style="margin-top: 350px;margin-left: 420px"  > Participate In The Meeting 👨‍👩‍👧‍👦 </a>
       </div>
     </div>
 
@@ -56,7 +56,7 @@
           muted
         ></video>
         <div class="user-name" style="color: white">{{ name }}</div>
-        <a *ngIf="remoteStreams.length === 0 && room !== ''" class="theme-btn w-full mb-12"   (click)="startCall()" style="width: 250px" > Join with video Call 📞 </a>
+        <a *ngIf="remoteStreams.length === 0 && room !== ''" class="video-cart-btn"   (click)="startCall()" style="width: 250px" ><i class=""></i> Join with video Call 📞 </a>
       </div>
       <div
         class="video-card"
