@@ -4,7 +4,7 @@
        &nbsp; &nbsp;<strong> Name :&nbsp;{{ name.toUpperCase() }}</strong>
       &nbsp;|&nbsp;<strong> Room Id :&nbsp;{{ room }}</strong>
     </div>
-    <div class="header__avatar"><a (click)="disconnect()" > Disconnect </a></div>
+    <div class="header__avatar"><a (click)="disconnect()" class="fas fa-sign-out-alt" > Disconnect </a></div>
   </header>
   <aside class="sidenav">
     <div class="card-container" *ngFor="let m of messages">
@@ -34,7 +34,7 @@
 
         <h1 style="color: white" > Room Space </h1>
 
-        <a class="theme-btn w-full mb-12" (click)="setRoom();setName()" style="width: 400px" > Participate In The Meeting 👨‍👩‍👧‍👦 </a>
+        <a class="theme-btn w-full mb-12" (click)="setRoom();setName()" style="width: 400px ;color: white" > Participate In The Meeting 👨‍👩‍👧‍👦 </a>
       </div>
     </div>
 

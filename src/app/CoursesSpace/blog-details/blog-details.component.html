@@ -11,8 +11,7 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a [routerLink]="['/front/End/homeF']">Home</a></li>
               <li class="breadcrumb-item"><span>Courses</span></li>
-              <li class="breadcrumb-item active" aria-current="page">MySQL Database : Beginner SQL
-                Database Design</li>
+              <li class="breadcrumb-item active" aria-current="page">{{formation.title}}</li>
             </ol>
           </nav>
         </div>
@@ -411,7 +410,7 @@
               <div class="col-xl-3">
                 <div class="reating-point mb-30">
                   <div class="rating-point-wrapper text-center">
-                    <h2>{{rating}}</h2>
+                    <h2>{{rating.toString() | slice: 0 : 4  }} </h2>
                     <div class="rating-star">
                       <i class="fas fa-star"></i>
                       <i class="fas fa-star"></i>
@@ -564,13 +563,13 @@
 
                     <div class="row">
                       <div class="col-xxl-12">
-                                                        <textarea   placeholder="Message ..."  [(ngModel)]="post.message"
+                                                        <textarea   placeholder="Message ..." name="key" #key=ngModel [(ngModel)]="post.message"
                                                                   class="comment-input comment-textarea mb-20"></textarea>
                       </div>
 
                       <div class="col-xxl-12">
                         <div class="comment-submit">
-                          <button type="submit" class="edu-btn" (click)="sendComments()">Submit</button>
+                          <button type="submit" class="edu-btn" (click)="sendComments();key.reset()">Submit</button>
                         </div>
                       </div>
                     </div>
@@ -605,6 +604,27 @@
                               </svg>
               </button>
             </form>
+          </div>
+          <div class="sidebar__widget mb-30">
+            <div class="sidebar__widget-head mb-35">
+              <h4 class="sidebar__widget-title">Recent Videos</h4>
+            </div>
+            <div class="sidebar__widget-content">
+              <div class="rc__post-wrapper">
+                <div class="rc__post d-flex align-items-center" *ngFor="let vdo of retrieveVideo">
+                  <div class="rc__thumb mr-20">
+                    <a [routerLink]="['../../portF',formation.id]"><img src="../../../assets/video_playlist_512px.png" alt=""></a>
+                  </div>
+                  <div class="rc__content">
+                    <div class="rc__meta">
+                      <span>{{formation.start | date | slice:0 : 12}}</span>
+                    </div>
+                    <h6 class="rc__title"><a [routerLink]="['../../portF',formation.id]">{{vdo | slice:37 : -36  }}</a></h6>
+                  </div>
+                </div>
+
+              </div>
+            </div>
           </div>
           <div class="sidebar__widget mb-30">
             <div class="course-video-thumb w-img">

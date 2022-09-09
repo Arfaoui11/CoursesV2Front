@@ -1,7 +1,7 @@
-$primary: #f6a1ff;
-$secondary: #ffdeea;
+$primary: #f7f7f7;
+$secondary: rgba(105, 103, 111, 0.52);
 $white: #fff;
-$gray: #ffdeea;
+$gray: #f7f7f7;
 $green: #a7a7a7;
 
 body {
@@ -79,13 +79,13 @@ body {
   grid-area: main;
   background-color: $green;
   .placeholder {
-    height: 50%;
-    line-height: 50%;
+    height: 100%;
+    line-height: 100%;
     text-align: center;
     .form__group {
       position: relative;
       padding: 15px 0 0;
-      margin-top: 40%;
+      margin-top: 100%;
       width: 100%;
       left: 0;
       button {
@@ -97,7 +97,7 @@ body {
 
     .form__field {
       font-family: inherit;
-      width: 50%;
+      width: 100%;
       border: 0;
       border-bottom: 2px solid $gray;
       outline: 0;
