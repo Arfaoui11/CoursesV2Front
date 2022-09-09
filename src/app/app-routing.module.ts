@@ -37,6 +37,7 @@ import {VerificationAcountComponent} from "./CoursesSpace/verification-acount/ve
 import {LoginComponent} from "./BackEnd/login/login.component";
 import {RegisterComponent} from "./BackEnd/register/register.component";
 import {Pages404Component} from "./CoursesSpace/pages404/pages404.component";
+import {CheckoutComponent} from "./CoursesSpace/checkout/checkout.component";
 
 
 
@@ -102,6 +103,7 @@ const routes: Routes =
              { path: 'quiz/:idQuiz', component: QuizComponent },
              { path: 'quizWelcome', component: WelcomeComponent },
              { path: 'cart', component: CartComponent },
+             { path: 'checkout', component: CheckoutComponent },
              { path: '**',  component: E404Component },
 
            ]
