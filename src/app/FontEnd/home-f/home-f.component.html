@@ -40,7 +40,7 @@
           <div class="slider-content-wrapper">
             <div class="hero-tittle-info text-center mb-45">
               <h2>Build Your Own Online<br>
-                Platform <span class="down-mark-line-2">Eduman</span></h2>
+                Platform <span class="down-mark-line-2">Udacity Academy</span></h2>
             </div>
             <div class="slider-search ">
               <form action="#">
@@ -308,7 +308,7 @@
         <div class="about-content mb-50">
           <div class="section-title mb-30">
             <h2>Increase Your High <br>
-              Education Level with <span class="down-mark-line-2">Eduman</span>
+              Education Level with <span class="down-mark-line-2">Udacity Academy</span>
             </h2>
           </div>
           <div class="student-choose-list">
@@ -514,9 +514,10 @@
                         </div>
                         <div  class="categories-content">
                           <div >
-                            <h4>{{tableau[choix].cle}}</h4>
+                            <h4>{{tableau[choix].cle.charAt(0).toUpperCase()+ tableau[choix].cle.slice(1).toLowerCase()}}</h4>
                             <p>{{tableau[choix].valeur}} Course available</p>
-                            <p>{{choix}}</p>
+
+
                           </div>
 
 
@@ -561,19 +562,19 @@
         <div class="portfolio-button text-info mt-65">
           <button class="active" data-filter="*" (click)="SearchMultiple('')">View All<span class="port-red">[08]</span></button>
 
-          <button (click)="SearchMultiple('DEVELOPMENT')" >Development</button>
-          <button  (click)="SearchMultiple('BUSINESS')" >Business</button>
-          <button  (click)="SearchMultiple('PERSONALDEVELOPMENT')" >Personal Development</button>
-          <button  (click)="SearchMultiple('OFFICEPRODUCTIVITY')" >Office Productivity</button>
-          <button  (click)="SearchMultiple('IT&SOFTWARE')" >IT & Software</button>
-          <button  (click)="SearchMultiple('MARKETING')" >Marketing</button>
-          <button  (click)="SearchMultiple('FINANCE&ACCOUNTING')" >Finance & Accounting</button>
-          <button  (click)="SearchMultiple('DESIGN')" >Design</button>
-          <button  (click)="SearchMultiple('LIFESTYLE')" >Lifestyle</button>
-          <button  (click)="SearchMultiple('PHOTOGRAPHY&VIDEO')" >Photography & Video</button>
-          <button  (click)="SearchMultiple('HEALTH&FITNESS')" >Health & Fitness</button>
-          <button  (click)="SearchMultiple('MUSIC')" >Music</button>
-          <button  (click)="SearchMultiple('TEACHING&ACADEMICS')" >Teaching & Academics</button>
+          <button class="down-mark-line" (click)="SearchMultiple('DEVELOPMENT')" >Development</button>
+          <button  class="down-mark-line" (click)="SearchMultiple('BUSINESS')" >Business</button>
+          <button  class="down-mark-line" (click)="SearchMultiple('PERSONALDEVELOPMENT')" >Personal Development</button>
+          <button  class="down-mark-line" (click)="SearchMultiple('OFFICEPRODUCTIVITY')" >Office Productivity</button>
+          <button class="down-mark-line" (click)="SearchMultiple('IT&SOFTWARE')" >IT & Software</button>
+          <button class="down-mark-line" (click)="SearchMultiple('MARKETING')" >Marketing</button>
+          <button class="down-mark-line" (click)="SearchMultiple('FINANCE&ACCOUNTING')" >Finance & Accounting</button>
+          <button class="down-mark-line" (click)="SearchMultiple('DESIGN')" >Design</button>
+          <button class="down-mark-line" (click)="SearchMultiple('LIFESTYLE')" >Lifestyle</button>
+          <button class="down-mark-line" (click)="SearchMultiple('PHOTOGRAPHY&VIDEO')" >Photography & Video</button>
+          <button class="down-mark-line" (click)="SearchMultiple('HEALTH&FITNESS')" >Health & Fitness</button>
+          <button class="down-mark-line" (click)="SearchMultiple('MUSIC')" >Music</button>
+          <button class="down-mark-line" (click)="SearchMultiple('TEACHING&ACADEMICS')" >Teaching & Academics</button>
 
         </div>
       </div>

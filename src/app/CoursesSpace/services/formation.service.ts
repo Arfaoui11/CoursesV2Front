@@ -206,6 +206,11 @@ export class FormationService {
     return this.http.get<Formation[]>("http://localhost:4000/api/courses");
   }
 
+  getFormationByRatings():Observable<Formation[]>
+  {
+    return this.http.get<Formation[]>("http://localhost:4000/api/coursesByRatings");
+  }
+
 
   getPourcentage():Observable<Object[]>
   {
