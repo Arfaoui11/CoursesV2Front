@@ -579,6 +579,8 @@
         </div>
       </div>
     </div>
+    <br>
+    <br>
     <div class="row grid">
       <div class="col-xl-3 col-lg-4 col-md-6  grid-item" *ngIf="listFormation[0]">
         <div class="course-wrapper-2 mb-30">
@@ -589,7 +591,7 @@
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">{{listFormation[0].domain}}</a></span>
+                                          href="course.html">{{listFormation[0].domain.charAt(0).toUpperCase()+ listFormation[0].domain.slice(1).toLowerCase()}}</a></span>
                 <a href="course-details.html">
                   <h3>{{listFormation[0].description}}</h3>
                 </a>
@@ -600,6 +602,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[0].skills}}</li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[0].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -631,11 +634,11 @@
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">{{listFormation[0].title.charAt(0).toUpperCase()+ listFormation[0].title.slice(1)}}</a></h3>
+              <h3><a href="#">{{listFormation[0].title.charAt(0).toUpperCase()+ listFormation[0].title.slice(1)}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[0].userF.lastName}}</a>
+                <a href="#"><i class="fas fa-user"></i>{{listFormation[0].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
@@ -657,8 +660,8 @@
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">{{listFormation[1].domain}}</a></span>
-                <a href="course-details.html">
+                                          href="#">{{listFormation[1].domain.charAt(0).toUpperCase()+ listFormation[1].domain.slice(1).toLowerCase()}}</a></span>
+                <a href="#">
                   <h3>{{listFormation[1].description}}</h3>
                 </a>
                 <div class="cart-lavel">
@@ -668,13 +671,14 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[1].skills}}</li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[1].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
                 <div class="course-action">
                   <a [routerLink]="['../detailsF',listFormation[1].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
+                  <a href="#" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
                 </div>
               </div>
@@ -699,11 +703,11 @@
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">{{listFormation[1].title.charAt(0).toUpperCase()+ listFormation[1].title.slice(1)}}</a></h3>
+              <h3><a href="#">{{listFormation[1].title.charAt(0).toUpperCase()+ listFormation[1].title.slice(1)}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[1].userF.lastName}}</a>
+                <a href="#"><i class="fas fa-user"></i>{{listFormation[1].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
@@ -725,8 +729,8 @@
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">{{listFormation[2].domain}}</a></span>
-                <a href="course-details.html">
+                                          href="#">{{listFormation[2].domain.charAt(0).toUpperCase()+ listFormation[2].domain.slice(1).toLowerCase()}}</a></span>
+                <a href="#">
                   <h3>{{listFormation[2].description}}</h3>
                 </a>
                 <div class="cart-lavel">
@@ -736,13 +740,14 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[2].skills}}</li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[2].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
                 <div class="course-action">
                   <a [routerLink]="['../detailsF',listFormation[2].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
+                  <a href="#" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
                 </div>
               </div>
@@ -767,11 +772,11 @@
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">{{listFormation[2].title.charAt(0).toUpperCase()+ listFormation[2].title.slice(1)}}</a></h3>
+              <h3><a href="#">{{listFormation[2].title.charAt(0).toUpperCase()+ listFormation[2].title.slice(1)}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[2].userF.lastName}}</a>
+                <a href="#"><i class="fas fa-user"></i>{{listFormation[2].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
@@ -793,8 +798,8 @@
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">{{listFormation[0].domain}}</a></span>
-                <a href="course-details.html">
+                                          href="#">{{listFormation[3].domain.charAt(0).toUpperCase()+ listFormation[3].domain.slice(1).toLowerCase()}}</a></span>
+                <a href="#">
                   <h3>{{listFormation[3].description}}</h3>
                 </a>
                 <div class="cart-lavel">
@@ -804,13 +809,14 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[3].skills}}</li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[3].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
                 <div class="course-action">
                   <a [routerLink]="['../detailsF',listFormation[3].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
+                  <a href="#" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
                 </div>
               </div>
@@ -835,11 +841,11 @@
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">{{listFormation[3].title.charAt(0).toUpperCase()+ listFormation[3].title.slice(1)}}</a></h3>
+              <h3><a href="#">{{listFormation[3].title.charAt(0).toUpperCase()+ listFormation[3].title.slice(1)}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[3].userF.lastName}}</a>
+                <a href="#"><i class="fas fa-user"></i>{{listFormation[3].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
@@ -861,8 +867,8 @@
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">{{listFormation[4].domain}}</a></span>
-                <a href="course-details.html">
+                                          href="#">{{listFormation[4].domain.charAt(0).toUpperCase()+ listFormation[4].domain.slice(1).toLowerCase()}}</a></span>
+                <a href="#">
                   <h3>{{listFormation[4].description}}</h3>
                 </a>
                 <div class="cart-lavel">
@@ -872,13 +878,14 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[4].skills}}</li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[4].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
                 <div class="course-action">
                   <a [routerLink]="['../detailsF',listFormation[4].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
+                  <a href="#" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
                 </div>
               </div>
@@ -903,11 +910,11 @@
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">{{listFormation[4].title.charAt(0).toUpperCase()+ listFormation[4].title.slice(1)}}</a></h3>
+              <h3><a href="#">{{listFormation[4].title.charAt(0).toUpperCase()+ listFormation[4].title.slice(1)}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[4].userF.lastName}}</a>
+                <a href="#"><i class="fas fa-user"></i>{{listFormation[4].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
@@ -929,8 +936,8 @@
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">{{listFormation[5].domain}}</a></span>
-                <a href="course-details.html">
+                                          href="#">{{listFormation[1].domain.charAt(5).toUpperCase()+ listFormation[5].domain.slice(1).toLowerCase()}}</a></span>
+                <a href="#">
                   <h3>{{listFormation[5].description}}</h3>
                 </a>
                 <div class="cart-lavel">
@@ -940,13 +947,14 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[5].skills}}</li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[5].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
                 <div class="course-action">
                   <a [routerLink]="['../detailsF',listFormation[5].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
+                  <a href="#" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
                 </div>
               </div>
@@ -971,11 +979,11 @@
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">{{listFormation[5].title.charAt(0).toUpperCase()+ listFormation[5].title.slice(1)}}</a></h3>
+              <h3><a href="#">{{listFormation[5].title.charAt(0).toUpperCase()+ listFormation[5].title.slice(1)}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[5].userF.lastName}}</a>
+                <a href="#"><i class="fas fa-user"></i>{{listFormation[5].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
@@ -997,8 +1005,8 @@
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">{{listFormation[6].domain}}</a></span>
-                <a href="course-details.html">
+                                          href="course.html">{{listFormation[6].domain.charAt(0).toUpperCase()+ listFormation[6].domain.slice(1).toLowerCase()}}</a></span>
+                <a href="#">
                   <h3>{{listFormation[6].description}}</h3>
                 </a>
                 <div class="cart-lavel">
@@ -1008,13 +1016,14 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[6].skills}}</li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[6].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
                 <div class="course-action">
                   <a [routerLink]="['../detailsF',listFormation[6].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
+                  <a href="#" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
                 </div>
               </div>
@@ -1039,11 +1048,11 @@
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">{{listFormation[6].title.charAt(0).toUpperCase()+ listFormation[6].title.slice(1)}}</a></h3>
+              <h3><a href="#">{{listFormation[6].title.charAt(0).toUpperCase()+ listFormation[6].title.slice(1)}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[6].userF.lastName}}</a>
+                <a href="#"><i class="fas fa-user"></i>{{listFormation[6].userF.lastName}}</a>
               </div>
               <div class="course-icon">
                 <i class="fas fa-star"></i>
@@ -1065,8 +1074,8 @@
             <div class="course-info-wrapper">
               <div class="cart-info-body">
                                         <span class="category-color category-color-1"><a
-                                          href="course.html">{{listFormation[7].domain}}</a></span>
-                <a href="course-details.html">
+                                          href="course.html">{{listFormation[7].domain.charAt(0).toUpperCase()+ listFormation[7].domain.slice(1).toLowerCase()}}</a></span>
+                <a href="#">
                   <h3>{{listFormation[7].description}}</h3>
                 </a>
                 <div class="cart-lavel">
@@ -1076,13 +1085,14 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[7].skills}}</li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[7].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
                 <div class="course-action">
                   <a [routerLink]="['../detailsF',listFormation[7].id]" class="view-details-btn">View Details</a>
                   <button class="wishlist-btn"><i class="flaticon-like"></i></button>
-                  <a href="course-details.html" class="c-share-btn"><i
+                  <a href="#" class="c-share-btn"><i
                     class="flaticon-previous"></i></a>
                 </div>
               </div>
@@ -1350,28 +1360,29 @@
       <div class="col-xl-4 col-lg-4 col-md-6">
         <div class="blog-wrapper position-relative mb-30">
           <div class="blog-thumb ">
-            <a href="blog-details.html"><img src="../../../assets/front/img/blog/blog-01.jpg" alt="img"></a>
+            <a [routerLink]="['../detailsF',list[0].id]"><img [src]="list[0].image" alt="img"></a>
           </div>
           <a href="blog.html" class="blog-tag">
             <i class="fal fa-folder-open"></i>
-            Development
+            {{list[0].domain.charAt(0).toUpperCase()+ list[0].domain.slice(1).toLowerCase()}}
           </a>
           <div class="blog-content-wrapper">
             <div class="blog-meta">
               <div class="blog-date">
                 <i class="flaticon-calendar"></i>
-                <span>20 Jan 2020</span>
+                <span>{{list[0].start | date | slice:0 : 12}} / {{list[0].end | date | slice:0 : 12}}</span>
               </div>
               <div class="blog-user">
                 <i class="flaticon-avatar"></i>
-                <span>Brian Hoff</span>
+                <span>{{list[0].userF.lastName}}</span>
               </div>
             </div>
             <div class="blog-content">
-              <a href="blog-details.html">
-                <h3>Ask the Expert: Typography Talk with Brian Hoff</h3>
+              <a href="blog-details.html" >
+                <h5 class="down-mark-line">Title : {{list[0].title.charAt(0).toUpperCase()+ list[0].title.slice(1).toLowerCase()}}</h5>
+                <p>{{list[0].description}}</p>
               </a>
-              <a class="blog-btn" href="blog-details.html">Read more</a>
+              <a class="blog-btn" [routerLink]="['../detailsF',list[0].id]">Read more</a>
             </div>
           </div>
         </div>
@@ -1379,28 +1390,29 @@
       <div class="col-xl-4 col-lg-4 col-md-6">
         <div class="blog-wrapper position-relative mb-30">
           <div class="blog-thumb ">
-            <a href="blog-details.html"><img src="../../../assets/front/img/blog/blog-02.jpg" alt="blog-img"></a>
+            <a [routerLink]="['../detailsF',list[1].id]"><img [src]="list[1].image" alt="img"></a>
           </div>
           <a href="blog.html" class="blog-tag">
             <i class="fal fa-folder-open"></i>
-            Business
+            {{list[1].domain.charAt(0).toUpperCase()+ list[1].domain.slice(1).toLowerCase()}}
           </a>
           <div class="blog-content-wrapper">
             <div class="blog-meta">
               <div class="blog-date">
                 <i class="flaticon-calendar"></i>
-                <span>13 Jan 2020</span>
+                <span>{{list[1].start | date | slice:0 : 12}} / {{list[1].end | date | slice:0 : 12}}</span>
               </div>
               <div class="blog-user">
                 <i class="flaticon-avatar"></i>
-                <span>Mark Hanry</span>
+                <span>{{list[1].userF.lastName}}</span>
               </div>
             </div>
             <div class="blog-content">
               <a href="blog-details.html">
-                <h3>Stop Redesigning And Start Your Tuning Your Site Instead</h3>
+                <h5 class="down-mark-line">Title : {{list[1].title.charAt(0).toUpperCase()+ list[1].title.slice(1).toLowerCase()}}</h5>
+                <p>{{list[1].description}}</p>
               </a>
-              <a class="blog-btn" href="blog-details.html">Read more</a>
+              <a class="blog-btn" [routerLink]="['../detailsF',list[1].id]">Read more</a>
             </div>
           </div>
         </div>
@@ -1408,32 +1420,35 @@
       <div class="col-xl-4 col-lg-4 col-md-6">
         <div class="blog-wrapper position-relative mb-30">
           <div class="blog-thumb ">
-            <a href="blog-details.html"><img src="../../../assets/front/img/blog/blog-03.jpg" alt="blog-img"></a>
+            <a [routerLink]="['../detailsF',list[2].id]"><img [src]="list[2].image" alt="img"></a>
           </div>
           <a href="blog.html" class="blog-tag">
             <i class="fal fa-folder-open"></i>
-            Web Design
+            {{list[2].domain.charAt(0).toUpperCase()+ list[2].domain.slice(1).toLowerCase()}}
           </a>
           <div class="blog-content-wrapper">
             <div class="blog-meta">
               <div class="blog-date">
                 <i class="flaticon-calendar"></i>
-                <span>23 Dec 2020</span>
+                <span>{{list[2].start | date | slice:0 : 12}} / {{list[2].end | date | slice:0 : 12}}</span>
               </div>
               <div class="blog-user">
                 <i class="flaticon-avatar"></i>
-                <span>Eduman</span>
+                <span>{{list[2].userF.lastName}}</span>
               </div>
             </div>
             <div class="blog-content">
               <a href="blog-details.html">
-                <h3>How To Teach Web Design to the New Students</h3>
+                <h5 class="down-mark-line">Title : {{list[2].title.charAt(0).toUpperCase()+ list[2].title.slice(1).toLowerCase()}}</h5>
+                <p>{{list[2].description}}</p>
               </a>
-              <a class="blog-btn" href="blog-details.html">Read more</a>
+              <a class="blog-btn" [routerLink]="['../detailsF',list[1].id]">Read more</a>
             </div>
           </div>
         </div>
       </div>
+
+
     </div>
   </div>
 </div>

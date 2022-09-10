@@ -4,6 +4,7 @@ import {TokenService} from "../../CoursesSpace/services/token.service";
 import {Formation} from "../../core/model/Formation";
 import {FormationService} from "../../CoursesSpace/services/formation.service";
 import {MatSnackBar} from "@angular/material/snack-bar";
+import {NgxQrcodeElementTypes, NgxQrcodeErrorCorrectionLevels} from "ngx-qrcode2";
 
 
 
@@ -28,7 +29,8 @@ export class HomeFComponent implements OnInit {
   public category = '';
 
 
-
+  elementType= NgxQrcodeElementTypes.URL;
+  correctionLevel = NgxQrcodeErrorCorrectionLevels.MEDIUM;
 
   public order : number = -1;
 
@@ -38,6 +40,7 @@ export class HomeFComponent implements OnInit {
 
   @ViewChild('thenfirst', {static: true}) thenfirst: TemplateRef<any>|null = null;
   @ViewChild('thenSec', {static: true}) thenSec: TemplateRef<any>|null = null;
+  public list: Formation[];
 
   constructor(private token: TokenService ,private serviceForm : FormationService,private snackbar:MatSnackBar ) {
     this.currentUser = this.token.getUser();
@@ -45,15 +48,16 @@ export class HomeFComponent implements OnInit {
 
   listFormation  : Formation[];
  public tableau = [{cle:'', valeur:0}];
+
   public cat = new Map();
 
  public temp : any;
- public choix: number=1;
+ public choix: number=0;
 
   ngOnInit(): void {
 
     this.getAllFormation();
-
+    this.getAllFormationByDate();
 
     fetch('https://api.openweathermap.org/data/2.5/weather?q=ariana&units=metric&appid=50a7aa80fa492fa92e874d23ad061374')
       .then(response => response.json())
@@ -91,9 +95,16 @@ export class HomeFComponent implements OnInit {
 
   getAllFormation()
   {
-    return  this.serviceForm.getFormation().subscribe(
+    return  this.serviceForm.getFormationByRatings().subscribe(
       (data : Formation[]) => {this.listFormation = data;
         this.nbrCategory();
+      });
+  }
+  getAllFormationByDate()
+  {
+    return  this.serviceForm.getFormation().subscribe(
+      (data : Formation[]) => {this.list = data;
+
       });
   }
 
@@ -130,6 +141,16 @@ export class HomeFComponent implements OnInit {
     let c4=0;
     let c5=0;
     let c6=0;
+    let c7=0;
+    let c8=0;
+    let c9=0;
+    let c10=0;
+    let c11=0;
+    let c12=0;
+    let c13=0;
+
+    this.tableau.splice(0,1);
+
 
     for (let l of this.listFormation)
     {
@@ -152,26 +173,97 @@ export class HomeFComponent implements OnInit {
       }else if (l.domain.toString() === 'MUSIC')
       {
         c6++;
+      }else if (l.domain.toString() === 'PERSONALDEVELOPMENT')
+      {
+        c7++;
+      }else if (l.domain.toString() === 'OFFICEPRODUCTIVITY')
+      {
+        c8++;
+      }else if (l.domain.toString() === 'DESIGN')
+      {
+        c9++;
+      }else if (l.domain.toString() === 'HEALTH&FITNESS')
+      {
+        c10++;
+      }else if (l.domain.toString() === 'PHOTOGRAPHY&VIDEO')
+      {
+        c11++;
+      }else if (l.domain.toString() === 'BUSINESS')
+      {
+        c12++;
+      }else if (l.domain.toString() === 'FINANCE&ACCOUNTING')
+      {
+        c13++;
       }
 
-
-
+    }
+    if (c1 !== 0 )
+    {
+      this.tableau.push({cle: 'DEVELOPMENT',valeur: c1});
     }
 
-    this.tableau.push({cle: 'DEVELOPMENT',valeur: c1});
-    this.tableau.push({cle: 'IT&SOFTWARE',valeur: c2});
-    this.tableau.push({cle: 'TEACHING&ACADEMICS',valeur: c3});
-    this.tableau.push({cle: 'LIFESTYLE',valeur: c4});
-    this.tableau.push({cle: 'PHOTOGRAPHY&VIDEO',valeur: c5});
-    this.tableau.push({cle: 'MUSIC',valeur: c6});
+    if (c2 !== 0 ) {
+      this.tableau.push({cle: 'IT&SOFTWARE', valeur: c2});
+    }
+
+    if (c3 !== 0 ) {
+      this.tableau.push({cle: 'TEACHING&ACADEMICS', valeur: c3});
+    }
+
+    if (c4 !== 0 ) {
+      this.tableau.push({cle: 'LIFESTYLE', valeur: c4});
+    }
+
+    if (c5 !== 0 ) {
+      this.tableau.push({cle: 'PHOTOGRAPHY&VIDEO', valeur: c5});
+    }
+
+    if (c6 !== 0 ) {
+      this.tableau.push({cle: 'MUSIC', valeur: c6});
+    }
+
+    if (c7 !== 0 ) {
+      this.tableau.push({cle: 'PERSONALDEVELOPMENT', valeur: c7});
+    }
+
+    if (c8 !== 0 ) {
+      this.tableau.push({cle: 'OFFICEPRODUCTIVITY', valeur: c8});
+    }
+
+    if (c9 !== 0 ) {
+      this.tableau.push({cle: 'DESIGN', valeur: c9});
+    }
+    if (c10 !== 0 ) {
+      this.tableau.push({cle: 'HEALTH&FITNESS', valeur: c10});
+    }
+
+    if (c11 !== 0 ) {
+      this.tableau.push({cle: 'PHOTOGRAPHY&VIDEO', valeur: c11});
+    }
+
+    if (c12 !== 0 ) {
+      this.tableau.push({cle: 'BUSINESS', valeur: c12});
+    }
+
+    if (c13 !== 0 ) {
+      this.tableau.push({cle: 'FINANCE&ACCOUNTING', valeur: c13});
+    }
 
 
+
+
+    this.tableau.sort(function (a, b) {
+      return b.valeur - a.valeur;
+    });
+
+
+    console.log(this.tableau);
 
 
   }
 
   IndexLeft() {
-    if (this.choix !== 1)
+    if (this.choix !== 0)
     {
       this.choix--;
     }
