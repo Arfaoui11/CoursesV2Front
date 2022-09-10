@@ -363,12 +363,14 @@
                 <div class="course-info-wrapper">
                   <div class="cart-info-body">
                                     <span class="category-color category-color-1"><a
-                                      [routerLink]="['../detailsF',l.id]">{{l.title.toUpperCase()}}</a></span>
+                                      [routerLink]="['../detailsF',l.id]">{{l.title.charAt(0).toUpperCase()+ l.title.slice(1)}}</a></span>
                     <a href="course-details.html">
                       <h3>{{l.description}}</h3>
                     </a>
                     <div class="cart-lavel">
                       <h5>Level : <span> {{l.level}}</span></h5>
+                      <h5>Domain : <span> {{l.domain.charAt(0).toUpperCase()+ l.domain.slice(1).toLowerCase()}}</span></h5>
+
                       <p>{{l.prerequisites}}</p>
                     </div>
 
@@ -406,21 +408,18 @@
                   </div>
                 </div>
                 <div class="student-course-text">
-                  <h3><a href="course-details.html">WordPress Development Course for Plugins & Themes</a>
+                  <h3><a href="course-details.html">{{l.title.charAt(0).toUpperCase()+ l.title.slice(1)}}</a>
+                  </h3>
+                </div>
+                <div class="course-bio-text">
+                  <h3><a href="course-details.html">{{l.domain.charAt(0).toUpperCase()+ l.domain.slice(1).toLowerCase()}}</a>
                   </h3>
                 </div>
                 <div class="portfolio-user">
                   <div class="user-icon">
                     <a href="instructor-profile.html"><i class="fas fa-user"></i> {{l.userF.lastName}}</a>
                   </div>
-                  <div class="course-icon">
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fas fa-star"></i>
-                    <i class="fal fa-star"></i>
-                    <span>{{l.ratings.length}}</span>
-                  </div>
+
                 </div>
               </div>
             </div>

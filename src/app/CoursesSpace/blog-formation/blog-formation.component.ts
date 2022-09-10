@@ -41,9 +41,7 @@ export class BlogFormationComponent implements OnInit {
 
 
   constructor(private fb: FormBuilder,private chatService : ChatServiceService,private serviceForm : FormationService,private snackbar:MatSnackBar  ,private http: HttpClient, private route:ActivatedRoute,private token: TokenService) {
-    this.form = fb.group({
-      selectedCountries:  new FormArray([])
-    });
+
   }
 
   ngOnInit(): void {
@@ -112,10 +110,7 @@ export class BlogFormationComponent implements OnInit {
 
 
 
-  templateForm(value: any) {
-    alert(JSON.stringify(value.Level));
-    this.level = JSON.stringify(value.Level);
-  }
+
 
 
 
