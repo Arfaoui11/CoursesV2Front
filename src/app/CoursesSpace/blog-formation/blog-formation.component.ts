@@ -116,7 +116,7 @@ export class BlogFormationComponent implements OnInit {
 
   getAllFormation()
   {
-    return  this.serviceForm.getFormation().subscribe(
+    return  this.serviceForm.getFormationByRatings().subscribe(
       (data : Formation[]) => {this.listFormation = data;
         this.Items = this.listFormation.length;
       });

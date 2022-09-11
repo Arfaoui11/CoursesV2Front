@@ -281,7 +281,7 @@
                   <div class="user-btn-wrapper">
                     <div class="user-btn-content ">
                       <button class="user-btn-sign-in" *ngIf="!currentUser" data-bs-toggle="modal" data-bs-target="#signinModal">Sign In</button>
-                      <img *ngIf="currentUser" [src]="currentUser.file" class="img-lg" alt="img">
+                      <img *ngIf="currentUser" [src]="currentUser.file" class="img-lg" style="border-radius: 5px;" alt="img">
                       <span *ngIf="currentUser" style="font-family: Georgia, Times New Roman, serif">  {{currentUser.lastName.toUpperCase()}}</span>
                     </div>
                   </div>

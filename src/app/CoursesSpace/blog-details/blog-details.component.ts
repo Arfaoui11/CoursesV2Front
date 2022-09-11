@@ -267,7 +267,7 @@ export class BlogDetailsComponent implements OnInit {
 
       },
       (error => {
-        this.snackbar.open(' You are excluded with any comment write 20 days ', 'Undo', {
+        this.snackbar.open(' You are excluded ', 'Undo', {
           duration: 2000
         });
         console.log(error)

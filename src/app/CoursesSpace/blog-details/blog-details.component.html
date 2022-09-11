@@ -384,7 +384,7 @@
               </div>
               <div class="instructors-body">
                 <h5><a href="instructor-profile.html">{{formation.userF.lastName }} {{formation.userF.firstName}}</a></h5>
-                <span>{{formation.userF.profession}}, Udacity Academy Team Ltd.</span>
+                <span>{{formation.userF.profession.charAt(0).toUpperCase() + formation.userF.profession.slice(1).toLowerCase()}}, Udacity Academy Team Ltd.</span>
                 <div class="intructors-review">
                   <i class="fas fa-star"></i>
                   <span>4.7 (54 reviews)</span>
@@ -412,11 +412,11 @@
                   <div class="rating-point-wrapper text-center">
                     <h2>{{rating.toString() | slice: 0 : 4  }} </h2>
                     <div class="rating-star">
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
-                      <i class="fas fa-star"></i>
+                      <i *ngIf=" 1 <= rating" class="fas fa-star"></i>
+                      <i *ngIf=" 2 <= rating" class="fas fa-star"></i>
+                      <i *ngIf=" 3 <= rating" class="fas fa-star"></i>
+                      <i *ngIf=" 4 <= rating" class="fas fa-star"></i>
+                      <i *ngIf=" 5 <= rating" class="fas fa-star"></i>
                     </div>
                     <span>{{formation.ratings.length}}</span>
                   </div>
