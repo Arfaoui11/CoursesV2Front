@@ -370,7 +370,7 @@
                     <div class="cart-lavel">
                       <h5>Level : <span> {{l.level.charAt(0).toUpperCase()+ l.level.slice(1).toLowerCase()}}</span></h5>
                       <h5>Domain : <span> {{l.domain.charAt(0).toUpperCase()+ l.domain.slice(1).toLowerCase()}}</span></h5>
-                      <h5>Domain : <span> {{l.domain.charAt(0).toUpperCase()+ l.domain.slice(1).toLowerCase()}}</span></h5>
+
 
                       <p>{{l.prerequisites}}</p>
                     </div>
@@ -378,7 +378,7 @@
                     <div class="info-cart-text">
                       <ul>
                         <li><i class="far fa-check"></i>{{l.skills}}</li>
-                        <li><ngx-qrcode [elementType]="elementType"  [value]="l.toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                        <li><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+l.id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
                       </ul>
                     </div>
                     <div class="course-action">

@@ -355,7 +355,7 @@
                 <div class="swiper-wrapper">
                   <!-- Slides -->
                   <div class="swiper-slide">
-                    <a href="course.html">
+                    <a [routerLink]="['/front/End/blogF']">
                       <div class="categories-wrapper text-center mb-30">
                         <div class="categiories-thumb">
                           <svg xmlns="http://www.w3.org/2000/svg" width="128.484"
@@ -603,7 +603,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[0].skills}}</li>
-                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[0].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+listFormation[0].id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -637,16 +637,15 @@
             <div class="student-course-text">
               <h3><a href="#">{{listFormation[0].title.charAt(0).toUpperCase()+ listFormation[0].title.slice(1)}}</a></h3>
             </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[0].costs}}</a></h3>
+            </div>
             <div class="portfolio-user">
               <div class="user-icon">
                 <a href="#"><i class="fas fa-user"></i>{{listFormation[0].userF.lastName}}</a>
               </div>
               <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.2({{listFormation[0].ratings.length}})</span>
+                <span>({{listFormation[0].courseApprenants.length}}) Students</span>
               </div>
             </div>
           </div>
@@ -673,7 +672,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[1].skills}}</li>
-                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[1].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+listFormation[1].id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -707,16 +706,15 @@
             <div class="student-course-text">
               <h3><a href="#">{{listFormation[1].title.charAt(0).toUpperCase()+ listFormation[1].title.slice(1)}}</a></h3>
             </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[1].costs}}</a></h3>
+            </div>
             <div class="portfolio-user">
               <div class="user-icon">
                 <a href="#"><i class="fas fa-user"></i>{{listFormation[1].userF.lastName}}</a>
               </div>
               <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.2({{listFormation[1].ratings.length}})</span>
+                <span>({{listFormation[1].courseApprenants.length}}) Students</span>
               </div>
             </div>
           </div>
@@ -743,7 +741,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[2].skills}}</li>
-                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[2].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+listFormation[2].id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -777,16 +775,15 @@
             <div class="student-course-text">
               <h3><a href="#">{{listFormation[2].title.charAt(0).toUpperCase()+ listFormation[2].title.slice(1)}}</a></h3>
             </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[2].costs}}</a></h3>
+            </div>
             <div class="portfolio-user">
               <div class="user-icon">
                 <a href="#"><i class="fas fa-user"></i>{{listFormation[2].userF.lastName}}</a>
               </div>
               <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.2({{listFormation[2].ratings.length}})</span>
+                <span>({{listFormation[2].courseApprenants.length}}) Students</span>
               </div>
             </div>
           </div>
@@ -813,7 +810,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[3].skills}}</li>
-                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[3].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+listFormation[3].id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -847,16 +844,18 @@
             <div class="student-course-text">
               <h3><a href="#">{{listFormation[3].title.charAt(0).toUpperCase()+ listFormation[3].title.slice(1)}}</a></h3>
             </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[3].costs}}</a></h3>
+            </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[3].costs}}</a></h3>
+            </div>
             <div class="portfolio-user">
               <div class="user-icon">
                 <a href="#"><i class="fas fa-user"></i>{{listFormation[3].userF.lastName}}</a>
               </div>
               <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.2({{listFormation[3].ratings.length}})</span>
+                <span>({{listFormation[3].courseApprenants.length}}) Students</span>
               </div>
             </div>
           </div>
@@ -883,7 +882,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[4].skills}}</li>
-                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[4].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+listFormation[4].id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -917,16 +916,15 @@
             <div class="student-course-text">
               <h3><a href="#">{{listFormation[4].title.charAt(0).toUpperCase()+ listFormation[4].title.slice(1)}}</a></h3>
             </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[4].costs}}</a></h3>
+            </div>
             <div class="portfolio-user">
               <div class="user-icon">
                 <a href="#"><i class="fas fa-user"></i>{{listFormation[4].userF.lastName}}</a>
               </div>
               <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.2({{listFormation[4].ratings.length}})</span>
+                <span>({{listFormation[4].courseApprenants.length}}) Students</span>
               </div>
             </div>
           </div>
@@ -953,7 +951,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[5].skills}}</li>
-                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[5].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+listFormation[5].id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -987,16 +985,15 @@
             <div class="student-course-text">
               <h3><a href="#">{{listFormation[5].title.charAt(0).toUpperCase()+ listFormation[5].title.slice(1)}}</a></h3>
             </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[5].costs}}</a></h3>
+            </div>
             <div class="portfolio-user">
               <div class="user-icon">
                 <a href="#"><i class="fas fa-user"></i>{{listFormation[5].userF.lastName}}</a>
               </div>
               <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.2({{listFormation[5].ratings.length}})</span>
+                <span>({{listFormation[5].courseApprenants.length}}) Students</span>
               </div>
             </div>
           </div>
@@ -1023,7 +1020,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[6].skills}}</li>
-                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[6].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+listFormation[6].id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -1057,16 +1054,15 @@
             <div class="student-course-text">
               <h3><a href="#">{{listFormation[6].title.charAt(0).toUpperCase()+ listFormation[6].title.slice(1)}}</a></h3>
             </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[6].costs}}</a></h3>
+            </div>
             <div class="portfolio-user">
               <div class="user-icon">
                 <a href="#"><i class="fas fa-user"></i>{{listFormation[6].userF.lastName}}</a>
               </div>
               <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.2({{listFormation[6].ratings.length}})</span>
+                <span>({{listFormation[6].courseApprenants.length}}) Students</span>
               </div>
             </div>
           </div>
@@ -1093,7 +1089,7 @@
                 <div class="info-cart-text">
                   <ul>
                     <li><i class="far fa-check"></i>{{listFormation[7].skills}}</li>
-                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="listFormation[7].toString()" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
+                    <li><i class="far fa-check"></i><ngx-qrcode [elementType]="elementType"  [value]="'http://localhost:4200/front/End/detailsF/'+listFormation[7].id" [width]="10"  [errorCorrectionLevel]="correctionLevel" ></ngx-qrcode></li>
 
                   </ul>
                 </div>
@@ -1125,18 +1121,18 @@
               </div>
             </div>
             <div class="student-course-text">
-              <h3><a href="course-details.html">{{listFormation[7].title.charAt(0).toUpperCase()+ listFormation[7].title.slice(1)}}</a></h3>
+              <h3><a href="#">{{listFormation[7].title.charAt(0).toUpperCase()+ listFormation[7].title.slice(1)}}</a></h3>
+            </div>
+            <div class="course-leran-text">
+              <h3><a href="#">$ {{listFormation[7].costs}}</a></h3>
             </div>
             <div class="portfolio-user">
               <div class="user-icon">
-                <a href="instructor-profile.html"><i class="fas fa-user"></i>{{listFormation[7].userF.lastName}}</a>
+                <a href="#"><i class="fas fa-user"></i>{{listFormation[7].userF.lastName}}</a>
               </div>
               <div class="course-icon">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <span>4.2({{listFormation[7].ratings.length}})</span>
+
+                <span>4.2({{listFormation[7].courseApprenants.length}}) Students</span>
               </div>
             </div>
           </div>
