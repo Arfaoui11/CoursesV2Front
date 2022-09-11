@@ -33,7 +33,7 @@ export class MyCoursesComponent implements OnInit {
   ngOnInit(): void {
 
     // Methode  subscribe recuperer la liste de donnee .
-    this.getAllFormation()
+    this.getAllFormation();
   }
 
   handlePageChange(event: number): void {

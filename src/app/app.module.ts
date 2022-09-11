@@ -112,6 +112,8 @@ import { NavbarCComponent } from './FontEnd/navbar-c/navbar-c.component';
 import {MatCheckboxModule} from "@angular/material/checkbox";
 import { Pages404Component } from './CoursesSpace/pages404/pages404.component';
 import { CheckoutComponent } from './CoursesSpace/checkout/checkout.component';
+import { ProfilesViewComponent } from './CoursesSpace/profiles-view/profiles-view.component';
+import { ProfilesEditComponent } from './CoursesSpace/profiles-edit/profiles-edit.component';
 
 
 
@@ -173,6 +175,8 @@ FullCalendarModule.registerPlugins([
     NavbarCComponent,
     Pages404Component,
     CheckoutComponent,
+    ProfilesViewComponent,
+    ProfilesEditComponent,
 
 
   ],

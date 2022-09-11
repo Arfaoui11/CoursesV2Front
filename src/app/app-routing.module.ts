@@ -30,7 +30,7 @@ import {E404Component} from "./FontEnd/e404/e404.component";
 import {CallVideoComponent} from "./CoursesSpace/call-video/call-video.component";
 import {TeamComponent} from "./CoursesSpace/team/team.component";
 
-import {ChatComponent} from "./CoursesSpace/chatClient/chat/chat.component";
+
 import {CartComponent} from "./CoursesSpace/cart/cart.component";
 import {UserListComponent} from "./CoursesSpace/user-list/user-list.component";
 import {VerificationAcountComponent} from "./CoursesSpace/verification-acount/verification-acount.component";
@@ -38,6 +38,7 @@ import {LoginComponent} from "./BackEnd/login/login.component";
 import {RegisterComponent} from "./BackEnd/register/register.component";
 import {Pages404Component} from "./CoursesSpace/pages404/pages404.component";
 import {CheckoutComponent} from "./CoursesSpace/checkout/checkout.component";
+import {ProfilesViewComponent} from "./CoursesSpace/profiles-view/profiles-view.component";
 
 
 
@@ -94,7 +95,7 @@ const routes: Routes =
              { path: 'blogF', component: BlogFormationComponent },
              { path: 'portF/:idCourses', component: PortfelioFormDetailsComponent },
              { path: 'chat', component: RoutComponent },
-             { path: 'chatNode', component: ChatComponent },
+
              { path:  'map',component: MapComponent },
              { path: 'homeF', component: HomeFComponent },
              { path: 'myCourses', component: MyCoursesComponent },
@@ -104,6 +105,7 @@ const routes: Routes =
              { path: 'quizWelcome', component: WelcomeComponent },
              { path: 'cart', component: CartComponent },
              { path: 'checkout', component: CheckoutComponent },
+             { path: 'profiles', component: ProfilesViewComponent },
              { path: '**',  component: E404Component },
 
            ]

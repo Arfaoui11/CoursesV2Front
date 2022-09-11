@@ -11,7 +11,7 @@
             <ol class="breadcrumb">
               <li class="breadcrumb-item"><a [routerLink]="['/front/End/homeF']">Home</a></li>
               <li class="breadcrumb-item"><span>Courses</span></li>
-              <li class="breadcrumb-item active" aria-current="page">{{formation.title}}</li>
+              <li class="breadcrumb-item active" aria-current="page">{{formation.title.charAt(0).toUpperCase() + formation.title.slice(1).toLowerCase()}}</li>
             </ol>
           </nav>
         </div>
@@ -32,7 +32,8 @@
           </div>
           <div class="course-heading mb-20">
             <br>
-            <h2>{{formation.title.toUpperCase()}} : {{formation.skills}}</h2>
+
+            <h2>{{formation.title.charAt(0).toUpperCase() + formation.title.slice(1).toLowerCase()}} : {{formation.skills}}</h2>
             <div >
               <ng-template #t let-fill="fill">
                   <span class="star" [class.full]="fill === 100">
@@ -53,7 +54,7 @@
               </div>
               <div class="course-meta-text">
                 <span>Created by</span>
-                <h6><a href="instructor-profile.html">{{formation.userF.lastName}}</a></h6>
+                <h6><a href="instructor-profile.html">{{formation.userF.lastName.charAt(0).toUpperCase() + formation.userF.lastName.slice(1).toLowerCase()}}</a></h6>
               </div>
             </div>
             <div class="course-Enroll border-line-meta">
@@ -62,10 +63,10 @@
             </div>
             <div class="course-update border-line-meta">
               <p>Last Update</p>
-              <span>01 January 2022 </span>
+              <span class="fas fa-calendar-alt"> {{formation.end | date | slice:0 : 12 }} </span>
             </div>
             <div class="course-category">
-              <p>01 January 2022 </p>
+              <p >{{formation.start | date | slice:0 : 12 }} </p>
               <span><a href="course.html">{{formation.domain}}</a></span>
             </div>
           </div>
@@ -119,7 +120,7 @@
               <h4>Curriculum</h4>
             </div>
             <ul>
-              <li>5 Quiz • {{formation.nbrHours}} total length</li>
+              <li>5 Quiz • {{formation.nbrHours}} hours total length </li>
             </ul>
             <div class="course-curriculam-accodion mt-30">
               <div class="accordion" id="accordionExample">
@@ -714,10 +715,10 @@
               </ul>
             </div>
             <div class="video-wishlist">
-              <a *ngIf="!show && currentUser" (click)="assingAppToCourses()" class="video-cart-btn"><i class="fal fa-shopping-cart"></i>Add
+           <!--   <a *ngIf="!show && currentUser" (click)="assingAppToCourses()" class="video-cart-btn"><i class="fal fa-shopping-cart"></i>Add
                 to
-                cart</a>
-              <a (click)="addtocart(formation)" class="video-wishlist-btn"><i class="far fa-heart"></i>Add
+                cart</a>-->
+              <a *ngIf="!show && currentUser"  (click)="addtocart(formation)" class="video-wishlist-btn"><i class="far fa-heart"></i>Add
                 to
                 Wishlist</a>
               <div  *ngIf="go && show" >
@@ -740,12 +741,12 @@
             </div>
             <div class="sidebar__widget-content">
 
-              <div class="sidebar__widget__cat mb-20">
+              <div class="sidebar__widget__cat mb-20" >
                 <div class="card overlay-img-card text-light">
                   <img src="../../../assets/images/companies/card-image-6.jpg"  alt="card-img-6">
                   <div class="card-img-overlay overlay-ligth">
-                    <h5 class="font-medium-5 text-light text-center mt-4">{{desc}}</h5>
-                    <p class="text-light text-center">{{lieu}}</p>
+                    <h5  class="text-light text-center" style="font-size: xx-large">{{desc}}</h5>
+                    <p  class="text-light text-center" style="font-size: xx-large">{{lieu}}</p>
                     <div class="card-content">
                       <div class="d-flex justify-content-around mt-2">
                         <div class="icon">

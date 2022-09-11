@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {TokenService} from "../../CoursesSpace/services/token.service";
+import {User} from "../../core/model/User";
+import {FormationService} from "../../CoursesSpace/services/formation.service";
 
 @Component({
   selector: 'app-navbar',
@@ -10,24 +12,29 @@ export class NavbarComponent implements OnInit {
 
 
 
-  isLoggedIn = false;
+  public user: User = new User();
 
   username: string;
   currentUser: any;
 
-  constructor(private token: TokenService) {
+  constructor(private token: TokenService,private serviceForm : FormationService) {
     this.currentUser = this.token.getUser();
   }
   ngOnInit(): void {
 
+  this.userDetails();
 
 
-    if (this.token.getToken()) {
-      this.isLoggedIn = true;
-      this.currentUser = this.token.getUser();
-    }
 
 
+  }
+
+  userDetails()
+  {
+    return  this.serviceForm.getUserById(this.currentUser.id).subscribe(
+      (data : User) => {this.user = data;
+
+      });
   }
   logout(): void {
     this.token.signOut();

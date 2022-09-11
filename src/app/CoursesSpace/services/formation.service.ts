@@ -71,6 +71,11 @@ export class FormationService {
     return this.http.get<User[]>('http://localhost:4000/api/user/getFormer',{headers : this.getHeaders()});
   }
 
+  getUserById(id : string):Observable<User>
+  {
+    return this.http.get<User>('http://localhost:4000/api/user/'+id,{headers : this.getHeaders()});
+  }
+
 
   getFormateurRemunerationMaxSalaireTrie():Observable<any[]> {
     return this.http.get<any[]>('http://localhost:8099/Courses/getFormateurMaxSalaireTrie');

@@ -3,6 +3,7 @@ import {Result} from "./Result";
 import {Likes} from "./likes";
 import {DisLikes} from "./DisLikes";
 import {PostComment} from "./PostComment";
+import {CourseApprenants} from "./courseApprenants";
 
 export class User {
 
@@ -28,6 +29,7 @@ export class User {
   comments!:PostComment[];
   results!:Result[];
   coursesF!:Formation[];
+  courseApprenants!:CourseApprenants[];
   isOnline: Boolean;
 
 

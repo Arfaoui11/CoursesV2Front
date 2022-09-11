@@ -4,6 +4,7 @@ import {CartService} from "../../CoursesSpace/services/cart.service";
 import {FormationService} from "../../CoursesSpace/services/formation.service";
 import {Router} from "@angular/router";
 import {GoogleApiService, UserInfo} from "../../CoursesSpace/services/google-api.service";
+import {User} from "../../core/model/User";
 
 @Component({
   selector: 'app-navbar-f',
@@ -13,20 +14,17 @@ import {GoogleApiService, UserInfo} from "../../CoursesSpace/services/google-api
 export class NavbarFComponent implements OnInit {
 
   public totalItem : number = 0;
-  private roles: string[];
-  isLoggedIn = false;
-  showAdminBoard = false;
-  showModeratorBoard = false;
   username: string;
   currentUser: any;
-
-  mailSnippets: string[] = [];
-  userInfo?: UserInfo;
-
+  public user: User = new User();
+  public Items: number;
 
 
 
-  constructor(private token: TokenService,private cartService : CartService,private router:Router) {
+
+
+
+  constructor(private token: TokenService,private cartService : CartService,private router:Router,private serviceForm : FormationService) {
     this.currentUser = this.token.getUser();
 
 
@@ -40,27 +38,24 @@ export class NavbarFComponent implements OnInit {
       });
 
 
-    this.isLoggedIn = !!this.token.getToken();
-
-
-
-    if (this.isLoggedIn) {
-      const user = this.token.getUser();
-      this.roles = user.roles;
-
-      this.showAdminBoard = this.roles.includes('ROLE_ADMIN');
-      this.showModeratorBoard = this.roles.includes('ROLE_MODERATOR');
-
-      this.username = user.lastName;
-    }
+    this.userDetails();
 
 
 
   }
 
+
+  userDetails()
+  {
+    return  this.serviceForm.getUserById(this.currentUser.id).subscribe(
+      (data : User) => {this.user = data;
+
+      });
+  }
+
   logout(): void {
     this.token.signOut();
-   window.location.reload();
+    window.location.href = '/front/End/homeF';
 
   //  window.location.href = '/login';
   }

@@ -8,7 +8,7 @@
         <div class="signup-box text-center">
           <div class="signup-text">
             <h3>Sign in</h3>
-            <div class="alert alert-success" *ngIf="isLoggedIn">Welcome {{currentUser.lastName}} <br>Logged in as {{ currentUser.type }}.</div>
+            <div class="alert alert-success" *ngIf="isLoggedIn">Welcome {{currentUser.lastName.charAt(0).toUpperCase() + currentUser.lastName.slice(1).toLowerCase()}} <br>Logged in as {{ currentUser.type }}.</div>
           </div>
           <div class="signup-thumb">
             <img src="../../../assets/front/img/sing-up/sign-up.png" alt="image not found">
