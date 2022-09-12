@@ -257,7 +257,7 @@ export class HomeFComponent implements OnInit {
     });
 
 
-    console.log(this.tableau);
+
 
 
   }

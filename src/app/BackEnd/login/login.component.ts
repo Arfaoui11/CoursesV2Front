@@ -38,9 +38,7 @@ export class LoginComponent implements OnInit {
 
   ngOnInit(): void {
 
-   /* this.authServiceGoogle.authState.subscribe((user) => {
-      this.user = user;
-    })*/
+
 
     const token: string | null = this.route.snapshot.queryParamMap.get('token');
     const error: string | null = this.route.snapshot.queryParamMap.get('error');
@@ -73,14 +71,22 @@ export class LoginComponent implements OnInit {
         this.login(data.user);
       },
       err => {
-        this.errorMessage = err.error;
+        this.errorMessage = err.error.message;
         this.isLoginFailed = true;
 
-        console.log(this.currentUser);
-       /* this.snackbar.open(' please verify your account go to email we have link to activate you account', 'Undo', {
-          duration: 2000
-        });
-        window.location.href = '/verification/'+"reset";*/
+
+       if (this.errorMessage === 'Please verify your email account')
+        {
+
+          setTimeout( () =>
+          {
+            window.location.href = '/verification/'+"reset";
+          },4000);
+
+        }
+
+
+
       }
     );
   }
