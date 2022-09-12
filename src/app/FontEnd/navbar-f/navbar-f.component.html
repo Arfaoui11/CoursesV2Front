@@ -207,7 +207,7 @@
                         <li><a href="checkout.html">checkout</a></li>
                       </ul>
                     </li>
-                    <li class="menu-item-has-children"><a [routerLink]="['/front/End/profiles']">Profiles</a>
+                    <li *ngIf="this.currentUser" class="menu-item-has-children"><a [routerLink]="['/front/End/profiles']">Profiles</a>
                       <ul class="sub-menu">
                         <li><a [routerLink]="['/front/End/profiles']">See all profiles</a></li>
 

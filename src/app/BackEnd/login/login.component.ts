@@ -73,12 +73,14 @@ export class LoginComponent implements OnInit {
         this.login(data.user);
       },
       err => {
-        this.errorMessage = err.error.message;
+        this.errorMessage = err.error;
         this.isLoginFailed = true;
-        this.snackbar.open(' please verify your account go to email we have link to activate you account', 'Undo', {
+
+        console.log(this.currentUser);
+       /* this.snackbar.open(' please verify your account go to email we have link to activate you account', 'Undo', {
           duration: 2000
         });
-        window.location.href = '/verification/'+"reset";
+        window.location.href = '/verification/'+"reset";*/
       }
     );
   }

@@ -8,6 +8,9 @@
         <div class="signup-box text-center">
           <div class="signup-text">
             <h3>Sign in</h3>
+            <div class="form-group">
+              <div class="alert alert-danger" role="alert" *ngIf="isLoginFailed">Login failed: {{ errorMessage }}</div>
+            </div>
             <div class="alert alert-success" *ngIf="isLoggedIn">Welcome {{currentUser.lastName.charAt(0).toUpperCase() + currentUser.lastName.slice(1).toLowerCase()}} <br>Logged in as {{ currentUser.type }}.</div>
           </div>
           <div class="signup-thumb">
