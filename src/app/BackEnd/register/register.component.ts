@@ -18,7 +18,7 @@ export class RegisterComponent implements OnInit {
   public imagePath :File;
   imgURL: any;
 
-  constructor(private authService: FormationService,private http : HttpClient) { }
+  constructor(private authService: FormationService) { }
 
   ngOnInit(): void {
   }

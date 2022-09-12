@@ -82,46 +82,6 @@ export class FormationService {
   }
 
 
-  getDataFormateur()
-  {
-
-
-    let xmll = new XMLHttpRequest();
-
-    xmll.onreadystatechange = ()=>
-    {
-      this.event = JSON.parse(xmll.responseText)
-    };
-
-
-    xmll.open('get','http://localhost:8099/Courses/retrieveFormation',true);
-
-
-
-    xmll.send(null);
-    return this.event;
-
-  }
-
-
-  getDataFormation()
-  {
-
-    let xx = new XMLHttpRequest();
-    xx.onreadystatechange = ()=>
-    {
-      this.formateur = JSON.parse(xx.responseText)
-    };
-
-    xx.open('get','http://localhost:8099/Courses/retrieveFormateur',true);
-
-
-    xx.send(null);
-
-
-    return this.formateur;
-
-  }
 
 
 
@@ -140,10 +100,6 @@ export class FormationService {
     return this.http.get<User[]>('http://localhost:4000/api/user/'+idF,{headers : this.getHeaders()});
   }
 
-  getAllComment(): Observable<PostComment[]>
-  {
-    return this.http.get<PostComment[]>('http://localhost:8099/Courses/getAllComments');
-  }
 
 
   writeComment(mess :PostComment,idF :string , idU : string): Observable<number>
@@ -198,13 +154,7 @@ export class FormationService {
   }
 
 
-/*
-  getFormation():Observable<Formation[]>
-  {
-    return this.http.get<Formation[]>("http://localhost:8099/Courses/retrieveFormation");
-  }
 
- */
 
   getFormation():Observable<Formation[]>
   {
@@ -303,15 +253,7 @@ export class FormationService {
 
 
 
-  getNbrLikes(id:string):Observable<any>
-  {
-    return this.http.get<any>('http://localhost:8099/Courses/getNbrLikesByComment/'+id);
-  }
 
-  getNbrDisLikes(id:string):Observable<any>
-  {
-    return this.http.get<any>('http://localhost:8099/Courses/getNbrDislikesByComment/'+id);
-  }
 
   addRatingFormation(idF:string,idU:string,rate :Rating):Observable<Rating>
   {
@@ -330,10 +272,7 @@ export class FormationService {
     return this.http.put<any>('http://localhost:4000/api/courses/multiple/'+i,file,{headers : this.getHeaders()});
   }
 
-  getFile(file: string): Observable<any>
-  {
-    return this.http.get<any>('http://localhost:8099/Courses/get/'+file);
-  }
+
 
   DownloadFile(file: string):Observable<Blob>
   {
@@ -365,9 +304,7 @@ export class FormationService {
   }
 
 
-
-
-
-
-
+  updateUser(id : string,formData: FormData) : Observable<any>{
+    return this.http.patch('http://localhost:4000/api/user/'+id, formData,{headers : this.getHeaders()});
+  }
 }
