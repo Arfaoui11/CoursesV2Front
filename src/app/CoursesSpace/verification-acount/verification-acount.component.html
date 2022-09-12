@@ -8,7 +8,7 @@
         <div class="card text-center w-100 mb-0">
           <div class="card-header justify-content-center pb-0">
             <div class="card-title">
-              <h2 class="mb-0">Verification Account </h2>
+              <h2 class="mb-0">Udacity Academy </h2>
             </div>
           </div>
           <div class="card-content">
@@ -27,9 +27,9 @@
                 </mat-card-content>
               </div>
               <div class="divider">
-                <div class="divider-text">Subscribe</div>
+                <h2 class="hero-title">Activate Your Account</h2>
               </div>
-              <p class="text-left">
+              <p class="text-center" >
                 If you would like to be Activated account when our app is live, Please Reactivate your Account to get our mailing Activation.
               </p>
               <form class="form-horizontal" name="form" (ngSubmit)="f.form.valid && ReactivationAccount()" #f="ngForm" novalidate>
@@ -47,7 +47,7 @@
 
 
               </form>
-              <button style="margin-bottom: 30px" *ngIf="currentTime.second && token != 'reset'" class="course-btn" (click)="activationAccount()" >Activate Account </button>
+              <button tyle="margin-bottom: 30px;width: 350px" *ngIf="currentTime.second && token != 'reset'" class="course-btn" (click)="activationAccount()" >Activate Account </button>
 
 
             </div>
