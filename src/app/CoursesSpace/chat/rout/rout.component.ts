@@ -18,6 +18,8 @@ export class RoutComponent implements OnInit {
 
   users: User[] = new Array();
 
+  public user: User = new User();
+
   currentUser: any = [];
 
   userName = '';
@@ -42,6 +44,8 @@ export class RoutComponent implements OnInit {
 
   ngOnInit(): void {
 this.chatApp();
+
+    this.userDetails();
   }
 
   chatApp(): void {
@@ -69,6 +73,14 @@ this.chatApp();
     this.socket.emit('message', msg);
     this.messageList.push({message: msg, userName: this.userName,image : this.image, mine: true});
     this.message = '';
+  }
+
+  userDetails()
+  {
+    return  this.serviceForm.getUserById(this.currentUser.id).subscribe(
+      (data : User) => {this.user = data;
+
+      });
   }
 
 
