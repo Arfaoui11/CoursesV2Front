@@ -59,7 +59,7 @@
 
       <div class="search-box chat-search-box py-4">
         <div class="position-relative">
-          <input type="text" class="form-control" placeholder="Search...">
+          <input type="text" class="form-control" #key="ngModel" [(ngModel)]="keyName" name="key" placeholder="Search..."  >
           <i class="bx bx-search-alt search-icon"></i>
         </div>
       </div>
@@ -89,7 +89,7 @@
           <div class="tab-pane show active" id="chat">
             <div>
               <h5 class="font-size-14 mb-3">Recent</h5>
-              <ul class="list-unstyled chat-list" data-simplebar style="max-height: 410px;" *ngFor="let user of userList">
+              <ul class="list-unstyled chat-list" data-simplebar style="max-height: 410px;" *ngFor="let user of userList| searchFilter: keyName">
                 <li class="active"  >
                   <a href="javascript: void(0);">
                     <div class="d-flex">

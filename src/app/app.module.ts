@@ -114,6 +114,7 @@ import { Pages404Component } from './CoursesSpace/pages404/pages404.component';
 import { CheckoutComponent } from './CoursesSpace/checkout/checkout.component';
 import { ProfilesViewComponent } from './CoursesSpace/profiles-view/profiles-view.component';
 import { ProfilesEditComponent } from './CoursesSpace/profiles-edit/profiles-edit.component';
+import { SearchFilterPipe } from './search-filter.pipe';
 
 
 
@@ -177,6 +178,7 @@ FullCalendarModule.registerPlugins([
     CheckoutComponent,
     ProfilesViewComponent,
     ProfilesEditComponent,
+    SearchFilterPipe,
 
 
   ],

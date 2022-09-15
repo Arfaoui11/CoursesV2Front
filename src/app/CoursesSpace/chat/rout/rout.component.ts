@@ -33,7 +33,10 @@ export class RoutComponent implements OnInit {
   heurs : Date = new Date();
   daysa : Date = new Date();
   id: string;
-  constructor(private serviceForm : FormationService,private token: TokenService) {
+   public keyName: string;
+
+
+   constructor(private serviceForm : FormationService,private token: TokenService) {
     this.currentUser = this.token.getUser();
 
 
@@ -92,4 +95,9 @@ this.chatApp();
   }
 
 
+  Search() {
+    console.log(this.keyName);
+    this.userList = this.userList.filter(l => l.split(',')[0].toLowerCase().toString().startsWith(this.keyName));
+    console.log(this.userList);
+  }
 }
