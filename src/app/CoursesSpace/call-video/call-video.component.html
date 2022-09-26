@@ -60,10 +60,9 @@
       </div>
       <div
         class="video-card"
-        *ngFor="let stream of remoteStreams; let i = index"
-      >
+        *ngFor="let stream of remoteStreams; let i = index">
         <video
-          id="me"
+
           height="190"
           width="257"
           [srcObject]="stream"

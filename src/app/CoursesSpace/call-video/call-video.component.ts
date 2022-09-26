@@ -82,7 +82,7 @@ export class CallVideoComponent implements OnInit {
   }
 
   initVideo() {
-    from(navigator.mediaDevices.getUserMedia({ audio: true, video: true }))
+    from(navigator.mediaDevices.getUserMedia({ audio: false, video: true }))
       .pipe(
         tap((stream) => (this.localStream = stream)),
         mergeMap(() =>
